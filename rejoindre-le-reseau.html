@@ -54,7 +54,8 @@
     .brand-logo{height:44px;width:auto;display:block;}
     .brand-logo-footer{height:34px;}
 
-    .nav-center{display:flex;justify-content:center;align-items:center;gap: 10px;flex-wrap:wrap;}
+    .nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap: 6px;}
+    .nav-row-1, .nav-row-2{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap: 10px;}
     .nav-center a{
       font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
     }
@@ -84,17 +85,51 @@
     }
     .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
 
-    .embed{
-      margin-top: 18px;border-radius: var(--radius-2xl);overflow:hidden;
-      border:1px solid var(--bordeaux-10);background:#fff;
+    .form-rejoindre-wrap{ max-width: 720px; margin: 0 auto; }
+    .form-rejoindre{
+      padding: 32px; border-radius: var(--radius-2xl); background: #fff;
+      border:1px solid var(--bordeaux-10); box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
-    .embed iframe{width:100%; height: 980px; border:0;}
-
-    .thanks{
-      margin-top: 14px;padding: 14px 16px;border-radius: 16px;
-      background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);
-      color: var(--text);font-size: 13px;line-height: 1.6;
+    .form-rejoindre .row{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-rejoindre .form-group{ margin-bottom: 18px; }
+    .form-rejoindre .form-group.full{ grid-column: 1 / -1; }
+    .form-rejoindre label{
+      display:block; font-weight:700; font-size:13px; color:var(--ink); margin-bottom:6px;
     }
+    .form-rejoindre label .req{ color: var(--bordeaux); }
+    .form-rejoindre input, .form-rejoindre select, .form-rejoindre textarea{
+      width:100%; padding:14px 16px; border:1px solid var(--bordeaux-10); border-radius:14px;
+      font:inherit; font-size:15px; color:var(--text); background:#fff;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .form-rejoindre input:focus, .form-rejoindre select:focus, .form-rejoindre textarea:focus{
+      outline:none; border-color:var(--bordeaux); box-shadow:0 0 0 3px var(--bordeaux-05);
+    }
+    .form-rejoindre textarea{ min-height: 120px; resize: vertical; }
+    .form-rejoindre .input-error{ border-color: var(--bordeaux) !important; }
+    .form-rejoindre .error-msg{ display:none; color:var(--bordeaux); font-size:13px; margin-top:6px; }
+    .form-rejoindre .form-check{ margin-bottom: 16px; }
+    .form-rejoindre .form-check label{ display:flex; align-items:flex-start; gap:10px; font-weight:500; cursor:pointer; }
+    .form-rejoindre .form-check input[type="checkbox"]{ width:20px; height:20px; flex-shrink:0; margin-top:2px; cursor:pointer; }
+    .form-rejoindre .form-check .error-msg{ margin-top: 6px; }
+    .form-rejoindre .btn-submit{
+      width:100%; padding:16px 24px; border-radius:16px; font-weight:800; font-size:15px;
+      background: var(--bordeaux); color:#fff; border:none; cursor:pointer;
+      transition: transform .12s ease, filter .2s ease; margin-top: 8px;
+    }
+    .form-rejoindre .btn-submit:hover:not(:disabled){ transform: translateY(-2px); filter: brightness(1.05); }
+    .form-rejoindre .btn-submit:disabled{ opacity:0.6; cursor:not-allowed; }
+    .form-rejoindre .form-footer{ margin-top: 16px; font-size: 13px; color: var(--muted); text-align: center; }
+    .confirmation-rejoindre{ display:none; padding: 40px 32px; border-radius: var(--radius-2xl); background: var(--bordeaux-05);
+      border: 2px solid var(--bordeaux-10); text-align: center; }
+    .confirmation-rejoindre.visible{ display:block; animation: fadeIn .4s ease-out; }
+    @keyframes fadeIn { from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:translateY(0); } }
+    .confirmation-rejoindre .icon{ font-size: 56px; margin-bottom: 16px; }
+    .confirmation-rejoindre h3{ margin:0 0 12px; font-size: 24px; color: var(--ink); }
+    .confirmation-rejoindre p{ margin:0 0 20px; font-size: 16px; line-height: 1.6; color: var(--text); }
+    .confirmation-rejoindre .btn-retour{ display:inline-block; padding: 12px 24px; border-radius: 14px; font-weight: 700;
+      background: var(--bordeaux); color: #fff; text-decoration: none; transition: transform .12s ease, filter .2s ease; }
+    .confirmation-rejoindre .btn-retour:hover{ transform: translateY(-2px); filter: brightness(1.05); color: #fff; }
 
     footer{
       padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);
@@ -106,7 +141,10 @@
       :root{--pad:22px}
       .topbar{grid-template-columns: 1fr; justify-items:start;}
       .nav-right,.nav-center{justify-content:flex-start}
-      .embed iframe{height: 1100px;}
+      .nav-center{flex-direction:column;align-items:flex-start;}
+      .nav-row-1, .nav-row-2{justify-content:flex-start;}
+      .form-rejoindre .row{ grid-template-columns: 1fr; }
+      .form-rejoindre{ padding: 24px 20px; }
     }
   </style>
   <link rel="stylesheet" href="css/bandeau.css">
@@ -114,21 +152,27 @@
 
 <body>
 
-  <!-- BANDEAU ÉVÉNEMENT -->
+  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
   <div id="bandeau-evenement">
-    <div class="bandeau-container">
-      <div class="bandeau-content">
-        <span class="bandeau-icon">🎯</span>
-        <span class="bandeau-text">
-          <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-          <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
-        </span>
-        <a href="webinaire-recrutement.html" class="bandeau-cta">
-          Je m'inscris gratuitement
-          <span class="bandeau-arrow">→</span>
-        </a>
+    <div class="bandeau-full">
+      <div class="bandeau-container">
+        <div class="bandeau-content">
+          <span class="bandeau-text">
+            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
+            <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
+          </span>
+          <a href="webinaire-recrutement.html" class="bandeau-cta">
+            Je m'inscris gratuitement
+            <span class="bandeau-arrow">→</span>
+          </a>
+        </div>
+        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
       </div>
-      <button type="button" class="bandeau-close" aria-label="Fermer le bandeau">×</button>
+    </div>
+    <div class="bandeau-mini" aria-hidden="true">
+      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Jeudi 6 février 2025, 19h</span>
+      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
+      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
     </div>
   </div>
 
@@ -140,15 +184,18 @@
         </a>
 
         <nav class="nav-center" aria-label="Navigation principale">
-          <a href="index.html">Accueil</a>
-          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-          <a href="nos-biens.html">Nos biens</a>
-          <a href="nos-realisations.html">Nos réalisations</a>
-          <a href="vendeurs.html">Vendeurs</a>
-          <a href="acquereurs.html">Acquéreurs</a>
-          <a href="rejoindre-le-reseau.html" class="active">Rejoindre le réseau</a>
-          <a href="contact.html">Contact</a>
-          <a href="index.html#faq">FAQ</a>
+          <div class="nav-row-1">
+            <a href="index.html">Accueil</a>
+            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+            <a href="nos-biens.html">Nos biens</a>
+            <a href="nos-realisations.html">Nos réalisations</a>
+          </div>
+          <div class="nav-row-2">
+            <a href="vendeurs.html">Vendeurs</a>
+            <a href="acquereurs.html">Acquéreurs</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
         </nav>
 
         <div class="nav-right">
@@ -166,28 +213,136 @@
       <h1>Si vous avez cliqué ici, c'est que vous souhaitez changer de vie professionnelle.</h1>
       <p class="lead">
         Nous ne recherchons pas de simples collaborateurs, mais des partenaires structurés et engagés.
-        Ce questionnaire nous permet d'évaluer votre profil (Agent immobilier, Marchand de biens, Investisseur, Artisan, Autre),
-        votre expérience et votre capacité à co-agir, co-construire et co-réussir au sein d'Ideal Home Project.
-      </p>
-
-      <p class="lead" style="margin-top:10px;color:var(--muted);font-size:12px;">
-        Le questionnaire ci-dessous est un Google Form : vos réponses sont enregistrées automatiquement.
+        Complétez le formulaire ci-dessous : nous vous recontacterons sous 48h. Confidentialité absolue.
       </p>
     </div>
 
-    <!-- Google Form intégré -->
-    <div class="embed">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSff80IuNjtOFVcsHxC6r5bug_iWGPboSsS-8VSLzJGX3hMUBQ/viewform?usp=sharing&ouid=118246987118794997024"
-        loading="lazy"
-        title="Candidature — Rejoindre le réseau Ideal Home Project">
-        Chargement…
-      </iframe>
-    </div>
+    <!-- Formulaire natif -->
+    <div class="form-rejoindre-wrap">
+      <form id="form-rejoindre" class="form-rejoindre" novalidate>
+        <div class="row">
+          <div class="form-group">
+            <label for="r-prenom">Prénom <span class="req">*</span></label>
+            <input type="text" id="r-prenom" name="prenom" placeholder="Ex: Jean" autocomplete="given-name" required>
+            <span class="error-msg" id="err-prenom"></span>
+          </div>
+          <div class="form-group">
+            <label for="r-nom">Nom <span class="req">*</span></label>
+            <input type="text" id="r-nom" name="nom" placeholder="Ex: Dupont" autocomplete="family-name" required>
+            <span class="error-msg" id="err-nom"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="r-email">Email professionnel <span class="req">*</span></label>
+            <input type="email" id="r-email" name="email" placeholder="Ex: jean.dupont@entreprise.fr" autocomplete="email" required>
+            <span class="error-msg" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="r-tel">Mobile / WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="r-tel" name="telephone" placeholder="Ex: 06 12 34 56 78" autocomplete="tel" required>
+            <span class="error-msg" id="err-telephone"></span>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="r-statut">Votre statut actuel <span class="req">*</span></label>
+          <select id="r-statut" name="statut" required>
+            <option value="">— Sélectionnez —</option>
+            <option value="salarie-immo">Salarié(e) de l'immobilier</option>
+            <option value="indep-immo">Indépendant(e) immobilier</option>
+            <option value="reconversion">En reconversion professionnelle</option>
+            <option value="etudiant">Étudiant(e) / Jeune diplômé(e)</option>
+            <option value="autre">Autre secteur</option>
+          </select>
+          <span class="error-msg" id="err-statut"></span>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="r-experience">Expérience dans l'immobilier <span class="req">*</span></label>
+            <select id="r-experience" name="experience" required>
+              <option value="">— Sélectionnez —</option>
+              <option value="aucune">Aucune (débutant)</option>
+              <option value="1-3ans">1 à 3 ans</option>
+              <option value="3-5ans">3 à 5 ans</option>
+              <option value="5ans-plus">Plus de 5 ans</option>
+            </select>
+            <span class="error-msg" id="err-experience"></span>
+          </div>
+          <div class="form-group">
+            <label for="r-cartet">Carte T <span class="req">*</span></label>
+            <select id="r-cartet" name="carte-t" required>
+              <option value="">— Sélectionnez —</option>
+              <option value="oui">Oui</option>
+              <option value="en-cours">En cours d'obtention</option>
+              <option value="non">Non</option>
+            </select>
+            <span class="error-msg" id="err-cartet"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="r-dispo">Disponibilité pour démarrer <span class="req">*</span></label>
+            <select id="r-dispo" name="disponibilite" required>
+              <option value="">— Sélectionnez —</option>
+              <option value="immediatement">Immédiatement</option>
+              <option value="1-mois">Dans 1 mois</option>
+              <option value="2-3-mois">Dans 2-3 mois</option>
+              <option value="3-mois-plus">Plus de 3 mois</option>
+            </select>
+            <span class="error-msg" id="err-dispo"></span>
+          </div>
+          <div class="form-group">
+            <label for="r-ambition">Ambition financière annuelle <span class="req">*</span></label>
+            <select id="r-ambition" name="ambition" required>
+              <option value="">— Sélectionnez —</option>
+              <option value="50-70k">50K€ — 70K€</option>
+              <option value="70-100k">70K€ — 100K€</option>
+              <option value="100k-plus">100K€ et plus</option>
+            </select>
+            <span class="error-msg" id="err-ambition"></span>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="r-zone">Zone géographique souhaitée <span class="req">*</span></label>
+          <select id="r-zone" name="zone" required>
+            <option value="">— Sélectionnez —</option>
+            <option value="bordeaux">Bordeaux</option>
+            <option value="gironde">Gironde (hors Bordeaux)</option>
+            <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+            <option value="autre">Autre région (précisez en message)</option>
+          </select>
+          <span class="error-msg" id="err-zone"></span>
+        </div>
+        <div class="form-group full">
+          <label for="r-msg">Votre motivation (optionnel)</label>
+          <textarea id="r-msg" name="message" placeholder="Parlez-nous de votre parcours, votre motivation, vos objectifs..."></textarea>
+        </div>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" id="r-rgpd" name="rgpd" required>
+            <span>J'accepte que mes données soient utilisées pour traiter ma candidature <span class="req">*</span></span>
+          </label>
+          <span class="error-msg" id="err-rgpd"></span>
+        </div>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" id="r-rappel" name="rappel">
+            <span>Je souhaite être rappelé(e) sous 48h</span>
+          </label>
+        </div>
+        <button type="submit" class="btn-submit">Envoyer ma candidature</button>
+        <p class="form-footer">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
+      </form>
 
-    <div class="thanks">
-      <strong>Merci pour votre candidature.</strong><br>
-      Notre équipe revient vers vous dans les meilleurs délais. Confidentialité absolue.
+      <div id="confirmation-rejoindre" class="confirmation-rejoindre">
+        <div class="icon">✅</div>
+        <h3>Candidature envoyée avec succès</h3>
+        <p>
+          Merci <strong id="conf-prenom"></strong> pour votre candidature. Nous avons bien reçu vos informations
+          et nous vous recontacterons à <strong id="conf-email"></strong> sous <strong>48h</strong>.
+        </p>
+        <a href="index.html" class="btn-retour">Retour à l'accueil</a>
+      </div>
     </div>
 
   </main>
@@ -209,5 +364,83 @@
   </footer>
 
   <script src="js/bandeau.js"></script>
+  <script>
+    (function() {
+      /* Remplacez FORM_URL par l’URL formResponse de votre Google Form, et les entry.XXX dans MAP par les vrais IDs (F12 → Network → formResponse → Payload). */
+      var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSff80IuNjtOFVcsHxC6r5bug_iWGPboSsS-8VSLzJGX3hMUBQ/formResponse';
+      var MAP = {
+        prenom: 'entry.123456789', nom: 'entry.987654321', email: 'entry.111222333', telephone: 'entry.444555666',
+        statut: 'entry.777888999', experience: 'entry.101112131', carteT: 'entry.141516171', disponibilite: 'entry.181920212',
+        ambition: 'entry.232425262', zone: 'entry.272829303', message: 'entry.313233343', rgpd: 'entry.353637383', rappel: 'entry.394041424'
+      };
+      var form = document.getElementById('form-rejoindre');
+      var conf = document.getElementById('confirmation-rejoindre');
+      var ids = { prenom: 'r-prenom', nom: 'r-nom', email: 'r-email', telephone: 'r-tel', statut: 'r-statut', experience: 'r-experience',
+        cartet: 'r-cartet', dispo: 'r-dispo', ambition: 'r-ambition', zone: 'r-zone', msg: 'r-msg', rgpd: 'r-rgpd', rappel: 'r-rappel' };
+
+      function err(id, msg) {
+        var el = document.getElementById('err-' + (id === 'cartet' ? 'cartet' : id === 'dispo' ? 'dispo' : id));
+        if (el) { el.textContent = msg || ''; el.style.display = msg ? 'block' : 'none'; }
+        var inp = document.getElementById(ids[id] || id);
+        if (inp) inp.classList.toggle('input-error', !!msg);
+      }
+      function validate() {
+        var ok = true;
+        var p = document.getElementById(ids.prenom).value.trim();
+        if (!p) { err('prenom', 'Prénom requis'); ok = false; } else err('prenom');
+        var n = document.getElementById(ids.nom).value.trim();
+        if (!n) { err('nom', 'Nom requis'); ok = false; } else err('nom');
+        var e = document.getElementById(ids.email).value.trim();
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!e) { err('email', 'Email requis'); ok = false; } else if (!re.test(e)) { err('email', 'Email invalide'); ok = false; } else err('email');
+        var t = document.getElementById(ids.telephone).value.trim();
+        var tr = /^[0-9\s\+\-\(\)]{10,}$/;
+        if (!t) { err('telephone', 'Téléphone requis'); ok = false; } else if (!tr.test(t)) { err('telephone', 'Numéro invalide'); ok = false; } else err('telephone');
+        if (!document.getElementById(ids.statut).value) { err('statut', 'Sélectionnez votre statut'); ok = false; } else err('statut');
+        if (!document.getElementById(ids.experience).value) { err('experience', 'Sélectionnez votre expérience'); ok = false; } else err('experience');
+        if (!document.getElementById(ids.cartet).value) { err('cartet', 'Indiquez si vous avez la carte T'); ok = false; } else err('cartet');
+        if (!document.getElementById(ids.dispo).value) { err('dispo', 'Sélectionnez votre disponibilité'); ok = false; } else err('dispo');
+        if (!document.getElementById(ids.ambition).value) { err('ambition', 'Sélectionnez votre ambition'); ok = false; } else err('ambition');
+        if (!document.getElementById(ids.zone).value) { err('zone', 'Sélectionnez votre zone'); ok = false; } else err('zone');
+        if (!document.getElementById(ids.rgpd).checked) { err('rgpd', 'Vous devez accepter les conditions'); ok = false; } else err('rgpd');
+        return ok;
+      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validate()) return;
+        var btn = form.querySelector('.btn-submit');
+        var orig = btn.textContent;
+        btn.textContent = '⏳ Envoi en cours…';
+        btn.disabled = true;
+        var fd = new FormData();
+        fd.append(MAP.prenom, document.getElementById(ids.prenom).value);
+        fd.append(MAP.nom, document.getElementById(ids.nom).value);
+        fd.append(MAP.email, document.getElementById(ids.email).value);
+        fd.append(MAP.telephone, document.getElementById(ids.telephone).value);
+        fd.append(MAP.statut, document.getElementById(ids.statut).value);
+        fd.append(MAP.experience, document.getElementById(ids.experience).value);
+        fd.append(MAP.carteT, document.getElementById(ids.cartet).value);
+        fd.append(MAP.disponibilite, document.getElementById(ids.dispo).value);
+        fd.append(MAP.ambition, document.getElementById(ids.ambition).value);
+        fd.append(MAP.zone, document.getElementById(ids.zone).value);
+        fd.append(MAP.message, document.getElementById(ids.msg).value);
+        fd.append(MAP.rgpd, document.getElementById(ids.rgpd).checked ? 'Oui' : 'Non');
+        fd.append(MAP.rappel, document.getElementById(ids.rappel).checked ? 'Oui' : 'Non');
+        fetch(FORM_URL, { method: 'POST', body: fd, mode: 'no-cors' })
+          .then(function() {
+            form.style.display = 'none';
+            conf.classList.add('visible');
+            document.getElementById('conf-prenom').textContent = document.getElementById(ids.prenom).value;
+            document.getElementById('conf-email').textContent = document.getElementById(ids.email).value;
+            conf.scrollIntoView({ behavior: 'smooth' });
+          })
+          .catch(function() {
+            alert('Une erreur est survenue. Veuillez réessayer.');
+            btn.textContent = orig;
+            btn.disabled = false;
+          });
+      });
+    })();
+  </script>
 </body>
 </html>

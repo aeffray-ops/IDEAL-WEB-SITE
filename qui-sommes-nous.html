@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Qui sommes-nous — Ideal Home Project</title>
+  <title>Qui sommes-nous ? — Ideal Home Project</title>
   <meta name="description" content="Découvrez l'ADN d'Ideal Home Project : Co-agir, Co-construire, Co-réussir. Un nouveau modèle immobilier intelligent, collectif et humain." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +73,8 @@
     .brand-logo{height:44px;width:auto;display:block;}
     .brand-logo-footer{height:34px;}
 
-    .nav-center{display:flex;justify-content:center;align-items:center;gap: 10px;flex-wrap:wrap;}
+    .nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap: 6px;}
+    .nav-row-1, .nav-row-2{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap: 10px;}
     .nav-center a{
       font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
     }
@@ -162,6 +163,8 @@
       :root{--pad:22px}
       .topbar{grid-template-columns: 1fr; justify-items:start;}
       .nav-right,.nav-center{justify-content:flex-start}
+      .nav-center{flex-direction:column;align-items:flex-start;}
+      .nav-row-1, .nav-row-2{justify-content:flex-start;}
       .grid-2, .grid-3{grid-template-columns: 1fr}
       .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
     }
@@ -171,21 +174,27 @@
 
 <body>
 
-  <!-- BANDEAU ÉVÉNEMENT -->
+  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
   <div id="bandeau-evenement">
-    <div class="bandeau-container">
-      <div class="bandeau-content">
-        <span class="bandeau-icon">🎯</span>
-        <span class="bandeau-text">
-          <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-          <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
-        </span>
-        <a href="webinaire-recrutement.html" class="bandeau-cta">
-          Je m'inscris gratuitement
-          <span class="bandeau-arrow">→</span>
-        </a>
+    <div class="bandeau-full">
+      <div class="bandeau-container">
+        <div class="bandeau-content">
+          <span class="bandeau-text">
+            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
+            <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
+          </span>
+          <a href="webinaire-recrutement.html" class="bandeau-cta">
+            Je m'inscris gratuitement
+            <span class="bandeau-arrow">→</span>
+          </a>
+        </div>
+        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
       </div>
-      <button type="button" class="bandeau-close" aria-label="Fermer le bandeau">×</button>
+    </div>
+    <div class="bandeau-mini" aria-hidden="true">
+      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Jeudi 6 février 2025, 19h</span>
+      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
+      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
     </div>
   </div>
 
@@ -197,15 +206,18 @@
         </a>
 
         <nav class="nav-center" aria-label="Navigation principale">
-          <a href="index.html">Accueil</a>
-          <a href="qui-sommes-nous.html" class="active">Qui sommes-nous</a>
-          <a href="nos-biens.html">Nos biens</a>
-          <a href="nos-realisations.html">Nos réalisations</a>
-          <a href="vendeurs.html">Vendeurs</a>
-          <a href="acquereurs.html">Acquéreurs</a>
-          <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
-          <a href="contact.html">Contact</a>
-          <a href="index.html#faq">FAQ</a>
+          <div class="nav-row-1">
+            <a href="index.html">Accueil</a>
+            <a href="qui-sommes-nous.html" class="active">Qui sommes-nous ?</a>
+            <a href="nos-biens.html">Nos biens</a>
+            <a href="nos-realisations.html">Nos réalisations</a>
+          </div>
+          <div class="nav-row-2">
+            <a href="vendeurs.html">Vendeurs</a>
+            <a href="acquereurs.html">Acquéreurs</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
         </nav>
 
         <div class="nav-right">
@@ -225,7 +237,7 @@
 
     <!-- Hero -->
     <div class="hero-page">
-      <div class="kicker">QUI SOMMES-NOUS</div>
+      <div class="kicker">Qui sommes-nous ?</div>
       <h1>Créer un immobilier plus intelligent, collectif et humain.</h1>
       <p class="lead">
         Chez Ideal Home Project, nous ne nous contentons pas de transformer des bâtiments.

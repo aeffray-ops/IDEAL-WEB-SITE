@@ -2,7 +2,6 @@
 #bandeau-evenement {
   background: linear-gradient(135deg, #2D0A0F 0%, #1A0506 100%);
   color: #FFFFFF;
-  padding: 16px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -15,13 +14,81 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes bandeauSlideUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-100%); opacity: 0; }
+/* Bloc complet (déplié) */
+.bandeau-full {
+  padding: 16px 20px;
+  transition: opacity 0.25s ease, max-height 0.35s ease, padding 0.25s ease;
 }
 
-#bandeau-evenement.bandeau-closing {
-  animation: bandeauSlideUp 0.3s ease-out forwards;
+#bandeau-evenement.bandeau-minimized .bandeau-full {
+  display: none;
+}
+
+/* Barre minimisée (réductible, toujours visible) */
+.bandeau-mini {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 20px;
+  min-height: 44px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#bandeau-evenement.bandeau-minimized .bandeau-mini {
+  display: flex;
+}
+
+.bandeau-mini-text {
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+}
+
+.bandeau-mini-text strong { color: #FFB800; }
+
+.bandeau-mini-cta {
+  background: linear-gradient(135deg, #FFB800 0%, #FFA500 100%);
+  color: #1A0506;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bandeau-mini-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,184,0,0.4);
+  color: #1A0506;
+}
+
+.bandeau-reouvrir {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.bandeau-reouvrir:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #FFB800;
+  color: #FFB800;
 }
 
 .bandeau-container {
@@ -122,45 +189,25 @@
 }
 
 @media (max-width: 767px) {
-  #bandeau-evenement {
-    padding: 12px 16px;
-    min-height: 80px;
-  }
+  .bandeau-full { padding: 12px 16px; min-height: 80px; }
+  .bandeau-container { flex-direction: column; gap: 12px; position: relative; }
+  .bandeau-content { flex-direction: column; text-align: center; gap: 12px; }
+  .bandeau-text { font-size: 14px; min-width: 100%; }
+  .bandeau-cta { width: 100%; justify-content: center; padding: 14px 24px; }
+  .bandeau-close { position: absolute; top: 0; right: 0; width: 32px; height: 32px; font-size: 24px; }
 
-  .bandeau-container {
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
+  .bandeau-mini {
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    gap: 10px;
   }
-
-  .bandeau-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-
-  .bandeau-text {
-    font-size: 14px;
-    min-width: 100%;
-  }
-
-  .bandeau-cta {
-    width: 100%;
-    justify-content: center;
-    padding: 14px 24px;
-  }
-
-  .bandeau-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-  }
+  .bandeau-mini-text { font-size: 12px; order: 1; width: 100%; }
+  .bandeau-mini-cta { order: 2; flex: 1; justify-content: center; }
+  .bandeau-reouvrir { order: 2; width: 28px; height: 28px; font-size: 16px; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .bandeau-text { font-size: 15px; }
   .bandeau-cta { padding: 10px 22px; font-size: 14px; }
+  .bandeau-mini-text { font-size: 13px; }
 }

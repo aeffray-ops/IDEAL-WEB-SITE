@@ -96,17 +96,10 @@
 
     .nav-center{
       display:flex;
-      flex-direction:column;
-      align-items:center;
       justify-content:center;
-      gap: 6px;
-    }
-    .nav-row-1, .nav-row-2{
-      display:flex;
-      flex-wrap:wrap;
       align-items:center;
-      justify-content:center;
       gap: 10px;
+      flex-wrap:wrap;
     }
     .nav-center a{
       font-weight:600;
@@ -153,16 +146,6 @@
     .split-panel:hover{
       transform: translateY(-2px);
     }
-    .split-panel.right{
-      background: linear-gradient(135deg, var(--bordeaux) 0%, #5a0018 100%);
-      border-color: rgba(255,255,255,0.15);
-    }
-    .split-panel.right .split-kicker{ color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); }
-    .split-panel.right .split-title{ color: #fff; }
-    .split-panel.right .split-sub{ color: rgba(255,255,255,0.9); }
-    .split-panel.right .btn-primary{ background: #fff; color: var(--bordeaux); }
-    .split-panel.right .btn-primary:hover{ filter: brightness(0.96); color: var(--bordeaux); }
-    .split-panel.right .split-inner{ background: transparent; }
 
     .split-inner{
       position:absolute; inset:0;
@@ -250,21 +233,6 @@
     }
     .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
     .lead{margin:10px 0 0;color:var(--muted);max-width: 75ch;line-height:1.6;font-size:14px;}
-    .block-fond{
-      padding: 40px 36px;
-      margin: 26px 0;
-      border-radius: var(--radius-2xl);
-      border: 1px solid var(--bordeaux-10);
-      background: linear-gradient(180deg, var(--bordeaux-05) 0%, #fff 100%);
-    }
-    .block-fond h2{ margin-top: 0; }
-    .block-fond .lead{ font-size: 16px; line-height: 1.7; margin-top: 14px; }
-    .block-fond .citation{
-      margin-top: 20px; padding: 20px 24px; border-radius: var(--radius-xl);
-      background: rgba(255,255,255,0.7); border-left: 4px solid var(--bordeaux);
-      font-style: italic; font-weight: 700; color: var(--bordeaux); font-size: 15px;
-    }
-    .block-fond .btn{ margin-top: 18px; }
 
     .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;}
     .grid-3{display:grid;grid-template-columns: repeat(3, 1fr);gap: 18px;}
@@ -434,45 +402,20 @@
     .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
 
     /* FAQ Accordéon */
-    .faq-wrap{
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 40px;
-      align-items: start;
-      margin-top: 28px;
-    }
-    .faq-photo{
-      width: 100%;
-      aspect-ratio: 3/4;
-      border-radius: var(--radius-2xl);
-      overflow: hidden;
-      background: var(--bordeaux-05);
-      border: 1px solid var(--bordeaux-10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .faq-photo img{ width: 100%; height: 100%; object-fit: cover; }
-    .faq-photo:has(img) .faq-photo-placeholder{ display: none; }
     .faq-list{margin:0;padding:0;list-style:none;}
-    .faq-item{border-radius: var(--radius-xl);background:#fff;border:1px solid var(--bordeaux-10);margin-bottom: 10px;overflow:hidden;width:100%;}
-    .faq-q{display:flex;align-items:center;justify-content:center;gap:8px;padding: 10px 12px;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;transition: background .2s ease;user-select:none;flex-wrap:wrap;min-height:fit-content;}
+    .faq-item{border-radius: var(--radius-xl);background:#fff;border:1px solid var(--bordeaux-10);margin-bottom: 14px;overflow:hidden;}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;gap:14px;padding: 18px 22px;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;transition: background .2s ease;user-select:none;}
     .faq-q:hover{background: var(--bordeaux-05);}
-    .faq-q .faq-num{flex-shrink:0;}
-    .faq-q .faq-q-text{flex:0 1 auto;text-align:center;}
-    .faq-q .faq-icon{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);display:grid;place-items:center;font-size:16px;line-height:1;color:var(--bordeaux);transition: transform .3s ease;}
+    .faq-q .faq-icon{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);display:grid;place-items:center;font-size:18px;line-height:1;color:var(--bordeaux);transition: transform .3s ease;}
     .faq-item.open .faq-icon{transform: rotate(45deg);}
-    .faq-a{padding: 0 12px;max-height:0;overflow:hidden;transition: max-height .35s ease;}
+    .faq-a{padding: 0 22px;max-height:0;overflow:hidden;transition: max-height .35s ease;}
     .faq-item.open .faq-a{max-height: 1200px;}
-    .faq-a-inner{padding: 0 0 14px;font-size:14px;line-height:1.7;color:var(--text);}
+    .faq-a-inner{padding: 0 0 20px;font-size:14px;line-height:1.7;color:var(--text);}
     .faq-a-inner ul{margin:10px 0 0;padding-left:20px;}
     .faq-a-inner li{margin:6px 0;}
     .faq-a-inner p:first-child{margin-top:0;}
     .faq-a-inner p{margin:10px 0 0;}
-    .faq-num{font-weight:800;color:var(--bordeaux);margin-right:0;}
+    .faq-num{font-weight:800;color:var(--bordeaux);margin-right:8px;}
 
     /* Section Contact (accueil) */
     #contact{
@@ -637,10 +580,6 @@
       .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
       .contact-wrap{grid-template-columns: 1fr;}
       .contact-form .row{grid-template-columns: 1fr;}
-      .nav-center{ flex-direction: column; align-items: flex-start; }
-      .nav-row-1, .nav-row-2{ justify-content: flex-start; }
-      .faq-wrap{ grid-template-columns: 1fr; }
-      .faq-photo{ aspect-ratio: 16/9; max-height: 220px; }
     }
   </style>
   <link rel="stylesheet" href="css/bandeau.css">
@@ -648,27 +587,21 @@
 
 <body id="top">
 
-  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
+  <!-- BANDEAU ÉVÉNEMENT -->
   <div id="bandeau-evenement">
-    <div class="bandeau-full">
-      <div class="bandeau-container">
-        <div class="bandeau-content">
-          <span class="bandeau-text">
-            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-            <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
-          </span>
-          <a href="webinaire-recrutement.html" class="bandeau-cta">
-            Je m'inscris gratuitement
-            <span class="bandeau-arrow">→</span>
-          </a>
-        </div>
-        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
+    <div class="bandeau-container">
+      <div class="bandeau-content">
+        <span class="bandeau-icon">🎯</span>
+        <span class="bandeau-text">
+          <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
+          <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
+        </span>
+        <a href="webinaire-recrutement.html" class="bandeau-cta">
+          Je m'inscris gratuitement
+          <span class="bandeau-arrow">→</span>
+        </a>
       </div>
-    </div>
-    <div class="bandeau-mini" aria-hidden="true">
-      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Jeudi 6 février 2025, 19h</span>
-      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
-      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
+      <button type="button" class="bandeau-close" aria-label="Fermer le bandeau">×</button>
     </div>
   </div>
 
@@ -680,18 +613,15 @@
         </a>
 
         <nav class="nav-center" aria-label="Navigation principale">
-          <div class="nav-row-1">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-            <a href="nos-biens.html">Nos biens</a>
-            <a href="nos-realisations.html">Nos réalisations</a>
-          </div>
-          <div class="nav-row-2">
-            <a href="vendeurs.html">Vendeurs</a>
-            <a href="acquereurs.html">Acquéreurs</a>
-            <a href="#contact">Contact</a>
-            <a href="index.html#faq">FAQ</a>
-          </div>
+          <a href="index.html" class="active">Accueil</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="nos-biens.html">Nos biens</a>
+          <a href="nos-realisations.html">Nos réalisations</a>
+          <a href="vendeurs.html">Vendeurs</a>
+          <a href="acquereurs.html">Acquéreurs</a>
+          <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+          <a href="#contact">Contact</a>
+          <a href="index.html#faq">FAQ</a>
         </nav>
 
         <div class="nav-right">
@@ -722,7 +652,7 @@
           <p class="split-sub">
             Rejoignez un métier structuré, crédible et rentable.
           </p>
-          <a class="btn btn-primary" style="margin-top:14px;" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+          <a class="btn btn-primary" style="margin-top:14px;background:var(--bordeaux);" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
         </div>
       </div>
     </section>
@@ -736,24 +666,30 @@
 
   <main class="container" id="univers-ihp">
 
-    <!-- Bloc Bienvenue -->
-    <section class="block-fond">
+    <!-- Bloc 0 -->
+    <section>
       <h2>Bienvenue chez Ideal Home Project : L'Excellence de la Valorisation Immobilière</h2>
       <div class="bar"></div>
       <p class="lead">
         Plus qu'une société d'investissement, nous sommes les architectes d'un nouveau modèle immobilier.
       </p>
-      <p class="citation">« L'immobilier de demain se construit sur la méthode, pas sur le hasard. »</p>
+      <div class="block soft" style="margin-top:14px;">
+        <p style="margin:0;color:var(--muted);font-weight:700;">
+          « L'immobilier de demain se construit sur la méthode, pas sur le hasard. »
+        </p>
+      </div>
     </section>
 
-    <!-- Bloc Nous achetons -->
-    <section class="block-fond">
+    <!-- Bloc 1 -->
+    <section>
       <h2>Nous achetons, valorisons et sécurisons vos projets immobiliers</h2>
       <div class="bar"></div>
       <p class="lead">
         Société d'investissement experte, nous transformons des maisons à rénover en actifs d'exception.
       </p>
-      <a class="btn btn-primary" href="contact.html">Faire étudier mon projet</a>
+      <div style="margin-top:14px;">
+        <a class="btn btn-primary" href="contact.html">Faire étudier mon projet</a>
+      </div>
     </section>
 
     <!-- Nos réalisations (aperçu) -->
@@ -788,13 +724,9 @@
     <section id="faq">
       <h2>Vous vous posez des questions ? On y répond !</h2>
       <div class="bar"></div>
-      <div class="faq-wrap">
-        <div class="faq-photo" aria-hidden="true">
-          <span class="faq-photo-placeholder">espace photo</span>
-        </div>
-        <ul class="faq-list">
+      <ul class="faq-list" style="margin-top:20px;">
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">1.</span><span class="faq-q-text">Pourquoi devenir associé Ideal ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 1.</span> Pourquoi devenir associé Ideal ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <ul>
               <li>Intégrer un réseau immobilier innovant et dynamique</li>
@@ -807,7 +739,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">2.</span><span class="faq-q-text">Quel est le montant de l'adhésion ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 2.</span> Quel est le montant de l'adhésion ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p>L'adhésion au réseau Ideal Home Project s'élève à <strong>5 000€ par an.</strong></p>
             <p>Ce montant inclut :</p>
@@ -822,7 +754,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">3.</span><span class="faq-q-text">Quelle est la répartition des commissions ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 3.</span> Quelle est la répartition des commissions ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p>Notre système de rémunération est transparent et avantageux :</p>
             <p>💰 <strong>Potentiel de revenus :</strong> jusqu'à 120 000€ par an<br>📊 Basé sur une moyenne de 8 ventes par an</p>
@@ -831,7 +763,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">4.</span><span class="faq-q-text">Quel accompagnement propose Ideal Home Project ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 4.</span> Quel accompagnement propose Ideal Home Project ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p>Nous mettons un point d'honneur à accompagner nos associés :</p>
             <ul>
@@ -846,7 +778,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">5.</span><span class="faq-q-text">Faut-il avoir un bureau physique ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 5.</span> Faut-il avoir un bureau physique ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p><strong>Non, ce n'est pas obligatoire !</strong></p>
             <p>✅ Vous pouvez travailler depuis chez vous<br>✅ Flexibilité totale dans l'organisation de votre activité<br>✅ Économies sur les frais fixes (loyer, charges)</p>
@@ -855,7 +787,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">6.</span><span class="faq-q-text">Puis-je rejoindre Ideal en conservant une autre activité ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 6.</span> Puis-je rejoindre Ideal en conservant une autre activité ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p><strong>Oui, c'est tout à fait possible !</strong></p>
             <p>⚖️ Compatibilité avec d'autres activités professionnelles<br>⏰ Gestion flexible de votre emploi du temps<br>📈 Idéal pour une transition progressive vers l'immobilier</p>
@@ -864,7 +796,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">7.</span><span class="faq-q-text">Quelles sont les zones géographiques disponibles ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 7.</span> Quelles sont les zones géographiques disponibles ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p>Ideal Home Project est en plein développement !</p>
             <p>🗺️ <strong>Actuellement présent :</strong> Gironde (Bordeaux et périphérie), Nouvelle-Aquitaine, extension en cours vers d'autres régions.</p>
@@ -873,7 +805,7 @@
           </div></div>
         </li>
         <li class="faq-item">
-          <div class="faq-q" aria-expanded="false"><span class="faq-num">8.</span><span class="faq-q-text">Comment se déroule le processus de recrutement ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 8.</span> Comment se déroule le processus de recrutement ?<span class="faq-icon">+</span></div>
           <div class="faq-a"><div class="faq-a-inner">
             <p>Un processus simple et transparent en 4 étapes :</p>
             <p><strong>1️⃣ PRISE DE CONTACT</strong> — Remplissez le formulaire sur notre site, premier échange téléphonique pour présenter le concept.</p>
@@ -884,7 +816,6 @@
           </div></div>
         </li>
       </ul>
-      </div>
     </section>
 
     <!-- Section Contact -->
