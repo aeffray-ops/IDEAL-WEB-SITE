@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Webinaire gratuit : Découvrez comment dépasser les 100K€ avec le modèle Agent Marchand d'Ideal Home Project">
+  <title>Webinaire Gratuit — Devenez Agent Marchand | Ideal Home Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-dark: #2D0A0F;
+      --primary-darker: #1A0506;
+      --accent-red: #8B0000;
+      --accent-gold: #FFB800;
+      --accent-gold-hover: #FFA500;
+      --text-white: #FFFFFF;
+      --text-gray: #CCCCCC;
+      --text-dark: #333333;
+      --bg-light: #F9F9F9;
+      --bg-white: #FFFFFF;
+      --shadow: rgba(0,0,0,0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-white);
+    }
+    h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; font-family: 'Montserrat', sans-serif; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .highlight { color: var(--accent-gold); position: relative; display: inline-block; }
+    .highlight::after {
+      content: ''; position: absolute; bottom: 2px; left: 0; width: 100%; height: 3px;
+      background: var(--accent-gold); animation: underlineExpand 0.6s ease-out;
+    }
+    @keyframes underlineExpand { from { width: 0; } to { width: 100%; } }
+
+    .header-webinaire {
+      background: var(--primary-dark);
+      padding: 20px 0;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo-webinaire {
+      color: var(--text-white); font-size: 24px; font-weight: 700; text-decoration: none;
+    }
+    .logo-webinaire span { color: var(--accent-gold); }
+    .logo-webinaire img { height: 36px; width: auto; display: inline-block; vertical-align: middle; margin-right: 8px; }
+    .btn-retour-site {
+      background: transparent; border: 2px solid var(--accent-gold); color: var(--accent-gold);
+      padding: 10px 24px; border-radius: 25px; text-decoration: none; font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-retour-site:hover { background: var(--accent-gold); color: var(--primary-dark); }
+
+    .hero-webinaire {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
+      color: var(--text-white);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 900px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-red);
+      color: var(--text-white);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    .hero-title { font-size: clamp(28px, 4vw, 48px); margin-bottom: 24px; line-height: 1.2; }
+    .hero-subtitle { font-size: clamp(16px, 2vw, 22px); margin-bottom: 40px; color: var(--text-gray); font-weight: 400; }
+    .hero-cta-container { margin-bottom: 50px; }
+    .btn-primary-hero {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+      color: var(--primary-darker);
+      padding: 18px 40px;
+      border-radius: 35px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(255, 184, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn-primary-hero:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 184, 0, 0.6);
+      color: var(--primary-darker);
+    }
+    .hero-cta-subtext { margin-top: 16px; font-size: 14px; color: var(--text-gray); }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      min-width: 140px;
+      border: 1px solid rgba(255,184,0,0.2);
+    }
+    .stat-number { display: block; font-size: 36px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px; }
+    .stat-label { display: block; font-size: 14px; color: var(--text-gray); }
+
+    section { padding: 80px 0; }
+    section h2 { text-align: center; font-size: clamp(26px, 3vw, 40px); margin-bottom: 50px; color: var(--primary-dark); }
+
+    .phrases-reconnues { background: var(--bg-light); }
+    .phrases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    .phrase-card {
+      background: var(--bg-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .phrase-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px var(--shadow); }
+    .phrase-icon { font-size: 48px; margin-bottom: 20px; }
+    .phrase-card p { font-size: 18px; font-style: italic; color: var(--text-dark); }
+    .phrases-conclusion {
+      text-align: center; font-size: 20px; font-weight: 600; color: var(--accent-red);
+      max-width: 700px; margin: 0 auto;
+    }
+
+    .le-virage { background: var(--bg-white); }
+    .virage-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .virage-intro { font-size: 20px; font-weight: 600; margin-bottom: 24px; color: var(--primary-dark); }
+    .virage-list { list-style: none; margin-bottom: 30px; }
+    .virage-list li { font-size: 18px; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+    .virage-conclusion {
+      background: linear-gradient(135deg, rgba(255,184,0,0.1) 0%, rgba(255,165,0,0.1) 100%);
+      border-left: 4px solid var(--accent-gold);
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+    .virage-visual img { border-radius: 15px; box-shadow: 0 6px 30px var(--shadow); }
+
+    .tableau-comparatif { background: var(--bg-light); }
+    .comparaison-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .col-traditionnel, .col-marchand {
+      background: var(--bg-white);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+    .col-traditionnel h3, .col-marchand h3 { font-size: 24px; margin-bottom: 24px; color: var(--text-dark); }
+    .col-marchand {
+      background: linear-gradient(135deg, rgba(255,184,0,0.08) 0%, rgba(255,165,0,0.08) 100%);
+      border: 2px solid var(--accent-gold);
+      position: relative;
+    }
+    .col-marchand::before {
+      content: '⭐ RECOMMANDÉ';
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      background: var(--accent-gold);
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .comparaison-table ul { list-style: none; }
+    .comparaison-table li { font-size: 16px; padding: 12px 0; line-height: 1.6; }
+    .comparaison-cta-text { text-align: center; font-size: 20px; font-weight: 600; margin-bottom: 30px; }
+    .btn-secondary {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      background: var(--primary-dark);
+      color: var(--text-white);
+      padding: 16px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover { background: var(--accent-red); transform: translateY(-3px); color: #fff; }
+
+    .programme-webinaire { background: var(--bg-white); }
+    .programme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .programme-item {
+      background: var(--bg-white);
+      padding: 30px;
+      border-left: 5px solid var(--accent-gold);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px var(--shadow);
+      transition: all 0.3s ease;
+    }
+    .programme-item:hover { border-left-width: 8px; transform: translateX(5px); }
+    .programme-number { font-size: 48px; font-weight: 900; color: var(--primary-dark); margin-bottom: 16px; }
+    .programme-item h4 { font-size: 20px; margin-bottom: 12px; color: var(--accent-red); }
+    .programme-item p { font-size: 16px; color: var(--text-dark); }
+
+    .session-differente { background: var(--bg-light); }
+    .differente-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .differente-card {
+      background: var(--bg-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .differente-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px var(--shadow); }
+    .differente-icon { font-size: 48px; margin-bottom: 20px; }
+    .differente-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--primary-dark); }
+    .differente-card p { font-size: 16px; color: var(--text-dark); }
+
+    .formulaire-inscription { background: var(--bg-white); padding: 80px 0; }
+    .formulaire-intro { text-align: center; font-size: 18px; margin-bottom: 50px; color: var(--accent-red); }
+    .formulaire-webinaire {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--bg-light);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 6px 30px var(--shadow);
+    }
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary-dark); font-size: 15px; }
+    .required { color: var(--accent-red); }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #DDD;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: var(--bg-white);
+      font-family: inherit;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.1);
+    }
+    .form-group input.input-error, .form-group select.input-error { border-color: var(--accent-red); }
+    .error-message { display: none; color: var(--accent-red); font-size: 14px; margin-top: 6px; }
+    .form-group-checkbox { margin-bottom: 20px; }
+    .form-group-checkbox label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+    .form-group-checkbox input[type="checkbox"] { margin-top: 4px; width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; }
+    .btn-submit-form {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+      color: var(--primary-darker);
+      padding: 18px 40px;
+      border: none;
+      border-radius: 35px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 25px rgba(255, 184, 0, 0.4);
+      font-family: inherit;
+    }
+    .btn-submit-form:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255, 184, 0, 0.6); }
+    .btn-submit-form:disabled { opacity: 0.6; cursor: not-allowed; }
+    .formulaire-footer { text-align: center; margin-top: 24px; font-size: 14px; color: var(--text-dark); }
+
+    .confirmation-hidden { display: none; }
+    .confirmation-visible {
+      display: block;
+      max-width: 700px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(255,184,0,0.1) 0%, rgba(255,165,0,0.1) 100%);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 6px 30px var(--shadow);
+      border: 3px solid var(--accent-gold);
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .confirmation-icon { font-size: 72px; margin-bottom: 24px; }
+    .confirmation-content h3 { font-size: 32px; color: var(--primary-dark); margin-bottom: 20px; }
+    .confirmation-content p { font-size: 18px; margin-bottom: 30px; line-height: 1.6; }
+    .calendrier-boutons { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+    .btn-calendrier {
+      display: inline-block;
+      background: var(--primary-dark);
+      color: var(--text-white);
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-calendrier:hover { background: var(--accent-red); transform: translateX(5px); color: #fff; }
+    .confirmation-redirection { font-size: 16px; color: var(--text-dark); margin-bottom: 30px; }
+    .btn-retour-accueil {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid var(--primary-dark);
+      color: var(--primary-dark);
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-retour-accueil:hover { background: var(--primary-dark); color: var(--text-white); }
+
+    .equipe { background: var(--bg-light); }
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .equipe-membre {
+      background: var(--bg-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow);
+      text-align: center;
+    }
+    .equipe-membre img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 4px solid var(--accent-gold);
+    }
+    .equipe-membre h4 { font-size: 22px; margin-bottom: 8px; color: var(--primary-dark); }
+    .equipe-role { color: var(--accent-gold); font-weight: 600; margin-bottom: 16px; font-size: 16px; }
+    .equipe-bio { font-size: 15px; color: var(--text-dark); line-height: 1.6; }
+
+    .faq-webinaire { background: var(--bg-white); }
+    .faq-accordeon { max-width: 900px; margin: 0 auto; }
+    .faq-item {
+      background: var(--bg-white);
+      border: 2px solid #DDD;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-item.active { border-color: var(--accent-gold); }
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 20px 24px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    .faq-question:hover { background: rgba(255, 184, 0, 0.1); }
+    .faq-icon { font-size: 28px; font-weight: 700; color: var(--accent-gold); transition: transform 0.3s ease; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-reponse { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.active .faq-reponse { max-height: 500px; }
+    .faq-reponse p { padding: 0 24px 24px 24px; font-size: 16px; line-height: 1.6; color: var(--text-dark); }
+
+    .cta-final {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
+      color: var(--text-white);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-final-content h2 { color: var(--text-white); font-size: clamp(28px, 3vw, 40px); margin-bottom: 24px; }
+    .cta-final-content p { font-size: 20px; margin-bottom: 40px; color: var(--text-gray); }
+    .cta-final .btn-primary-hero { color: var(--primary-darker); }
+
+    .footer-webinaire {
+      background: var(--primary-darker);
+      color: var(--text-white);
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .footer-links { margin-top: 20px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-gray); text-decoration: none; font-size: 14px; transition: color 0.3s ease; }
+    .footer-links a:hover { color: var(--accent-gold); }
+
+    @media (max-width: 767px) {
+      .hero-title { font-size: 28px; }
+      .hero-subtitle { font-size: 18px; }
+      section h2 { font-size: 26px; }
+      .phrases-grid, .programme-grid, .differente-grid { grid-template-columns: 1fr; }
+      .virage-content, .comparaison-table { grid-template-columns: 1fr; }
+      .formulaire-webinaire { padding: 30px 20px; }
+      .hero-stats { gap: 20px; }
+      .stat-item { min-width: 120px; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .hero-title { font-size: 40px; }
+      section h2 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-webinaire">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo-webinaire">
+          <img src="assets/logo.png" alt="">
+          Ideal <span>Home Project</span>
+        </a>
+        <a href="index.html" class="btn-retour-site">← Retour au site</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-webinaire">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">PLACES LIMITÉES — SESSION EXCLUSIVE</div>
+        <h1 class="hero-title">
+          Et si vous pouviez <span class="highlight">Dépasser les 100K€</span><br>
+          sans local, sans salariés, sans stock ?
+        </h1>
+        <p class="hero-subtitle">
+          Découvrez le <strong>Modèle Agent Marchand</strong> :<br>
+          l'immobilier autrement, sans les contraintes de l'agence traditionnelle
+        </p>
+        <div class="hero-cta-container">
+          <a href="#formulaire" class="btn-primary-hero">
+            Je réserve ma place gratuitement
+            <span>→</span>
+          </a>
+          <p class="hero-cta-subtext">✅ Webinaire 100% gratuit | ✅ Rediffusion disponible 48h</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">120K€</span>
+            <span class="stat-label">Potentiel de revenus</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5000€</span>
+            <span class="stat-label">Coût d'adhésion/an</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Ventes moyennes/an</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="phrases-reconnues">
+    <div class="container">
+      <h2>Vous vous reconnaissez dans ces phrases ?</h2>
+      <div class="phrases-grid">
+        <div class="phrase-card">
+          <div class="phrase-icon">💼</div>
+          <p>"Je suis coincé(e) dans un emploi qui ne me convient plus..."</p>
+        </div>
+        <div class="phrase-card">
+          <div class="phrase-icon">📊</div>
+          <p>"J'ai des objectifs financiers que je n'atteins jamais..."</p>
+        </div>
+        <div class="phrase-card">
+          <div class="phrase-icon">🏢</div>
+          <p>"Je rêve de liberté mais pas des contraintes de l'agence classique..."</p>
+        </div>
+        <div class="phrase-card">
+          <div class="phrase-icon">🎯</div>
+          <p>"Je veux un métier structuré qui rapporte vraiment..."</p>
+        </div>
+        <div class="phrase-card">
+          <div class="phrase-icon">⏰</div>
+          <p>"J'en ai marre de dépendre des autres pour gagner ma vie..."</p>
+        </div>
+        <div class="phrase-card">
+          <div class="phrase-icon">🔑</div>
+          <p>"Je cherche une activité avec du sens et de l'impact réel..."</p>
+        </div>
+      </div>
+      <p class="phrases-conclusion">
+        <strong>Si vous avez acquiescé à au moins 2 de ces phrases</strong>,<br>
+        ce webinaire est fait pour vous.
+      </p>
+    </div>
+  </section>
+
+  <section class="le-virage">
+    <div class="container">
+      <h2>Le <span class="highlight">Virage</span> que vous devez prendre</h2>
+      <div class="virage-content">
+        <div class="virage-text">
+          <p class="virage-intro">
+            <strong>Le monde change. L'immobilier aussi.</strong><br>
+            Les modèles traditionnels montrent leurs limites :
+          </p>
+          <ul class="virage-list">
+            <li>❌ Charges fixes écrasantes (local, salariés)</li>
+            <li>❌ Rémunération limitée par le statut salarié</li>
+            <li>❌ Dépendance aux mandats et aux patrons</li>
+            <li>❌ Pas de vision long terme ni de patrimoine</li>
+          </ul>
+          <p class="virage-conclusion">
+            <strong>Le modèle Agent Marchand</strong> inverse la logique :<br>
+            vous devenez <strong>acteur</strong>, pas spectateur.
+          </p>
+        </div>
+        <div class="virage-visual">
+          <img src="https://placehold.co/600x360/1A0506/FFB800?text=Le+virage+immobilier" alt="Le virage immobilier">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tableau-comparatif">
+    <div class="container">
+      <h2>Agent Traditionnel VS Agent Marchand</h2>
+      <div class="comparaison-table">
+        <div class="col-traditionnel">
+          <h3>🏢 Agent Traditionnel</h3>
+          <ul>
+            <li>❌ Salaire plafonné (30-50K€)</li>
+            <li>❌ Local obligatoire</li>
+            <li>❌ Horaires contraints</li>
+            <li>❌ Dépendance aux mandats</li>
+            <li>❌ Pas de patrimoine construit</li>
+            <li>❌ Commission partagée avec l'agence</li>
+          </ul>
+        </div>
+        <div class="col-marchand">
+          <h3>🚀 Agent Marchand</h3>
+          <ul>
+            <li>✅ Revenus jusqu'à 120K€</li>
+            <li>✅ Travail depuis chez vous</li>
+            <li>✅ Liberté totale</li>
+            <li>✅ Propriétaire des biens</li>
+            <li>✅ Patrimoine + dividendes</li>
+            <li>✅ 100% de votre commission</li>
+          </ul>
+        </div>
+      </div>
+      <p class="comparaison-cta-text">Le choix est simple. Mais encore faut-il savoir comment y accéder.</p>
+      <a href="#formulaire" class="btn-secondary">Je découvre comment faire le virage</a>
+    </div>
+  </section>
+
+  <section class="programme-webinaire">
+    <div class="container">
+      <h2>Ce que vous allez découvrir pendant ce webinaire</h2>
+      <div class="programme-grid">
+        <div class="programme-item">
+          <div class="programme-number">01</div>
+          <h4>Le Modèle Agent Marchand expliqué</h4>
+          <p>Comprendre le fonctionnement, les revenus, les étapes clés</p>
+        </div>
+        <div class="programme-item">
+          <div class="programme-number">02</div>
+          <h4>Les 3 Piliers de la Réussite</h4>
+          <p>Identification, Valorisation, Transaction : la méthode Ideal</p>
+        </div>
+        <div class="programme-item">
+          <div class="programme-number">03</div>
+          <h4>Combien pouvez-vous gagner ?</h4>
+          <p>Simulation réelle : de 8 ventes/an à 120K€ de revenus</p>
+        </div>
+        <div class="programme-item">
+          <div class="programme-number">04</div>
+          <h4>Les Outils et l'Accompagnement</h4>
+          <p>Formation, CRM, support juridique, réseau d'experts</p>
+        </div>
+        <div class="programme-item">
+          <div class="programme-number">05</div>
+          <h4>Comment Rejoindre Ideal ?</h4>
+          <p>Les étapes, le coût (5000€/an), les prérequis (carte T)</p>
+        </div>
+        <div class="programme-item">
+          <div class="programme-number">06</div>
+          <h4>Q&A en direct</h4>
+          <p>Posez toutes vos questions en live</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="session-differente">
+    <div class="container">
+      <h2>Pourquoi cette session est <span class="highlight">différente</span> ?</h2>
+      <div class="differente-grid">
+        <div class="differente-card">
+          <div class="differente-icon">💯</div>
+          <h4>100% Transparence</h4>
+          <p>Chiffres réels, études de cas concrètes, aucun bullshit marketing</p>
+        </div>
+        <div class="differente-card">
+          <div class="differente-icon">👥</div>
+          <h4>Échanges directs</h4>
+          <p>Q&A en live avec les fondateurs et agents en activité</p>
+        </div>
+        <div class="differente-card">
+          <div class="differente-icon">📊</div>
+          <h4>Simulation personnalisée</h4>
+          <p>Calculez VOTRE potentiel de revenus en temps réel</p>
+        </div>
+        <div class="differente-card">
+          <div class="differente-icon">🎁</div>
+          <h4>Bonus exclusifs</h4>
+          <p>Ressources offertes : guide de démarrage, checklist, templates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulaire" class="formulaire-inscription">
+    <div class="container">
+      <h2>Réservez votre place <span class="highlight">gratuitement</span></h2>
+      <p class="formulaire-intro">
+        ⏰ <strong>Places limitées à 50 participants</strong> pour garantir la qualité des échanges.<br>
+        Remplissez le formulaire ci-dessous pour sécuriser votre accès.
+      </p>
+
+      <form id="form-webinaire" class="formulaire-webinaire" novalidate>
+        <div class="form-group">
+          <label for="prenom">Prénom <span class="required">*</span></label>
+          <input type="text" id="prenom" name="prenom" required placeholder="Ex: Jean">
+          <span class="error-message" id="error-prenom"></span>
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom <span class="required">*</span></label>
+          <input type="text" id="nom" name="nom" required placeholder="Ex: Dupont">
+          <span class="error-message" id="error-nom"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email professionnel <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="Ex: jean.dupont@entreprise.fr">
+          <span class="error-message" id="error-email"></span>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Mobile / WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="telephone" name="telephone" required placeholder="Ex: 06 12 34 56 78">
+          <span class="error-message" id="error-telephone"></span>
+        </div>
+        <div class="form-group">
+          <label for="statut">Votre statut actuel <span class="required">*</span></label>
+          <select id="statut" name="statut" required>
+            <option value="">— Sélectionnez —</option>
+            <option value="salarie-immo">Salarié(e) de l'immobilier</option>
+            <option value="indep-immo">Indépendant(e) immobilier</option>
+            <option value="reconversion">En reconversion professionnelle</option>
+            <option value="etudiant">Étudiant(e) / Jeune diplômé(e)</option>
+            <option value="autre">Autre secteur</option>
+          </select>
+          <span class="error-message" id="error-statut"></span>
+        </div>
+        <div class="form-group">
+          <label for="experience">Expérience dans l'immobilier <span class="required">*</span></label>
+          <select id="experience" name="experience" required>
+            <option value="">— Sélectionnez —</option>
+            <option value="aucune">Aucune (débutant)</option>
+            <option value="1-3ans">1 à 3 ans</option>
+            <option value="3-5ans">3 à 5 ans</option>
+            <option value="5ans-plus">Plus de 5 ans</option>
+          </select>
+          <span class="error-message" id="error-experience"></span>
+        </div>
+        <div class="form-group">
+          <label for="disponibilite">Disponibilité pour l'événement <span class="required">*</span></label>
+          <select id="disponibilite" name="disponibilite" required>
+            <option value="">— Sélectionnez —</option>
+            <option value="jeudi-6-fevrier-19h">Jeudi 6 février 2025 — 19h (LIVE)</option>
+            <option value="rediffusion">Je regarderai la rediffusion</option>
+          </select>
+          <span class="error-message" id="error-disponibilite"></span>
+        </div>
+        <div class="form-group">
+          <label for="ambition">Ambition financière annuelle <span class="required">*</span></label>
+          <select id="ambition" name="ambition" required>
+            <option value="">— Sélectionnez —</option>
+            <option value="50-70k">50K€ — 70K€</option>
+            <option value="70-100k">70K€ — 100K€</option>
+            <option value="100k-plus">100K€ et plus</option>
+          </select>
+          <span class="error-message" id="error-ambition"></span>
+        </div>
+        <div class="form-group-checkbox">
+          <label>
+            <input type="checkbox" id="rgpd" name="rgpd" required>
+            J'accepte que mes données soient utilisées pour recevoir les informations sur le webinaire <span class="required">*</span>
+          </label>
+          <span class="error-message" id="error-rgpd"></span>
+        </div>
+        <div class="form-group-checkbox">
+          <label>
+            <input type="checkbox" id="rappel" name="rappel">
+            Je souhaite être rappelé(e) avant l'événement
+          </label>
+        </div>
+        <button type="submit" class="btn-submit-form">
+          <span class="btn-text">Je confirme ma participation</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <p class="formulaire-footer">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
+      </form>
+
+      <div id="confirmation-message" class="confirmation-hidden">
+        <div class="confirmation-content">
+          <div class="confirmation-icon">✅</div>
+          <h3>Félicitations ! Votre place est réservée</h3>
+          <p>
+            Vous allez recevoir un email de confirmation à l'adresse <strong id="email-confirmation"></strong>
+            avec le lien du webinaire et les instructions pour ajouter l'événement à votre calendrier.
+          </p>
+          <div class="calendrier-boutons">
+            <a href="#" class="btn-calendrier" id="btn-google-calendar" target="_blank" rel="noopener">📅 Ajouter à Google Calendar</a>
+            <a href="#" class="btn-calendrier" id="btn-outlook-calendar" target="_blank" rel="noopener">📅 Ajouter à Outlook</a>
+            <a href="#" class="btn-calendrier" id="btn-apple-calendar" download="webinaire-ideal.ics">📅 Ajouter à Apple Calendar</a>
+          </div>
+          <p class="confirmation-redirection">Un email de rappel vous sera envoyé <strong>24h avant</strong> le début du webinaire.</p>
+          <a href="index.html" class="btn-retour-accueil">Retour à l'accueil</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipe">
+    <div class="container">
+      <h2>Qui anime ce webinaire ?</h2>
+      <div class="equipe-grid">
+        <div class="equipe-membre">
+          <img src="https://placehold.co/150x150/2D0A0F/FFF?text=AE" alt="Aurélien Effray">
+          <h4>Aurélien Effray</h4>
+          <p class="equipe-role">Co-fondateur Ideal Home Project</p>
+          <p class="equipe-bio">
+            15 ans d'expérience dans l'immobilier, ancien directeur d'agence,
+            pionnier du modèle Agent Marchand en France.
+          </p>
+        </div>
+        <div class="equipe-membre">
+          <img src="https://placehold.co/150x150/2D0A0F/FFF?text=Equipe" alt="Directeur du Développement">
+          <h4>Équipe Ideal</h4>
+          <p class="equipe-role">Directeur du Développement</p>
+          <p class="equipe-bio">
+            Expert en formation et accompagnement, a formé plus de 200 agents
+            en 3 ans avec un taux de réussite de 90%.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-webinaire">
+    <div class="container">
+      <h2>Questions fréquentes</h2>
+      <div class="faq-accordeon">
+        <div class="faq-item">
+          <button type="button" class="faq-question"><span>Le webinaire est-il vraiment gratuit ?</span><span class="faq-icon">+</span></button>
+          <div class="faq-reponse"><p>Oui, 100% gratuit. Aucune carte bancaire demandée. Notre objectif est de vous présenter le modèle en toute transparence.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question"><span>Dois-je avoir une carte T pour participer ?</span><span class="faq-icon">+</span></button>
+          <div class="faq-reponse"><p>Non, pas pour assister au webinaire. La carte T est nécessaire uniquement si vous décidez de rejoindre le réseau Ideal.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question"><span>Y aura-t-il une rediffusion ?</span><span class="faq-icon">+</span></button>
+          <div class="faq-reponse"><p>Oui, une rediffusion sera disponible pendant 48h pour tous les inscrits. Vous recevrez le lien par email.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question"><span>Combien coûte l'adhésion à Ideal ?</span><span class="faq-icon">+</span></button>
+          <div class="faq-reponse"><p>5 000€ par an. Ce montant inclut tous les outils, formations, accompagnement, support juridique et accès au réseau.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question"><span>Combien de temps dure le webinaire ?</span><span class="faq-icon">+</span></button>
+          <div class="faq-reponse"><p>Environ 1h30-2h, incluant la présentation (1h) et la session Q&amp;A (30-60min).</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-final-content">
+        <h2>Prêt(e) à franchir le cap ?</h2>
+        <p>
+          Rejoignez les <strong>50 participants</strong> qui vont découvrir
+          comment dépasser les 100K€ sans les contraintes de l'agence traditionnelle.
+        </p>
+        <a href="#formulaire" class="btn-primary-hero">Je réserve ma place maintenant <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-webinaire">
+    <div class="footer-content">
+      <p>© 2025 Ideal Home Project — Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="index.html">Retour au site</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfWwOjm9peagvpHmIOIrj74BeV7c13zBkKZvv2X8XH-Gcfuqw/formResponse';
+      /* Remplacer les entry.XXXXXXX par les vrais IDs de votre Google Form (voir doc). */
+      var FORM_MAPPING = {
+        prenom: 'entry.123456789',
+        nom: 'entry.987654321',
+        email: 'entry.111222333',
+        telephone: 'entry.444555666',
+        statut: 'entry.777888999',
+        experience: 'entry.101112131',
+        disponibilite: 'entry.141516171',
+        ambition: 'entry.181920212',
+        rgpd: 'entry.232425262',
+        rappel: 'entry.272829303'
+      };
+
+      function validateForm() {
+        var ok = true;
+        var prenom = document.getElementById('prenom').value.trim();
+        if (!prenom) { showErr('prenom', 'Le prénom est requis'); ok = false; } else { hideErr('prenom'); }
+        var nom = document.getElementById('nom').value.trim();
+        if (!nom) { showErr('nom', 'Le nom est requis'); ok = false; } else { hideErr('nom'); }
+        var email = document.getElementById('email').value.trim();
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) { showErr('email', "L'email est requis"); ok = false; }
+        else if (!re.test(email)) { showErr('email', 'Email invalide'); ok = false; }
+        else { hideErr('email'); }
+        var tel = document.getElementById('telephone').value.trim();
+        var tre = /^[0-9\s\+\-\(\)]{10,}$/;
+        if (!tel) { showErr('telephone', 'Le téléphone est requis'); ok = false; }
+        else if (!tre.test(tel)) { showErr('telephone', 'Numéro invalide'); ok = false; }
+        else { hideErr('telephone'); }
+        if (!document.getElementById('statut').value) { showErr('statut', 'Sélectionnez votre statut'); ok = false; } else { hideErr('statut'); }
+        if (!document.getElementById('experience').value) { showErr('experience', 'Sélectionnez votre expérience'); ok = false; } else { hideErr('experience'); }
+        if (!document.getElementById('disponibilite').value) { showErr('disponibilite', 'Sélectionnez votre disponibilité'); ok = false; } else { hideErr('disponibilite'); }
+        if (!document.getElementById('ambition').value) { showErr('ambition', 'Sélectionnez votre ambition'); ok = false; } else { hideErr('ambition'); }
+        if (!document.getElementById('rgpd').checked) { showErr('rgpd', 'Vous devez accepter les conditions'); ok = false; } else { hideErr('rgpd'); }
+        return ok;
+      }
+      function showErr(id, msg) {
+        var el = document.getElementById('error-' + id);
+        if (el) { el.textContent = msg; el.style.display = 'block'; }
+        var input = document.getElementById(id);
+        if (input) input.classList.add('input-error');
+      }
+      function hideErr(id) {
+        var el = document.getElementById('error-' + id);
+        if (el) el.style.display = 'none';
+        var input = document.getElementById(id);
+        if (input) input.classList.remove('input-error');
+      }
+
+      document.getElementById('form-webinaire').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validateForm()) return;
+        var btn = document.querySelector('.btn-submit-form');
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<span>⏳ Envoi en cours...</span>';
+        btn.disabled = true;
+        var fd = new FormData();
+        fd.append(FORM_MAPPING.prenom, document.getElementById('prenom').value);
+        fd.append(FORM_MAPPING.nom, document.getElementById('nom').value);
+        fd.append(FORM_MAPPING.email, document.getElementById('email').value);
+        fd.append(FORM_MAPPING.telephone, document.getElementById('telephone').value);
+        fd.append(FORM_MAPPING.statut, document.getElementById('statut').value);
+        fd.append(FORM_MAPPING.experience, document.getElementById('experience').value);
+        fd.append(FORM_MAPPING.disponibilite, document.getElementById('disponibilite').value);
+        fd.append(FORM_MAPPING.ambition, document.getElementById('ambition').value);
+        fd.append(FORM_MAPPING.rgpd, document.getElementById('rgpd').checked ? 'Oui' : 'Non');
+        fd.append(FORM_MAPPING.rappel, document.getElementById('rappel').checked ? 'Oui' : 'Non');
+        fetch(GOOGLE_FORM_URL, { method: 'POST', body: fd, mode: 'no-cors' })
+          .then(function() {
+            document.getElementById('form-webinaire').style.display = 'none';
+            var cm = document.getElementById('confirmation-message');
+            cm.classList.remove('confirmation-hidden');
+            cm.classList.add('confirmation-visible');
+            document.getElementById('email-confirmation').textContent = document.getElementById('email').value;
+            generateCalendarLinks();
+            cm.scrollIntoView({ behavior: 'smooth' });
+          })
+          .catch(function(err) {
+            console.error(err);
+            alert('Une erreur est survenue. Veuillez réessayer.');
+            btn.innerHTML = orig;
+            btn.disabled = false;
+          });
+      });
+
+      function generateCalendarLinks() {
+        var title = 'Webinaire Ideal Home Project - Modèle Agent Marchand';
+        var desc = 'Découvrez comment dépasser les 100K€ sans local ni salariés grâce au modèle Agent Marchand.';
+        var loc = 'En ligne (lien envoyé par email)';
+        var start = '20250206T190000';
+        var end = '20250206T210000';
+        var g = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(title) + '&dates=' + start + '/' + end + '&details=' + encodeURIComponent(desc) + '&location=' + encodeURIComponent(loc);
+        document.getElementById('btn-google-calendar').href = g;
+        var o = 'https://outlook.office.com/calendar/0/deeplink/compose?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(desc) + '&startdt=' + start + '&enddt=' + end + '&location=' + encodeURIComponent(loc);
+        document.getElementById('btn-outlook-calendar').href = o;
+        var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:' + start + '\r\nDTEND:' + end + '\r\nSUMMARY:' + title.replace(/\n/g, ' ') + '\r\nDESCRIPTION:' + desc.replace(/\n/g, ' ') + '\r\nLOCATION:' + loc + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+        var blob = new Blob([ics], { type: 'text/calendar' });
+        var url = URL.createObjectURL(blob);
+        var a = document.getElementById('btn-apple-calendar');
+        a.href = url;
+        a.download = 'webinaire-ideal.ics';
+      }
+
+      document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = this.parentElement;
+          var open = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach(function(i) {
+            i.classList.remove('active');
+            var ic = i.querySelector('.faq-icon');
+            if (ic) ic.textContent = '+';
+          });
+          if (!open) {
+            item.classList.add('active');
+            var icon = item.querySelector('.faq-icon');
+            if (icon) icon.textContent = '−';
+          }
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(ev) {
+          var h = this.getAttribute('href');
+          if (h === '#') return;
+          var t = document.querySelector(h);
+          if (t) { ev.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

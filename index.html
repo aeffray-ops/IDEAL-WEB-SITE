@@ -91,6 +91,8 @@
       text-transform:uppercase;
       font-size:12px;
     }
+    .brand-logo{height:44px;width:auto;display:block;}
+    .brand-logo-footer{height:34px;}
 
     .nav-center{
       display:flex;
@@ -415,6 +417,158 @@
     .faq-a-inner p{margin:10px 0 0;}
     .faq-num{font-weight:800;color:var(--bordeaux);margin-right:8px;}
 
+    /* Section Contact (accueil) */
+    #contact{
+      padding-top: 50px;
+      padding-bottom: 60px;
+      margin-top: 20px;
+      background: linear-gradient(180deg, var(--bordeaux-05) 0%, #fff 100%);
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--bordeaux-10);
+    }
+    #contact .kicker{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: var(--bordeaux);
+      background: #fff;
+      border: 1px solid var(--bordeaux-10);
+      padding: 10px 14px;
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 14px;
+    }
+    #contact .contact-sub{
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 55ch;
+      margin-top: 10px;
+    }
+    .contact-wrap{
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 32px;
+    }
+    .contact-infos{
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-infos h3{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin: 0 0 10px;
+    }
+    .contact-addr, .contact-mean{
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background: #fff;
+      border: 1px solid var(--bordeaux-10);
+    }
+    .contact-addr p, .contact-mean p{
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .contact-mean a{
+      color: var(--bordeaux);
+      font-weight: 700;
+    }
+    .contact-mean a:hover{text-decoration: underline;}
+    .contact-map-wrap{
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--bordeaux-10);
+      background: #fff;
+      aspect-ratio: 4/3;
+      min-height: 220px;
+    }
+    .contact-map-wrap iframe{
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .contact-form-card{
+      padding: 32px;
+      border-radius: var(--radius-2xl);
+      background: #fff;
+      border: 1px solid var(--bordeaux-10);
+      box-shadow: 0 8px 32px rgba(128,0,32,0.06);
+    }
+    .contact-form-card h3{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .contact-form-card > p{
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .contact-form .row{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contact-form .form-group{ margin-bottom: 18px; }
+    .contact-form .form-group.full{ grid-column: 1 / -1; }
+    .contact-form label{
+      display: block;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .contact-form label .req{ color: var(--bordeaux); }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea{
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--bordeaux-10);
+      border-radius: 14px;
+      font: inherit;
+      font-size: 15px;
+      color: var(--text);
+      background: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder{ color: var(--muted); }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus{
+      outline: none;
+      border-color: var(--bordeaux);
+      box-shadow: 0 0 0 3px var(--bordeaux-05);
+    }
+    .contact-form textarea{ min-height: 120px; resize: vertical; }
+    .contact-form .btn-submit{
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 15px;
+      background: var(--bordeaux);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: transform .12s ease, filter .2s ease;
+      margin-top: 8px;
+    }
+    .contact-form .btn-submit:hover{ transform: translateY(-2px); filter: brightness(1.05); }
+
     @media (max-width: 980px){
       :root{--pad:22px}
       .topbar{grid-template-columns: 1fr; justify-items:start;}
@@ -424,23 +578,38 @@
       .split-wrap:hover .split{grid-template-columns: 1fr;}
       .grid-2, .grid-3{grid-template-columns: 1fr}
       .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
+      .contact-wrap{grid-template-columns: 1fr;}
+      .contact-form .row{grid-template-columns: 1fr;}
     }
   </style>
+  <link rel="stylesheet" href="css/bandeau.css">
 </head>
 
 <body id="top">
+
+  <!-- BANDEAU ÉVÉNEMENT -->
+  <div id="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-content">
+        <span class="bandeau-icon">🎯</span>
+        <span class="bandeau-text">
+          <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
+          <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
+        </span>
+        <a href="webinaire-recrutement.html" class="bandeau-cta">
+          Je m'inscris gratuitement
+          <span class="bandeau-arrow">→</span>
+        </a>
+      </div>
+      <button type="button" class="bandeau-close" aria-label="Fermer le bandeau">×</button>
+    </div>
+  </div>
 
   <header>
     <div class="container">
       <div class="topbar">
         <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
-          <div class="logo" aria-hidden="true">
-            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="Logo Ideal Home Project">
-          </div>
-          <div class="wordmark">
-            <div class="ideal">IDEAL</div>
-            <div class="home">HOME PROJECT</div>
-          </div>
+          <img src="assets/logo.png" alt="Logo Ideal Home Project" class="brand-logo">
         </a>
 
         <nav class="nav-center" aria-label="Navigation principale">
@@ -451,7 +620,7 @@
           <a href="vendeurs.html">Vendeurs</a>
           <a href="acquereurs.html">Acquéreurs</a>
           <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
-          <a href="contact.html">Contact</a>
+          <a href="#contact">Contact</a>
           <a href="index.html#faq">FAQ</a>
         </nav>
 
@@ -649,15 +818,98 @@
       </ul>
     </section>
 
+    <!-- Section Contact -->
+    <section id="contact">
+      <div class="kicker">Nous contacter</div>
+      <h2>Parlez-nous de votre projet immobilier</h2>
+      <div class="bar"></div>
+      <p class="contact-sub">
+        Vendeur, acquéreur ou futur Agent Marchand — échangeons avec rigueur et discrétion.
+        Réponse sous 48h.
+      </p>
+
+      <div class="contact-wrap">
+        <div class="contact-infos">
+          <div class="contact-addr">
+            <h3>Adresse</h3>
+            <p>
+              <strong>IDEAL HOME PROJECT</strong><br>
+              10 rue Raymond Bierge<br>
+              33140 Villenave d'Ornon
+            </p>
+          </div>
+            <div class="contact-map-wrap">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.582%2C44.763%2C-0.548%2C44.778&layer=mapnik&marker=44.77%2C-0.565"
+              title="Carte — IDEAL Home Project, Villenave d'Ornon"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="contact-mean">
+            <h3>Appelez-nous ou écrivez-nous</h3>
+            <p>
+              Email : <a href="mailto:bonjour@idealhomeproject.com">bonjour@idealhomeproject.com</a><br>
+              Tél : <a href="tel:+33664646464">06 64 64 64 64</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Envoyez-nous un message</h3>
+          <p>Remplissez le formulaire ci-dessous. Nous vous recontactons rapidement.</p>
+
+          <form class="contact-form" action="#" method="post" id="form-contact-accueil">
+            <div class="row">
+              <div class="form-group">
+                <label for="c-prenom">Prénom <span class="req">*</span></label>
+                <input type="text" id="c-prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name" required>
+              </div>
+              <div class="form-group">
+                <label for="c-nom">Nom <span class="req">*</span></label>
+                <input type="text" id="c-nom" name="nom" placeholder="Votre nom" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="c-email">Email <span class="req">*</span></label>
+                <input type="email" id="c-email" name="email" placeholder="nom@domaine.fr" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="c-tel">Téléphone</label>
+                <input type="tel" id="c-tel" name="tel" placeholder="06 00 00 00 00" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group full">
+              <label for="c-type">Type de demande <span class="req">*</span></label>
+              <select id="c-type" name="type" required>
+                <option value="">— Choisir —</option>
+                <option value="vendre">Vendre un bien (étude gratuite)</option>
+                <option value="acheter">Acheter un bien</option>
+                <option value="reseau">Rejoindre le réseau — Agent Marchand</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="c-message">Message <span class="req">*</span></label>
+              <textarea id="c-message" name="message" placeholder="Décrivez brièvement votre projet ou votre question..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Envoyer ma demande</button>
+            <p style="margin:14px 0 0;font-size:13px;color:var(--muted);">
+              Formulaire détaillé par profil (vendeur / acquéreur) → <a href="contact.html" style="color:var(--bordeaux);font-weight:700;">Page Contact</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-row">
         <div class="brand" style="min-width:auto;">
-          <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:10px;">
-            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="">
-          </div>
+          <img src="assets/logo.png" alt="Ideal Home Project" class="brand-logo brand-logo-footer">
         </div>
 
         <div class="legal">
@@ -686,5 +938,6 @@
       });
     })();
   </script>
+  <script src="js/bandeau.js"></script>
 </body>
 </html>

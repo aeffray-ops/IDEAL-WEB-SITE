@@ -51,6 +51,8 @@
       font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);
       text-transform:uppercase;font-size:12px;
     }
+    .brand-logo{height:44px;width:auto;display:block;}
+    .brand-logo-footer{height:34px;}
 
     .nav-center{display:flex;justify-content:center;align-items:center;gap: 10px;flex-wrap:wrap;}
     .nav-center a{
@@ -107,21 +109,34 @@
       .embed iframe{height: 1100px;}
     }
   </style>
+  <link rel="stylesheet" href="css/bandeau.css">
 </head>
 
 <body>
+
+  <!-- BANDEAU ÉVÉNEMENT -->
+  <div id="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-content">
+        <span class="bandeau-icon">🎯</span>
+        <span class="bandeau-text">
+          <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
+          <span class="bandeau-date">Jeudi 6 février 2025 à 19h</span>
+        </span>
+        <a href="webinaire-recrutement.html" class="bandeau-cta">
+          Je m'inscris gratuitement
+          <span class="bandeau-arrow">→</span>
+        </a>
+      </div>
+      <button type="button" class="bandeau-close" aria-label="Fermer le bandeau">×</button>
+    </div>
+  </div>
 
   <header>
     <div class="container">
       <div class="topbar">
         <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
-          <div class="logo" aria-hidden="true">
-            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="Logo Ideal Home Project">
-          </div>
-          <div class="wordmark">
-            <div class="ideal">IDEAL</div>
-            <div class="home">HOME PROJECT</div>
-          </div>
+          <img src="assets/logo.png" alt="Logo Ideal Home Project" class="brand-logo">
         </a>
 
         <nav class="nav-center" aria-label="Navigation principale">
@@ -181,13 +196,7 @@
     <div class="container">
       <div class="footer-row">
         <div class="brand" style="min-width:auto;">
-          <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:10px;">
-            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="">
-          </div>
-          <div class="wordmark">
-            <div class="ideal" style="font-size:12px;">IDEAL</div>
-            <div class="home" style="font-size:11px;">HOME PROJECT</div>
-          </div>
+          <img src="assets/logo.png" alt="Ideal Home Project" class="brand-logo brand-logo-footer">
         </div>
 
         <div class="legal">
@@ -199,5 +208,6 @@
     </div>
   </footer>
 
+  <script src="js/bandeau.js"></script>
 </body>
 </html>
