@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nos biens — Ideal Home Project</title>
-  <meta name="description" content="Découvrez nos réalisations : biens transformés et valorisés par Ideal Home Project. Avant/après, témoignages et processus complet." />
+  <meta name="description" content="Découvrez nos biens à vendre : maisons, appartements, studios, lofts. Moteur de recherche par ville, type et budget." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,45 +40,9 @@
       margin:0 auto;
     }
 
-    header{
-      position:sticky;top:0;z-index:60;background: rgba(255,255,255,.90);backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--bordeaux-10);
-    }
-    .topbar{
-      display:grid;grid-template-columns: 260px 1fr 260px;align-items:center;gap:16px;padding: 16px 0;
-    }
     .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .logo{
-      width:44px;height:44px;border-radius: 12px;background:#fff;border:1px solid var(--bordeaux-10);
-      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
-    }
-    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
-    .wordmark{display:flex;flex-direction:column;line-height:1.05}
-    .wordmark .ideal{
-      font-family: Montserrat, sans-serif;letter-spacing:.08em;font-weight:800;color:var(--ink);
-      text-transform:uppercase;font-size:14px;
-    }
-    .wordmark .home{
-      font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);
-      text-transform:uppercase;font-size:12px;
-    }
     .brand-logo{height:44px;width:auto;display:block;}
     .brand-logo-footer{height:34px;}
-
-    .nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap: 6px;}
-    .nav-row-1, .nav-row-2{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap: 10px;}
-    .nav-center a{
-      font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
-    }
-    .nav-center a:hover, .nav-center a.active{
-      background: var(--bordeaux-05);outline:1px solid var(--bordeaux-10);opacity:1;
-    }
-    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
-    .nav-cta{
-      padding:10px 14px;background: var(--bordeaux);color:#fff;border-radius: 14px;
-      font-weight:800;font-size:14px;white-space:nowrap;
-    }
-    .nav-cta:hover{filter:brightness(1.03)}
 
     main{padding: 34px 0 70px;}
     .hero-page{
@@ -134,6 +98,123 @@
     .testimonial p{font-style:italic;color: var(--text);font-size: 13px;line-height: 1.6;}
     .testimonial cite{display:block;margin-top: 8px;font-style:normal;font-weight:700;color: var(--ink);font-size: 12px;}
 
+    /* Hero biens */
+    .hero-biens{
+      background: linear-gradient(135deg, var(--bordeaux) 0%, #5a0018 100%);
+      color: #fff;
+      padding: 60px 0 50px;
+      text-align: center;
+      border-radius: var(--radius-2xl);
+      margin-bottom: 40px;
+    }
+    .hero-biens h1{margin:0 0 14px;font-size: clamp(28px, 3vw, 42px);color:#fff;}
+    .hero-biens p{margin:0;font-size: 17px;color: rgba(255,255,255,0.9);}
+
+    /* Moteur de recherche */
+    .section-recherche{background: var(--soft);padding: 44px 0;margin-bottom: 0;}
+    .recherche-card{
+      background: #fff;
+      padding: 36px 40px;
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--bordeaux-10);
+      box-shadow: 0 6px 28px rgba(0,0,0,0.06);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .recherche-card h2{font-size: 22px;color: var(--ink);margin: 0 0 24px;text-align: center;}
+    .recherche-form{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: end;
+    }
+    .form-group-recherche label{font-weight: 700;font-size: 13px;color: var(--ink);margin-bottom: 8px;display: block;}
+    .form-group-recherche select{
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--bordeaux-10);
+      border-radius: 14px;
+      font: inherit;
+      font-size: 15px;
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .form-group-recherche select:focus{outline: none;border-color: var(--bordeaux);}
+    .btn-rechercher{
+      grid-column: 1 / -1;
+      justify-self: center;
+      padding: 16px 40px;
+      background: var(--bordeaux);
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .15s ease, filter .2s ease;
+    }
+    .btn-rechercher:hover{transform: translateY(-2px);filter: brightness(1.05);}
+
+    /* Liste des biens */
+    .section-biens{padding: 50px 0 70px;background: #fff;}
+    .biens-grid{display: grid;grid-template-columns: repeat(2, 1fr);gap: 32px;}
+    .bien-card{
+      background: #fff;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--bordeaux-10);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .bien-card:hover{transform: translateY(-4px);box-shadow: 0 12px 32px rgba(0,0,0,0.1);}
+    .bien-image{
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, var(--soft) 0%, #e5e7eb 100%);
+      overflow: hidden;
+      position: relative;
+    }
+    .bien-image img{width: 100%; height: 100%; object-fit: cover;}
+    .bien-badge{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--bordeaux);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .bien-content{padding: 24px;}
+    .bien-prix{font-size: 24px;font-weight: 900;color: var(--bordeaux);margin-bottom: 10px;}
+    .bien-titre{font-size: 18px;font-weight: 800;color: var(--ink);margin-bottom: 10px;}
+    .bien-localisation{font-size: 14px;color: var(--muted);margin-bottom: 14px;}
+    .bien-caracteristiques{
+      display: flex;
+      gap: 18px;
+      margin-bottom: 14px;
+      padding: 14px 0;
+      border-top: 1px solid var(--bordeaux-10);
+      border-bottom: 1px solid var(--bordeaux-10);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .bien-description{font-size: 14px;color: var(--text);line-height: 1.6;margin-bottom: 18px;}
+    .btn-details{
+      display: inline-block;
+      border: 2px solid var(--bordeaux);
+      color: var(--bordeaux);
+      padding: 10px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .btn-details:hover{background: var(--bordeaux);color: #fff;}
+
     .floating-cta{
       position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
       padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
@@ -153,15 +234,14 @@
 
     @media (max-width: 980px){
       :root{--pad:22px}
-      .topbar{grid-template-columns: 1fr; justify-items:start;}
-      .nav-right,.nav-center{justify-content:flex-start}
-      .nav-center{flex-direction:column;align-items:flex-start;}
-      .nav-row-1, .nav-row-2{justify-content:flex-start;}
       .grid-2, .grid-3{grid-template-columns: 1fr}
+      .recherche-form{grid-template-columns: 1fr;}
+      .biens-grid{grid-template-columns: 1fr;}
       .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
     }
   </style>
   <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
@@ -190,32 +270,31 @@
     </div>
   </div>
 
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
-          <img src="assets/logo.png" alt="Logo Ideal Home Project" class="brand-logo">
+  <header class="header-principal">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
         </a>
-
-        <nav class="nav-center" aria-label="Navigation principale">
-          <div class="nav-row-1">
-            <a href="index.html">Accueil</a>
-            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-            <a href="nos-biens.html" class="active">Nos biens</a>
-            <a href="nos-realisations.html">Nos réalisations</a>
-          </div>
-          <div class="nav-row-2">
-            <a href="vendeurs.html">Vendeurs</a>
-            <a href="acquereurs.html">Acquéreurs</a>
-            <a href="contact.html">Contact</a>
-            <a href="index.html#faq">FAQ</a>
-          </div>
-        </nav>
-
-        <div class="nav-right">
-          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
-        </div>
       </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
+        <a href="nos-biens.html" class="nav-link">Nos biens</a>
+        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
+        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
+        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-cta">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -227,176 +306,168 @@
 
   <main class="container">
 
-    <!-- Hero -->
-    <div class="hero-page">
-      <div class="kicker">NOS RÉALISATIONS</div>
-      <h1>Des biens transformés et valorisés par Ideal Home Project</h1>
-      <p class="lead">
-        Chaque projet est une démonstration concrète de notre méthode : diagnostic, conception, exécution impeccable.
-        Découvrez nos réalisations avec témoignages des propriétaires accompagnés de A à Z.
-      </p>
-    </div>
+    <section class="hero-biens">
+      <h1>Nos Biens à Vendre</h1>
+      <p>Découvrez notre sélection de biens valorisés avec soin</p>
+    </section>
 
-    <!-- Réalisation 1 -->
-    <section>
-      <h2>Rénovation complète — Maison de ville (Bordeaux)</h2>
-      <div class="bar"></div>
-
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="block">
-          <div class="pill">Avant / Après</div>
-          <h3>Le projet</h3>
-          <p>
-            <strong>Adresse :</strong> Bordeaux (33000)<br>
-            <strong>Type :</strong> Maison de ville T4, 110 m²<br>
-            <strong>Achat :</strong> Prix du marché (en l'état)
-          </p>
-
-          <div class="case-meta">
-            <span>Diagnostic complet</span><span>•</span>
-            <span>Plans 3D</span><span>•</span>
-            <span>Rénovation globale</span>
+    <section class="section-recherche">
+      <div class="recherche-card">
+        <h2>🔍 Rechercher un bien</h2>
+        <form class="recherche-form" id="recherche-biens">
+          <div class="form-group-recherche">
+            <label for="ville">Ville / Code postal</label>
+            <select id="ville" name="ville">
+              <option value="">Toutes les villes</option>
+              <option value="bordeaux">Bordeaux (33000)</option>
+              <option value="merignac">Mérignac (33700)</option>
+              <option value="talence">Talence (33400)</option>
+              <option value="pessac">Pessac (33600)</option>
+              <option value="begles">Bègles (33130)</option>
+              <option value="villenave">Villenave-d'Ornon (33140)</option>
+            </select>
           </div>
-
-          <p style="margin-top:10px;">
-            Maison acquise avec un fort potentiel mais une faible capacité de projection pour un particulier.
-            IHP a réalisé une restructuration complète des volumes, une rénovation intégrale
-            (électricité, plomberie, isolation, finitions premium) et une mise en valeur architecturale.
-          </p>
-
-          <p>
-            <strong>Résultat :</strong> Revente fluide, projet sécurisé, vendeurs et acquéreurs ravis.
-          </p>
-        </div>
-
-        <div class="block">
-          <h3>Description des travaux</h3>
-          <ul style="margin:0;padding-left:20px;line-height:1.8;font-size:14px;">
-            <li>Restructuration des espaces : ouverture cuisine / salon</li>
-            <li>Rénovation complète électricité et plomberie aux normes</li>
-            <li>Isolation thermique et acoustique renforcée</li>
-            <li>Finitions premium : parquet, faïence, peintures</li>
-            <li>Extérieur : terrasse en bois exotique</li>
-          </ul>
-
-          <div class="testimonial">
-            <p>
-              "Nous ne savions pas par où commencer. IHP a pris en charge l'ensemble du projet,
-              de l'évaluation à la livraison. Nous avons été accompagnés de A à Z et le résultat
-              a dépassé nos attentes."
-            </p>
-            <cite>— M. et Mme Dupont, propriétaires vendeurs</cite>
+          <div class="form-group-recherche">
+            <label for="type">Type de bien</label>
+            <select id="type" name="type">
+              <option value="">Tous les types</option>
+              <option value="appartement">Appartement</option>
+              <option value="loft">Loft</option>
+              <option value="maison">Maison / Villa</option>
+              <option value="studio">Studio</option>
+            </select>
           </div>
-        </div>
+          <div class="form-group-recherche">
+            <label for="budget">Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Tous les budgets</option>
+              <option value="0-150">Moins de 150 000€</option>
+              <option value="150-250">150 000€ – 250 000€</option>
+              <option value="250-350">250 000€ – 350 000€</option>
+              <option value="350-500">350 000€ – 500 000€</option>
+              <option value="500-plus">Plus de 500 000€</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-rechercher">Rechercher</button>
+        </form>
       </div>
     </section>
 
-    <!-- Réalisation 2 -->
-    <section>
-      <h2>Création extérieur premium — Piscine & aménagement (Villenave-d'Ornon)</h2>
-      <div class="bar"></div>
+    <section class="section-biens">
+      <div class="biens-grid">
 
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="block">
-          <div class="pill">Piscine</div>
-          <h3>Le projet</h3>
-          <p>
-            <strong>Adresse :</strong> Villenave-d'Ornon (33140)<br>
-            <strong>Type :</strong> Maison T5, 140 m² + jardin 400 m²<br>
-            <strong>Transformation :</strong> Valorisation extérieure complète
-          </p>
-
-          <div class="case-meta">
-            <span>Piscine 8x4m</span><span>•</span>
-            <span>Aménagement paysager</span><span>•</span>
-            <span>Éclairage design</span>
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Maison Bordeaux"><span class="bien-badge">Maison</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">425 000€</div>
+            <h3 class="bien-titre">Maison de ville rénovée</h3>
+            <p class="bien-localisation">📍 Bordeaux (33000) • Chartrons</p>
+            <div class="bien-caracteristiques">
+              <span>🏠 5 pièces</span><span>📐 120 m²</span><span>🛏️ 4 chambres</span>
+            </div>
+            <p class="bien-description">Belle maison de ville entièrement rénovée avec jardin. Cuisine équipée, parquet massif, double vitrage. Quartier recherché, proche commerces et tram.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
           </div>
+        </article>
 
-          <p style="margin-top:10px;">
-            Bien avec un potentiel inexploité au niveau extérieur.
-            IHP a piloté la création d'un espace cohérent : piscine chauffée,
-            terrasse en pierre naturelle, éclairage LED intégré et aménagement paysager.
-          </p>
-
-          <p>
-            <strong>Résultat :</strong> Valorisation immédiate du bien, désirabilité maximale.
-          </p>
-        </div>
-
-        <div class="block">
-          <h3>Description des travaux</h3>
-          <ul style="margin:0;padding-left:20px;line-height:1.8;font-size:14px;">
-            <li>Construction piscine 8x4m, liner gris anthracite</li>
-            <li>Terrasse pierre naturelle 60 m²</li>
-            <li>Éclairage LED périmétrique et piscine</li>
-            <li>Végétalisation : palmiers, gazon japonais</li>
-            <li>Pool house en bois (12 m²) avec douche extérieure</li>
-          </ul>
-
-          <div class="testimonial">
-            <p>
-              "IHP a transformé notre jardin en un espace de vie exceptionnel.
-              Coordination parfaite des corps d'état, finitions soignées. Nos acquéreurs
-              ont été conquis immédiatement."
-            </p>
-            <cite>— Famille Martin, propriétaires</cite>
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Appartement Mérignac"><span class="bien-badge">Appartement</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">245 000€</div>
+            <h3 class="bien-titre">Appartement T3 avec balcon</h3>
+            <p class="bien-localisation">📍 Mérignac (33700) • Centre-ville</p>
+            <div class="bien-caracteristiques">
+              <span>🏢 3 pièces</span><span>📐 68 m²</span><span>🛏️ 2 chambres</span>
+            </div>
+            <p class="bien-description">Appartement lumineux avec grand balcon exposé sud. Résidence récente, parking sécurisé, proche commodités. Parfait primo-accédant ou investissement locatif.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- Réalisation 3 -->
-    <section>
-      <h2>Surélévation & création de surface — Valorisation immédiate (Bordeaux Nord)</h2>
-      <div class="bar"></div>
-
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="block">
-          <div class="pill">Surélévation</div>
-          <h3>Le projet</h3>
-          <p>
-            <strong>Adresse :</strong> Bordeaux Nord (33300)<br>
-            <strong>Type :</strong> Maison T3 plain-pied 70 m² → T5 130 m² après surélévation<br>
-            <strong>Opération :</strong> Étude urbanisme, surélévation, aménagement complet
-          </p>
-
-          <div class="case-meta">
-            <span>DP validée</span><span>•</span>
-            <span>+60 m² créés</span><span>•</span>
-            <span>MOA complète</span>
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Maison Talence"><span class="bien-badge">Maison</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">585 000€</div>
+            <h3 class="bien-titre">Villa contemporaine avec piscine</h3>
+            <p class="bien-localisation">📍 Talence (33400) • Thouars</p>
+            <div class="bien-caracteristiques">
+              <span>🏠 6 pièces</span><span>📐 155 m²</span><span>🛏️ 4 chambres</span>
+            </div>
+            <p class="bien-description">Superbe villa récente avec piscine chauffée et jardin arboré. Prestations haut de gamme, cuisine ouverte, suite parentale. Calme absolu, proche écoles et commerces.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
           </div>
+        </article>
 
-          <p style="margin-top:10px;">
-            Bien sous-exploité en centre-ville avec un fort potentiel de valorisation via surélévation.
-            IHP a piloté l'étude technique, l'obtention de la déclaration préalable,
-            la coordination des artisans et l'aménagement intérieur (2 chambres + SDB à l'étage).
-          </p>
-
-          <p>
-            <strong>Résultat :</strong> Bien livré « prêt à vivre », valorisation x1.8.
-          </p>
-        </div>
-
-        <div class="block">
-          <h3>Description des travaux</h3>
-          <ul style="margin:0;padding-left:20px;line-height:1.8;font-size:14px;">
-            <li>Étude structure & faisabilité (bureau d'études)</li>
-            <li>Dossier urbanisme (DP) validé en 2 mois</li>
-            <li>Surélévation ossature bois + toiture zinc</li>
-            <li>Création 2 chambres + SDB à l'étage</li>
-            <li>Escalier design sur mesure (métal/bois)</li>
-            <li>Isolation renforcée + VMC double flux</li>
-          </ul>
-
-          <div class="testimonial">
-            <p>
-              "Projet ambitieux mais parfaitement cadré par IHP.
-              Ils ont géré l'ensemble : administratif, technique, coordination.
-              Nous avons pu revendre dans des délais record avec une plus-value significative."
-            </p>
-            <cite>— M. Renaud, investisseur</cite>
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Appartement Pessac"><span class="bien-badge">Appartement</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">189 000€</div>
+            <h3 class="bien-titre">Appartement T2 rénové</h3>
+            <p class="bien-localisation">📍 Pessac (33600) • Centre</p>
+            <div class="bien-caracteristiques">
+              <span>🏢 2 pièces</span><span>📐 48 m²</span><span>🛏️ 1 chambre</span>
+            </div>
+            <p class="bien-description">Charmant T2 entièrement rénové avec goût. Cuisine équipée neuve, salle d'eau moderne, cave. Idéal premier achat ou investissement rentable.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
           </div>
-        </div>
+        </article>
+
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Maison Bègles"><span class="bien-badge">Maison</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">395 000€</div>
+            <h3 class="bien-titre">Maison familiale avec jardin</h3>
+            <p class="bien-localisation">📍 Bègles (33130) • Prés</p>
+            <div class="bien-caracteristiques">
+              <span>🏠 5 pièces</span><span>📐 105 m²</span><span>🛏️ 3 chambres</span>
+            </div>
+            <p class="bien-description">Maison traditionnelle avec grand jardin clos. 3 chambres à l'étage, séjour lumineux, garage. Secteur calme et verdoyant, proche écoles.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
+          </div>
+        </article>
+
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Appartement Bordeaux"><span class="bien-badge">Appartement</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">325 000€</div>
+            <h3 class="bien-titre">Appartement T4 avec terrasse</h3>
+            <p class="bien-localisation">📍 Bordeaux (33000) • Saint-Augustin</p>
+            <div class="bien-caracteristiques">
+              <span>🏢 4 pièces</span><span>📐 85 m²</span><span>🛏️ 3 chambres</span>
+            </div>
+            <p class="bien-description">Grand T4 avec belle terrasse de 20 m². Immeuble standing, parking privatif, cave. Proche tram C, commerces et écoles.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
+          </div>
+        </article>
+
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Studio Bordeaux"><span class="bien-badge">Studio</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">135 000€</div>
+            <h3 class="bien-titre">Studio étudiant centre-ville</h3>
+            <p class="bien-localisation">📍 Bordeaux (33000) • Victoire</p>
+            <div class="bien-caracteristiques">
+              <span>🏢 1 pièce</span><span>📐 25 m²</span><span>🛏️ Kitchenette</span>
+            </div>
+            <p class="bien-description">Studio optimisé en plein centre-ville. Meublé, cuisine équipée, salle d'eau fonctionnelle. Investissement locatif sûr, fort potentiel étudiant.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
+          </div>
+        </article>
+
+        <article class="bien-card">
+          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Loft Bordeaux"><span class="bien-badge">Loft</span></div>
+          <div class="bien-content">
+            <div class="bien-prix">465 000€</div>
+            <h3 class="bien-titre">Loft industriel rénové</h3>
+            <p class="bien-localisation">📍 Bordeaux (33000) • Bassins à Flot</p>
+            <div class="bien-caracteristiques">
+              <span>🏢 3 pièces</span><span>📐 95 m²</span><span>🛏️ 2 chambres</span>
+            </div>
+            <p class="bien-description">Magnifique loft avec poutres apparentes et mezzanine. Cuisine ouverte design, hauteur sous plafond 4 m. Quartier branché, proche restaurants et transports.</p>
+            <a href="contact.html" class="btn-details">Voir les détails</a>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -418,6 +489,18 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('recherche-biens').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var v = document.getElementById('ville');
+      var t = document.getElementById('type');
+      var b = document.getElementById('budget');
+      var msg = 'Recherche : ' + (v.value ? v.selectedOptions[0].text : 'Toutes les villes') + ' • ' + (t.value ? t.selectedOptions[0].text : 'Tous les types') + ' • ' + (b.value ? b.selectedOptions[0].text : 'Tous les budgets');
+      console.log(msg);
+      alert(msg);
+    });
+  </script>
+  <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
 </body>
 </html>

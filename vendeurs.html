@@ -30,45 +30,9 @@
     img{max-width:100%;display:block}
     .container{width:min(var(--container), calc(100% - 2*var(--pad)));margin:0 auto;}
 
-    header{
-      position:sticky;top:0;z-index:60;background: rgba(255,255,255,.90);backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--bordeaux-10);
-    }
-    .topbar{
-      display:grid;grid-template-columns: 260px 1fr 260px;align-items:center;gap:16px;padding: 16px 0;
-    }
     .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .logo{
-      width:44px;height:44px;border-radius: 12px;background:#fff;border:1px solid var(--bordeaux-10);
-      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
-    }
-    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
-    .wordmark{display:flex;flex-direction:column;line-height:1.05}
-    .wordmark .ideal{
-      font-family: Montserrat, sans-serif;letter-spacing:.08em;font-weight:800;color:var(--ink);
-      text-transform:uppercase;font-size:14px;
-    }
-    .wordmark .home{
-      font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);
-      text-transform:uppercase;font-size:12px;
-    }
     .brand-logo{height:44px;width:auto;display:block;}
     .brand-logo-footer{height:34px;}
-
-    .nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap: 6px;}
-    .nav-row-1, .nav-row-2{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap: 10px;}
-    .nav-center a{
-      font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
-    }
-    .nav-center a:hover, .nav-center a.active{
-      background: var(--bordeaux-05);outline:1px solid var(--bordeaux-10);opacity:1;
-    }
-    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
-    .nav-cta{
-      padding:10px 14px;background: var(--bordeaux);color:#fff;border-radius: 14px;
-      font-weight:800;font-size:14px;white-space:nowrap;
-    }
-    .nav-cta:hover{filter:brightness(1.03)}
 
     main{padding: 34px 0 70px;}
     .hero-page{
@@ -151,15 +115,12 @@
 
     @media (max-width: 980px){
       :root{--pad:22px}
-      .topbar{grid-template-columns: 1fr; justify-items:start;}
-      .nav-right,.nav-center{justify-content:flex-start}
-      .nav-center{flex-direction:column;align-items:flex-start;}
-      .nav-row-1, .nav-row-2{justify-content:flex-start;}
       .grid-2, .grid-4{grid-template-columns: 1fr}
       .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
     }
   </style>
   <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
@@ -188,32 +149,31 @@
     </div>
   </div>
 
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
-          <img src="assets/logo.png" alt="Logo Ideal Home Project" class="brand-logo">
+  <header class="header-principal">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
         </a>
-
-        <nav class="nav-center" aria-label="Navigation principale">
-          <div class="nav-row-1">
-            <a href="index.html">Accueil</a>
-            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-            <a href="nos-biens.html">Nos biens</a>
-            <a href="nos-realisations.html">Nos réalisations</a>
-          </div>
-          <div class="nav-row-2">
-            <a href="vendeurs.html" class="active">Vendeurs</a>
-            <a href="acquereurs.html">Acquéreurs</a>
-            <a href="contact.html">Contact</a>
-            <a href="index.html#faq">FAQ</a>
-          </div>
-        </nav>
-
-        <div class="nav-right">
-          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
-        </div>
       </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
+        <a href="nos-biens.html" class="nav-link">Nos biens</a>
+        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
+        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
+        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-cta">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -230,8 +190,8 @@
       <div class="kicker">VENDEURS</div>
       <h1>Vendez votre bien en toute sérénité, sans les aléas d'une vente classique.</h1>
       <p class="lead">
-        Nous achetons votre maison. Pas de visites inutiles, pas de conditions suspensives de financement complexes,
-        une offre ferme et une exécution rapide.
+        Vous vendez ? Nous achetons au prix du marché. Pas de conditions suspensives de financement complexes,
+        une offre ferme et une exécution rapide en toute transparence.
       </p>
       <div style="margin-top:14px;">
         <a class="btn btn-primary" href="contact.html#vendeur">Étudier mon projet</a>
@@ -412,6 +372,7 @@
     </div>
   </footer>
 
+  <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
 </body>
 </html>

@@ -29,31 +29,9 @@
     img{max-width:100%;display:block}
     .container{width:min(var(--container), calc(100% - 2*var(--pad)));margin:0 auto;}
 
-    header{
-      position:sticky;top:0;z-index:60;background: rgba(255,255,255,.90);backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--bordeaux-10);
-    }
-    .topbar{
-      display:grid;grid-template-columns: 260px 1fr 260px;align-items:center;gap:16px;padding: 16px 0;
-    }
     .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .logo{
-      width:44px;height:44px;border-radius: 12px;background:#fff;border:1px solid var(--bordeaux-10);
-      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
-    }
-    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
-    .wordmark{display:flex;flex-direction:column;line-height:1.05}
-    .wordmark .ideal{font-family: Montserrat, sans-serif;letter-spacing:.08em;font-weight:800;color:var(--ink);text-transform:uppercase;font-size:14px;}
-    .wordmark .home{font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);text-transform:uppercase;font-size:12px;}
     .brand-logo{height:44px;width:auto;display:block;}
     .brand-logo-footer{height:34px;}
-    .nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap: 6px;}
-    .nav-row-1, .nav-row-2{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap: 10px;}
-    .nav-center a{font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;}
-    .nav-center a:hover, .nav-center a.active{background: var(--bordeaux-05);outline:1px solid var(--bordeaux-10);opacity:1;}
-    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
-    .nav-cta{padding:10px 14px;background: var(--bordeaux);color:#fff;border-radius: 14px;font-weight:800;font-size:14px;white-space:nowrap;}
-    .nav-cta:hover{filter:brightness(1.03)}
 
     main{padding: 34px 0 70px;}
     .hero-page{
@@ -69,48 +47,74 @@
     h1{margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;}
     .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
 
-    /* Moteur de recherche */
-    .search-card{
-      padding: 24px;border-radius: var(--radius-xl);background:#fff;
-      border:1px solid var(--bordeaux-10);margin-bottom: 32px;
-    }
-    .search-grid{
-      display:grid;grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));gap: 14px;align-items:end;
-    }
-    .search-grid label{display:block;font-weight:700;font-size:13px;color:var(--ink);margin:0 0 6px;}
-    .search-grid select, .search-grid input{
-      width:100%;border:1px solid var(--bordeaux-10);background:#fff;border-radius: 12px;
-      padding: 12px 14px;font:inherit;color:var(--text);outline:none;
-    }
-    .btn-search{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;padding: 12px 20px;
-      background: var(--bordeaux);color:#fff;border-radius: 14px;font-weight:800;font-size:14px;
-      border:none;cursor:pointer;white-space:nowrap;
-    }
-    .btn-search:hover{filter:brightness(1.05)}
-
     section{padding: 26px 0;}
     h2{margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);}
     .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
 
-    /* Galerie réalisation */
-    .realisation-card{
-      padding: 24px;border-radius: var(--radius-xl);background:#fff;
-      border:1px solid var(--bordeaux-10);margin-bottom: 32px;
+    /* Hero réalisations */
+    .hero-realisations{
+      background: linear-gradient(135deg, var(--bordeaux) 0%, #5a0018 100%);
+      color: #fff;
+      padding: 60px 0 50px;
+      text-align: center;
+      border-radius: var(--radius-2xl);
+      margin-bottom: 40px;
     }
-    .realisation-card h3{margin:0 0 8px;font-family: Montserrat, sans-serif;font-weight:900;color:var(--ink);font-size: 18px;}
-    .realisation-card .desc{margin:0 0 20px;color:var(--text);font-size:14px;line-height:1.65;}
-    .galerie-label{
-      font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bordeaux);
-      margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--bordeaux-10);
+    .hero-realisations h1{margin:0 0 14px;font-size: clamp(28px, 3vw, 42px);color:#fff;}
+    .hero-realisations p{margin:0;font-size: 17px;color: rgba(255,255,255,0.9);max-width: 640px;margin-left: auto;margin-right: auto;}
+
+    /* Section réalisation (alternance fond) */
+    .section-realisation{padding: 50px 0;background: #fff;}
+    .section-realisation:nth-child(even){background: var(--soft);}
+    .realisation-header{text-align: center;margin-bottom: 36px;}
+    .realisation-badge{
+      display: inline-block;background: var(--bordeaux);color:#fff;
+      padding: 6px 16px;border-radius: 999px;font-size: 12px;font-weight: 700;
+      text-transform: uppercase;margin-bottom: 14px;
     }
-    .galerie-grid{
-      display:grid;grid-template-columns: repeat(4, 1fr);gap: 12px;margin-bottom: 24px;
+    .realisation-header h2{font-size: clamp(22px, 2.2vw, 30px);color: var(--ink);margin-bottom: 10px;}
+    .realisation-header p{font-size: 15px;color: var(--muted);max-width: 700px;margin: 0 auto;line-height: 1.6;}
+
+    /* Grille Avant / Après */
+    .avant-apres-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 28px;
     }
-    .galerie-grid .slot{
-      aspect-ratio: 4/3;border-radius: 12px;background: var(--soft);border:1px dashed var(--bordeaux-10);
-      display:grid;place-items:center;color:var(--muted);font-size:12px;font-weight:600;
+    .avant-section, .apres-section{
+      background: #fff;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--bordeaux-10);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
+    .section-realisation:nth-child(even) .avant-section,
+    .section-realisation:nth-child(even) .apres-section{background: #fff;}
+    .avant-section h3, .apres-section h3{
+      font-size: 18px;color: var(--ink);margin: 0 0 18px;text-align: center;font-weight: 800;
+    }
+    .avant-section h3::before{content: '📷 ';}
+    .apres-section h3::before{content: '✨ ';}
+    .images-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .image-placeholder{
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--soft) 0%, #e5e7eb 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+      overflow: hidden;
+    }
+    .image-placeholder img{width: 100%; height: 100%; object-fit: cover;}
+    .image-placeholder:has(img) span{display: none;}
     .floating-cta{
       position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
       padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
@@ -128,20 +132,15 @@
 
     @media (max-width: 980px){
       :root{--pad:22px}
-      .topbar{grid-template-columns: 1fr; justify-items:start;}
-      .nav-right,.nav-center{justify-content:flex-start;}
-      .nav-center{flex-direction:column;align-items:flex-start;}
-      .nav-row-1, .nav-row-2{justify-content:flex-start;}
-      .search-grid{grid-template-columns: 1fr 1fr;}
-      .galerie-grid{grid-template-columns: repeat(2, 1fr);}
+      .avant-apres-container{grid-template-columns: 1fr;}
       .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
     }
     @media (max-width: 520px){
-      .search-grid{grid-template-columns: 1fr;}
-      .galerie-grid{grid-template-columns: 1fr;}
+      .images-grid{grid-template-columns: 1fr;}
     }
   </style>
   <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
@@ -169,30 +168,31 @@
     </div>
   </div>
 
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
-          <img src="assets/logo.png" alt="Logo Ideal Home Project" class="brand-logo">
+  <header class="header-principal">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
         </a>
-        <nav class="nav-center" aria-label="Navigation principale">
-          <div class="nav-row-1">
-            <a href="index.html">Accueil</a>
-            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-            <a href="nos-biens.html">Nos biens</a>
-            <a href="nos-realisations.html" class="active">Nos réalisations</a>
-          </div>
-          <div class="nav-row-2">
-            <a href="vendeurs.html">Vendeurs</a>
-            <a href="acquereurs.html">Acquéreurs</a>
-            <a href="contact.html">Contact</a>
-            <a href="index.html#faq">FAQ</a>
-          </div>
-        </nav>
-        <div class="nav-right">
-          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
-        </div>
       </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
+        <a href="nos-biens.html" class="nav-link">Nos biens</a>
+        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
+        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
+        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-cta">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -204,114 +204,94 @@
 
   <main class="container">
 
-    <div class="hero-page">
-      <div class="kicker">NOS RÉALISATIONS</div>
-      <h1>Découvrez nos réalisations et biens en vente</h1>
-      <p class="lead">
-        Utilisez les filtres pour affiner votre recherche. Galerie avant/après de nos projets transformés par Ideal Home Project.
-      </p>
-    </div>
+    <section class="hero-realisations">
+      <h1>Nos Réalisations</h1>
+      <p>Découvrez nos projets de valorisation immobilière avec transformations avant/après.</p>
+    </section>
 
-    <!-- Moteur de recherche -->
-    <div class="search-card">
-      <h2 style="margin-bottom:18px;">Rechercher</h2>
-      <div class="bar" style="margin-bottom:20px;"></div>
-      <form class="search-grid" id="search-form" role="search">
-        <div>
-          <label for="type">Type</label>
-          <select id="type" name="type">
-            <option value="vente">Nos biens en vente</option>
-            <option value="realisations">Nos réalisations</option>
-          </select>
+    <!-- RÉALISATION 1 -->
+    <section class="section-realisation">
+      <div class="realisation-header">
+        <span class="realisation-badge">Avant / Après</span>
+        <h2>Rénovation complète — Maison de ville</h2>
+        <p><strong>📍 Bordeaux</strong> • Maison T4 110 m² • Restructuration des volumes, rénovation intégrale (électricité, plomberie, isolation). Revente fluide, vendeurs et acquéreurs ravis.</p>
+      </div>
+      <div class="avant-apres-container">
+        <div class="avant-section">
+          <h3>Avant</h3>
+          <div class="images-grid">
+            <div class="image-placeholder"><span>Image 1</span></div>
+            <div class="image-placeholder"><span>Image 2</span></div>
+            <div class="image-placeholder"><span>Image 3</span></div>
+            <div class="image-placeholder"><span>Image 4</span></div>
+          </div>
         </div>
-        <div>
-          <label for="ville">Ville</label>
-          <select id="ville" name="ville">
-            <option value="">Toutes les villes</option>
-            <option value="bordeaux">Bordeaux</option>
-            <option value="paris">Paris</option>
-            <option value="lyon">Lyon</option>
-            <option value="toulouse">Toulouse</option>
-            <option value="nantes">Nantes</option>
-            <option value="marseille">Marseille</option>
-            <option value="villenave-dornon">Villenave d'Ornon</option>
-            <option value="talence">Talence</option>
-            <option value="merignac">Mérignac</option>
-          </select>
-        </div>
-        <div>
-          <label for="prix-min">Prix minimum (€)</label>
-          <input type="number" id="prix-min" name="prix_min" placeholder="Ex. 100 000" min="0" step="10000">
-        </div>
-        <div>
-          <label for="prix-max">Prix maximum (€)</label>
-          <input type="number" id="prix-max" name="prix_max" placeholder="Ex. 500 000" min="0" step="10000">
-        </div>
-        <div>
-          <button type="submit" class="btn-search">Rechercher</button>
-        </div>
-      </form>
-    </div>
-
-    <!-- Galerie de réalisations -->
-    <section>
-      <h2>Galerie de réalisations</h2>
-      <div class="bar"></div>
-
-      <div class="realisation-card">
-        <h3>Rénovation complète — Maison de ville (Bordeaux)</h3>
-        <p class="desc">Maison T4 110 m², restructuration des volumes, rénovation intégrale (électricité, plomberie, isolation). Revente fluide, vendeurs et acquéreurs ravis.</p>
-        <div class="galerie-label">Avant</div>
-        <div class="galerie-grid">
-          <div class="slot">Image 1</div>
-          <div class="slot">Image 2</div>
-          <div class="slot">Image 3</div>
-          <div class="slot">Image 4</div>
-        </div>
-        <div class="galerie-label">Après</div>
-        <div class="galerie-grid">
-          <div class="slot">Image 1</div>
-          <div class="slot">Image 2</div>
-          <div class="slot">Image 3</div>
-          <div class="slot">Image 4</div>
+        <div class="apres-section">
+          <h3>Après</h3>
+          <div class="images-grid">
+            <div class="image-placeholder"><span>Image 1</span></div>
+            <div class="image-placeholder"><span>Image 2</span></div>
+            <div class="image-placeholder"><span>Image 3</span></div>
+            <div class="image-placeholder"><span>Image 4</span></div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="realisation-card">
-        <h3>Extérieur premium — Piscine & aménagement</h3>
-        <p class="desc">Optimisation des accès, piscine, finitions haut de gamme pour une valorisation maximale du bien.</p>
-        <div class="galerie-label">Avant</div>
-        <div class="galerie-grid">
-          <div class="slot">Image 1</div>
-          <div class="slot">Image 2</div>
-          <div class="slot">Image 3</div>
-          <div class="slot">Image 4</div>
+    <!-- RÉALISATION 2 -->
+    <section class="section-realisation">
+      <div class="realisation-header">
+        <span class="realisation-badge">Piscine</span>
+        <h2>Extérieur premium — Piscine & aménagement</h2>
+        <p><strong>📍 Mérignac</strong> • Optimisation des accès, piscine, finitions haut de gamme pour une valorisation maximale du bien.</p>
+      </div>
+      <div class="avant-apres-container">
+        <div class="avant-section">
+          <h3>Avant</h3>
+          <div class="images-grid">
+            <div class="image-placeholder"><span>Image 1</span></div>
+            <div class="image-placeholder"><span>Image 2</span></div>
+            <div class="image-placeholder"><span>Image 3</span></div>
+            <div class="image-placeholder"><span>Image 4</span></div>
+          </div>
         </div>
-        <div class="galerie-label">Après</div>
-        <div class="galerie-grid">
-          <div class="slot">Image 1</div>
-          <div class="slot">Image 2</div>
-          <div class="slot">Image 3</div>
-          <div class="slot">Image 4</div>
+        <div class="apres-section">
+          <h3>Après</h3>
+          <div class="images-grid">
+            <div class="image-placeholder"><span>Image 1</span></div>
+            <div class="image-placeholder"><span>Image 2</span></div>
+            <div class="image-placeholder"><span>Image 3</span></div>
+            <div class="image-placeholder"><span>Image 4</span></div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="realisation-card">
-        <h3>Surélévation & création de surface</h3>
-        <p class="desc">Étude technique, urbanisme, pilotage complet. Bien livré « prêt à vivre » avec surfaces optimisées.</p>
-        <div class="galerie-label">Avant</div>
-        <div class="galerie-grid">
-          <div class="slot">Image 1</div>
-          <div class="slot">Image 2</div>
-          <div class="slot">Image 3</div>
-          <div class="slot">Image 4</div>
+    <!-- RÉALISATION 3 -->
+    <section class="section-realisation">
+      <div class="realisation-header">
+        <span class="realisation-badge">Surélévation</span>
+        <h2>Surélévation & création de surface</h2>
+        <p><strong>📍 Talence</strong> • Étude technique, urbanisme, pilotage complet. Bien livré « prêt à vivre » avec surfaces optimisées.</p>
+      </div>
+      <div class="avant-apres-container">
+        <div class="avant-section">
+          <h3>Avant</h3>
+          <div class="images-grid">
+            <div class="image-placeholder"><span>Image 1</span></div>
+            <div class="image-placeholder"><span>Image 2</span></div>
+            <div class="image-placeholder"><span>Image 3</span></div>
+            <div class="image-placeholder"><span>Image 4</span></div>
+          </div>
         </div>
-        <div class="galerie-label">Après</div>
-        <div class="galerie-grid">
-          <div class="slot">Image 1</div>
-          <div class="slot">Image 2</div>
-          <div class="slot">Image 3</div>
-          <div class="slot">Image 4</div>
+        <div class="apres-section">
+          <h3>Après</h3>
+          <div class="images-grid">
+            <div class="image-placeholder"><span>Image 1</span></div>
+            <div class="image-placeholder"><span>Image 2</span></div>
+            <div class="image-placeholder"><span>Image 3</span></div>
+            <div class="image-placeholder"><span>Image 4</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -333,17 +313,7 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('search-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var type = document.getElementById('type').value;
-      var ville = document.getElementById('ville').value;
-      var prixMin = document.getElementById('prix-min').value;
-      var prixMax = document.getElementById('prix-max').value;
-      console.log('Recherche:', { type: type, ville: ville, prixMin: prixMin, prixMax: prixMax });
-      alert('Recherche envoyée. Filtres : Type = ' + (type === 'realisations' ? 'Nos réalisations' : 'Nos biens en vente') + (ville ? ', Ville = ' + document.getElementById('ville').selectedOptions[0].text : '') + (prixMin ? ', Prix min = ' + prixMin + ' €' : '') + (prixMax ? ', Prix max = ' + prixMax + ' €' : ''));
-    });
-  </script>
+  <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
 </body>
 </html>
