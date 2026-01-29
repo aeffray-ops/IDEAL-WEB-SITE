@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Ideal Home Project</title>
+  <meta name="description" content="Contactez Ideal Home Project. Vendeurs, acquéreurs, agents : notre équipe répond à vos questions." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bordeaux:#800020;--ink:#111827;--text:#1f2937;--muted:#6b7280;--soft:#f3f4f6;
+      --bordeaux-05: rgba(128, 0, 32, 0.05);--bordeaux-10: rgba(128, 0, 32, 0.10);
+      --radius-xl: 20px;--radius-2xl: 28px;
+      --pad: 48px;--container: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: #fff;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--container), calc(100% - 2*var(--pad)));margin:0 auto;}
+
+    header{
+      position:sticky;top:0;z-index:60;background: rgba(255,255,255,.90);backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--bordeaux-10);
+    }
+    .topbar{
+      display:grid;grid-template-columns: 260px 1fr 260px;align-items:center;gap:16px;padding: 16px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+    .logo{
+      width:44px;height:44px;border-radius: 12px;background:#fff;border:1px solid var(--bordeaux-10);
+      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
+    .wordmark{display:flex;flex-direction:column;line-height:1.05}
+    .wordmark .ideal{
+      font-family: Montserrat, sans-serif;letter-spacing:.08em;font-weight:800;color:var(--ink);
+      text-transform:uppercase;font-size:14px;
+    }
+    .wordmark .home{
+      font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);
+      text-transform:uppercase;font-size:12px;
+    }
+
+    .nav-center{display:flex;justify-content:center;align-items:center;gap: 10px;flex-wrap:wrap;}
+    .nav-center a{
+      font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
+    }
+    .nav-center a:hover, .nav-center a.active{
+      background: var(--bordeaux-05);outline:1px solid var(--bordeaux-10);opacity:1;
+    }
+    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
+    .nav-cta{
+      padding:10px 14px;background: var(--bordeaux);color:#fff;border-radius: 14px;
+      font-weight:800;font-size:14px;white-space:nowrap;
+    }
+
+    main{padding: 34px 0 70px;}
+    .hero-page{
+      padding: 28px;border-radius: var(--radius-2xl);
+      background: #fff;
+      border:1px solid var(--bordeaux-10);margin-bottom: 26px;
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;font-weight:900;color: var(--bordeaux);background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
+    }
+    h1{
+      margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;
+      letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;
+    }
+    .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
+
+    section{padding: 26px 0;}
+    h2{
+      margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;
+      color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);
+    }
+    .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
+
+    .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;}
+    .form-card{
+      padding: 22px;border-radius: var(--radius-xl);background:#fff;
+      border:1px solid var(--bordeaux-10);
+    }
+
+    label{display:block;font-weight:700;font-size:13px;color:var(--ink);margin: 0 0 8px;}
+    input, select, textarea{
+      width:100%;border:1px solid var(--bordeaux-10);background:#fff;
+      border-radius: 14px;padding: 12px 12px;font: inherit;color: var(--text);outline: none;
+    }
+    textarea{min-height: 110px; resize: vertical;}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap: 12px;}
+    .hint{margin:10px 0 0;color:var(--muted);font-size:12px;line-height:1.5;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;padding: 13px 16px;border-radius: 16px;
+      font-weight: 800;font-size: 14px;cursor:pointer;border:1px solid transparent;
+      background: var(--bordeaux); color:#fff;
+    }
+
+    .info-block{
+      padding: 18px;border-radius: 16px;background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);margin-top: 14px;
+    }
+    .info-block strong{display:block;margin-bottom: 6px;color: var(--ink);font-family: Montserrat, sans-serif;font-weight:800;}
+    .info-block p{margin:0;color: var(--text);font-size:14px;line-height:1.6;}
+
+    .floating-cta{
+      position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
+      padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
+      min-width: 180px;text-decoration:none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
+    .floating-cta .t1{font-size: 10px;font-weight: 900;letter-spacing:.14em;text-transform: uppercase;color: var(--bordeaux);}
+    .floating-cta .t2{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
+    .floating-cta .t3{color: var(--muted);font-size: 12px;font-weight: 700;}
+
+    footer{
+      padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);
+    }
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap: 14px;flex-wrap:wrap;}
+    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
+
+    @media (max-width: 980px){
+      :root{--pad:22px}
+      .topbar{grid-template-columns: 1fr; justify-items:start;}
+      .nav-right,.nav-center{justify-content:flex-start}
+      .grid-2{grid-template-columns: 1fr}
+      .row{grid-template-columns: 1fr}
+      .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
+          <div class="logo" aria-hidden="true">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="Logo Ideal Home Project">
+          </div>
+          <div class="wordmark">
+            <div class="ideal">IDEAL</div>
+            <div class="home">HOME PROJECT</div>
+          </div>
+        </a>
+
+        <nav class="nav-center" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="nos-biens.html">Nos biens</a>
+          <a href="nos-realisations.html">Nos réalisations</a>
+          <a href="vendeurs.html">Vendeurs</a>
+          <a href="acquereurs.html">Acquéreurs</a>
+          <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
+    <span class="t1">RÉSEAU</span>
+    <span class="t2">Devenir membre</span>
+    <span class="t3">Agent Marchand</span>
+  </a>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <div class="hero-page">
+      <div class="kicker">CONTACT</div>
+      <h1>Échangeons sur votre projet immobilier</h1>
+      <p class="lead">
+        Que vous soyez propriétaire, acquéreur ou professionnel souhaitant rejoindre notre réseau,
+        notre équipe d'experts est à votre disposition pour analyser vos besoins avec rigueur et discrétion.
+      </p>
+    </div>
+
+    <!-- Formulaire segmenté -->
+    <section>
+      <h2>Sélectionnez votre profil</h2>
+      <div class="bar"></div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <!-- Formulaire Vendeur -->
+        <div class="form-card" id="vendeur">
+          <h3 style="margin:0 0 10px;font-family: Montserrat, sans-serif;font-weight:900;color: var(--ink);font-size: 18px;">
+            Je suis un Vendeur
+          </h3>
+          <p style="margin:0 0 14px;color: var(--muted);font-size:13px;">
+            Maison à rénover — Étude gratuite et confidentielle.
+          </p>
+
+          <form action="#" method="post">
+            <div class="row">
+              <div>
+                <label for="v-prenom">Prénom</label>
+                <input id="v-prenom" name="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" required>
+              </div>
+              <div>
+                <label for="v-nom">Nom</label>
+                <input id="v-nom" name="nom" type="text" placeholder="Votre nom" autocomplete="family-name" required>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:12px;">
+              <div>
+                <label for="v-email">Email</label>
+                <input id="v-email" name="email" type="email" placeholder="nom@domaine.fr" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="v-tel">Téléphone</label>
+                <input id="v-tel" name="tel" type="tel" placeholder="06 00 00 00 00" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="v-ville">Localisation du bien</label>
+              <input id="v-ville" name="ville" type="text" placeholder="Ville ou Code Postal">
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="v-message">Message</label>
+              <textarea id="v-message" name="message" placeholder="Décrivez brièvement votre bien..."></textarea>
+            </div>
+
+            <p class="hint">Votre demande est traitée sans engagement et dans les plus brefs délais.</p>
+
+            <button type="submit" class="btn" style="margin-top:14px;width:100%;">Envoyer ma demande (vendeur)</button>
+          </form>
+        </div>
+
+        <!-- Formulaire Acquéreur -->
+        <div class="form-card" id="acquereur">
+          <h3 style="margin:0 0 10px;font-family: Montserrat, sans-serif;font-weight:900;color: var(--ink);font-size: 18px;">
+            Je suis un Acquéreur
+          </h3>
+          <p style="margin:0 0 14px;color: var(--muted);font-size:13px;">
+            Recherche de projet clé en main.
+          </p>
+
+          <form action="#" method="post">
+            <div class="row">
+              <div>
+                <label for="a-prenom">Prénom</label>
+                <input id="a-prenom" name="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" required>
+              </div>
+              <div>
+                <label for="a-nom">Nom</label>
+                <input id="a-nom" name="nom" type="text" placeholder="Votre nom" autocomplete="family-name" required>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:12px;">
+              <div>
+                <label for="a-email">Email</label>
+                <input id="a-email" name="email" type="email" placeholder="nom@domaine.fr" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="a-tel">Téléphone</label>
+                <input id="a-tel" name="tel" type="tel" placeholder="06 00 00 00 00" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="a-ville">Zone de recherche</label>
+              <input id="a-ville" name="ville" type="text" placeholder="Ville ou Région souhaitée">
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="a-message">Message</label>
+              <textarea id="a-message" name="message" placeholder="Décrivez vos critères (type de bien, budget, surface...)"></textarea>
+            </div>
+
+            <p class="hint">Accès privilégié à nos avant-premières immobilières.</p>
+
+            <button type="submit" class="btn" style="margin-top:14px;width:100%;">Envoyer ma demande (acquéreur)</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coordonnées -->
+    <section>
+      <h2>Nos Coordonnées</h2>
+      <div class="bar"></div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="info-block">
+          <strong>Siège Social</strong>
+          <p>
+            SAS IDEAL HOME PROJECT<br>
+            10 rue Raymond Bierge<br>
+            33140 Villenave d'Ornon
+          </p>
+        </div>
+
+        <div class="info-block">
+          <strong>Contact</strong>
+          <p>
+            Email : <a href="mailto:bonjour@idealhomeproject.com" style="color:var(--bordeaux);font-weight:700;">bonjour@idealhomeproject.com</a><br>
+            Tél : <a href="tel:0664646464" style="color:var(--bordeaux);font-weight:700;">06 64 64 64 64</a><br>
+            Horaires : Du lundi au vendredi, de 9h00 à 18h00
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="brand" style="min-width:auto;">
+          <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:10px;">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="">
+          </div>
+          <div class="wordmark">
+            <div class="ideal" style="font-size:12px;">IDEAL</div>
+            <div class="home" style="font-size:11px;">HOME PROJECT</div>
+          </div>
+        </div>
+
+        <div class="legal">
+          © Ideal Home Project — 10 rue Raymond Bierge, 33140 Villenave d'Ornon •
+          Email : bonjour@idealhomeproject.com • Tél : 06 64 64 64 64<br>
+          Mentions légales • Politique de confidentialité (RGPD)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

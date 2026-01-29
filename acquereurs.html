@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acquéreurs — Ideal Home Project</title>
+  <meta name="description" content="Devenez propriétaire d'un bien d'exception, sans l'incertitude des travaux. Projets clés en main, transparence budgétaire." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bordeaux:#800020;--ink:#111827;--text:#1f2937;--muted:#6b7280;--soft:#f3f4f6;
+      --bordeaux-05: rgba(128, 0, 32, 0.05);--bordeaux-10: rgba(128, 0, 32, 0.10);
+      --radius-xl: 20px;--radius-2xl: 28px;
+      --pad: 48px;--container: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: #fff;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--container), calc(100% - 2*var(--pad)));margin:0 auto;}
+
+    header{
+      position:sticky;top:0;z-index:60;background: rgba(255,255,255,.90);backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--bordeaux-10);
+    }
+    .topbar{
+      display:grid;grid-template-columns: 260px 1fr 260px;align-items:center;gap:16px;padding: 16px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+    .logo{
+      width:44px;height:44px;border-radius: 12px;background:#fff;border:1px solid var(--bordeaux-10);
+      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
+    .wordmark{display:flex;flex-direction:column;line-height:1.05}
+    .wordmark .ideal{
+      font-family: Montserrat, sans-serif;letter-spacing:.08em;font-weight:800;color:var(--ink);
+      text-transform:uppercase;font-size:14px;
+    }
+    .wordmark .home{
+      font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);
+      text-transform:uppercase;font-size:12px;
+    }
+
+    .nav-center{display:flex;justify-content:center;align-items:center;gap: 10px;flex-wrap:wrap;}
+    .nav-center a{
+      font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
+    }
+    .nav-center a:hover, .nav-center a.active{
+      background: var(--bordeaux-05);outline:1px solid var(--bordeaux-10);opacity:1;
+    }
+    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
+    .nav-cta{
+      padding:10px 14px;background: var(--bordeaux);color:#fff;border-radius: 14px;
+      font-weight:800;font-size:14px;white-space:nowrap;
+    }
+    .nav-cta:hover{filter:brightness(1.03)}
+
+    main{padding: 34px 0 70px;}
+    .hero-page{
+      padding: 28px;border-radius: var(--radius-2xl);
+      background: #fff;
+      border:1px solid var(--bordeaux-10);margin-bottom: 26px;
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;font-weight:900;color: var(--bordeaux);background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
+    }
+    h1{
+      margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;
+      letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;
+    }
+    .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;padding: 13px 16px;
+      border-radius: 16px;font-weight: 900;font-size: 14px;border:1px solid transparent;
+      user-select:none;transition: transform .12s ease;
+    }
+    .btn-primary{
+      background: var(--bordeaux);color:#fff;
+    }
+    .btn:hover{transform: translateY(-1px)}
+
+    section{padding: 26px 0;}
+    h2{
+      margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;
+      color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);
+    }
+    .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
+
+    .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;}
+    .grid-3{display:grid;grid-template-columns: repeat(3, 1fr);gap: 18px;}
+    .grid-4{display:grid;grid-template-columns: repeat(4, 1fr);gap: 18px;}
+
+    .block{
+      padding: 22px;border-radius: var(--radius-xl);background:#fff;
+      border:1px solid var(--bordeaux-10);
+    }
+    .block.soft{background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);}
+    .block h3{
+      margin:0 0 8px;font-family: Montserrat, sans-serif;font-weight:900;color: var(--ink);font-size: 16px;
+    }
+    .block p{margin:0;color: var(--text);line-height:1.65;font-size: 14px;}
+    .block .icon{font-size:24px;color: var(--bordeaux);margin-bottom:10px;}
+
+    .floating-cta{
+      position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
+      padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
+      min-width: 180px;text-decoration:none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
+    .floating-cta .t1{font-size: 10px;font-weight: 900;letter-spacing:.14em;text-transform: uppercase;color: var(--bordeaux);}
+    .floating-cta .t2{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
+    .floating-cta .t3{color: var(--muted);font-size: 12px;font-weight: 700;}
+
+    footer{
+      padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);
+    }
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap: 14px;flex-wrap:wrap;}
+    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
+
+    @media (max-width: 980px){
+      :root{--pad:22px}
+      .topbar{grid-template-columns: 1fr; justify-items:start;}
+      .nav-right,.nav-center{justify-content:flex-start}
+      .grid-2, .grid-3, .grid-4{grid-template-columns: 1fr}
+      .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
+          <div class="logo" aria-hidden="true">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="Logo Ideal Home Project">
+          </div>
+          <div class="wordmark">
+            <div class="ideal">IDEAL</div>
+            <div class="home">HOME PROJECT</div>
+          </div>
+        </a>
+
+        <nav class="nav-center" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="nos-biens.html">Nos biens</a>
+          <a href="nos-realisations.html">Nos réalisations</a>
+          <a href="vendeurs.html">Vendeurs</a>
+          <a href="acquereurs.html" class="active">Acquéreurs</a>
+          <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+          <a href="contact.html">Contact</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
+    <span class="t1">RÉSEAU</span>
+    <span class="t2">Devenir membre</span>
+    <span class="t3">Agent Marchand</span>
+  </a>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <div class="hero-page">
+      <div class="kicker">ACQUÉREURS</div>
+      <h1>Devenez propriétaire d'un bien d'exception, sans l'incertitude des travaux.</h1>
+      <p class="lead">
+        Nous concevons pour vous des projets immobiliers clés en main. Des biens rigoureusement sélectionnés,
+        techniquement validés et prêts à être valorisés.
+      </p>
+      <div style="margin-top:14px;">
+        <a class="btn btn-primary" href="nos-biens.html">Découvrir nos opportunités</a>
+      </div>
+    </div>
+
+    <!-- Constat -->
+    <section>
+      <h2>En finir avec le "parcours du combattant"</h2>
+      <div class="bar"></div>
+      <p style="margin-top:10px;">
+        Dans un marché traditionnel, acheter un bien à rénover est souvent source de stress :
+      </p>
+
+      <div class="grid-4" style="margin-top:14px;">
+        <div class="block">
+          <div class="icon">📊</div>
+          <h3>Budgets qui s'envolent</h3>
+          <p>Des devis travaux souvent sous-estimés ou flous.</p>
+        </div>
+        <div class="block">
+          <div class="icon">⚠️</div>
+          <h3>Malfaçons techniques</h3>
+          <p>La peur des vices cachés ou des structures défaillantes.</p>
+        </div>
+        <div class="block">
+          <div class="icon">⏰</div>
+          <h3>Délais non maîtrisés</h3>
+          <p>Des chantiers qui décalent vos projets de vie.</p>
+        </div>
+        <div class="block">
+          <div class="icon">🔍</div>
+          <h3>Défaut de projection</h3>
+          <p>Difficulté d'imaginer le potentiel réel d'un espace dégradé.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section>
+      <h2>La Solution IHP : La Force du "Clé en Main"</h2>
+      <div class="bar"></div>
+      <p style="margin-top:10px;">
+        Avec Ideal Home Project, vous n'achetez pas seulement des murs, vous achetez une solution architecturale complète.
+      </p>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="block">
+          <h3>Projets déjà budgétés</h3>
+          <p>
+            Chaque bien est présenté avec un chiffrage précis et transparent des rénovations nécessaires.
+          </p>
+        </div>
+        <div class="block">
+          <h3>Expertise Technique Garantie</h3>
+          <p>
+            Nos dossiers incluent des diagnostics structurels poussés. Vous savez exactement ce que vous achetez.
+          </p>
+        </div>
+        <div class="block">
+          <h3>Accompagnement d'architecte</h3>
+          <p>
+            Nous livrons des plans de masse et des rendus 3D immersifs pour que vous puissiez vous projeter immédiatement.
+          </p>
+        </div>
+        <div class="block">
+          <h3>Valorisation Immobilière</h3>
+          <p>
+            Nos projets sont pensés pour maximiser la valeur de revente ou le rendement locatif.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section>
+      <h2>Nos Services : Un suivi de A à Z</h2>
+      <div class="bar"></div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="block soft">
+          <h3>Audit & Diagnostic</h3>
+          <p>Validation de la viabilité du projet par notre "Bureau des 7" et nos experts techniques.</p>
+        </div>
+        <div class="block soft">
+          <h3>Dossier de Conception</h3>
+          <p>Mise à disposition de tous les documents (plans, coupes, notices techniques).</p>
+        </div>
+        <div class="block soft">
+          <h3>Maîtrise d'Ouvrage</h3>
+          <p>Nous assurons la coordination des corps d'état et le suivi rigoureux du planning.</p>
+        </div>
+        <div class="block soft">
+          <h3>Livraison & Garantie</h3>
+          <p>Un bien livré conforme aux attentes, prêt à habiter ou à louer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promesse -->
+    <section>
+      <h2>La Promesse IHP : Acheter en toute confiance</h2>
+      <div class="bar"></div>
+
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="block">
+          <h3>Sécurité Juridique</h3>
+          <p>Des transactions cadrées et transparentes avec nos partenaires notaires.</p>
+        </div>
+        <div class="block">
+          <h3>Qualité Architecturale</h3>
+          <p>Des choix de matériaux et d'aménagements durables et esthétiques.</p>
+        </div>
+        <div class="block">
+          <h3>Transparence Financière</h3>
+          <p>Pas de frais cachés. Le coût final est connu dès le départ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section>
+      <div class="block soft">
+        <h2>Prêt à investir dans votre futur idéal ?</h2>
+        <div class="bar"></div>
+        <p style="margin-top:10px;">
+          Que vous cherchiez votre résidence principale ou un investissement patrimonial,
+          Ideal Home Project vous ouvre les portes de projets exclusifs.
+          Échangeons sur vos critères de recherche.
+        </p>
+        <p style="margin-top:10px;color:var(--muted);font-size:12px;">
+          <strong>Accès privilégié à nos avant-premières immobilières.</strong>
+        </p>
+        <div style="margin-top:14px;">
+          <a class="btn btn-primary" href="contact.html#acquereur">Contacter un conseiller acquéreur</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="brand" style="min-width:auto;">
+          <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:10px;">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="">
+          </div>
+          <div class="wordmark">
+            <div class="ideal" style="font-size:12px;">IDEAL</div>
+            <div class="home" style="font-size:11px;">HOME PROJECT</div>
+          </div>
+        </div>
+
+        <div class="legal">
+          © Ideal Home Project — 10 rue Raymond Bierge, 33140 Villenave d'Ornon •
+          Email : bonjour@idealhomeproject.com • Tél : 06 64 64 64 64<br>
+          Mentions légales • Politique de confidentialité (RGPD)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

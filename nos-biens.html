@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nos biens — Ideal Home Project</title>
+  <meta name="description" content="Découvrez nos réalisations : biens transformés et valorisés par Ideal Home Project. Avant/après, témoignages et processus complet." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bordeaux:#800020;
+      --ink:#111827;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --soft:#f3f4f6;
+      --bordeaux-05: rgba(128, 0, 32, 0.05);
+      --bordeaux-10: rgba(128, 0, 32, 0.10);
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+      --pad: 48px;
+      --container: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: #fff;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{
+      width:min(var(--container), calc(100% - 2*var(--pad)));
+      margin:0 auto;
+    }
+
+    header{
+      position:sticky;top:0;z-index:60;background: rgba(255,255,255,.90);backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--bordeaux-10);
+    }
+    .topbar{
+      display:grid;grid-template-columns: 260px 1fr 260px;align-items:center;gap:16px;padding: 16px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+    .logo{
+      width:44px;height:44px;border-radius: 12px;background:#fff;border:1px solid var(--bordeaux-10);
+      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
+    .wordmark{display:flex;flex-direction:column;line-height:1.05}
+    .wordmark .ideal{
+      font-family: Montserrat, sans-serif;letter-spacing:.08em;font-weight:800;color:var(--ink);
+      text-transform:uppercase;font-size:14px;
+    }
+    .wordmark .home{
+      font-family: Montserrat, sans-serif;letter-spacing:.05em;font-weight:700;color:var(--muted);
+      text-transform:uppercase;font-size:12px;
+    }
+
+    .nav-center{display:flex;justify-content:center;align-items:center;gap: 10px;flex-wrap:wrap;}
+    .nav-center a{
+      font-weight:600;font-size:14px;padding:10px 10px;border-radius: 12px;color: var(--text);opacity:.92;
+    }
+    .nav-center a:hover, .nav-center a.active{
+      background: var(--bordeaux-05);outline:1px solid var(--bordeaux-10);opacity:1;
+    }
+    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
+    .nav-cta{
+      padding:10px 14px;background: var(--bordeaux);color:#fff;border-radius: 14px;
+      font-weight:800;font-size:14px;white-space:nowrap;
+    }
+    .nav-cta:hover{filter:brightness(1.03)}
+
+    main{padding: 34px 0 70px;}
+    .hero-page{
+      padding: 28px;border-radius: var(--radius-2xl);
+      background: #fff;
+      border:1px solid var(--bordeaux-10);margin-bottom: 26px;
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;font-weight:900;color: var(--bordeaux);background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
+    }
+    h1{
+      margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;
+      letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;
+    }
+    .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
+
+    section{padding: 26px 0;}
+    h2{
+      margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;
+      color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);
+    }
+    .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
+
+    .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;}
+    .grid-3{display:grid;grid-template-columns: repeat(3, 1fr);gap: 18px;}
+
+    .block{
+      padding: 22px;border-radius: var(--radius-xl);background:#fff;
+      border:1px solid var(--bordeaux-10);
+    }
+    .block h3{
+      margin:0 0 8px;font-family: Montserrat, sans-serif;font-weight:900;color: var(--ink);font-size: 16px;
+    }
+    .block p{margin:0;color: var(--text);line-height:1.65;font-size: 14px;}
+    .block p + p{margin-top: 10px;}
+
+    .pill{
+      display:inline-flex;align-items:center;padding: 7px 10px;border-radius: 999px;
+      background: rgba(128,0,32,0.08);border:1px solid rgba(128,0,32,0.12);color: var(--bordeaux);
+      font-weight:900;font-size:11px;letter-spacing:.10em;text-transform:uppercase;
+      width: fit-content;margin-bottom: 10px;
+    }
+    .case-meta{
+      display:flex;gap: 10px;flex-wrap:wrap;color: var(--muted);font-size: 12px;font-weight: 700;margin-top: 10px;
+    }
+
+    .testimonial{
+      padding: 18px;border-radius: 16px;background: rgba(128,0,32,0.05);
+      border:1px solid rgba(128,0,32,0.10);margin-top: 10px;
+    }
+    .testimonial p{font-style:italic;color: var(--text);font-size: 13px;line-height: 1.6;}
+    .testimonial cite{display:block;margin-top: 8px;font-style:normal;font-weight:700;color: var(--ink);font-size: 12px;}
+
+    .floating-cta{
+      position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
+      padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
+      min-width: 180px;text-decoration:none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
+    .floating-cta .t1{font-size: 10px;font-weight: 900;letter-spacing:.14em;text-transform: uppercase;color: var(--bordeaux);}
+    .floating-cta .t2{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
+    .floating-cta .t3{color: var(--muted);font-size: 12px;font-weight: 700;}
+
+    footer{
+      padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);
+    }
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap: 14px;flex-wrap:wrap;}
+    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
+
+    @media (max-width: 980px){
+      :root{--pad:22px}
+      .topbar{grid-template-columns: 1fr; justify-items:start;}
+      .nav-right,.nav-center{justify-content:flex-start}
+      .grid-2, .grid-3{grid-template-columns: 1fr}
+      .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
+          <div class="logo" aria-hidden="true">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="Logo Ideal Home Project">
+          </div>
+          <div class="wordmark">
+            <div class="ideal">IDEAL</div>
+            <div class="home">HOME PROJECT</div>
+          </div>
+        </a>
+
+        <nav class="nav-center" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="nos-biens.html" class="active">Nos biens</a>
+          <a href="nos-realisations.html">Nos réalisations</a>
+          <a href="vendeurs.html">Vendeurs</a>
+          <a href="acquereurs.html">Acquéreurs</a>
+          <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+          <a href="contact.html">Contact</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
+    <span class="t1">RÉSEAU</span>
+    <span class="t2">Devenir membre</span>
+    <span class="t3">Agent Marchand</span>
+  </a>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <div class="hero-page">
+      <div class="kicker">NOS RÉALISATIONS</div>
+      <h1>Des biens transformés et valorisés par Ideal Home Project</h1>
+      <p class="lead">
+        Chaque projet est une démonstration concrète de notre méthode : diagnostic, conception, exécution impeccable.
+        Découvrez nos réalisations avec témoignages des propriétaires accompagnés de A à Z.
+      </p>
+    </div>
+
+    <!-- Réalisation 1 -->
+    <section>
+      <h2>Rénovation complète — Maison de ville (Bordeaux)</h2>
+      <div class="bar"></div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="block">
+          <div class="pill">Avant / Après</div>
+          <h3>Le projet</h3>
+          <p>
+            <strong>Adresse :</strong> Bordeaux (33000)<br>
+            <strong>Type :</strong> Maison de ville T4, 110 m²<br>
+            <strong>Achat :</strong> Prix du marché (en l'état)
+          </p>
+
+          <div class="case-meta">
+            <span>Diagnostic complet</span><span>•</span>
+            <span>Plans 3D</span><span>•</span>
+            <span>Rénovation globale</span>
+          </div>
+
+          <p style="margin-top:10px;">
+            Maison acquise avec un fort potentiel mais une faible capacité de projection pour un particulier.
+            IHP a réalisé une restructuration complète des volumes, une rénovation intégrale
+            (électricité, plomberie, isolation, finitions premium) et une mise en valeur architecturale.
+          </p>
+
+          <p>
+            <strong>Résultat :</strong> Revente fluide, projet sécurisé, vendeurs et acquéreurs ravis.
+          </p>
+        </div>
+
+        <div class="block">
+          <h3>Description des travaux</h3>
+          <ul style="margin:0;padding-left:20px;line-height:1.8;font-size:14px;">
+            <li>Restructuration des espaces : ouverture cuisine / salon</li>
+            <li>Rénovation complète électricité et plomberie aux normes</li>
+            <li>Isolation thermique et acoustique renforcée</li>
+            <li>Finitions premium : parquet, faïence, peintures</li>
+            <li>Extérieur : terrasse en bois exotique</li>
+          </ul>
+
+          <div class="testimonial">
+            <p>
+              "Nous ne savions pas par où commencer. IHP a pris en charge l'ensemble du projet,
+              de l'évaluation à la livraison. Nous avons été accompagnés de A à Z et le résultat
+              a dépassé nos attentes."
+            </p>
+            <cite>— M. et Mme Dupont, propriétaires vendeurs</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réalisation 2 -->
+    <section>
+      <h2>Création extérieur premium — Piscine & aménagement (Villenave-d'Ornon)</h2>
+      <div class="bar"></div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="block">
+          <div class="pill">Piscine</div>
+          <h3>Le projet</h3>
+          <p>
+            <strong>Adresse :</strong> Villenave-d'Ornon (33140)<br>
+            <strong>Type :</strong> Maison T5, 140 m² + jardin 400 m²<br>
+            <strong>Transformation :</strong> Valorisation extérieure complète
+          </p>
+
+          <div class="case-meta">
+            <span>Piscine 8x4m</span><span>•</span>
+            <span>Aménagement paysager</span><span>•</span>
+            <span>Éclairage design</span>
+          </div>
+
+          <p style="margin-top:10px;">
+            Bien avec un potentiel inexploité au niveau extérieur.
+            IHP a piloté la création d'un espace cohérent : piscine chauffée,
+            terrasse en pierre naturelle, éclairage LED intégré et aménagement paysager.
+          </p>
+
+          <p>
+            <strong>Résultat :</strong> Valorisation immédiate du bien, désirabilité maximale.
+          </p>
+        </div>
+
+        <div class="block">
+          <h3>Description des travaux</h3>
+          <ul style="margin:0;padding-left:20px;line-height:1.8;font-size:14px;">
+            <li>Construction piscine 8x4m, liner gris anthracite</li>
+            <li>Terrasse pierre naturelle 60 m²</li>
+            <li>Éclairage LED périmétrique et piscine</li>
+            <li>Végétalisation : palmiers, gazon japonais</li>
+            <li>Pool house en bois (12 m²) avec douche extérieure</li>
+          </ul>
+
+          <div class="testimonial">
+            <p>
+              "IHP a transformé notre jardin en un espace de vie exceptionnel.
+              Coordination parfaite des corps d'état, finitions soignées. Nos acquéreurs
+              ont été conquis immédiatement."
+            </p>
+            <cite>— Famille Martin, propriétaires</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réalisation 3 -->
+    <section>
+      <h2>Surélévation & création de surface — Valorisation immédiate (Bordeaux Nord)</h2>
+      <div class="bar"></div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="block">
+          <div class="pill">Surélévation</div>
+          <h3>Le projet</h3>
+          <p>
+            <strong>Adresse :</strong> Bordeaux Nord (33300)<br>
+            <strong>Type :</strong> Maison T3 plain-pied 70 m² → T5 130 m² après surélévation<br>
+            <strong>Opération :</strong> Étude urbanisme, surélévation, aménagement complet
+          </p>
+
+          <div class="case-meta">
+            <span>DP validée</span><span>•</span>
+            <span>+60 m² créés</span><span>•</span>
+            <span>MOA complète</span>
+          </div>
+
+          <p style="margin-top:10px;">
+            Bien sous-exploité en centre-ville avec un fort potentiel de valorisation via surélévation.
+            IHP a piloté l'étude technique, l'obtention de la déclaration préalable,
+            la coordination des artisans et l'aménagement intérieur (2 chambres + SDB à l'étage).
+          </p>
+
+          <p>
+            <strong>Résultat :</strong> Bien livré « prêt à vivre », valorisation x1.8.
+          </p>
+        </div>
+
+        <div class="block">
+          <h3>Description des travaux</h3>
+          <ul style="margin:0;padding-left:20px;line-height:1.8;font-size:14px;">
+            <li>Étude structure & faisabilité (bureau d'études)</li>
+            <li>Dossier urbanisme (DP) validé en 2 mois</li>
+            <li>Surélévation ossature bois + toiture zinc</li>
+            <li>Création 2 chambres + SDB à l'étage</li>
+            <li>Escalier design sur mesure (métal/bois)</li>
+            <li>Isolation renforcée + VMC double flux</li>
+          </ul>
+
+          <div class="testimonial">
+            <p>
+              "Projet ambitieux mais parfaitement cadré par IHP.
+              Ils ont géré l'ensemble : administratif, technique, coordination.
+              Nous avons pu revendre dans des délais record avec une plus-value significative."
+            </p>
+            <cite>— M. Renaud, investisseur</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="brand" style="min-width:auto;">
+          <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:10px;">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="">
+          </div>
+          <div class="wordmark">
+            <div class="ideal" style="font-size:12px;">IDEAL</div>
+            <div class="home" style="font-size:11px;">HOME PROJECT</div>
+          </div>
+        </div>
+
+        <div class="legal">
+          © Ideal Home Project — 10 rue Raymond Bierge, 33140 Villenave d'Ornon •
+          Email : bonjour@idealhomeproject.com • Tél : 06 64 64 64 64<br>
+          Mentions légales • Politique de confidentialité (RGPD)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

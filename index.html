@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ideal Home Project — Accueil</title>
+  <meta name="description" content="Ideal Home Project : excellence de la valorisation immobilière." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bordeaux:#800020;
+      --ink:#111827;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --soft:#f3f4f6;
+      --bordeaux-05: rgba(128, 0, 32, 0.05);
+      --bordeaux-10: rgba(128, 0, 32, 0.10);
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+      --pad: 48px;
+      --container: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: #fff;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{
+      width:min(var(--container), calc(100% - 2*var(--pad)));
+      margin:0 auto;
+    }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background: rgba(255,255,255,.90);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--bordeaux-10);
+    }
+    .topbar{
+      display:grid;
+      grid-template-columns: 260px 1fr 260px;
+      align-items:center;
+      gap:16px;
+      padding: 16px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      width:44px;
+      height:44px;
+      border-radius: 12px;
+      background:#fff;
+      border:1px solid var(--bordeaux-10);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:contain;padding:4px;}
+    .wordmark{display:flex;flex-direction:column;line-height:1.05;}
+    .wordmark .ideal{
+      font-family: Montserrat, sans-serif;
+      letter-spacing:.08em;
+      font-weight:800;
+      color:var(--ink);
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    .wordmark .home{
+      font-family: Montserrat, sans-serif;
+      letter-spacing:.05em;
+      font-weight:700;
+      color:var(--muted);
+      text-transform:uppercase;
+      font-size:12px;
+    }
+
+    .nav-center{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .nav-center a{
+      font-weight:600;
+      font-size:14px;
+      padding:10px 10px;
+      border-radius: 12px;
+      color: var(--text);
+      opacity:.92;
+    }
+    .nav-center a:hover, .nav-center a.active{
+      background: var(--bordeaux-05);
+      outline:1px solid var(--bordeaux-10);
+      opacity:1;
+    }
+    .nav-right{display:flex;justify-content:flex-end;align-items:center;}
+    .nav-cta{
+      padding:10px 14px;
+      background: var(--bordeaux);
+      color:#fff;
+      border-radius: 14px;
+      font-weight:800;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .nav-cta:hover{filter:brightness(1.03)}
+
+    /* Zone split (hauteur réduite de moitié) */
+    .split{
+      height: 320px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 18px 0 0;
+    }
+    .split-panel{
+      position:relative;
+      border-radius: var(--radius-2xl);
+      overflow:hidden;
+      border:1px solid var(--bordeaux-10);
+      background: #fff;
+      cursor:pointer;
+      transition: transform .18s ease;
+    }
+    .split-panel:hover{
+      transform: translateY(-2px);
+    }
+
+    .split-inner{
+      position:absolute; inset:0;
+      padding: 24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap: 10px;
+      background: #fff;
+    }
+
+    .split-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:900;
+      color: var(--bordeaux);
+      background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);
+      padding:8px 10px;
+      border-radius:999px;
+      width:fit-content;
+    }
+    .split-title{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.1;
+      margin: 0;
+      text-align:center;
+    }
+    .split-sub{
+      margin: 0;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 50ch;
+      text-align:center;
+    }
+
+    .split-wrap:hover .split{
+      grid-template-columns: 1.15fr .85fr;
+      transition: grid-template-columns .26s ease;
+    }
+    .split:has(.split-panel.right:hover){
+      grid-template-columns: .85fr 1.15fr;
+      transition: grid-template-columns .26s ease;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 13px 16px;
+      border-radius: 16px;
+      font-weight: 900;
+      font-size: 14px;
+      border:1px solid transparent;
+      user-select:none;
+      transition: transform .12s ease;
+    }
+    .btn-primary{
+      background: var(--bordeaux);
+      color:#fff;
+    }
+    .btn:hover{transform: translateY(-1px)}
+
+    /* Contenu CDC */
+    main{padding-bottom: 70px;}
+    section{padding: 26px 0;}
+    h2{
+      margin:0;
+      font-family: Montserrat, sans-serif;
+      font-weight:900;
+      letter-spacing:-0.02em;
+      color:var(--ink);
+      font-size: clamp(22px, 2.2vw, 32px);
+    }
+    .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
+    .lead{margin:10px 0 0;color:var(--muted);max-width: 75ch;line-height:1.6;font-size:14px;}
+
+    .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;}
+    .grid-3{display:grid;grid-template-columns: repeat(3, 1fr);gap: 18px;}
+
+    .block{
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      background:#fff;
+      border:1px solid var(--bordeaux-10);
+    }
+    .block.soft{
+      background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--bordeaux);
+      color:#fff;
+      font-weight:900;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .block h3{
+      margin:0 0 8px;
+      font-family: Montserrat, sans-serif;
+      font-weight:900;
+      color: var(--ink);
+      font-size: 16px;
+    }
+    .block p{margin:0;color: var(--text);line-height:1.65;font-size: 14px;}
+    .block p + p{margin-top: 10px;}
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius: var(--radius-xl);
+      border:1px solid var(--bordeaux-10);
+      background:#fff;
+    }
+    th, td{
+      text-align:left;
+      padding: 14px 14px;
+      font-size: 13px;
+      vertical-align:top;
+      border-bottom:1px solid var(--bordeaux-10);
+    }
+    th{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      color: var(--ink);
+      background: var(--bordeaux-05);
+    }
+    tr:last-child td{border-bottom:none}
+    .step{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      color: var(--bordeaux);
+      letter-spacing:.06em;
+      white-space:nowrap;
+    }
+
+    .case{display:grid;gap: 10px;}
+    .case-meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(128,0,32,0.08);
+      border:1px solid rgba(128,0,32,0.12);
+      color: var(--bordeaux);
+      font-weight:900;
+      font-size:11px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      width: fit-content;
+    }
+
+    .final{
+      padding: 26px;
+      border-radius: var(--radius-2xl);
+      background: var(--bordeaux-05);
+      border:1px solid var(--bordeaux-10);
+    }
+    .choice{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding: 16px;
+      border-radius: 18px;
+      background:#fff;
+      border:1px solid var(--bordeaux-10);
+    }
+    .choice strong{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .choice span{color: var(--muted);font-size: 13px;line-height:1.5}
+
+    .floating-cta{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: #fff;
+      border:1px solid rgba(128,0,32,0.18);
+      min-width: 180px;
+      text-decoration:none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
+    .floating-cta .t1{
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing:.14em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+    }
+    .floating-cta .t2{
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.1;
+    }
+    .floating-cta .t3{
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    footer{
+      padding: 22px 0 46px;
+      border-top: 1px solid var(--bordeaux-10);
+      background: rgba(255,255,255,.7);
+    }
+    .footer-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
+
+    /* FAQ Accordéon */
+    .faq-list{margin:0;padding:0;list-style:none;}
+    .faq-item{border-radius: var(--radius-xl);background:#fff;border:1px solid var(--bordeaux-10);margin-bottom: 14px;overflow:hidden;}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;gap:14px;padding: 18px 22px;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;transition: background .2s ease;user-select:none;}
+    .faq-q:hover{background: var(--bordeaux-05);}
+    .faq-q .faq-icon{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);display:grid;place-items:center;font-size:18px;line-height:1;color:var(--bordeaux);transition: transform .3s ease;}
+    .faq-item.open .faq-icon{transform: rotate(45deg);}
+    .faq-a{padding: 0 22px;max-height:0;overflow:hidden;transition: max-height .35s ease;}
+    .faq-item.open .faq-a{max-height: 1200px;}
+    .faq-a-inner{padding: 0 0 20px;font-size:14px;line-height:1.7;color:var(--text);}
+    .faq-a-inner ul{margin:10px 0 0;padding-left:20px;}
+    .faq-a-inner li{margin:6px 0;}
+    .faq-a-inner p:first-child{margin-top:0;}
+    .faq-a-inner p{margin:10px 0 0;}
+    .faq-num{font-weight:800;color:var(--bordeaux);margin-right:8px;}
+
+    @media (max-width: 980px){
+      :root{--pad:22px}
+      .topbar{grid-template-columns: 1fr; justify-items:start;}
+      .nav-right,.nav-center{justify-content:flex-start;}
+      .nav-center{flex-wrap:wrap;}
+      .split{grid-template-columns: 1fr; height:auto;}
+      .split-wrap:hover .split{grid-template-columns: 1fr;}
+      .grid-2, .grid-3{grid-template-columns: 1fr}
+      .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Accueil Ideal Home Project">
+          <div class="logo" aria-hidden="true">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="Logo Ideal Home Project">
+          </div>
+          <div class="wordmark">
+            <div class="ideal">IDEAL</div>
+            <div class="home">HOME PROJECT</div>
+          </div>
+        </a>
+
+        <nav class="nav-center" aria-label="Navigation principale">
+          <a href="index.html" class="active">Accueil</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="nos-biens.html">Nos biens</a>
+          <a href="nos-realisations.html">Nos réalisations</a>
+          <a href="vendeurs.html">Vendeurs</a>
+          <a href="acquereurs.html">Acquéreurs</a>
+          <a href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+          <a href="contact.html">Contact</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="nav-cta" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Zone split -->
+  <div class="container split-wrap" aria-label="Choix d'univers">
+    <section class="split">
+      <div class="split-panel left" aria-label="L'univers Ideal Home Project">
+        <div class="split-inner">
+          <div class="split-kicker">IDEAL HOME PROJECT</div>
+          <h1 class="split-title">L'univers IDEAL</h1>
+          <p class="split-sub">
+            Un concept pensé pour vendeurs et acquéreurs, en sécurisant les deux parties.
+          </p>
+          <a class="btn btn-primary" style="margin-top:14px;" href="qui-sommes-nous.html">Découvrir IHP</a>
+        </div>
+      </div>
+
+      <div class="split-panel right" aria-label="Devenir Agent Marchand">
+        <div class="split-inner">
+          <div class="split-kicker">DEVENEZ AGENT MARCHAND</div>
+          <h1 class="split-title">Changer de vie professionnelle</h1>
+          <p class="split-sub">
+            Rejoignez un métier structuré, crédible et rentable.
+          </p>
+          <a class="btn btn-primary" style="margin-top:14px;background:var(--bordeaux);" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
+    <span class="t1">RÉSEAU</span>
+    <span class="t2">Devenir membre</span>
+    <span class="t3">Agent Marchand</span>
+  </a>
+
+  <main class="container" id="univers-ihp">
+
+    <!-- Bloc 0 -->
+    <section>
+      <h2>Bienvenue chez Ideal Home Project : L'Excellence de la Valorisation Immobilière</h2>
+      <div class="bar"></div>
+      <p class="lead">
+        Plus qu'une société d'investissement, nous sommes les architectes d'un nouveau modèle immobilier.
+      </p>
+      <div class="block soft" style="margin-top:14px;">
+        <p style="margin:0;color:var(--muted);font-weight:700;">
+          « L'immobilier de demain se construit sur la méthode, pas sur le hasard. »
+        </p>
+      </div>
+    </section>
+
+    <!-- Bloc 1 -->
+    <section>
+      <h2>Nous achetons, valorisons et sécurisons vos projets immobiliers</h2>
+      <div class="bar"></div>
+      <p class="lead">
+        Société d'investissement experte, nous transformons des maisons à rénover en actifs d'exception.
+      </p>
+      <div style="margin-top:14px;">
+        <a class="btn btn-primary" href="contact.html">Faire étudier mon projet</a>
+      </div>
+    </section>
+
+    <!-- Nos réalisations (aperçu) -->
+    <section>
+      <h2>Nos réalisations</h2>
+      <div class="bar"></div>
+      <p class="lead">Des biens transformés et valorisés par IHP.</p>
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="block case">
+          <div class="pill">Avant / Après</div>
+          <h3>Rénovation complète — Maison de ville</h3>
+          <div class="case-meta"><span>Bordeaux</span></div>
+          <p>Restructuration des volumes, rénovation complète. Vendeurs et acquéreurs ravis.</p>
+        </div>
+        <div class="block case">
+          <div class="pill">Piscine</div>
+          <h3>Extérieur premium — Piscine & aménagement</h3>
+          <p>Optimisation accès, piscine, finitions haut de gamme pour valorisation maximale.</p>
+        </div>
+        <div class="block case">
+          <div class="pill">Surélévation</div>
+          <h3>Surélévation & création de surface</h3>
+          <p>Étude technique, urbanisme, pilotage complet. Bien livré « prêt à vivre ».</p>
+        </div>
+      </div>
+      <div style="margin-top:18px;text-align:center;">
+        <a class="btn btn-primary" href="nos-realisations.html">Voir plus</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Vous vous posez des questions ? On y répond !</h2>
+      <div class="bar"></div>
+      <ul class="faq-list" style="margin-top:20px;">
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 1.</span> Pourquoi devenir associé Ideal ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <ul>
+              <li>Intégrer un réseau immobilier innovant et dynamique</li>
+              <li>Bénéficier d'un accompagnement personnalisé tout au long de votre parcours</li>
+              <li>Accéder à des outils digitaux performants et à une formation continue</li>
+              <li>Développer votre activité en toute autonomie avec le soutien du réseau</li>
+              <li>Profiter d'une marque forte et d'une visibilité accrue sur le marché</li>
+              <li>Travailler avec des professionnels passionnés et partager les meilleures pratiques</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 2.</span> Quel est le montant de l'adhésion ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>L'adhésion au réseau Ideal Home Project s'élève à <strong>5 000€ par an.</strong></p>
+            <p>Ce montant inclut :</p>
+            <ul>
+              <li>L'accès à tous les outils et ressources du réseau</li>
+              <li>La formation continue et l'accompagnement personnalisé</li>
+              <li>L'accompagnement juridique et administratif</li>
+              <li>La visibilité sur tous nos supports de communication</li>
+              <li>Le support technique et marketing</li>
+              <li>L'accès aux événements et séminaires du réseau</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 3.</span> Quelle est la répartition des commissions ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Notre système de rémunération est transparent et avantageux :</p>
+            <p>💰 <strong>Potentiel de revenus :</strong> jusqu'à 120 000€ par an<br>📊 Basé sur une moyenne de 8 ventes par an</p>
+            <p>En plus de vos commissions :<br>💎 Dividendes de fin d'année en fonction des résultats du réseau<br>📈 Système de répartition équitable et motivant<br>🤝 Plus vous performez, plus vous gagnez</p>
+            <p><strong>Votre réussite est notre réussite !</strong></p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 4.</span> Quel accompagnement propose Ideal Home Project ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Nous mettons un point d'honneur à accompagner nos associés :</p>
+            <ul>
+              <li>📚 Formation initiale complète au lancement</li>
+              <li>🎓 Formations continues régulières (juridique, commercial, digital)</li>
+              <li>👥 Mentorat par des agents expérimentés</li>
+              <li>📞 Support technique et commercial disponible</li>
+              <li>🛠️ Outils digitaux performants (CRM, site web, communication)</li>
+              <li>📈 Suivi personnalisé de votre activité et objectifs</li>
+              <li>🤝 Réunions réseau et partage d'expériences</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 5.</span> Faut-il avoir un bureau physique ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p><strong>Non, ce n'est pas obligatoire !</strong></p>
+            <p>✅ Vous pouvez travailler depuis chez vous<br>✅ Flexibilité totale dans l'organisation de votre activité<br>✅ Économies sur les frais fixes (loyer, charges)</p>
+            <p>📍 Si vous souhaitez un bureau : vous êtes libre de choisir votre emplacement, nous vous accompagnons dans la mise en place, visibilité avec l'identité visuelle Ideal Home Project.</p>
+            <p><em>L'essentiel est votre performance, pas votre adresse !</em></p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 6.</span> Puis-je rejoindre Ideal en conservant une autre activité ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p><strong>Oui, c'est tout à fait possible !</strong></p>
+            <p>⚖️ Compatibilité avec d'autres activités professionnelles<br>⏰ Gestion flexible de votre emploi du temps<br>📈 Idéal pour une transition progressive vers l'immobilier</p>
+            <p>⚠️ Points d'attention : respecter les obligations déontologiques, vérifier la compatibilité avec votre statut actuel, s'assurer d'avoir le temps nécessaire pour développer votre activité.</p>
+            <p>Nous vous conseillons sur la meilleure approche selon votre situation.</p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 7.</span> Quelles sont les zones géographiques disponibles ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Ideal Home Project est en plein développement !</p>
+            <p>🗺️ <strong>Actuellement présent :</strong> Gironde (Bordeaux et périphérie), Nouvelle-Aquitaine, extension en cours vers d'autres régions.</p>
+            <p>🎯 <strong>Stratégie territoriale :</strong> nous recherchons des agents sur l'ensemble du territoire, exclusivité territoriale possible selon les zones, opportunité de devenir pionnier dans votre région.</p>
+            <p>📞 Contactez-nous pour connaître les disponibilités dans votre secteur !</p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">❓ 8.</span> Comment se déroule le processus de recrutement ?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Un processus simple et transparent en 4 étapes :</p>
+            <p><strong>1️⃣ PRISE DE CONTACT</strong> — Remplissez le formulaire sur notre site, premier échange téléphonique pour présenter le concept.</p>
+            <p><strong>2️⃣ ENTRETIEN DÉCOUVERTE</strong> — Rencontre avec l'équipe dirigeante, présentation détaillée du réseau et des opportunités, questions/réponses sur votre projet.</p>
+            <p><strong>3️⃣ VALIDATION</strong> — Étude de votre profil et de votre projet, vérification des prérequis (carte professionnelle), proposition d'adhésion personnalisée.</p>
+            <p><strong>4️⃣ INTÉGRATION</strong> — Signature de la convention, formation initiale, démarrage de votre activité avec accompagnement.</p>
+            <p>⏱️ <strong>Délai moyen : 2 à 4 semaines</strong></p>
+          </div></div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="brand" style="min-width:auto;">
+          <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:10px;">
+            <img src="https://www.genspark.ai/api/files/s/qEfoezZl" alt="">
+          </div>
+        </div>
+
+        <div class="legal">
+          © Ideal Home Project — 10 rue Raymond Bierge, 33140 Villenave d'Ornon •
+          Email : bonjour@idealhomeproject.com • Tél : 06 64 64 64 64<br>
+          Mentions légales • Politique de confidentialité (RGPD)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var faqList = document.querySelector('.faq-list');
+      if (!faqList) return;
+      var items = faqList.querySelectorAll('.faq-item');
+      items.forEach(function(item) {
+        var q = item.querySelector('.faq-q');
+        if (!q) return;
+        q.addEventListener('click', function() {
+          var wasOpen = item.classList.contains('open');
+          items.forEach(function(other) { other.classList.remove('open'); });
+          if (!wasOpen) item.classList.add('open');
+          q.setAttribute('aria-expanded', item.classList.contains('open'));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
