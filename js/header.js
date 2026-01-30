@@ -20,15 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ========================================
-     HIGHLIGHT LIEN ACTIF
-  ======================================== */
   var path = window.location.pathname || '';
   var currentPage = path.split('/').pop() || 'index.html';
   if (!currentPage) currentPage = 'index.html';
 
+  /* Contact → formulaire en bas de la page d'accueil */
+  var contactLink = document.querySelector('.nav-link-contact');
+  if (contactLink) {
+    if (currentPage === 'index.html' || currentPage === '') {
+      contactLink.setAttribute('href', '#contact');
+    } else {
+      contactLink.setAttribute('href', 'index.html#contact');
+    }
+  }
+
+  /* ========================================
+     HIGHLIGHT LIEN ACTIF
+  ======================================== */
   var links = document.querySelectorAll('.header-nav .nav-link');
   links.forEach(function(link) {
+    if (link.classList.contains('nav-link-contact') && currentPage === 'contact.html') {
+      link.classList.add('active');
+      return;
+    }
     var href = link.getAttribute('href') || '';
     var linkPage = href.split('#')[0];
     if (linkPage !== currentPage) return;
@@ -36,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     link.classList.add('active');
   });
 
-  /* Défilement fluide pour les ancres */
+  /* Défilement fluide pour les ancres (#contact, #faq, etc.) */
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       var id = this.getAttribute('href');
@@ -48,4 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  /* Arrivée sur index.html#contact (depuis une autre page) → scroll fluide */
+  if ((currentPage === 'index.html' || currentPage === '') && window.location.hash === '#contact') {
+    var contactEl = document.getElementById('contact');
+    if (contactEl) {
+      contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 });
