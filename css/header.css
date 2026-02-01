@@ -229,8 +229,9 @@
   height: 22px;
 }
 
-/* MENU DÉROULANT */
-.dropdown-profil {
+/* MENU DÉROULANT PROFIL - Clic (remplace hover) */
+.dropdown-profil,
+.profil-dropdown {
   position: absolute;
   top: calc(100% + 10px);
   right: 0 !important;
@@ -238,60 +239,66 @@
   min-width: 220px;
   max-width: 280px;
   background: #FFFFFF;
-  border: 1px solid #E0E0E0;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  z-index: 99999 !important;
-  overflow: visible !important;
-  pointer-events: none;
-  padding: 12px 0;
+  border: 1px solid rgba(109, 7, 26, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  display: none;
+  z-index: 20000 !important;
+  overflow: hidden;
+  padding: 0;
   margin: 0;
   list-style: none;
 }
 
-/* AFFICHAGE AU SURVOL */
-.header-profil:hover .dropdown-profil,
-.dropdown-profil:hover {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.header-profil:focus-within .dropdown-profil {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.dropdown-profil a {
+.dropdown-profil.is-open,
+.profil-dropdown.is-open {
   display: block;
-  padding: 14px 20px;
-  color: #333333;
+}
+
+/* Triangle */
+.profil-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 14px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-left: 1px solid rgba(109, 7, 26, 0.15);
+  border-top: 1px solid rgba(109, 7, 26, 0.15);
+  transform: rotate(45deg);
+}
+
+.dropdown-profil a,
+.profil-dropdown a,
+.profil-dropdown-item {
+  display: block;
+  padding: 12px 14px;
+  color: #111;
   text-decoration: none;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 600;
   transition: all 0.3s ease;
   border-bottom: 1px solid #F0F0F0;
   white-space: nowrap;
 }
 
-.dropdown-profil a:last-child {
+.dropdown-profil a:last-child,
+.profil-dropdown a:last-child {
   border-bottom: none;
 }
 
-.dropdown-profil a:hover {
-  background: #FFF8F8;
+.dropdown-profil a:hover,
+.profil-dropdown a:hover,
+.profil-dropdown-item:hover {
+  background: rgba(109, 7, 26, 0.08);
   color: #6D071A;
-  padding-left: 25px;
 }
 
-/* MENU MOBILE */
+/* =========================
+   BURGER - DESKTOP PAR DÉFAUT (>= 992px)
+   ========================= */
+.burger,
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -302,12 +309,26 @@
   gap: 5px;
 }
 
+.burger span,
 .menu-toggle span {
   width: 28px;
   height: 3px;
   background: var(--texte-sombre);
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* Style burger alternatif */
+.burger {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+}
+
+.burger span {
+  height: 2px;
+  background: #6D071A;
+  margin: 6px 0;
 }
 
 /* ========================================
@@ -371,26 +392,36 @@ body.page-bordeaux .btn-retour:hover {
   .nav-link { font-size: 14px; }
 }
 
-@media (max-width: 1024px) {
+/* =========================
+   MOBILE/TABLETTE (< 992px)
+   ========================= */
+@media (max-width: 991px) {
+  .burger,
   .menu-toggle { display: flex; }
 
+  #mainNav,
   .header-nav-full,
   .header-nav {
-    position: fixed;
-    top: 85px;
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
+    right: 0;
     width: 100%;
     background: var(--blanc);
     flex-direction: column;
     gap: 0;
-    padding: 20px 0;
+    padding: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    border-top: 1px solid rgba(109, 7, 26, 0.15);
+    z-index: 20000;
   }
 
-  .header-nav-full.active,
-  .header-nav.active { transform: translateX(0); }
+  #mainNav.is-open,
+  .header-nav-full.is-open,
+  .header-nav.is-open {
+    display: flex;
+  }
 
   .nav-link,
   .nav-item-dropdown > .nav-link {
@@ -417,7 +448,7 @@ body.page-bordeaux .btn-retour:hover {
   .header-actions .btn-rejoindre { display: none; }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .header-container-full {
     padding: 0 20px;
   }
@@ -484,8 +515,16 @@ body.page-bordeaux .btn-retour:hover {
   }
   
   .menu-toggle,
-  .burger-menu {
+  .burger-menu,
+  .burger {
     margin-left: 15px;
     order: 10;
   }
+}
+
+/* Bandeau événements au-dessus du header */
+.bandeau-evenements,
+.bandeau-evenement,
+#bandeau-evenement {
+  z-index: 30000;
 }

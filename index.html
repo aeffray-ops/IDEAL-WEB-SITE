@@ -629,7 +629,7 @@
           <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
         </a>
       </div>
-      <nav class="header-nav-full">
+      <nav id="mainNav" class="header-nav-full">
         <div class="nav-item-dropdown">
           <a href="index.html" class="nav-link">
             <span class="nav-arrow">▼</span> Bonjour
@@ -677,19 +677,19 @@
       <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
         <div class="header-profil">
-          <button type="button" class="btn-profil" id="btnProfil" aria-label="Menu profil" aria-haspopup="true">
+          <button type="button" class="btn-profil" id="btnProfil" aria-label="Se connecter" aria-expanded="false" aria-controls="profilDropdown">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
           </button>
-          <div class="dropdown-profil" id="dropdownProfil">
-            <a href="mon-espace-associe.html">Mon espace associé</a>
-            <a href="mon-espace-partenaire.html">Mon espace partenaire</a>
+          <div id="profilDropdown" class="dropdown-profil profil-dropdown" role="menu" aria-hidden="true">
+            <a href="mon-espace-associe.html" class="profil-dropdown-item" role="menuitem">Espace Associé</a>
+            <a href="mon-espace-partenaire.html" class="profil-dropdown-item" role="menuitem">Espace Partenaire</a>
           </div>
         </div>
       </div>
-      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu">
+      <button class="burger menu-toggle burger-menu" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
         <span></span>
         <span></span>
         <span></span>
