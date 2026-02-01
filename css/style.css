@@ -3,24 +3,34 @@
 ======================================== */
 
 /* ========================================
-   TYPOGRAPHIE GLOBALE - POPPINS
+   POLICE GLOBALE - POPPINS SUR TOUT LE SITE
 ======================================== */
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
   font-family: 'Poppins', sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6,
-p, span, a, button, input, select, textarea,
-.hero-realisations h1,
-.hero-realisations p,
-.section-title,
-.section-intro,
-.realisation-titre,
-.realisation-description,
-.detail-titre,
-.avant-apres-titre,
-.avant-apres-description {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+p, span, a, li, div, section, article, header, footer, nav {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+button, input, select, textarea, label {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.header-principal, .footer-principal,
+.hero-content, .hero-qui-content, .hero-nos-biens-content, .hero-evenements-content,
+.section-title, .section-intro, .vignette-qui-content, .presentation-texte, .descriptive-texte,
+.realisation-titre, .realisation-description, .bien-card, .evenement-card,
+.devise-item, .devise-description, .btn-primary, .btn-secondary,
+.hero-realisations h1, .hero-realisations p, .detail-titre,
+.avant-apres-titre, .avant-apres-description {
   font-family: 'Poppins', sans-serif !important;
 }
 
@@ -1055,5 +1065,1562 @@ header,
   .btn-bandeau {
     padding: 8px 20px;
     font-size: 14px;
+  }
+}
+
+/* ========================================
+   HERO NOS BIENS À VENDRE (AVEC PHOTO)
+======================================== */
+
+.hero-nos-biens {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.hero-nos-biens-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-nos-biens-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-nos-biens-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none; /* Suppression du dégradé */
+}
+
+.hero-nos-biens-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #ffffff !important;
+}
+
+.hero-nos-biens-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff !important;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9) !important;
+}
+
+.hero-nos-biens-content p {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9) !important;
+}
+
+@media (max-width: 1024px) {
+  .hero-nos-biens {
+    height: 450px;
+  }
+
+  .hero-nos-biens-content h1 {
+    font-size: 46px;
+  }
+
+  .hero-nos-biens-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-nos-biens {
+    height: 400px;
+  }
+
+  .hero-nos-biens-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-nos-biens-content p {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+
+/* ========================================
+   HERO NOS SERVICES
+======================================== */
+.hero-nos-services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section-services-grid .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.hero-nos-services {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-nos-services-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.hero-nos-services-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-nos-services-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #ffffff !important;
+}
+.hero-nos-services-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+.hero-nos-services-content p {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 900px;
+  margin: 0 auto 15px;
+  line-height: 1.6;
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+.hero-nos-services-content .hero-subtitle {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: none !important;
+}
+
+/* ========================================
+   GRILLE 2x2 DES SERVICES
+======================================== */
+.section-services-grid {
+  padding: 80px 20px;
+  background: #F9F9F9;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.service-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(109, 7, 26, 0.25);
+}
+.service-card-header {
+  position: relative;
+}
+.service-main-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.service-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.service-card:hover .service-main-image img {
+  transform: scale(1.1);
+}
+.service-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #6D071A;
+  padding: 25px 25px 10px;
+  margin: 0;
+}
+.service-description {
+  font-size: 16px;
+  color: #555;
+  padding: 0 25px 20px;
+  line-height: 1.6;
+}
+.service-sous-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 0 25px 25px;
+}
+.sous-service-item {
+  background: #F9F9F9;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.sous-service-item:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(109, 7, 26, 0.2);
+  transform: translateY(-5px);
+}
+.sous-service-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.sous-service-item:hover img {
+  transform: scale(1.1);
+}
+.sous-service-item h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6D071A;
+  padding: 15px 15px 5px;
+  margin: 0;
+}
+.sous-service-item p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 15px 15px;
+  margin: 0;
+}
+
+/* MODAL DÉTAIL */
+.modal-detail-service {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-detail-service.active {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.4s ease;
+}
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #6D071A;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.modal-close:hover {
+  background: #8A0921;
+  transform: rotate(90deg);
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+.modal-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal-texte {
+  padding: 40px;
+}
+.modal-texte h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 20px;
+}
+.modal-texte p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+}
+.modal-texte ul {
+  list-style: none;
+  padding: 0;
+}
+.modal-texte ul li {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+.modal-texte ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #6D071A;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-sous-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-nos-services {
+    height: 400px;
+  }
+  .hero-nos-services-content h1 {
+    font-size: 36px;
+  }
+  .service-card h2 {
+    font-size: 24px;
+  }
+  .modal-texte {
+    padding: 20px;
+  }
+  .modal-texte h2 {
+    font-size: 28px;
+  }
+}
+
+/* ========================================
+   PAGE CONTACT - CENTRAGE ET AMÉLIORATION
+   ======================================== */
+
+/* HERO CONTACT */
+.hero-contact {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-contact-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(109, 7, 26, 0.5);
+  z-index: 2;
+}
+
+.hero-contact-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-contact-content {
+  position: relative;
+  z-index: 10;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-contact-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-align: center !important;
+  margin: 0 auto 30px;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+}
+
+.hero-contact-content p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff !important;
+  text-align: center !important;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* SECTION CONTACT */
+.section-contact {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.section-contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-contact .section-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #6D071A;
+  text-align: center !important;
+  margin: 0 auto 50px;
+  display: block;
+}
+
+/* FORMULAIRE ET COORDONNÉES */
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-form,
+.contact-info {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* RESPONSIVE CONTACT */
+@media (max-width: 968px) {
+  .hero-contact-content h1 {
+    font-size: 42px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .section-contact .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-contact {
+    height: 300px;
+  }
+
+  .hero-contact-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero-contact-content p {
+    font-size: 16px;
+  }
+
+  .section-contact {
+    padding: 60px 20px;
+  }
+
+  .section-contact .section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 30px 20px;
+  }
+}
+
+/* ========================================
+   NOTRE HISTOIRE - VERSION MODERNE EN CARTES
+   ======================================== */
+
+.presentation-content-modern {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.histoire-bloc {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.histoire-bloc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #6D071A;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.histoire-bloc:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(109, 7, 26, 0.15);
+}
+
+.histoire-bloc:hover::before {
+  transform: scaleY(1);
+}
+
+/* BLOC HIGHLIGHT (Innovation et Ambition) */
+.histoire-bloc-highlight {
+  background: linear-gradient(135deg, #6D071A 0%, #8A0921 100%);
+  color: #ffffff;
+}
+
+.histoire-bloc-highlight h3,
+.histoire-bloc-highlight p {
+  color: #ffffff !important;
+}
+
+.histoire-bloc-highlight strong {
+  color: #FFC107 !important;
+}
+
+.histoire-bloc-highlight .histoire-icone {
+  background: rgba(255, 193, 7, 0.2);
+}
+
+.histoire-bloc-highlight .histoire-icone i {
+  color: #FFC107 !important;
+}
+
+/* ICÔNES */
+.histoire-icone {
+  width: 60px;
+  height: 60px;
+  background: rgba(109, 7, 26, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.histoire-icone i {
+  font-size: 28px;
+  color: #6D071A;
+}
+
+/* TITRES DES BLOCS */
+.histoire-bloc h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* TEXTE */
+.histoire-bloc p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.histoire-bloc strong {
+  font-weight: 700;
+  color: #6D071A;
+}
+
+/* RESPONSIVE NOTRE HISTOIRE */
+@media (max-width: 968px) {
+  .presentation-content-modern {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .histoire-bloc {
+    padding: 30px 25px;
+  }
+
+  .histoire-bloc h3 {
+    font-size: 20px;
+  }
+
+  .histoire-bloc p {
+    font-size: 15px;
+  }
+
+  .histoire-icone {
+    width: 50px;
+    height: 50px;
+  }
+
+  .histoire-icone i {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .histoire-bloc {
+    padding: 25px 20px;
+  }
+
+  .histoire-bloc h3 {
+    font-size: 18px;
+  }
+}
+
+/* ========================================
+   PAGE VENDEURS - STYLE NOS SERVICES
+   ======================================== */
+
+/* SECTIONS GÉNÉRALES */
+.section-vendeurs-grid {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.section-bg-light {
+  background: #f8f9fa;
+}
+
+.section-vendeurs-grid .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 50px;
+}
+
+/* GRILLE VIGNETTES 2x2 */
+.vendeurs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* GRILLE 2 COLONNES POUR VALORISATION */
+.vendeurs-grid-2cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARTE VIGNETTE */
+.vendeur-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.vendeur-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(109, 7, 26, 0.15);
+}
+
+/* IMAGE DE LA CARTE */
+.vendeur-card-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.vendeur-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.vendeur-card:hover .vendeur-card-image img {
+  transform: scale(1.05);
+}
+
+/* CONTENU DE LA CARTE */
+.vendeur-card-content {
+  padding: 30px 25px;
+}
+
+.vendeur-card-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.vendeur-card-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CARTE LARGE (pour valorisation) */
+.vendeur-card-large .vendeur-card-image {
+  height: 320px;
+}
+
+/* ========================================
+   PROCESSUS EN 4 ÉTAPES - TIMELINE
+   ======================================== */
+
+.section-vendeurs-processus {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.section-vendeurs-processus .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 50px;
+}
+
+.processus-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.processus-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.processus-step:hover {
+  transform: translateX(10px);
+  box-shadow: 0 6px 25px rgba(109, 7, 26, 0.12);
+}
+
+.processus-number {
+  width: 60px;
+  height: 60px;
+  background: #6D071A;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.processus-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.processus-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========================================
+   CTA FINAL VENDEURS
+   ======================================== */
+
+.section-vendeurs-cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #6D071A 0%, #8A0921 100%);
+}
+
+.cta-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-wrapper h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cta-wrapper p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-cta-primary {
+  background: #FFC107;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-cta-primary:hover {
+  background: #FFD54F;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE PAGE VENDEURS
+   ======================================== */
+
+@media (max-width: 968px) {
+  .vendeurs-grid,
+  .vendeurs-grid-2cols {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .section-vendeurs-grid .section-title,
+  .section-vendeurs-processus .section-title {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  .vendeur-card-image {
+    height: 240px;
+  }
+
+  .vendeur-card-content {
+    padding: 25px 20px;
+  }
+
+  .vendeur-card-content h3 {
+    font-size: 20px;
+  }
+
+  .processus-step {
+    padding: 25px 20px;
+  }
+
+  .processus-number {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .cta-wrapper h2 {
+    font-size: 32px;
+  }
+
+  .cta-wrapper p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-vendeurs-grid,
+  .section-vendeurs-processus,
+  .section-vendeurs-cta {
+    padding: 60px 20px;
+  }
+
+  .section-vendeurs-grid .section-title,
+  .section-vendeurs-processus .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .vendeur-card-image {
+    height: 200px;
+  }
+
+  .vendeur-card-large .vendeur-card-image {
+    height: 260px;
+  }
+
+  .processus-step {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cta-wrapper h2 {
+    font-size: 28px;
+  }
+}
+
+/* ========================================
+   PAGE VENDEURS - HERO + 4 VIGNETTES 4 ZONES
+   ======================================== */
+
+/* HERO VENDEURS - STYLE ACQUÉREURS (SANS ENCADRÉ) */
+.hero-vendeurs {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero-vendeurs-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-vendeurs-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay supprimé - fond semi-transparent sur le contenu uniquement */
+
+/* CONTENU HERO - SANS ENCADRÉ GRIS */
+.hero-vendeurs-content {
+  position: relative;
+  z-index: 10;
+  text-align: left;
+  max-width: 1200px;
+  padding: 0 40px;
+}
+
+/* BADGE VENDEURS - ROUGE BORDEAUX TRANSPARENT */
+.hero-badge-vendeurs {
+  display: inline-block;
+  background: rgba(109, 7, 26, 0.85);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  backdrop-filter: blur(5px);
+}
+
+/* TITRE - ALIGNÉ À GAUCHE */
+.hero-vendeurs-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  max-width: 800px;
+}
+
+/* TEXTE - ALIGNÉ À GAUCHE */
+.hero-vendeurs-content p {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  max-width: 700px;
+}
+
+/* CTA JAUNE (style bouton Acquéreurs) */
+.btn-hero-vendeurs {
+  display: inline-block;
+  background: #FFC107;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-hero-vendeurs:hover {
+  background: #FFD54F;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* SECTION VIGNETTES - ANCRE */
+#section-vignettes {
+  scroll-margin-top: 100px;
+}
+
+.section-vendeurs-vignettes {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.section-vendeurs-vignettes .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 50px;
+}
+
+/* ========================================
+   CORRECTION ALIGNEMENT BOUTON "VOIR LES DÉTAILS"
+   ======================================== */
+
+/* GRILLE PRINCIPALE - ALIGNEMENT VERTICAL */
+.vendeurs-grid-principale,
+.acquereurs-grid-principale {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Vignette en flexbox pour pousser le bouton en bas */
+.vignette-vendeur-principale,
+.vignette-acquereur-principale {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vignette-vendeur-principale:hover,
+.vignette-acquereur-principale:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(109, 7, 26, 0.2);
+}
+
+/* Header de hauteur FIXE pour uniformité */
+.vignette-vendeur-principale .vignette-header,
+.vignette-acquereur-principale .vignette-header {
+  background: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Animation hover */
+.vignette-vendeur-principale:hover .vignette-header,
+.vignette-acquereur-principale:hover .vignette-header {
+  background: #6D071A;
+}
+
+/* UNIFORMISER LA HAUTEUR DES TITRES */
+.vignette-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6D071A;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vignette-vendeur-principale:hover .vignette-header h3,
+.vignette-acquereur-principale:hover .vignette-header h3 {
+  color: #ffffff;
+}
+
+/* Mini-grid prend l'espace restant */
+.vignette-vendeur-principale .vignette-mini-grid,
+.vignette-acquereur-principale .vignette-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  flex: 1;
+}
+
+/* Compatibilité avec vignette-mini-grid seul */
+.vignette-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+/* MINI ZONE */
+.mini-zone {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-zone:hover {
+  background: rgba(109, 7, 26, 0.05);
+}
+
+/* IMAGE MINI ZONE */
+.mini-zone-img {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.mini-zone-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mini-zone:hover .mini-zone-img img {
+  transform: scale(1.1);
+}
+
+/* TITRE MINI ZONE */
+.mini-zone-titre {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6D071A;
+  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bouton TOUJOURS en bas de la vignette */
+.vignette-vendeur-principale .btn-voir-details,
+.vignette-acquereur-principale .btn-voir-details,
+.btn-voir-details {
+  width: 100%;
+  padding: 18px;
+  background: #6D071A;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.vignette-vendeur-principale .btn-voir-details:hover,
+.vignette-acquereur-principale .btn-voir-details:hover,
+.btn-voir-details:hover {
+  background: #8A0921;
+}
+
+/* ========================================
+   MODAL DÉTAILS VENDEURS
+   ======================================== */
+
+.modal-vendeur-details {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.modal-vendeur-details.active {
+  display: flex;
+}
+
+.modal-vendeur-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  margin: 20px;
+}
+
+.modal-vendeur-details .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #6D071A;
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.modal-vendeur-details .modal-close:hover {
+  background: #8A0921;
+  transform: rotate(90deg);
+}
+
+.modal-vendeur-body {
+  padding: 60px 40px 40px;
+}
+
+.modal-vendeur-body h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-detail-item {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.modal-detail-item h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-detail-item p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========================================
+   PAGE ACQUÉREURS - STYLE VENDEURS (4 VIGNETTES)
+   ======================================== */
+
+.section-acquereurs-vignettes {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.section-acquereurs-vignettes .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 50px;
+}
+
+/* MODAL DÉTAILS ACQUÉREURS */
+.modal-acquereur-details {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.modal-acquereur-details.active {
+  display: flex;
+}
+
+.modal-acquereur-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  margin: 20px;
+}
+
+.modal-acquereur-details .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #6D071A;
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.modal-acquereur-details .modal-close:hover {
+  background: #8A0921;
+  transform: rotate(90deg);
+}
+
+.modal-acquereur-body {
+  padding: 60px 40px 40px;
+}
+
+.modal-acquereur-body h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CTA FINAL ACQUÉREURS */
+.section-acquereurs-cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #6D071A 0%, #8A0921 100%);
+}
+
+/* RESPONSIVE VIGNETTES VENDEURS ET ACQUÉREURS */
+@media (max-width: 968px) {
+  .vendeurs-grid-principale,
+  .acquereurs-grid-principale {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .vignette-header {
+    min-height: 90px;
+  }
+
+  .hero-vendeurs {
+    height: 500px;
+    justify-content: center;
+  }
+
+  .hero-vendeurs-content {
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .hero-vendeurs-content h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+
+  .hero-vendeurs-content p {
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+
+  .hero-badge-vendeurs {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+
+  .vignette-header h3 {
+    font-size: 20px;
+  }
+
+  .mini-zone-titre {
+    font-size: 12px;
+  }
+
+  .section-vendeurs-vignettes .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-vendeurs {
+    height: 450px;
+  }
+
+  .hero-vendeurs-content {
+    padding: 0 20px;
+  }
+
+  .hero-vendeurs-content h1 {
+    font-size: 28px;
+    margin: 0 auto 15px;
+  }
+
+  .hero-vendeurs-content p {
+    font-size: 16px;
+    margin: 0 auto 30px;
+  }
+
+  .btn-hero-vendeurs {
+    font-size: 16px;
+    padding: 14px 32px;
+  }
+
+  .section-vendeurs-vignettes {
+    padding: 60px 20px;
+  }
+
+  .section-vendeurs-vignettes .section-title {
+    font-size: 24px;
+    margin-bottom: 35px;
+  }
+
+  .vignette-header {
+    min-height: 80px;
+    padding: 25px 20px;
+  }
+
+  .vignette-header h3 {
+    font-size: 18px;
+  }
+
+  .vignette-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-vendeur-body,
+  .modal-acquereur-body {
+    padding: 40px 20px 20px;
+  }
+
+  .modal-vendeur-body h2,
+  .modal-acquereur-body h2 {
+    font-size: 26px;
+  }
+
+  .section-acquereurs-vignettes {
+    padding: 60px 20px;
+  }
+
+  .section-acquereurs-vignettes .section-title {
+    font-size: 24px;
+    margin-bottom: 35px;
   }
 }

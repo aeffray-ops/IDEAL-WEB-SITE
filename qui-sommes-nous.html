@@ -3,31 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qui sommes-nous ? | IDEAL Home Project</title>
+  <title>Qui sommes-nous ? - IDEAL Home Project</title>
+
+  <!-- Google Fonts - POPPINS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bandeau.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/qui-sommes-nous.css">
 </head>
 <body>
 
-  <!-- BANDEAU ÉVÈNEMENTS REPOSITIONNÉ -->
-  <div id="bandeau-evenement" class="bandeau-evenement">
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement bandeau-evenements">
     <div class="bandeau-container">
-      <div class="bandeau-left">
-        <span class="bandeau-title">Nos évènements</span>
+      <div class="bandeau-left"></div>
+      <div class="bandeau-center">
+        <a href="tous-nos-evenements.html" class="bandeau-link">
+          <span class="bandeau-text">Nos événements</span>
+        </a>
       </div>
-      <div class="bandeau-center"></div>
       <div class="bandeau-right">
-        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
-        <button class="bandeau-close" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2"/>
-          </svg>
+        <a href="tous-nos-evenements.html" class="btn-inscription">Je m'inscris</a>
+        <button type="button" class="btn-close-bandeau bandeau-close" aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
         </button>
       </div>
     </div>
@@ -60,203 +65,227 @@
   </a>
 
   <!-- HERO QUI SOMMES-NOUS -->
-  <section class="hero-qui">
-    <div class="container-reduced">
+  <section class="hero-qui-sommes-nous">
+    <div class="hero-qui-background">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
+           alt="Siège IDEAL Bordealis"
+           class="hero-qui-bg-image">
+      <div class="hero-qui-overlay"></div>
+    </div>
+    <div class="container hero-qui-content">
       <h1>Qui sommes-nous ?</h1>
-      <p class="hero-subtitle">Redonner confiance aux vendeurs, aux acquéreurs et aux professionnels de l'immobilier.</p>
+      <p>IDEAL, acteur de référence du marchand de biens en Gironde, accompagne particuliers et professionnels dans leurs projets immobiliers.</p>
     </div>
   </section>
 
-  <!-- 1. NOTRE IDEAL -->
-  <section class="section-bloc section-ideal">
+  <!-- SECTION PRÉSENTATION -->
+  <section class="section-presentation">
     <div class="container">
-      <div class="bloc-header">
-        <h2 class="section-title">Notre IDEAL</h2>
-      </div>
-      <div class="bloc-content">
-        <p class="intro-text">Chez IDEAL, notre ambition est simple et exigeante :<br><strong>👉 redonner confiance aux vendeurs, aux acquéreurs et aux professionnels de l'immobilier.</strong></p>
-        <p class="paragraph">Nous croyons que cette confiance ne se décrète pas.<br>Elle se construit par :</p>
-        <div class="valeurs-grid">
-          <div class="valeur-card"><div class="valeur-icon">🔍</div><h4>La transparence</h4></div>
-          <div class="valeur-card"><div class="valeur-icon">🎯</div><h4>La maîtrise des projets</h4></div>
-          <div class="valeur-card"><div class="valeur-icon">✅</div><h4>La livraison de solutions finies, sécurisées et compréhensibles</h4></div>
-        </div>
-        <p class="conclusion-text">C'est de ce constat métier et marché qu'est née une évidence.</p>
-      </div>
-    </div>
-  </section>
+      <h2 class="section-title">Notre Histoire</h2>
 
-  <!-- 2. NOTRE VISION -->
-  <section class="section-bloc section-vision">
-    <div class="container">
-      <div class="bloc-header">
-        <h2 class="section-title">Notre vision</h2>
-        <p class="section-subtitle">L'Agent Marchand, le métier de demain</p>
-      </div>
-      <div class="bloc-content">
-        <p class="intro-text">Nous sommes convaincus que l'Agent Marchand est le métier qui va progressivement substituer :</p>
-        <div class="substitution-grid">
-          <div class="substitution-item"><p>❌ l'agent immobilier traditionnel,</p></div>
-          <div class="substitution-item"><p>❌ et le marchand de biens isolé.</p></div>
-        </div>
-        <p class="paragraph">Parce qu'il répond aux nouvelles attentes du marché :</p>
-        <div class="attentes-grid">
-          <div class="attente-item">✅ Plus de transparence</div>
-          <div class="attente-item">✅ Plus de valeur ajoutée</div>
-          <div class="attente-item">✅ Plus de sécurité</div>
-          <div class="attente-item">✅ Plus de sens</div>
-        </div>
-        <p class="conclusion-text"><strong>Mais notre vision va plus loin.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. NOTRE ADN -->
-  <section class="section-bloc section-adn" id="adn">
-    <div class="container">
-      <div class="bloc-header">
-        <h2 class="section-title">Notre ADN</h2>
-        <p class="section-subtitle">Co-agir · Co-construire · Co-réussir</p>
-      </div>
-      <div class="bloc-content">
-        <p class="intro-text">Chez IDEAL, personne ne réussit seul.</p>
-        <p class="paragraph">Nous avons bâti un modèle fondé sur :</p>
-        <div class="adn-grid">
-          <div class="adn-card"><div class="adn-icon">🤝</div><h4>La coopération</h4><p>Plutôt que la concurrence interne</p></div>
-          <div class="adn-card"><div class="adn-icon">🔗</div><h4>La mutualisation</h4><p>Des compétences</p></div>
-          <div class="adn-card"><div class="adn-icon">🏆</div><h4>La réussite collective</h4><p>Plutôt que l'individualisme</p></div>
-        </div>
-        <div class="citation-box">
-          <p>Chaque projet est un travail d'équipe.<br>Chaque réussite bénéficie au réseau.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. LE CONSTAT -->
-  <section class="section-bloc section-constat">
-    <div class="container">
-      <div class="bloc-header">
-        <h2 class="section-title">Le constat</h2>
-      </div>
-      <div class="bloc-content">
-        <p class="intro-text">Le marché immobilier traverse une crise de confiance.</p>
-        <div class="constat-grid">
-          <div class="constat-item">
-            <h3>L'agent immobilier</h3>
-            <p>L'agent immobilier exerce aujourd'hui un métier devenu extrêmement difficile : pression sur les prix, concurrence massive, défiance des vendeurs, promesses parfois irréalistes, modèle économique à bout de souffle.</p>
+      <div class="presentation-content-modern">
+        <!-- BLOC 1 : LE CONSTAT -->
+        <div class="histoire-bloc">
+          <div class="histoire-icone">
+            <i class="fas fa-lightbulb"></i>
           </div>
-          <div class="constat-item">
-            <h3>Le marchand de biens</h3>
-            <p>De leur côté, les marchands de biens, bien qu'essentiels à la transformation du parc immobilier, souffrent eux aussi d'une image dégradée : opacité, incompréhension de leur rôle, amalgame avec des pratiques opportunistes.</p>
-          </div>
+          <h3>Le Constat</h3>
+          <p>
+            IDEAL Home Project est né d'un <strong>constat simple</strong> : le monde de l'immobilier s'est complexifié.
+            Les vendeurs manquent de visibilité, les acquéreurs de repères, les agents immobiliers subissent une
+            pression commerciale permanente, et les marchands de biens font face à des contraintes financières,
+            juridiques et administratives toujours plus lourdes. <strong>La confiance s'est érodée.</strong>
+          </p>
         </div>
-        <div class="resultat-box">
-          <h4>👉 Résultat :</h4>
-          <ul class="resultat-list">
-            <li>des vendeurs méfiants,</li>
-            <li>des acquéreurs inquiets,</li>
-            <li>et des professionnels de l'immobilier dévalorisés, malgré leur utilité réelle.</li>
-          </ul>
-          <p class="conclusion-text">Le marché ne manque pas de compétences.<br><strong>Il manque un modèle lisible, responsable et aligné.</strong></p>
+
+        <!-- BLOC 2 : L'INNOVATION -->
+        <div class="histoire-bloc histoire-bloc-highlight">
+          <div class="histoire-icone">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>La Naissance de l'Agent-Marchand</h3>
+          <p>
+            Pour répondre à ces défis, nous avons créé <strong>un nouveau métier : l'Agent-Marchand</strong>,
+            un modèle hybride combinant l'accompagnement de l'agent immobilier et la capacité d'investissement
+            du marchand de biens. Un seul interlocuteur, une vision d'ensemble, des solutions clés en main.
+          </p>
+        </div>
+
+        <!-- BLOC 3 : L'APPROCHE -->
+        <div class="histoire-bloc">
+          <div class="histoire-icone">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Notre Approche</h3>
+          <p>
+            Nous ne nous contentons pas de vendre : nous <strong>construisons des projets immobiliers complets</strong>
+            pour créer de la valeur durable. Grâce à notre expertise locale et notre réseau de partenaires
+            (urbanisme, travaux, financement, commercialisation), nous transformons des biens à fort potentiel
+            en opérations fiables et rentables.
+          </p>
+        </div>
+
+        <!-- BLOC 4 : L'AMBITION -->
+        <div class="histoire-bloc histoire-bloc-highlight">
+          <div class="histoire-icone">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Notre Ambition</h3>
+          <p>
+            Devenir <strong>la référence nationale</strong> de ce nouveau métier, pas par la taille,
+            mais par la fiabilité, la structure et l'utilité pour nos clients et partenaires.
+            Chaque projet est traité comme un projet d'équipe, dans une culture de
+            <strong>co-agir, co-construire, co-réussir</strong>.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. LA NAISSANCE DE L'AGENT MARCHAND -->
-  <section class="section-bloc section-agent-marchand" id="agent-marchand">
+  <!-- VIGNETTES CLIQUABLES AVEC HOVER + CTA -->
+  <section class="section-vignettes-qui">
     <div class="container">
-      <div class="bloc-header">
-        <h2 class="section-title">La naissance de l'Agent Marchand</h2>
-      </div>
-      <div class="bloc-content">
-        <p class="intro-text">Nous avons créé un nouveau métier : <strong>l'Agent Marchand</strong>.</p>
-        <p class="paragraph">Un métier hybride qui combine le meilleur de deux mondes :</p>
-        <div class="hybride-grid">
-          <div class="hybride-item">
-            <h4>🤝 L'agent immobilier</h4>
-            <p>La capacité de conseil et de mise en relation</p>
-          </div>
-          <div class="hybride-separator">+</div>
-          <div class="hybride-item">
-            <h4>🏗️ Le marchand de biens</h4>
-            <p>La maîtrise opérationnelle, financière et technique</p>
-          </div>
-        </div>
-        <div class="agent-marchand-box">
-          <h4>👉 L'Agent Marchand :</h4>
-          <ul class="actions-list">
-            <li><strong>conseille</strong>,</li>
-            <li><strong>valorise</strong>,</li>
-            <li><strong>structure</strong>,</li>
-            <li>et <strong>vend un produit immobilier fini, clé en main</strong>.</li>
-          </ul>
-          <div class="highlight-box">
-            <p><strong>Il ne vend plus une promesse.</strong><br>Il vend un projet abouti.</p>
-          </div>
-        </div>
-        <p class="conclusion-text">C'est cette approche qui permet de réconcilier vendeurs, acquéreurs et professionnels, et de revaloriser durablement les métiers de l'immobilier.</p>
-      </div>
-    </div>
-  </section>
+      <div class="vignettes-grid-qui">
 
-  <!-- 6. NOS AMBITIONS À LONG TERME -->
-  <section class="section-bloc section-ambitions">
-    <div class="container">
-      <div class="bloc-header">
-        <h2 class="section-title">Nos ambitions à long terme</h2>
-      </div>
-      <div class="bloc-content">
-        <!-- GRID 2x3 -->
-        <div class="ambitions-grid">
-          <!-- Ambition 0 : Agent Marchand (NOUVEAU) -->
-          <div class="ambition-card-grid">
-            <div class="ambition-icon">🎯</div>
-            <div class="ambition-number">Agent marchand</div>
-            <h3>Un nouveau métier</h3>
-            <p>Créer et développer le métier d'Agent Marchand, hybride entre agent immobilier et marchand de biens, pour répondre aux nouvelles attentes du marché.</p>
-          </div>
-          <!-- Ambition 1 : Opérations d'associés -->
-          <div class="ambition-card-grid">
-            <div class="ambition-icon">🤝</div>
-            <div class="ambition-number">1</div>
-            <h3>Opérations d'associés</h3>
-            <p>Réaliser collectivement les plus grandes opérations de marchand de biens, grâce à la mutualisation des capitaux, des expertises et des opportunités du réseau.</p>
-          </div>
-          <!-- Ambition 2 : Réseau collaboratif -->
-          <div class="ambition-card-grid">
-            <div class="ambition-icon">🔗</div>
-            <div class="ambition-number">2</div>
-            <h3>Réseau collaboratif</h3>
-            <p>Créer le premier écosystème collaboratif immobilier, intégrant tous les métiers à valeur ajoutée pour accélérer la croissance des projets et des personnes.</p>
-          </div>
-          <!-- Ambition 3 : Rénovation énergétique -->
-          <div class="ambition-card-grid">
-            <div class="ambition-icon">♻️</div>
-            <div class="ambition-number">3</div>
-            <h3>Réseau de référence en rénovation énergétique</h3>
-            <p>Devenir un acteur national de référence de la rénovation énergétique, pour transformer durablement le parc immobilier et répondre aux enjeux de performance et de durabilité.</p>
-          </div>
-          <!-- Ambition 4 : Structure innovante -->
-          <div class="ambition-card-grid">
-            <div class="ambition-icon">🏢</div>
-            <div class="ambition-number">4</div>
-            <h3>Structure innovante</h3>
-            <p>Construire une SAS à capital variable, transparente et performante, où chaque membre contribue activement et bénéficie de la réussite collective.</p>
-          </div>
-          <!-- Ambition 5 : Immobilier auto-suffisant -->
-          <div class="ambition-card-grid ambition-highlight">
-            <div class="ambition-icon">⚡</div>
-            <div class="ambition-number">5</div>
-            <h3>L'immobilier auto-suffisant</h3>
-            <p>Promouvoir des immeubles et résidences énergétiquement autonomes, capables de générer leurs propres revenus : toits productifs, récupération des eaux, énergies renouvelables, géothermie partagée.</p>
-            <div class="ambition-cta-inline">
-              <p><strong>👉 L'immeuble de demain ne coûte plus. Il rapporte.</strong></p>
+        <!-- VIGNETTE 1 - Notre ADN -->
+        <a href="#section-adn" class="vignette-qui-card smooth-scroll">
+          <div class="vignette-qui-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="ADN IDEAL" loading="lazy">
+            <div class="vignette-qui-overlay">
+              <div class="vignette-qui-cta">
+                <span class="cta-text">Découvrir notre ADN</span>
+                <i class="fas fa-arrow-down"></i>
+              </div>
             </div>
           </div>
+          <div class="vignette-qui-content">
+            <h3>Notre ADN</h3>
+            <p class="vignette-devise">"Co-agir, Co-construire, Co-réussir"</p>
+          </div>
+        </a>
+
+        <!-- VIGNETTE 2 - Notre Mission -->
+        <a href="#section-mission" class="vignette-qui-card smooth-scroll">
+          <div class="vignette-qui-image">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Mission IDEAL" loading="lazy">
+            <div class="vignette-qui-overlay">
+              <div class="vignette-qui-cta">
+                <span class="cta-text">Découvrir notre mission</span>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="vignette-qui-content">
+            <h3>Notre Mission</h3>
+            <p>Accompagner vos projets immobiliers</p>
+          </div>
+        </a>
+
+        <!-- VIGNETTE 3 - Nos Valeurs -->
+        <a href="#section-valeurs" class="vignette-qui-card smooth-scroll">
+          <div class="vignette-qui-image">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80" alt="Valeurs IDEAL" loading="lazy">
+            <div class="vignette-qui-overlay">
+              <div class="vignette-qui-cta">
+                <span class="cta-text">Découvrir nos valeurs</span>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="vignette-qui-content">
+            <h3>Nos Valeurs</h3>
+            <p>Transparence, Expertise, Confiance</p>
+          </div>
+        </a>
+
+        <!-- VIGNETTE 4 - Notre Ambition -->
+        <a href="#section-ambition" class="vignette-qui-card smooth-scroll">
+          <div class="vignette-qui-image">
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80" alt="Ambition IDEAL" loading="lazy">
+            <div class="vignette-qui-overlay">
+              <div class="vignette-qui-cta">
+                <span class="cta-text">Découvrir notre ambition</span>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="vignette-qui-content">
+            <h3>Notre Ambition</h3>
+            <p>Développement national</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1 : NOTRE ADN -->
+  <section id="section-adn" class="section-descriptive section-adn">
+    <div class="container">
+      <div class="descriptive-content">
+        <h2 class="section-title">Notre ADN</h2>
+        <p class="devise-principale">"Co-agir, Co-construire, Co-réussir"</p>
+        <div class="descriptive-texte">
+          <p>Chez <strong>IDEAL</strong>, notre ADN repose sur trois piliers fondamentaux qui incarnent notre philosophie : <strong>Co-agir</strong> ensemble pour créer de la valeur, <strong>Co-construire</strong> des projets durables et ambitieux, et <strong>Co-réussir</strong> en partageant les succès avec nos clients et partenaires.</p>
+          <p>Notre identité est celle d'une entreprise <strong>collaborative</strong>, <strong>engagée</strong> et <strong>passionnée</strong>. Nous croyons en la force du collectif, en l'expertise partagée et en la création de valeur durable pour tous nos partenaires.</p>
+          <p>Basés à <strong>Villenave d'Ornon</strong>, nous sommes profondément ancrés dans le tissu économique girondin, tout en cultivant une vision ambitieuse de <strong>développement national</strong>.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : NOTRE MISSION -->
+  <section id="section-mission" class="section-descriptive section-mission">
+    <div class="container">
+      <div class="descriptive-content">
+        <h2 class="section-title">Notre Mission</h2>
+        <div class="descriptive-texte">
+          <p>Notre mission est d'<strong>accompagner particuliers et professionnels</strong> dans leurs projets d'achat, de rénovation et de valorisation immobilière. Nous mettons notre <strong>expertise</strong> et notre <strong>réseau</strong> au service de chaque projet pour transformer des opportunités en réussites concrètes.</p>
+          <p>Que vous soyez <strong>investisseur</strong>, <strong>primo-accédant</strong> ou <strong>professionnel de l'immobilier</strong>, nous vous proposons des solutions sur-mesure adaptées à vos besoins et à vos ambitions.</p>
+          <p>Nous intervenons à toutes les étapes : <strong>sourcing</strong> de biens à potentiel, <strong>financement</strong>, <strong>rénovation</strong>, <strong>commercialisation</strong> et <strong>accompagnement juridique</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 : NOS VALEURS -->
+  <section id="section-valeurs" class="section-descriptive section-valeurs">
+    <div class="container">
+      <div class="descriptive-content">
+        <h2 class="section-title">Nos Valeurs</h2>
+        <div class="descriptive-texte">
+          <p>Chez IDEAL, nos valeurs sont le socle de notre réussite et de la confiance que nos clients et partenaires nous accordent.</p>
+          <ul class="valeurs-liste">
+            <li><strong>Transparence</strong> : Nous croyons en une communication claire et honnête à chaque étape du projet. Pas de surprises, pas de zones d'ombre.</li>
+            <li><strong>Expertise</strong> : Notre équipe est composée de professionnels aguerris du marchand de biens, de la rénovation et de l'investissement immobilier.</li>
+            <li><strong>Accompagnement personnalisé</strong> : Chaque projet est unique. Nous adaptons notre approche pour répondre précisément à vos besoins.</li>
+            <li><strong>Confiance</strong> : Nous bâtissons des relations durables basées sur la confiance mutuelle et le respect de nos engagements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 : NOTRE AMBITION -->
+  <section id="section-ambition" class="section-descriptive section-ambition">
+    <div class="container">
+      <div class="descriptive-content">
+        <h2 class="section-title">Notre Ambition</h2>
+        <div class="descriptive-texte">
+          <p>Notre ambition est claire : devenir un <strong>acteur majeur du marchand de biens</strong> en France. Après avoir consolidé notre position en <strong>Gironde</strong>, nous visons un <strong>développement national</strong> pour accompagner toujours plus de projets immobiliers à travers le pays.</p>
+          <p>Nous souhaitons développer un <strong>réseau de partenaires</strong> et d'<strong>agents marchands</strong> sur l'ensemble du territoire, tout en conservant les valeurs qui font notre force : <strong>proximité</strong>, <strong>réactivité</strong> et <strong>excellence</strong>.</p>
+          <p>Notre vision à long terme : proposer des <strong>solutions innovantes</strong> et <strong>accessibles</strong> pour démocratiser l'investissement immobilier et permettre à chacun de réaliser ses projets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA REJOINDRE -->
+  <section class="section-cta-rejoindre">
+    <div class="container">
+      <h2>Vous souhaitez nous rejoindre ?</h2>
+      <p>Devenez membre du réseau IDEAL et développez votre activité de marchand de biens avec notre accompagnement.</p>
+      <a href="rejoindre-le-reseau.html" class="btn-primary">Rejoindre le réseau IDEAL</a>
     </div>
   </section>
 
@@ -272,5 +301,17 @@
 
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
+  <script>
+    document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

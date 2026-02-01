@@ -1,117 +1,185 @@
 /* ========================================
-   BANDEAU ÉVÈNEMENTS REPOSITIONNÉ
+   BANDEAU NOS ÉVÉNEMENTS
 ======================================== */
 .bandeau-evenement,
+.bandeau-evenements,
 #bandeau-evenement {
-  background: #6D071A;
-  border-bottom: 3px solid #FFD700;
+  background: linear-gradient(90deg, #6D071A 0%, #8A0921 50%, #6D071A 100%);
   padding: 12px 20px;
-  position: relative;
-  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .bandeau-container {
   max-width: 1400px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .bandeau-left {
-  justify-self: start;
+  flex: 1;
 }
 
-.bandeau-title {
-  color: #FFD700;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
+/* CENTRE : Texte "Nos événements" avec animation */
 .bandeau-center {
-  /* Espace flexible */
+  flex: 0 0 auto;
 }
 
+.bandeau-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.bandeau-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFC107;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: surbrillance 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes surbrillance {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 20px rgba(255, 193, 7, 1), 0 0 30px rgba(255, 193, 7, 0.8);
+  }
+}
+
+.bandeau-link:hover .bandeau-text {
+  color: #FFD54F;
+}
+
+/* Fallback pour ancienne structure */
+.bandeau-title {
+  color: #FFC107;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: surbrillance 2s ease-in-out infinite;
+}
+
+/* DROITE : Bouton inscription + Croix */
 .bandeau-right {
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 15px;
-  justify-self: end;
 }
 
+.btn-inscription,
 .btn-bandeau {
-  background: #FFD700;
-  color: #6D071A;
-  padding: 10px 30px;
-  border-radius: 8px;
+  background: #FFC107;
+  color: #000;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 20px;
   text-decoration: none;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
 
+.btn-inscription:hover,
 .btn-bandeau:hover {
-  background: #FFFFFF;
-  color: #6D071A;
+  background: #FFD54F;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
 }
 
+/* BOUTON FERMER (CROIX AVEC ROND) */
+.btn-close-bandeau,
 .bandeau-close {
-  background: none;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  padding: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
+.btn-close-bandeau:hover,
 .bandeau-close:hover {
-  color: #FFD700;
-  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.btn-close-bandeau i,
+.bandeau-close svg {
+  color: #fff;
+  font-size: 16px;
 }
 
 .bandeau-close svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Header : espace pour le bandeau fixe */
+#bandeau-evenement + .header-principal,
+.bandeau-evenement + .header-principal {
+  margin-top: 54px;
+  transition: margin-top 0.3s ease;
+}
+
+body.bandeau-ferme .header-principal {
+  margin-top: 0 !important;
 }
 
 @media (max-width: 768px) {
   .bandeau-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 10px;
   }
-  
-  .bandeau-left,
-  .bandeau-right {
-    justify-self: center;
-  }
-  
-  .bandeau-left {
+
+  .bandeau-center {
     order: 1;
   }
-  
+
   .bandeau-right {
     order: 2;
-    width: 100%;
     justify-content: center;
+    flex: none;
   }
-  
-  .btn-bandeau {
-    flex: 1;
+
+  .bandeau-left {
+    display: none;
   }
-  
+
+  .bandeau-text,
+  .bandeau-title {
+    font-size: 16px;
+  }
+
+  .btn-close-bandeau,
   .bandeau-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    order: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .bandeau-close svg {
+    width: 16px;
+    height: 16px;
   }
 }

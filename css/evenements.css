@@ -1,5 +1,6 @@
 /* ========================================
-   VARIABLES & BASE (aligné aux autres pages)
+   VARIABLES & BASE - PAGE ÉVÉNEMENTS
+   Police : Poppins (héritée de style.css)
 ======================================== */
 :root {
   --bordeaux: #6D071A;
@@ -17,7 +18,7 @@
 
 html { scroll-behavior: smooth; }
 body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text);
   background: #fff;
   margin: 0;
@@ -107,7 +108,7 @@ body {
 }
 
 .hero-evenements h1 {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 52px;
   font-weight: 700;
   color: #FFFFFF;
@@ -303,7 +304,7 @@ body {
 }
 
 .event-content h3 {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 22px;
   font-weight: 800;
   color: var(--bordeaux);

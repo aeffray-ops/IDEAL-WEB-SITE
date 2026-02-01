@@ -1,844 +1,479 @@
 /* ========================================
-   VARIABLES & BASE (aligné aux autres pages)
+   PAGE QUI SOMMES-NOUS (VERSION FINALE)
 ======================================== */
-:root {
-  --bordeaux: #6D071A;
-  --ink: #111827;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --soft: #f3f4f6;
-  --bordeaux-05: rgba(109, 7, 26, 0.05);
-  --bordeaux-10: rgba(109, 7, 26, 0.10);
-  --radius-xl: 20px;
-  --radius-2xl: 28px;
-  --pad: 48px;
-  --container: 1180px;
+
+/* HERO QUI SOMMES-NOUS */
+.hero-qui-sommes-nous {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-html { scroll-behavior: smooth; }
-body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
+.hero-qui-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-qui-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-qui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none; /* Pas de dégradé - photo visible */
+}
+
+.hero-qui-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-qui-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+}
+
+.hero-qui-content p {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* SECTION DEVISE IDEAL */
+.section-devise-ideal {
+  padding: 60px 20px;
+  background: #6D071A;
+  color: #fff;
+  text-align: center;
+}
+
+.devise-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.devise-icone {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #FFD700;
+}
+
+.devise-titre {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.devise-contenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.devise-item {
+  font-size: 42px;
+  font-weight: 700;
+  color: #FFD700;
+  padding: 0 20px;
+}
+
+.devise-separator {
+  font-size: 32px;
+  color: #FFD700;
+  padding: 0 15px;
+}
+
+.devise-description {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* SECTION PRÉSENTATION */
+.section-presentation {
+  padding: 80px 20px;
+  background: #F9F9F9;
+}
+
+.section-presentation .section-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #6D071A;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.presentation-texte {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.presentation-texte p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.presentation-texte strong {
+  color: #6D071A;
+  font-weight: 600;
+}
+
+/* VIGNETTES CLIQUABLES AVEC HOVER + CTA */
+.section-vignettes-qui {
+  padding: 80px 20px;
   background: #fff;
-  margin: 0;
 }
 
-/* ========================================
-   BOUTON RETOUR
-======================================== */
-.btn-back {
+.vignettes-grid-qui {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vignette-qui-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.vignette-qui-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(109, 7, 26, 0.25);
+}
+
+.vignette-qui-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.vignette-qui-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vignette-qui-card:hover .vignette-qui-image img {
+  transform: scale(1.1);
+}
+
+/* OVERLAY DÉGRADÉ + CTA */
+.vignette-qui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(109, 7, 26, 0.9) 0%, rgba(109, 7, 26, 0.7) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vignette-qui-card:hover .vignette-qui-overlay {
+  opacity: 1;
+}
+
+.vignette-qui-cta {
+  text-align: center;
+  color: #fff;
+}
+
+.vignette-qui-cta .cta-text {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.vignette-qui-cta i {
+  font-size: 32px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.vignette-qui-content {
+  padding: 30px;
+  background: #fff;
+}
+
+.vignette-qui-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 10px;
+}
+
+.vignette-qui-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.vignette-devise {
+  font-style: italic;
+  font-weight: 600;
+  color: #6D071A !important;
+}
+
+/* SECTIONS DESCRIPTIVES */
+.section-descriptive {
+  padding: 80px 20px;
+  scroll-margin-top: 100px;
+}
+
+.section-descriptive:nth-of-type(odd) {
+  background: #F9F9F9;
+}
+
+.section-descriptive:nth-of-type(even) {
+  background: #fff;
+}
+
+.descriptive-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-descriptive .section-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #6D071A;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.devise-principale {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  color: #6D071A;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.descriptive-texte p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.descriptive-texte strong {
+  color: #6D071A;
+  font-weight: 600;
+}
+
+.valeurs-liste {
+  list-style: none;
+  padding: 0;
+}
+
+.valeurs-liste li {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+  padding-left: 35px;
+  position: relative;
+}
+
+.valeurs-liste li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #6D071A;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* CTA REJOINDRE */
+.section-cta-rejoindre {
+  padding: 80px 20px;
+  background: #6D071A;
+  color: #fff;
+  text-align: center;
+}
+
+.section-cta-rejoindre h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-cta-rejoindre p {
+  font-size: 18px;
+  margin: 0 auto 30px;
+  max-width: 700px;
+}
+
+.section-cta-rejoindre .btn-primary {
+  background: #FFD700;
+  color: #333;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.section-cta-rejoindre .btn-primary:hover {
+  background: #FFD54F;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 193, 7, 0.4);
+}
+
+/* CONTAINER */
+.section-devise-ideal .container,
+.section-presentation .container,
+.section-vignettes-qui .container,
+.section-descriptive .container,
+.section-cta-rejoindre .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* BOUTON RETOUR */
+.btn-back-white {
   position: fixed;
   top: 100px;
   left: 20px;
-  background: #6D071A;
-  color: #FFFFFF;
-  border-radius: 25px;
-  padding: 10px 18px;
-  display: flex;
+  z-index: 999;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 10px 18px;
+  background: #fff;
+  color: #6D071A;
+  border-radius: 25px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(109, 7, 26, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  z-index: 999;
 }
 
-.btn-back:hover {
-  background: #8B0920;
+.btn-back-white:hover {
+  background: #6D071A;
+  color: #fff;
   transform: translateX(-3px);
-  box-shadow: 0 6px 16px rgba(109, 7, 26, 0.4);
-  color: #FFFFFF;
 }
 
-.btn-back svg {
+.btn-back-white svg {
   width: 18px;
   height: 18px;
 }
 
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-qui-content h1 {
+    font-size: 46px;
+  }
+
+  .vignettes-grid-qui {
+    grid-template-columns: 1fr;
+  }
+
+  .devise-item {
+    font-size: 36px;
+  }
+}
+
 @media (max-width: 768px) {
-  .btn-back {
+  .hero-qui-sommes-nous {
+    min-height: 400px;
+  }
+
+  .hero-qui-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-qui-content p {
+    font-size: 16px;
+  }
+
+  .devise-item {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+
+  .devise-contenu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .devise-separator {
+    display: none;
+  }
+
+  .section-presentation .section-title,
+  .section-descriptive .section-title {
+    font-size: 32px;
+  }
+
+  .vignette-qui-cta .cta-text {
+    font-size: 20px;
+  }
+
+  .section-cta-rejoindre h2 {
+    font-size: 32px;
+  }
+
+  .btn-back-white {
     top: 80px;
     left: 15px;
     padding: 8px 14px;
     font-size: 13px;
-  }
-}
-
-/* ========================================
-   HERO QUI SOMMES-NOUS (aligné nos-realisations)
-======================================== */
-.hero-qui {
-  background: var(--bordeaux);
-  color: #fff;
-  padding: 60px var(--pad) 50px;
-  text-align: center;
-  border-radius: var(--radius-2xl);
-  margin-bottom: 40px;
-}
-
-.hero-qui .container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-.hero-qui h1 {
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
-  font-size: clamp(28px, 3vw, 42px);
-  letter-spacing: -0.02em;
-  margin: 0 0 14px;
-  color: #fff;
-}
-
-.hero-subtitle {
-  font-size: 17px;
-  max-width: 640px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* ========================================
-   SECTIONS BLOCS - BASE (aligné vendeurs/acquereurs)
-======================================== */
-.section-bloc {
-  padding: 50px 0;
-}
-
-.section-bloc:nth-child(even) {
-  background: #fff;
-}
-
-.section-bloc:nth-child(odd) {
-  background: var(--soft);
-}
-
-.section-bloc .container,
-.hero-qui .container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-.bloc-header::after {
-  content: '';
-  display: block;
-  width: 96px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--bordeaux);
-  margin: 10px auto 0;
-}
-
-/* ========================================
-   BLOC HEADER (TITRES DE SECTIONS - aligné vendeurs)
-======================================== */
-.bloc-header {
-  text-align: center;
-  margin-bottom: 36px;
-}
-
-.section-title {
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
-  font-size: clamp(22px, 2.2vw, 30px);
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin: 0 0 10px;
-}
-
-.bloc-header .bar {
-  width: 96px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--bordeaux);
-  margin: 10px auto 0;
-}
-
-.section-subtitle {
-  font-size: 18px;
-  color: var(--bordeaux);
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.section-intro {
-  font-size: 15px;
-  color: var(--muted);
-  max-width: 700px;
-  margin: 20px auto 0;
-  line-height: 1.6;
-}
-
-/* ========================================
-   BLOC CONTENT (CONTENU DES SECTIONS)
-======================================== */
-.bloc-content {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.intro-text {
-  font-size: 15px;
-  color: var(--text);
-  font-weight: 500;
-  margin-bottom: 26px;
-  line-height: 1.7;
-  text-align: center;
-}
-
-.paragraph {
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 26px;
-  text-align: center;
-}
-
-.conclusion-text {
-  font-size: 16px;
-  color: var(--text);
-  font-weight: 600;
-  margin-top: 26px;
-  text-align: center;
-  line-height: 1.6;
-}
-
-/* ========================================
-   SECTION 1 : LE CONSTAT
-======================================== */
-.constat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
-}
-
-.constat-item {
-  background: #fff;
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 22px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-.constat-item:hover {
-  border-color: var(--bordeaux);
-  box-shadow: 0 8px 25px rgba(109, 7, 26, 0.12);
-  transform: translateY(-2px);
-}
-
-.constat-item h3 {
-  font-family: Montserrat, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--ink);
-  margin: 0 0 10px;
-}
-
-.constat-item p {
-  font-size: 14px;
-  color: var(--text);
-  line-height: 1.65;
-  margin: 0;
-}
-
-.resultat-box {
-  background: var(--bordeaux-05);
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 28px;
-  margin-top: 26px;
-  text-align: center;
-}
-
-.resultat-box h4 {
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  color: var(--bordeaux);
-  margin-bottom: 16px;
-  font-weight: 800;
-}
-
-.resultat-list {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0;
-  font-size: 15px;
-  color: var(--text);
-  line-height: 1.8;
-}
-
-.resultat-list li {
-  margin-bottom: 10px;
-}
-
-/* ========================================
-   SECTION 2 : NOTRE IDEAL
-======================================== */
-.valeurs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
-}
-
-.valeur-card {
-  background: #fff;
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 22px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-.valeur-card:hover {
-  border-color: var(--bordeaux);
-  box-shadow: 0 8px 25px rgba(109, 7, 26, 0.12);
-  transform: translateY(-2px);
-}
-
-.valeur-icon {
-  font-size: 36px;
-  margin-bottom: 14px;
-}
-
-.valeur-card h4 {
-  font-family: Montserrat, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--ink);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* ========================================
-   SECTION 3 : AGENT MARCHAND
-======================================== */
-.hybride-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 30px;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.hybride-item {
-  background: #fff;
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 22px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-.hybride-item:hover {
-  border-color: var(--bordeaux);
-  box-shadow: 0 8px 25px rgba(109, 7, 26, 0.12);
-  transform: translateY(-2px);
-}
-
-.hybride-item h4 {
-  font-family: Montserrat, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--ink);
-  margin: 0 0 10px;
-}
-
-.hybride-item p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.hybride-separator {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--bordeaux);
-  text-align: center;
-}
-
-.agent-marchand-box {
-  background: var(--bordeaux-05);
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 28px;
-  margin: 26px 0;
-}
-
-.agent-marchand-box h4 {
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  color: var(--bordeaux);
-  margin-bottom: 16px;
-  font-weight: 800;
-  text-align: center;
-}
-
-.actions-list {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0;
-  font-size: 15px;
-  color: var(--text);
-  line-height: 1.8;
-  text-align: center;
-}
-
-.actions-list li {
-  margin-bottom: 8px;
-}
-
-.highlight-box {
-  background: var(--bordeaux);
-  color: #fff;
-  border-radius: var(--radius-xl);
-  padding: 24px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.highlight-box p {
-  font-size: 17px;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* ========================================
-   SECTION 4 : NOTRE ADN
-======================================== */
-.adn-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
-}
-
-.adn-card {
-  background: #fff;
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 22px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-.adn-card:hover {
-  border-color: var(--bordeaux);
-  box-shadow: 0 8px 25px rgba(109, 7, 26, 0.12);
-  transform: translateY(-2px);
-}
-
-.adn-icon {
-  font-size: 36px;
-  margin-bottom: 14px;
-}
-
-.adn-card h4 {
-  font-family: Montserrat, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--ink);
-  margin: 0 0 10px;
-}
-
-.adn-card p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.citation-box {
-  background: var(--bordeaux);
-  color: #fff;
-  border-radius: var(--radius-xl);
-  padding: 28px;
-  margin-top: 26px;
-  text-align: center;
-}
-
-.citation-box p {
-  font-size: 17px;
-  line-height: 1.6;
-  margin: 0;
-  font-weight: 600;
-}
-
-/* ========================================
-   SECTION 5 : NOTRE VISION
-======================================== */
-.substitution-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
-  margin: 30px 0;
-}
-
-.substitution-item {
-  background: var(--bordeaux-05);
-  border: 1px solid var(--bordeaux-10);
-  border-radius: var(--radius-xl);
-  padding: 22px;
-  text-align: center;
-}
-
-.substitution-item p {
-  font-size: 15px;
-  color: var(--text);
-  margin: 0;
-  font-weight: 600;
-}
-
-.attentes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 18px;
-  margin: 26px 0;
-}
-
-.attente-item {
-  background: #fff;
-  border: 1px solid var(--bordeaux);
-  border-radius: var(--radius-xl);
-  padding: 20px 18px;
-  text-align: center;
-  font-size: 15px;
-  color: var(--bordeaux);
-  font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-.attente-item:hover {
-  background: var(--bordeaux);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-/* ========================================
-   SECTION 6 : NOS AMBITIONS (GRID 2x3)
-======================================== */
-.section-ambitions {
-  background: #FFFFFF;
-  padding: 80px 20px;
-}
-
-.ambitions-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.ambition-card-grid {
-  background: #F9F9F9;
-  border: 2px solid #E0E0E0;
-  border-radius: 12px;
-  padding: 30px 25px;
-  text-align: center;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 320px;
-}
-
-.ambition-card-grid:hover {
-  border-color: #6D071A;
-  box-shadow: 0 8px 20px rgba(109, 7, 26, 0.15);
-  transform: translateY(-5px);
-  background: #FFFFFF;
-}
-
-.ambition-icon {
-  font-size: 56px;
-  margin-bottom: 15px;
-}
-
-.ambition-number {
-  display: inline-block;
-  background: #6D071A;
-  color: #FFFFFF;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
-}
-
-.ambition-card-grid:first-child .ambition-number {
-  background: #FFD700;
-  color: #6D071A;
-  padding: 6px 12px;
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
-.ambition-card-grid h3 {
-  font-size: 20px;
-  color: #6D071A;
-  margin-bottom: 12px;
-  font-weight: 700;
-  line-height: 1.3;
-  flex: 0 0 auto;
-}
-
-.ambition-card-grid p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
-  flex: 1;
-}
-
-.ambition-highlight {
-  background: #FFF8F8;
-  border: 3px solid #6D071A;
-  position: relative;
-}
-
-.ambition-highlight::before {
-  content: '⭐';
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 28px;
-}
-
-.ambition-cta-inline {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 2px solid #6D071A;
-  width: 100%;
-}
-
-.ambition-cta-inline p {
-  font-size: 16px;
-  color: #6D071A;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* ========================================
-   SECTION 7 : NOS ÉQUIPES
-======================================== */
-.section-equipes {
-  background: #fff;
-  padding: 50px 0;
-}
-
-.equipe-bloc {
-  margin-bottom: 50px;
-}
-
-.equipe-title {
-  font-family: Montserrat, sans-serif;
-  font-size: clamp(22px, 2.2vw, 26px);
-  font-weight: 900;
-  color: var(--ink);
-  margin-bottom: 12px;
-  border-left: 5px solid var(--bordeaux);
-  padding-left: 18px;
-}
-
-.equipe-description {
-  font-size: 15px;
-  color: var(--muted);
-  margin-bottom: 26px;
-  line-height: 1.6;
-  max-width: 700px;
-  padding-left: 23px;
-}
-
-.equipe-photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.section-equipes .photo-placeholder {
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.section-equipes .photo-placeholder:hover {
-  transform: scale(1.05);
-}
-
-.section-equipes .photo-placeholder img,
-.section-equipes .photo-img-placeholder {
-  width: 100%;
-  height: 250px;
-  min-height: 250px;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--bordeaux-10);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #999;
-  font-size: 16px;
-  background: #E5E5E5;
-}
-
-.section-equipes .photo-placeholder:hover img,
-.section-equipes .photo-placeholder:hover .photo-img-placeholder {
-  border-color: var(--bordeaux);
-  box-shadow: 0 8px 25px rgba(109, 7, 26, 0.15);
-}
-
-.section-equipes .photo-placeholder img {
-  background: #E5E5E5;
-  object-fit: cover;
-}
-
-.photo-caption {
-  margin-top: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.equipe-cta {
-  text-align: center;
-  margin-top: 50px;
-  padding-top: 50px;
-  border-top: 1px solid var(--bordeaux-10);
-}
-
-.btn-cta-large {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bordeaux);
-  color: #fff;
-  padding: 14px 32px;
-  border-radius: 16px;
-  font-size: 15px;
-  font-weight: 900;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid var(--bordeaux);
-  font-family: Montserrat, sans-serif;
-}
-
-.btn-cta-large:hover {
-  background: #fff;
-  color: var(--bordeaux);
-  transform: translateY(-2px);
-}
-
-.equipe-valeurs {
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--bordeaux);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-/* ========================================
-   RESPONSIVE
-======================================== */
-@media (max-width: 1024px) {
-  .ambitions-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ambitions-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .ambition-card-grid {
-    min-height: auto;
-    padding: 25px 20px;
-  }
-  
-  .ambition-icon {
-    font-size: 48px;
-  }
-  
-  .ambition-card-grid h3 {
-    font-size: 18px;
-  }
-  
-  .ambition-card-grid p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-qui {
-    padding: 40px 24px 36px;
-  }
-
-  .hero-qui h1 {
-    font-size: 28px;
-  }
-
-  .hero-subtitle {
-    font-size: 15px;
-  }
-
-  .section-bloc {
-    padding: 36px 0;
-  }
-
-  .section-bloc .container {
-    padding: 0 24px;
-  }
-
-  .section-title {
-    font-size: 22px;
-  }
-
-  .section-subtitle {
-    font-size: 16px;
-  }
-
-  .constat-grid,
-  .hybride-grid,
-  .substitution-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .hybride-separator {
-    font-size: 28px;
-  }
-
-  .ambition-card {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .ambition-number {
-    font-size: 28px;
-  }
-
-  .equipe-title {
-    font-size: 20px;
-  }
-
-  .equipe-photos {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
   }
 }

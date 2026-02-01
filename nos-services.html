@@ -8,46 +8,27 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --rouge-bordeaux: #6D071A; }
-    body { font-family: 'Montserrat', sans-serif; background: #F5F5F5; margin: 0; }
-    .btn-retour { position: fixed; top: 100px; left: 20px; background: var(--rouge-bordeaux); color: #FFFFFF; border: none; border-radius: 25px; padding: 10px 18px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(109, 7, 26, 0.3); transition: all 0.3s ease; z-index: 999; }
-    .btn-retour:hover { background: #8B0920; transform: translateX(-3px); }
-    .services-hero { background: var(--rouge-bordeaux); color: #FFFFFF; padding: 80px 20px 60px; text-align: center; }
-    .services-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
-    .services-hero .intro { font-size: 20px; line-height: 1.6; max-width: 900px; margin: 0 auto 20px; color: rgba(255,255,255,0.95); }
-    .services-hero .subtitle { font-size: 18px; font-weight: 600; color: #FFB800; margin-top: 20px; }
-    .services-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-    .service-section { background: #FFFFFF; border-radius: 12px; padding: 40px; margin-bottom: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .service-section h2 { color: var(--rouge-bordeaux); font-size: 32px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
-    .service-intro { font-size: 17px; color: #666; line-height: 1.7; margin-bottom: 30px; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .service-card { background: #F9F9F9; border-radius: 10px; padding: 25px; border-left: 4px solid var(--rouge-bordeaux); transition: all 0.3s ease; }
-    .service-card:hover { background: #FFF; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateX(5px); }
-    .service-card .photo-placeholder { width: 100%; height: 120px; background: #E5E5E5; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px; margin-bottom: 15px; }
-    .service-card h3 { color: var(--rouge-bordeaux); font-size: 18px; margin-bottom: 10px; }
-    .service-card ul { list-style: none; padding: 0; margin: 0; }
-    .service-card li { color: #666; font-size: 14px; line-height: 1.6; padding-left: 20px; position: relative; margin-bottom: 8px; }
-    .service-card li::before { content: '✓'; position: absolute; left: 0; color: var(--rouge-bordeaux); font-weight: 700; }
-    .service-objectif { background: #FFF9E6; border-left: 4px solid #FFB800; padding: 15px 20px; margin-top: 20px; border-radius: 8px; }
-    .services-cta { background: var(--rouge-bordeaux); color: #FFF; border-radius: 12px; padding: 50px 40px; text-align: center; margin-top: 60px; }
-    .btn-contact { display: inline-block; background: #FFB800; color: var(--rouge-bordeaux); padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; }
-    .btn-contact:hover { background: #FFC933; transform: translateY(-3px); }
-    @media (max-width: 768px) { .services-hero h1 { font-size: 36px; } .service-section { padding: 30px 25px; } }
+    body { font-family: 'Poppins', sans-serif; background: #F5F5F5; margin: 0; }
   </style>
 </head>
 <body>
-  <!-- BANDEAU ÉVÈNEMENTS -->
-  <div id="bandeau-evenement" class="bandeau-evenement">
+  <!-- BANDEAU NOS ÉVÉNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement bandeau-evenements">
     <div class="bandeau-container">
-      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
-      <div class="bandeau-right">
-        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      <div class="bandeau-left"></div>
+      <div class="bandeau-center">
+        <a href="tous-nos-evenements.html" class="bandeau-link">
+          <span class="bandeau-text">Nos événements</span>
+        </a>
       </div>
-      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
-      </button>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-inscription">Je m'inscris</a>
+        <button type="button" class="btn-close-bandeau bandeau-close" aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -77,81 +58,151 @@
     Retour
   </a>
 
-  <section class="services-hero">
-    <div class="container-reduced">
+  <!-- HERO NOS SERVICES (SANS DÉGRADÉ) -->
+  <section class="hero-nos-services">
+    <div class="hero-nos-services-background">
+      <img src="assets/hero-nos-services.jpg" alt="Services immobiliers IDEAL - Réunion professionnelle" class="hero-nos-services-bg-image">
+    </div>
+    <div class="container hero-nos-services-content">
       <h1>Nos Services</h1>
-      <p class="intro">Chez IDEAL Home Project, nous intervenons sur toute la chaîne de valeur immobilière.<br>Notre rôle : <strong>transformer des situations complexes en projets rentables, sécurisés et maîtrisés</strong>.</p>
-      <p class="subtitle">IDEAL HOME PROJECT : identification, conception, structuration, financement, valorisation et cession de projets immobiliers à forte valeur ajoutée.</p>
+      <p>Chez IDEAL Home Project, nous intervenons sur toute la chaîne de valeur immobilière. Notre rôle : transformer des situations complexes en projets rentables, sécurisés et maîtrisés.</p>
+      <p class="hero-subtitle">IDEAL HOME PROJECT : Identification, conception, structuration, accompagnement, valorisation et cession de projets immobiliers à forte valeur ajoutée.</p>
     </div>
   </section>
 
-  <div class="services-container">
-    <div class="service-section">
-      <h2>🏠 Transaction & Marchand de biens</h2>
-      <p class="service-intro">Nous intervenons aussi bien comme intermédiaire que comme acquéreur professionnel.</p>
+  <!-- SECTION SERVICES GRILLE 2x2 -->
+  <section class="section-services-grid">
+    <div class="container">
       <div class="services-grid">
-        <div class="service-card"><div class="photo-placeholder">📷 Transaction</div><h3>Transaction immobilière</h3><ul><li>Vente d'immeubles et fonds</li><li>Accompagnement vendeurs et acquéreurs</li><li>Négociation et sécurisation juridique</li></ul></div>
-        <div class="service-card"><div class="photo-placeholder">📷 Marchand de biens</div><h3>Marchand de biens</h3><ul><li>Achat, revente et valorisation</li><li>Opérations de promotion immobilière</li><li>Construction-vente</li></ul></div>
-        <div class="service-card"><div class="photo-placeholder">📷 Valorisation</div><h3>Valorisation patrimoniale</h3><ul><li>Optimisation de biens bâtis</li><li>Valorisation foncière</li><li>Stratégie patrimoniale</li></ul></div>
-      </div>
-      <div class="service-objectif"><strong>Objectif :</strong> Créer de la valeur là où le marché voit un problème.</div>
-    </div>
-    <div class="service-section">
-      <h2>✏️ Conception, architecture & aménagement</h2>
-      <p class="service-intro">Nous concevons des projets pensés pour être réalisables, autorisés et rentables.</p>
-      <div class="services-grid">
-        <div class="service-card"><div class="photo-placeholder">📷 Architecture</div><h3>Architecture d'intérieur</h3><ul><li>Conception et rénovation d'espaces</li><li>Transformation optimisée</li></ul></div>
-        <div class="service-card"><div class="photo-placeholder">📷 Plans</div><h3>Plans techniques</h3><ul><li>Relevés et métrés</li><li>Modélisation 2D / 3D</li></ul></div>
-        <div class="service-card"><div class="photo-placeholder">📷 Aménagement</div><h3>Aménagement sur mesure</h3><ul><li>Création de mobiliers</li><li>Optimisation des volumes</li></ul></div>
-      </div>
-      <div class="service-objectif"><strong>Chaque m² est optimisé.</strong> Rien n'est laissé au hasard.</div>
-    </div>
-    <div class="service-section">
-      <h2>📐 Études & autorisations</h2>
-      <p class="service-intro">Avant d'engager un euro, nous sécurisons le projet.</p>
-      <div class="services-grid">
-        <div class="service-card"><h3>Études préalables</h3><ul><li>Études de faisabilité</li><li>Analyse réglementaire</li></ul></div>
-        <div class="service-card"><h3>Autorisations</h3><ul><li>Déclarations Préalables</li><li>Permis de Construire</li></ul></div>
-        <div class="service-card"><h3>Dossiers techniques</h3><ul><li>DCE</li><li>Coordination technique</li></ul></div>
-      </div>
-      <div class="service-objectif"><strong>Moins de risques.</strong> Plus de visibilité.</div>
-    </div>
-    <div class="service-section">
-      <h2>💰 Économie de la construction</h2>
-      <p class="service-intro">Nous maîtrisons les chiffres avant, pendant et après les travaux.</p>
-      <div class="services-grid">
-        <div class="service-card"><h3>Estimation & devis</h3><ul><li>Estimation financière</li><li>Analyse des offres</li></ul></div>
-        <div class="service-card"><h3>Suivi budgétaire</h3><ul><li>Contrôle des coûts</li><li>Gestion des décomptes</li></ul></div>
-        <div class="service-card"><h3>Pilotage financier</h3><ul><li>Tableaux de bord</li><li>Reporting financier</li></ul></div>
-      </div>
-      <div class="service-objectif"><strong>Le budget n'est pas une surprise.</strong> C'est un outil de pilotage.</div>
-    </div>
-    <div class="service-section">
-      <h2>🧠 Conseil, AMO & ingénierie</h2>
-      <p class="service-intro">Nous accompagnons les décisions stratégiques.</p>
-      <div class="services-grid">
-        <div class="service-card"><h3>Assistance Maîtrise d'Ouvrage</h3><ul><li>Pilotage de projets</li><li>Coordination des intervenants</li></ul></div>
-        <div class="service-card"><h3>Conseil immobilier</h3><ul><li>Conseil patrimonial</li><li>Stratégie d'investissement</li></ul></div>
-        <div class="service-card"><h3>Ingénierie patrimoniale</h3><ul><li>Montage de projets</li><li>Valorisation</li></ul></div>
-      </div>
-      <div class="service-objectif"><strong>Vous décidez en connaissance de cause.</strong></div>
-    </div>
-    <div class="service-section">
-      <h2>🔗 Intermédiation & réseau</h2>
-      <p class="service-intro">Nous activons les bons partenaires au bon moment.</p>
-      <div class="services-grid">
-        <div class="service-card"><h3>Apport d'affaires</h3><ul><li>Intermédiation professionnelle</li><li>Mise en relation qualifiée</li></ul></div>
-        <div class="service-card"><h3>Réseau de partenaires</h3><ul><li>Artisans certifiés</li><li>Entreprises du bâtiment</li></ul></div>
-        <div class="service-card"><h3>Services complémentaires</h3><ul><li>Prospection foncière</li><li>Formation et accompagnement</li></ul></div>
-      </div>
-      <div class="service-objectif"><strong>Un seul interlocuteur, un écosystème complet.</strong></div>
-    </div>
 
-    <div class="services-cta">
-      <h2>Notre approche</h2>
-      <p>Nous ne vendons pas des biens.<br><strong>Nous structurons des projets, nous créons de la valeur, nous sécurisons les décisions.</strong></p>
-      <p style="font-size: 24px; font-weight: 700; color: #FFB800; margin-bottom: 30px;">Co-agir. Co-construire. Co-réussir.</p>
-      <a href="contact.html" class="btn-contact">Parlons de votre projet</a>
+        <!-- VIGNETTE 1 : TRANSACTION & MARCHAND DE BIENS -->
+        <div class="service-card" data-service="transaction">
+          <div class="service-card-header">
+            <div class="service-main-image">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Transaction & Marchand de biens">
+            </div>
+            <h2>Transaction & Marchand de biens</h2>
+            <p class="service-description">Nous intervenons aussi bien comme intermédiaire que comme acquéreur professionnel</p>
+          </div>
+          <div class="service-sous-services">
+            <div class="sous-service-item" data-detail="transaction-immobiliere">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="Transaction immobilière">
+              <h3>Transaction immobilière</h3>
+              <p>Conseil en acquisition et stratégie</p>
+            </div>
+            <div class="sous-service-item" data-detail="marchand-biens">
+              <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80" alt="Marchand de biens">
+              <h3>Marchand de biens</h3>
+              <p>Achat-revente et structuration</p>
+            </div>
+            <div class="sous-service-item" data-detail="valorisation-patrimoniale">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Valorisation">
+              <h3>Valorisation patrimoniale</h3>
+              <p>Optimisation de patrimoine</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIGNETTE 2 : CONCEPTION, ARCHITECTURE & AMÉNAGEMENT -->
+        <div class="service-card" data-service="conception">
+          <div class="service-card-header">
+            <div class="service-main-image">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="Conception & Architecture">
+            </div>
+            <h2>Conception, architecture & aménagement</h2>
+            <p class="service-description">Nous concevons des projets pensés pour leur faisabilité, sécurisés et rentables</p>
+          </div>
+          <div class="service-sous-services">
+            <div class="sous-service-item" data-detail="architecture-interieur">
+              <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80" alt="Architecture d'intérieur">
+              <h3>Architecture d'intérieur</h3>
+              <p>Conception sur-mesure et 3D</p>
+            </div>
+            <div class="sous-service-item" data-detail="plans-techniques">
+              <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=400&q=80" alt="Plans techniques">
+              <h3>Plans techniques</h3>
+              <p>Relevés et plans conformes</p>
+            </div>
+            <div class="sous-service-item" data-detail="amenagement-mesure">
+              <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=400&q=80" alt="Aménagement">
+              <h3>Aménagement sur mesure</h3>
+              <p>Création et suivi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIGNETTE 3 : ÉTUDES & AUTORISATIONS -->
+        <div class="service-card" data-service="etudes">
+          <div class="service-card-header">
+            <div class="service-main-image">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Études & Autorisations">
+            </div>
+            <h2>Études & autorisations</h2>
+            <p class="service-description">IDEAL déploie un effort maxi absolument sur le projet</p>
+          </div>
+          <div class="service-sous-services">
+            <div class="sous-service-item" data-detail="etudes-prealables">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80" alt="Études préalables">
+              <h3>Études préalables</h3>
+              <p>Faisabilité et analyse</p>
+            </div>
+            <div class="sous-service-item" data-detail="autorisations-admin">
+              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80" alt="Autorisations">
+              <h3>Autorisations</h3>
+              <p>Permis et déclarations</p>
+            </div>
+            <div class="sous-service-item" data-detail="dossiers-techniques">
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80" alt="Dossiers techniques">
+              <h3>Dossiers techniques</h3>
+              <p>BET et diagnostics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIGNETTE 4 : ÉCONOMIE DE LA CONSTRUCTION -->
+        <div class="service-card" data-service="economie">
+          <div class="service-card-header">
+            <div class="service-main-image">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Économie de la construction">
+            </div>
+            <h2>Économie de la construction</h2>
+            <p class="service-description">Nous maîtrisons les coûts avant, pendant et après les travaux</p>
+          </div>
+          <div class="service-sous-services">
+            <div class="sous-service-item" data-detail="estimation-devis">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="Estimation">
+              <h3>Estimation & devis</h3>
+              <p>Chiffrage et métrés</p>
+            </div>
+            <div class="sous-service-item" data-detail="suivi-budgetaire">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" alt="Suivi budgétaire">
+              <h3>Suivi budgétaire</h3>
+              <p>Contrôle des coûts</p>
+            </div>
+            <div class="sous-service-item" data-detail="pilotage-financier">
+              <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=400&q=80" alt="Pilotage financier">
+              <h3>Pilotage financier</h3>
+              <p>Optimisation financière</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DÉTAIL -->
+  <div class="modal-detail-service" id="modalDetailService">
+    <div class="modal-content">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image"><img src="" alt="" id="modalImage"></div>
+        <div class="modal-texte">
+          <h2 id="modalTitre"></h2>
+          <p id="modalDescription"></p>
+          <ul id="modalListe"></ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -166,5 +217,43 @@
   </footer>
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
+  <script>
+const servicesData = {
+  'transaction-immobiliere': { titre: 'Transaction Immobilière', image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80', description: 'Nous vous accompagnons dans vos projets d\'acquisition immobilière avec une approche globale et sécurisée.', services: ['Conseil en acquisition et stratégie d\'investissement', 'Recherche de biens à fort potentiel de valorisation', 'Négociation et sécurisation des transactions', 'Accompagnement juridique et administratif', 'Étude de faisabilité et montage financier'] },
+  'marchand-biens': { titre: 'Marchand de Biens', image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1200&q=80', description: 'En tant que marchand de biens professionnel, nous achetons, rénovons et revendons des biens immobiliers pour créer de la valeur.', services: ['Achat-revente de biens immobiliers', 'Structuration fiscale et juridique optimale', 'Gestion complète de projets de rénovation', 'Pilotage des travaux et des budgets', 'Commercialisation et mise en vente'] },
+  'valorisation-patrimoniale': { titre: 'Valorisation Patrimoniale', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80', description: 'Nous vous aidons à optimiser et valoriser votre patrimoine immobilier pour maximiser sa rentabilité.', services: ['Audit patrimonial et diagnostic immobilier', 'Stratégie de valorisation sur-mesure', 'Optimisation fiscale et financière', 'Restructuration de patrimoine', 'Accompagnement dans les arbitrages'] },
+  'architecture-interieur': { titre: 'Architecture d\'Intérieur', image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80', description: 'Nous concevons des espaces sur-mesure qui allient esthétique, fonctionnalité et rentabilité.', services: ['Conception architecturale sur-mesure', 'Modélisation 3D et visualisations réalistes', 'Optimisation des espaces et de la lumière', 'Sélection de matériaux et finitions', 'Suivi de chantier et coordination des artisans'] },
+  'plans-techniques': { titre: 'Plans Techniques', image: 'https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=1200&q=80', description: 'Nous réalisons tous les plans techniques nécessaires à la concrétisation de votre projet.', services: ['Relevés de côtes précis sur site', 'Plans techniques conformes aux normes', 'Plans d\'exécution pour les artisans', 'Conformité RT 2020 et réglementation', 'Dossiers de consultation des entreprises'] },
+  'amenagement-mesure': { titre: 'Aménagement Sur Mesure', image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1200&q=80', description: 'Nous créons des aménagements sur-mesure parfaitement adaptés à vos besoins et à votre budget.', services: ['Création de mobilier sur-mesure', 'Aménagement d\'espaces optimisés', 'Conseils décoration et agencement', 'Suivi de réalisation des menuiseries', 'Installation et réception des travaux'] },
+  'etudes-prealables': { titre: 'Études Préalables', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80', description: 'Nous réalisons toutes les études nécessaires pour valider la faisabilité technique et réglementaire de votre projet.', services: ['Études de faisabilité technique et financière', 'Analyse réglementaire et contraintes urbanisme', 'Audit technique du bâti existant', 'Étude de marché et positionnement', 'Validation de la rentabilité du projet'] },
+  'autorisations-admin': { titre: 'Autorisations Administratives', image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80', description: 'Nous gérons toutes les démarches administratives et autorisations nécessaires à votre projet.', services: ['Déclaration préalable de travaux', 'Dépôt et suivi de permis de construire', 'Dossiers de demande d\'autorisation', 'Gestion des recours et contentieux', 'Conformité et réception des travaux'] },
+  'dossiers-techniques': { titre: 'Dossiers Techniques', image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80', description: 'Nous coordonnons tous les bureaux d\'études techniques nécessaires à votre projet.', services: ['Bureau d\'études techniques (BET)', 'Diagnostics techniques obligatoires', 'Études de sol et fondations', 'Études thermiques et énergétiques', 'Coordination des intervenants techniques'] },
+  'estimation-devis': { titre: 'Estimation & Devis', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80', description: 'Nous établissons des estimations précises et détaillées pour maîtriser votre budget dès le départ.', services: ['Estimation détaillée des coûts de travaux', 'Métrés et quantitatifs précis', 'Analyse comparative des offres', 'Négociation avec les entreprises', 'Validation technique des devis'] },
+  'suivi-budgetaire': { titre: 'Suivi Budgétaire', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80', description: 'Nous assurons un contrôle rigoureux du budget tout au long du projet pour éviter les dérapages.', services: ['Gestion et suivi du budget en temps réel', 'Révision et validation des situations de travaux', 'Contrôle des coûts et des écarts', 'Anticipation des dérives budgétaires', 'Reporting financier régulier'] },
+  'pilotage-financier': { titre: 'Pilotage Financier', image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&q=80', description: 'Nous pilotons l\'ensemble des aspects financiers de votre projet pour optimiser sa rentabilité.', services: ['Planification financière globale du projet', 'Optimisation des coûts et des délais', 'Mise en place de tableaux de bord', 'Reporting financier pour investisseurs', 'Conseil en montage financier'] }
+};
+
+document.querySelectorAll('.sous-service-item').forEach(item => {
+  item.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const data = servicesData[this.getAttribute('data-detail')];
+    if (data) {
+      document.getElementById('modalTitre').textContent = data.titre;
+      document.getElementById('modalDescription').textContent = data.description;
+      const img = document.getElementById('modalImage');
+      img.src = data.image;
+      img.alt = data.titre;
+      const liste = document.getElementById('modalListe');
+      liste.innerHTML = '';
+      data.services.forEach(s => { const li = document.createElement('li'); li.textContent = s; liste.appendChild(li); });
+      document.getElementById('modalDetailService').classList.add('active');
+    }
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => document.getElementById('modalDetailService').classList.remove('active'));
+document.getElementById('modalDetailService').addEventListener('click', function(e) { if (e.target === this) this.classList.remove('active'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('modalDetailService').classList.remove('active'); });
+  </script>
 </body>
 </html>

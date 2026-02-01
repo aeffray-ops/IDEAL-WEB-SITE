@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -22,7 +22,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       color:var(--text);
       background: #fff;
     }
@@ -46,7 +46,7 @@
       border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
     }
     h1{
-      margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;
+      margin: 0 0 10px;font-family: 'Poppins', sans-serif;font-weight: 900;
       letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;
     }
     .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
@@ -62,7 +62,7 @@
 
     section{padding: 26px 0;}
     h2{
-      margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;
+      margin:0;font-family: 'Poppins', sans-serif;font-weight:900;letter-spacing:-0.02em;
       color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);
     }
     .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
@@ -77,7 +77,7 @@
     }
     .block.soft{background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);}
     .block h3{
-      margin:0 0 8px;font-family: Montserrat, sans-serif;font-weight:900;color: var(--ink);font-size: 16px;
+      margin:0 0 8px;font-family: 'Poppins', sans-serif;font-weight:900;color: var(--ink);font-size: 16px;
     }
     .block p{margin:0;color: var(--text);line-height:1.65;font-size: 14px;}
     .block .icon{font-size:24px;color: var(--bordeaux);margin-bottom:10px;}
@@ -90,7 +90,7 @@
     }
     .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
     .floating-cta .t1{font-size: 10px;font-weight: 900;letter-spacing:.14em;text-transform: uppercase;color: var(--bordeaux);}
-    .floating-cta .t2{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
+    .floating-cta .t2{font-family: 'Poppins', sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
     .floating-cta .t3{color: var(--muted);font-size: 12px;font-weight: 700;}
 
     footer{
@@ -114,15 +114,20 @@
 <body>
 
   <!-- BANDEAU ÉVÈNEMENTS -->
-  <div id="bandeau-evenement" class="bandeau-evenement">
+  <div id="bandeau-evenement" class="bandeau-evenement bandeau-evenements">
     <div class="bandeau-container">
-      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
-      <div class="bandeau-right">
-        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      <div class="bandeau-left"></div>
+      <div class="bandeau-center">
+        <a href="tous-nos-evenements.html" class="bandeau-link">
+          <span class="bandeau-text">Nos événements</span>
+        </a>
       </div>
-      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
-      </button>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-inscription">Je m'inscris</a>
+        <button type="button" class="btn-close-bandeau bandeau-close" aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -181,142 +186,173 @@
     </div>
   </section>
 
-  <main class="container">
+  <!-- ========================================
+       SECTION 4 VIGNETTES PRINCIPALES ACQUÉREURS
+       ======================================== -->
+  <section class="section-acquereurs-vignettes" id="section-vignettes">
+    <div class="container">
+      <h2 class="section-title">Devenez propriétaire d'un bien d'exception, sans l'incertitude des travaux</h2>
 
-    <!-- Constat -->
-    <section>
-      <h2>En finir avec le "parcours du combattant"</h2>
-      <div class="bar"></div>
-      <p style="margin-top:10px;">
-        Dans un marché traditionnel, acheter un bien à rénover est souvent source de stress :
-      </p>
+      <div class="acquereurs-grid-principale">
 
-      <div class="grid-4" style="margin-top:14px;">
-        <div class="block">
-          <div class="icon">📊</div>
-          <h3>Budgets qui s'envolent</h3>
-          <p>Des devis travaux souvent sous-estimés ou flous.</p>
+        <!-- VIGNETTE 1 : EN FINIR AVEC LE "PARCOURS DU COMBATTANT" -->
+        <div class="vignette-acquereur-principale" data-vignette="parcours">
+          <div class="vignette-header">
+            <h3>En finir avec le "parcours du combattant"</h3>
+          </div>
+          <div class="vignette-mini-grid">
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=300&q=80" alt="Budgets qui s'envolent">
+              </div>
+              <p class="mini-zone-titre">Budgets qui s'envolent</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=300&q=80" alt="Malfaçons techniques">
+              </div>
+              <p class="mini-zone-titre">Malfaçons techniques</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=300&q=80" alt="Délais non maîtrisés">
+              </div>
+              <p class="mini-zone-titre">Délais non maîtrisés</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&q=80" alt="Défaut de projection">
+              </div>
+              <p class="mini-zone-titre">Défaut de projection</p>
+            </div>
+          </div>
+          <button type="button" class="btn-voir-details">Voir les détails</button>
         </div>
-        <div class="block">
-          <div class="icon">⚠️</div>
-          <h3>Malfaçons techniques</h3>
-          <p>La peur des vices cachés ou des structures défaillantes.</p>
+
+        <!-- VIGNETTE 2 : LA SOLUTION IHP -->
+        <div class="vignette-acquereur-principale" data-vignette="solution">
+          <div class="vignette-header">
+            <h3>La Solution IHP : La Force du "Clé en Main"</h3>
+          </div>
+          <div class="vignette-mini-grid">
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&q=80" alt="Projets déjà budgétés">
+              </div>
+              <p class="mini-zone-titre">Projets déjà budgétés</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&q=80" alt="Expertise Technique">
+              </div>
+              <p class="mini-zone-titre">Expertise Technique</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=300&q=80" alt="Accompagnement architecte">
+              </div>
+              <p class="mini-zone-titre">Accompagnement architecte</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=300&q=80" alt="Valorisation Immobilière">
+              </div>
+              <p class="mini-zone-titre">Valorisation Immobilière</p>
+            </div>
+          </div>
+          <button type="button" class="btn-voir-details">Voir les détails</button>
         </div>
-        <div class="block">
-          <div class="icon">⏰</div>
-          <h3>Délais non maîtrisés</h3>
-          <p>Des chantiers qui décalent vos projets de vie.</p>
+
+        <!-- VIGNETTE 3 : NOS SERVICES -->
+        <div class="vignette-acquereur-principale" data-vignette="services">
+          <div class="vignette-header">
+            <h3>Nos Services : Un suivi de A à Z</h3>
+          </div>
+          <div class="vignette-mini-grid">
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&q=80" alt="Audit & Diagnostic">
+              </div>
+              <p class="mini-zone-titre">Audit & Diagnostic</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&q=80" alt="Dossier de Conception">
+              </div>
+              <p class="mini-zone-titre">Dossier de Conception</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=300&q=80" alt="Maîtrise d'Ouvrage">
+              </div>
+              <p class="mini-zone-titre">Maîtrise d'Ouvrage</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=300&q=80" alt="Livraison & Garantie">
+              </div>
+              <p class="mini-zone-titre">Livraison & Garantie</p>
+            </div>
+          </div>
+          <button type="button" class="btn-voir-details">Voir les détails</button>
         </div>
-        <div class="block">
-          <div class="icon">🔍</div>
-          <h3>Défaut de projection</h3>
-          <p>Difficulté d'imaginer le potentiel réel d'un espace dégradé.</p>
+
+        <!-- VIGNETTE 4 : LA PROMESSE IHP -->
+        <div class="vignette-acquereur-principale" data-vignette="promesse">
+          <div class="vignette-header">
+            <h3>La Promesse IHP : Acheter en toute confiance</h3>
+          </div>
+          <div class="vignette-mini-grid">
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=300&q=80" alt="Sécurité Juridique">
+              </div>
+              <p class="mini-zone-titre">Sécurité Juridique</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=300&q=80" alt="Qualité Architecturale">
+              </div>
+              <p class="mini-zone-titre">Qualité Architecturale</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&q=80" alt="Transparence Financière">
+              </div>
+              <p class="mini-zone-titre">Transparence Financière</p>
+            </div>
+            <div class="mini-zone">
+              <div class="mini-zone-img">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&q=80" alt="Accompagnement Personnalisé">
+              </div>
+              <p class="mini-zone-titre">Accompagnement Personnalisé</p>
+            </div>
+          </div>
+          <button type="button" class="btn-voir-details">Voir les détails</button>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Solution -->
-    <section>
-      <h2>La Solution IHP : La Force du "Clé en Main"</h2>
-      <div class="bar"></div>
-      <p style="margin-top:10px;">
-        Avec Ideal Home Project, vous n'achetez pas seulement des murs, vous achetez une solution architecturale complète.
-      </p>
+  <!-- MODAL DÉTAILS ACQUÉREURS -->
+  <div class="modal-acquereur-details" id="modalDetailsAcquereurs">
+    <div class="modal-acquereur-content">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <div class="modal-acquereur-body" id="modalBodyAcquereurs"></div>
+    </div>
+  </div>
 
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="block">
-          <h3>Projets déjà budgétés</h3>
-          <p>
-            Chaque bien est présenté avec un chiffrage précis et transparent des rénovations nécessaires.
-          </p>
-        </div>
-        <div class="block">
-          <h3>Expertise Technique Garantie</h3>
-          <p>
-            Nos dossiers incluent des diagnostics structurels poussés. Vous savez exactement ce que vous achetez.
-          </p>
-        </div>
-        <div class="block">
-          <h3>Accompagnement d'architecte</h3>
-          <p>
-            Nous livrons des plans de masse et des rendus 3D immersifs pour que vous puissiez vous projeter immédiatement.
-          </p>
-        </div>
-        <div class="block">
-          <h3>Valorisation Immobilière</h3>
-          <p>
-            Nos projets sont pensés pour maximiser la valeur de revente ou le rendement locatif.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section>
-      <h2>Nos Services : Un suivi de A à Z</h2>
-      <div class="bar"></div>
-
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="block soft">
-          <h3>Audit & Diagnostic</h3>
-          <p>Validation de la viabilité du projet par notre "Bureau des 7" et nos experts techniques.</p>
-        </div>
-        <div class="block soft">
-          <h3>Dossier de Conception</h3>
-          <p>Mise à disposition de tous les documents (plans, coupes, notices techniques).</p>
-        </div>
-        <div class="block soft">
-          <h3>Maîtrise d'Ouvrage</h3>
-          <p>Nous assurons la coordination des corps d'état et le suivi rigoureux du planning.</p>
-        </div>
-        <div class="block soft">
-          <h3>Livraison & Garantie</h3>
-          <p>Un bien livré conforme aux attentes, prêt à habiter ou à louer.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Promesse -->
-    <section>
-      <h2>La Promesse IHP : Acheter en toute confiance</h2>
-      <div class="bar"></div>
-
-      <div class="grid-3" style="margin-top:14px;">
-        <div class="block">
-          <h3>Sécurité Juridique</h3>
-          <p>Des transactions cadrées et transparentes avec nos partenaires notaires.</p>
-        </div>
-        <div class="block">
-          <h3>Qualité Architecturale</h3>
-          <p>Des choix de matériaux et d'aménagements durables et esthétiques.</p>
-        </div>
-        <div class="block">
-          <h3>Transparence Financière</h3>
-          <p>Pas de frais cachés. Le coût final est connu dès le départ.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA final -->
-    <section>
-      <div class="block soft">
+  <!-- CTA FINAL -->
+  <section class="section-acquereurs-cta">
+    <div class="container">
+      <div class="cta-wrapper">
         <h2>Prêt à investir dans votre futur idéal ?</h2>
-        <div class="bar"></div>
-        <p style="margin-top:10px;">
-          Que vous cherchiez votre résidence principale ou un investissement patrimonial,
-          Ideal Home Project vous ouvre les portes de projets exclusifs.
-          Échangeons sur vos critères de recherche.
-        </p>
-        <p style="margin-top:10px;color:var(--muted);font-size:12px;">
-          <strong>Accès privilégié à nos avant-premières immobilières.</strong>
-        </p>
-        <div style="margin-top:14px;">
-          <a class="btn btn-primary" href="contact.html#acquereur">Contacter un conseiller acquéreur</a>
-        </div>
+        <p>Que vous cherchiez votre résidence principale ou un investissement patrimonial, IDEAL Home Project vous ouvre les portes de projets exclusifs. Échangeons sur vos critères de recherche.</p>
+        <a href="contact.html#acquereur" class="btn-cta-primary">Contacter un conseiller acquéreur</a>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer-principal">
@@ -364,5 +400,6 @@
 
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
+  <script src="js/acquereurs-modal.js"></script>
 </body>
 </html>

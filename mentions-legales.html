@@ -6,13 +6,13 @@
   <title>Mentions Légales - IDEAL Home Project</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; background: #fff; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; color: #333; background: #fff; }
     .legal-hero {
       background: #6D071A;
       color: #FFFFFF;
@@ -48,15 +48,20 @@
 <body>
 
   <!-- BANDEAU ÉVÈNEMENTS -->
-  <div id="bandeau-evenement" class="bandeau-evenement">
+  <div id="bandeau-evenement" class="bandeau-evenement bandeau-evenements">
     <div class="bandeau-container">
-      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
-      <div class="bandeau-right">
-        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      <div class="bandeau-left"></div>
+      <div class="bandeau-center">
+        <a href="tous-nos-evenements.html" class="bandeau-link">
+          <span class="bandeau-text">Nos événements</span>
+        </a>
       </div>
-      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
-      </button>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-inscription">Je m'inscris</a>
+        <button type="button" class="btn-close-bandeau bandeau-close" aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 
