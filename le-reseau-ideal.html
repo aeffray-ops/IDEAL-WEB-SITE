@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Réseau IDEAL | IDEAL Home Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reseau.css">
+</head>
+<body>
+
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
+
+  <!-- HERO AVEC PHOTO D'ÉQUIPE -->
+  <section class="hero-reseau">
+    <div class="hero-reseau-background">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" 
+           alt="Équipe professionnelle IDEAL"
+           class="hero-reseau-bg-image">
+      <div class="hero-reseau-overlay"></div>
+    </div>
+    <div class="container hero-reseau-content">
+      <h1>Le Réseau IDEAL</h1>
+      <p>Découvrez les femmes et les hommes qui font IDEAL : un collectif d'experts passionnés, engagés pour transformer l'immobilier.</p>
+    </div>
+  </section>
+
+  <!-- SECTION NOS ÉQUIPES -->
+  <section class="section-equipes">
+    <div class="container">
+      <h2 class="section-title">Nos Équipes</h2>
+      <p class="section-intro">IDEAL n'est pas qu'une marque, mais un collectif d'experts passionnés réunis autour d'une vision commune : transformer l'immobilier.</p>
+
+      <!-- LES FONDATEURS (4 CARTES) -->
+      <div class="equipe-categorie">
+        <h3 class="equipe-titre">
+          <i class="fas fa-star"></i>
+          Les Fondateurs
+        </h3>
+        <p class="equipe-description">Les visionnaires qui ont imaginé et créé IDEAL Home Project.</p>
+        <div class="equipe-grid equipe-grid-4">
+          <div class="membre-card">
+            <div class="membre-photo">
+              <img src="https://www.genspark.ai/api/files/s/IaRPfDQC" alt="Aurélien Effray">
+            </div>
+            <h4 class="membre-nom">Aurélien Effray</h4>
+            <p class="membre-role">Co-fondateur</p>
+          </div>
+          <div class="membre-card">
+            <div class="membre-photo">
+              <img src="https://www.genspark.ai/api/files/s/5KkHC4sW" alt="Marc Fouré">
+            </div>
+            <h4 class="membre-nom">Marc Fouré</h4>
+            <p class="membre-role">Co-fondateur</p>
+          </div>
+          <div class="membre-card">
+            <div class="membre-photo">
+              <img src="https://www.genspark.ai/api/files/s/5bnVLIJr" alt="Sébastien et Julie Laroudie">
+            </div>
+            <h4 class="membre-nom">Sébastien et Julie Laroudie</h4>
+            <p class="membre-role">Co-fondateurs</p>
+          </div>
+          <div class="membre-card">
+            <div class="membre-photo">
+              <img src="https://www.genspark.ai/api/files/s/xko3we12" alt="Alexandre Mordant">
+            </div>
+            <h4 class="membre-nom">Alexandre Mordant</h4>
+            <p class="membre-role">Co-fondateur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEMBRES DU BUREAU (2 CARTES + FILTRE) -->
+      <div class="equipe-categorie" id="membres-bureau">
+        <h3 class="equipe-titre">
+          <i class="fas fa-briefcase"></i>
+          Membres du Bureau
+        </h3>
+        <p class="equipe-description">L'équipe dirigeante qui pilote la stratégie et assure la croissance du réseau.</p>
+        <div class="filtre-section">
+          <div class="filtre-box">
+            <label for="filtre-bureau">Filtrer par ville :</label>
+            <input type="text" id="filtre-bureau" class="filtre-input" placeholder="Ville ou code postal...">
+          </div>
+        </div>
+        <div class="equipe-grid">
+          <div class="membre-card" data-ville="Bordeaux" data-cp="33000">
+            <div class="membre-photo">
+              <img src="https://www.genspark.ai/api/files/s/1OkrzNxx" alt="Ayoub Jaziri">
+            </div>
+            <h4 class="membre-nom">Ayoub Jaziri</h4>
+            <p class="membre-role">Membre du Bureau</p>
+            <p class="membre-ville">Bordeaux (33000)</p>
+          </div>
+          <div class="membre-card" data-ville="Paris" data-cp="75000">
+            <div class="membre-photo">
+              <img src="assets/team/mustapha-el-hayani.jpg" alt="Mustapha El Hayani" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80'">
+            </div>
+            <h4 class="membre-nom">Mustapha El Hayani</h4>
+            <p class="membre-role">Membre du Bureau</p>
+            <p class="membre-ville">Paris (75000)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGENTS MARCHANDS (CARROUSEL + FILTRE) -->
+      <div class="equipe-categorie" id="agents-marchands">
+        <h3 class="equipe-titre">
+          <i class="fas fa-users"></i>
+          Agents Marchands
+        </h3>
+        <p class="equipe-description">Les professionnels de terrain qui accompagnent vendeurs et acquéreurs.</p>
+        <div class="filtre-section">
+          <div class="filtre-box">
+            <label for="filtre-agents">Filtrer par ville :</label>
+            <input type="text" id="filtre-agents" class="filtre-input" placeholder="Ville ou code postal...">
+          </div>
+        </div>
+        <div class="carrousel-container">
+          <button class="carrousel-btn carrousel-prev" onclick="scrollCarrousel('agents', -1)" aria-label="Précédent">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carrousel-wrapper" id="carrousel-agents">
+            <div class="membre-card-carrousel" data-ville="Bordeaux" data-cp="33000">
+              <div class="membre-photo">
+                <img src="https://www.genspark.ai/api/files/s/iHrRYQNv" alt="Philippe Corbères">
+              </div>
+              <h4 class="membre-nom">Philippe Corbères</h4>
+              <p class="membre-role">Agent Marchand</p>
+              <p class="membre-ville">Bordeaux (33000)</p>
+            </div>
+            <div class="membre-card-carrousel" data-ville="Lyon" data-cp="69000">
+              <div class="membre-photo">
+                <img src="https://www.genspark.ai/api/files/s/3cg0d1aN" alt="Céline Cornu">
+              </div>
+              <h4 class="membre-nom">Céline Cornu</h4>
+              <p class="membre-role">Agent Marchand</p>
+              <p class="membre-ville">Lyon (69000)</p>
+            </div>
+          </div>
+          <button class="carrousel-btn carrousel-next" onclick="scrollCarrousel('agents', 1)" aria-label="Suivant">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- PARTENAIRES STRATÉGIQUES -->
+      <div class="equipe-categorie" id="partenaires">
+        <h3 class="equipe-titre">
+          <i class="fas fa-handshake"></i>
+          Partenaires Stratégiques
+        </h3>
+        <p class="equipe-description">Des experts de confiance qui enrichissent notre offre de services.</p>
+        <div class="filtre-section">
+          <div class="filtre-box">
+            <label for="filtre-partenaires">Filtrer par métier :</label>
+            <select id="filtre-partenaires" class="filtre-select">
+              <option value="">Tous les métiers</option>
+              <option value="Notaire">Notaire</option>
+              <option value="Architecte">Architecte</option>
+              <option value="Artisan">Artisan</option>
+              <option value="Banque">Banque</option>
+            </select>
+          </div>
+        </div>
+        <div class="equipe-grid">
+          <div class="partenaire-card" data-metier="Notaire">
+            <div class="membre-photo">
+              <img src="assets/team/dorian-fournier.jpg" alt="Dorian Fournier" onerror="this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80'">
+            </div>
+            <h4 class="membre-nom">Dorian Fournier</h4>
+            <p class="partenaire-metier">Notaire</p>
+            <p class="partenaire-entreprise">Office Notarial de Bordeaux</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA REJOINDRE (FOND UNI BORDEAUX) -->
+      <div class="cta-rejoindre">
+        <h3>Vous souhaitez nous rejoindre ?</h3>
+        <p>Devenez Agent Marchand et transformez votre carrière dans l'immobilier</p>
+        <a href="rejoindre-le-reseau.html" class="btn-cta-rejoindre">Rejoindre le réseau</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li><li><a href="nos-services.html">Nos services</a></li><li><a href="le-reseau-ideal.html">Le réseau IDEAL</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 IDEAL Home Project - Tous droits réservés.</p></div>
+  </footer>
+
+  <script>
+    function scrollCarrousel(id, direction) {
+      const carrousel = document.getElementById('carrousel-' + id);
+      if (carrousel) {
+        carrousel.scrollBy({ left: direction * 300, behavior: 'smooth' });
+      }
+    }
+    document.getElementById('filtre-bureau')?.addEventListener('input', function(e) {
+      const search = e.target.value.toLowerCase();
+      document.querySelectorAll('#membres-bureau .membre-card').forEach(function(card) {
+        const ville = (card.dataset.ville || '').toLowerCase();
+        const cp = (card.dataset.cp || '').toLowerCase();
+        card.style.display = (ville.includes(search) || cp.includes(search) || search === '') ? 'block' : 'none';
+      });
+    });
+    document.getElementById('filtre-agents')?.addEventListener('input', function(e) {
+      const search = e.target.value.toLowerCase();
+      document.querySelectorAll('.membre-card-carrousel').forEach(function(card) {
+        const ville = (card.dataset.ville || '').toLowerCase();
+        const cp = (card.dataset.cp || '').toLowerCase();
+        card.style.display = (ville.includes(search) || cp.includes(search) || search === '') ? 'block' : 'none';
+      });
+    });
+    document.getElementById('filtre-partenaires')?.addEventListener('change', function(e) {
+      const metier = e.target.value;
+      document.querySelectorAll('.partenaire-card').forEach(function(card) {
+        card.style.display = (metier === '' || card.dataset.metier === metier) ? 'block' : 'none';
+      });
+    });
+  </script>
+  <script src="js/header.js"></script>
+  <script src="js/bandeau.js"></script>
+</body>
+</html>

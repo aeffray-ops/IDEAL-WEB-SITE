@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; background: #fff; }
     .legal-hero {
-      background: #67161f;
+      background: #6D071A;
       color: #FFFFFF;
       padding: 80px 20px 60px;
       text-align: center;
@@ -26,16 +27,16 @@
       border-bottom: 1px solid #E5E5E5;
     }
     .legal-section:last-child { border-bottom: none; }
-    .legal-section h2 { color: #8B0000; font-size: 32px; margin-bottom: 20px; padding-top: 20px; }
+    .legal-section h2 { color: #6D071A; font-size: 32px; margin-bottom: 20px; padding-top: 20px; }
     .legal-section h3 { color: #2D0202; font-size: 22px; margin-top: 30px; margin-bottom: 15px; font-weight: 600; }
     .legal-section h4 { color: #2D0202; font-size: 18px; margin-top: 20px; margin-bottom: 10px; font-weight: 600; }
     .legal-section p { font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 15px; }
     .legal-section ul { margin-left: 20px; margin-bottom: 20px; }
     .legal-section li { font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 10px; }
-    .legal-section strong { color: #8B0000; font-weight: 600; }
-    .legal-section a { color: #8B0000; text-decoration: underline; }
-    .legal-section a:hover { color: #A00000; }
-    .legal-section code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 14px; color: #8B0000; }
+    .legal-section strong { color: #6D071A; font-weight: 600; }
+    .legal-section a { color: #6D071A; text-decoration: underline; }
+    .legal-section a:hover { color: #6D071A; }
+    .legal-section code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 14px; color: #6D071A; }
     @media (max-width: 768px) {
       .legal-hero h1 { font-size: 36px; }
       .legal-section h2 { font-size: 28px; }
@@ -46,56 +47,44 @@
 </head>
 <body>
 
-  <div id="bandeau-evenement">
-    <div class="bandeau-full">
-      <div class="bandeau-container">
-        <div class="bandeau-content">
-          <span class="bandeau-text">
-            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-            <span class="bandeau-date">Dimanche 15 février 2025 à 20h</span>
-          </span>
-          <a href="webinaire-recrutement.html" class="bandeau-cta">
-            Je m'inscris gratuitement
-            <span class="bandeau-arrow">→</span>
-          </a>
-        </div>
-        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
       </div>
-    </div>
-    <div class="bandeau-mini" aria-hidden="true">
-      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Dimanche 15 février 2025, 20h</span>
-      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
-      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
     </div>
   </div>
 
   <header class="header-principal">
-    <div class="header-container">
-      <div class="header-logo">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
-        </a>
-      </div>
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
-        <a href="nos-biens.html" class="nav-link">Nos biens</a>
-        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
-        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
-        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
-        <a href="index.html#contact" class="nav-link nav-link-contact">Contact</a>
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
-      <div class="header-cta">
+      <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
   </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
 
   <section class="legal-hero">
     <h1>Mentions Légales</h1>
@@ -391,6 +380,7 @@
           <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
           <li><a href="nos-biens.html">Nos biens</a></li>
           <li><a href="nos-realisations.html">Nos réalisations</a></li>
+          <li><a href="nos-services.html">Nos services</a></li>
         </ul>
       </div>
       <div class="footer-col">

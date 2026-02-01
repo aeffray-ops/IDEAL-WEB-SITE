@@ -122,61 +122,57 @@
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
-  <div id="bandeau-evenement">
-    <div class="bandeau-full">
-      <div class="bandeau-container">
-        <div class="bandeau-content">
-          <span class="bandeau-text">
-            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-            <span class="bandeau-date">Dimanche 15 février 2025 à 20h</span>
-          </span>
-          <a href="webinaire-recrutement.html" class="bandeau-cta">
-            Je m'inscris gratuitement
-            <span class="bandeau-arrow">→</span>
-          </a>
-        </div>
-        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
       </div>
-    </div>
-    <div class="bandeau-mini" aria-hidden="true">
-      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Dimanche 15 février 2025, 20h</span>
-      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
-      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
     </div>
   </div>
 
   <header class="header-principal">
-    <div class="header-container">
-      <div class="header-logo">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
-        </a>
-      </div>
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
-        <a href="nos-biens.html" class="nav-link">Nos biens</a>
-        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
-        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
-        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
-        <a href="index.html#contact" class="nav-link nav-link-contact">Contact</a>
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a>
+          <div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div>
+        </div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a>
+          <div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div>
+        </div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a>
+          <div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div>
+        </div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a>
+          <div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div>
+        </div>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
-      <div class="header-cta">
+      <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
   </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
 
   <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
     <span class="t1">RÉSEAU</span>
@@ -184,20 +180,22 @@
     <span class="t3">Agent Marchand</span>
   </a>
 
-  <main class="container">
-
-    <!-- Hero -->
-    <div class="hero-page">
-      <div class="kicker">VENDEURS</div>
-      <h1>Vendez votre bien en toute sérénité, sans les aléas d'une vente classique.</h1>
-      <p class="lead">
-        Vous vendez ? Nous achetons au prix du marché. Pas de conditions suspensives de financement complexes,
-        une offre ferme et une exécution rapide en toute transparence.
-      </p>
-      <div style="margin-top:14px;">
-        <a class="btn btn-primary" href="contact.html#vendeur">Étudier mon projet</a>
-      </div>
+  <!-- Section Vendeurs avec photo arrière-plan -->
+  <section class="section-vendeurs">
+    <div class="vendeurs-background">
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80" 
+           alt="Villa avec vue mer et forêt"
+           class="vendeurs-bg-image">
     </div>
+    <div class="container vendeurs-content">
+      <span class="badge-section">VENDEURS</span>
+      <h2>Vendez votre bien en toute sérénité, sans les aléas d'une vente classique.</h2>
+      <p>Vous vendez ? Nous achetons au prix du marché. Pas de conditions suspensives de financement complexes, une offre ferme et une exécution rapide en toute transparence.</p>
+      <a href="contact.html#vendeur" class="btn-primary">Étudier mon projet</a>
+    </div>
+  </section>
+
+  <main class="container">
 
     <!-- Constat -->
     <section>
@@ -240,7 +238,7 @@
     </section>
 
     <!-- Solution -->
-    <section>
+    <section id="processus">
       <h2>Notre Engagement : Une approche d'investisseur pour une transaction sécurisée</h2>
       <div class="bar"></div>
 
@@ -277,7 +275,7 @@
     </section>
 
     <!-- Services -->
-    <section>
+    <section id="valoriser">
       <h2>Comment nous valorisons votre bien</h2>
       <div class="bar"></div>
 
@@ -357,6 +355,7 @@
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer-principal">
     <div class="footer-container">
       <div class="footer-col">
@@ -372,6 +371,7 @@
           <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
           <li><a href="nos-biens.html">Nos biens</a></li>
           <li><a href="nos-realisations.html">Nos réalisations</a></li>
+          <li><a href="nos-services.html">Nos services</a></li>
         </ul>
       </div>
       <div class="footer-col">

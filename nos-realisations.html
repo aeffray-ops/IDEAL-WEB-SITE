@@ -3,309 +3,164 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nos réalisations — Ideal Home Project</title>
-  <meta name="description" content="Découvrez nos réalisations : biens transformés par Ideal Home Project. Moteur de recherche, galerie avant/après." />
+  <title>Nos Réalisations — IDEAL Home Project</title>
+  <meta name="description" content="Découvrez nos réalisations : projets de rénovation et transformation immobilière clés en main." />
 
+  <!-- Google Fonts - POPPINS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bordeaux:#800020;--ink:#111827;--text:#1f2937;--muted:#6b7280;--soft:#f3f4f6;
-      --bordeaux-05: rgba(128, 0, 32, 0.05);--bordeaux-10: rgba(128, 0, 32, 0.10);
-      --radius-xl: 20px;--radius-2xl: 28px;
-      --pad: 48px;--container: 1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: #fff;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(var(--container), calc(100% - 2*var(--pad)));margin:0 auto;}
-
-    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .brand-logo{height:44px;width:auto;display:block;}
-    .brand-logo-footer{height:34px;}
-
-    main{padding: 34px 0 70px;}
-    .hero-page{
-      padding: 28px;border-radius: var(--radius-2xl);
-      background: #fff;
-      border:1px solid var(--bordeaux-10);margin-bottom: 26px;
-    }
-    .kicker{
-      display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;
-      text-transform:uppercase;font-weight:900;color: var(--bordeaux);background: var(--bordeaux-05);
-      border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
-    }
-    h1{margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;}
-    .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
-
-    section{padding: 26px 0;}
-    h2{margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);}
-    .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
-
-    /* Hero réalisations */
-    .hero-realisations{
-      background: #67161f;
-      color: #fff;
-      padding: 60px 0 50px;
-      text-align: center;
-      border-radius: var(--radius-2xl);
-      margin-bottom: 40px;
-    }
-    .hero-realisations h1{margin:0 0 14px;font-size: clamp(28px, 3vw, 42px);color:#fff;}
-    .hero-realisations p{margin:0;font-size: 17px;color: rgba(255,255,255,0.9);max-width: 640px;margin-left: auto;margin-right: auto;}
-
-    /* Section réalisation (alternance fond) */
-    .section-realisation{padding: 50px 0;background: #fff;}
-    .section-realisation:nth-child(even){background: var(--soft);}
-    .realisation-header{text-align: center;margin-bottom: 36px;}
-    .realisation-badge{
-      display: inline-block;background: var(--bordeaux);color:#fff;
-      padding: 6px 16px;border-radius: 999px;font-size: 12px;font-weight: 700;
-      text-transform: uppercase;margin-bottom: 14px;
-    }
-    .realisation-header h2{font-size: clamp(22px, 2.2vw, 30px);color: var(--ink);margin-bottom: 10px;}
-    .realisation-header p{font-size: 15px;color: var(--muted);max-width: 700px;margin: 0 auto;line-height: 1.6;}
-
-    /* Grille Avant / Après */
-    .avant-apres-container{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 28px;
-    }
-    .avant-section, .apres-section{
-      background: #fff;
-      padding: 24px;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--bordeaux-10);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-    .section-realisation:nth-child(even) .avant-section,
-    .section-realisation:nth-child(even) .apres-section{background: #fff;}
-    .avant-section h3, .apres-section h3{
-      font-size: 18px;color: var(--ink);margin: 0 0 18px;text-align: center;font-weight: 800;
-    }
-    .avant-section h3::before{content: '📷 ';}
-    .apres-section h3::before{content: '✨ ';}
-    .images-grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .image-placeholder{
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--soft) 0%, #e5e7eb 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 600;
-      overflow: hidden;
-    }
-    .image-placeholder img{width: 100%; height: 100%; object-fit: cover;}
-    .image-placeholder:has(img) span{display: none;}
-    .floating-cta{
-      position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
-      padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
-      min-width: 180px;text-decoration:none;
-      transition: transform .15s ease, background .15s ease;
-    }
-    .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
-    .floating-cta .t1{font-size: 10px;font-weight: 900;letter-spacing:.14em;text-transform: uppercase;color: var(--bordeaux);}
-    .floating-cta .t2{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
-    .floating-cta .t3{color: var(--muted);font-size: 12px;font-weight: 700;}
-
-    footer{padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);}
-    .footer-row{display:flex;align-items:center;justify-content:space-between;gap: 14px;flex-wrap:wrap;}
-    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
-
-    @media (max-width: 980px){
-      :root{--pad:22px}
-      .avant-apres-container{grid-template-columns: 1fr;}
-      .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
-    }
-    @media (max-width: 520px){
-      .images-grid{grid-template-columns: 1fr;}
-    }
-  </style>
-  <link rel="stylesheet" href="css/bandeau.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/realisations.css">
 </head>
 <body>
 
-  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
-  <div id="bandeau-evenement">
-    <div class="bandeau-full">
-      <div class="bandeau-container">
-        <div class="bandeau-content">
-          <span class="bandeau-text">
-            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-            <span class="bandeau-date">Dimanche 15 février 2025 à 20h</span>
-          </span>
-          <a href="webinaire-recrutement.html" class="bandeau-cta">
-            Je m'inscris gratuitement
-            <span class="bandeau-arrow">→</span>
-          </a>
-        </div>
-        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
       </div>
-    </div>
-    <div class="bandeau-mini" aria-hidden="true">
-      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Dimanche 15 février 2025, 20h</span>
-      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
-      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
     </div>
   </div>
 
   <header class="header-principal">
-    <div class="header-container">
-      <div class="header-logo">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
-        </a>
-      </div>
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
-        <a href="nos-biens.html" class="nav-link">Nos biens</a>
-        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
-        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
-        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
-        <a href="index.html#contact" class="nav-link nav-link-contact">Contact</a>
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
-      <div class="header-cta">
+      <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
-    <span class="t1">RÉSEAU</span>
-    <span class="t2">Devenir membre</span>
-    <span class="t3">Agent Marchand</span>
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
   </a>
 
-  <main class="container">
-
-    <section class="hero-realisations">
+  <!-- HERO AVEC PHOTO RÉNOVATION -->
+  <section class="hero-realisations">
+    <div class="hero-realisations-background">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80" 
+           alt="Rénovation immobilière IDEAL"
+           class="hero-realisations-bg-image">
+      <div class="hero-realisations-overlay"></div>
+    </div>
+    <div class="container hero-realisations-content">
       <h1>Nos Réalisations</h1>
-      <p>Découvrez nos projets de valorisation immobilière avec transformations avant/après.</p>
-    </section>
+      <p>Découvrez nos projets de rénovation et de transformation immobilière clés en main</p>
+    </div>
+  </section>
 
-    <!-- RÉALISATION 1 -->
-    <section class="section-realisation">
-      <div class="realisation-header">
-        <span class="realisation-badge">Avant / Après</span>
-        <h2>Rénovation complète — Maison de ville</h2>
-        <p><strong>📍 Bordeaux</strong> • Maison T4 110 m² • Restructuration des volumes, rénovation intégrale (électricité, plomberie, isolation). Revente fluide, vendeurs et acquéreurs ravis.</p>
-      </div>
-      <div class="avant-apres-container">
-        <div class="avant-section">
-          <h3>Avant</h3>
-          <div class="images-grid">
-            <div class="image-placeholder"><span>Image 1</span></div>
-            <div class="image-placeholder"><span>Image 2</span></div>
-            <div class="image-placeholder"><span>Image 3</span></div>
-            <div class="image-placeholder"><span>Image 4</span></div>
-          </div>
-        </div>
-        <div class="apres-section">
-          <h3>Après</h3>
-          <div class="images-grid">
-            <div class="image-placeholder"><span>Image 1</span></div>
-            <div class="image-placeholder"><span>Image 2</span></div>
-            <div class="image-placeholder"><span>Image 3</span></div>
-            <div class="image-placeholder"><span>Image 4</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- SECTION RÉALISATIONS -->
+  <section class="section-realisations">
+    <div class="container">
+      <h2 class="section-title">Nos Projets Réalisés</h2>
+      <p class="section-intro">Des biens valorisés avec soin, de l'acquisition à la livraison clé en main.</p>
 
-    <!-- RÉALISATION 2 -->
-    <section class="section-realisation">
-      <div class="realisation-header">
-        <span class="realisation-badge">Piscine</span>
-        <h2>Extérieur premium — Piscine & aménagement</h2>
-        <p><strong>📍 Mérignac</strong> • Optimisation des accès, piscine, finitions haut de gamme pour une valorisation maximale du bien.</p>
-      </div>
-      <div class="avant-apres-container">
-        <div class="avant-section">
-          <h3>Avant</h3>
-          <div class="images-grid">
-            <div class="image-placeholder"><span>Image 1</span></div>
-            <div class="image-placeholder"><span>Image 2</span></div>
-            <div class="image-placeholder"><span>Image 3</span></div>
-            <div class="image-placeholder"><span>Image 4</span></div>
+      <div class="realisations-grid">
+        <div class="realisation-card">
+          <div class="realisation-image">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Rénovation appartement Bordeaux">
+            <span class="realisation-badge">Rénovation complète</span>
+          </div>
+          <div class="realisation-content">
+            <h3 class="realisation-titre">Appartement Haussmannien</h3>
+            <p class="realisation-lieu"><i class="fas fa-map-marker-alt"></i> Bordeaux (33000) • Chartrons</p>
+            <div class="realisation-details">
+              <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+              <span><i class="fas fa-door-open"></i> 4 pièces</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+            </div>
+            <p class="realisation-description">Rénovation complète d'un appartement haussmannien avec optimisation des espaces et finitions haut de gamme.</p>
+            <a href="realisation-detail.html?id=1" class="btn-voir-detail">Voir le détail <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <div class="apres-section">
-          <h3>Après</h3>
-          <div class="images-grid">
-            <div class="image-placeholder"><span>Image 1</span></div>
-            <div class="image-placeholder"><span>Image 2</span></div>
-            <div class="image-placeholder"><span>Image 3</span></div>
-            <div class="image-placeholder"><span>Image 4</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- RÉALISATION 3 -->
-    <section class="section-realisation">
-      <div class="realisation-header">
-        <span class="realisation-badge">Surélévation</span>
-        <h2>Surélévation & création de surface</h2>
-        <p><strong>📍 Talence</strong> • Étude technique, urbanisme, pilotage complet. Bien livré « prêt à vivre » avec surfaces optimisées.</p>
-      </div>
-      <div class="avant-apres-container">
-        <div class="avant-section">
-          <h3>Avant</h3>
-          <div class="images-grid">
-            <div class="image-placeholder"><span>Image 1</span></div>
-            <div class="image-placeholder"><span>Image 2</span></div>
-            <div class="image-placeholder"><span>Image 3</span></div>
-            <div class="image-placeholder"><span>Image 4</span></div>
+        <div class="realisation-card">
+          <div class="realisation-image">
+            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="Rénovation maison avec jardin">
+            <span class="realisation-badge">Extension + Rénovation</span>
+          </div>
+          <div class="realisation-content">
+            <h3 class="realisation-titre">Maison de Ville avec Jardin</h3>
+            <p class="realisation-lieu"><i class="fas fa-map-marker-alt"></i> Lyon (69000) • Croix-Rousse</p>
+            <div class="realisation-details">
+              <span><i class="fas fa-ruler-combined"></i> 150 m²</span>
+              <span><i class="fas fa-door-open"></i> 5 pièces</span>
+              <span><i class="fas fa-calendar"></i> 2024</span>
+            </div>
+            <p class="realisation-description">Extension et rénovation énergétique d'une maison de ville, création d'une véranda et aménagement paysager.</p>
+            <a href="realisation-detail.html?id=2" class="btn-voir-detail">Voir le détail <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <div class="apres-section">
-          <h3>Après</h3>
-          <div class="images-grid">
-            <div class="image-placeholder"><span>Image 1</span></div>
-            <div class="image-placeholder"><span>Image 2</span></div>
-            <div class="image-placeholder"><span>Image 3</span></div>
-            <div class="image-placeholder"><span>Image 4</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-  </main>
+        <div class="realisation-card">
+          <div class="realisation-image">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Transformation loft industriel">
+            <span class="realisation-badge">Transformation loft</span>
+          </div>
+          <div class="realisation-content">
+            <h3 class="realisation-titre">Loft Industriel</h3>
+            <p class="realisation-lieu"><i class="fas fa-map-marker-alt"></i> Paris (75011) • Bastille</p>
+            <div class="realisation-details">
+              <span><i class="fas fa-ruler-combined"></i> 180 m²</span>
+              <span><i class="fas fa-door-open"></i> 3 pièces</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+            </div>
+            <p class="realisation-description">Transformation d'un ancien atelier en loft moderne avec mezzanine et verrière sur mesure.</p>
+            <a href="realisation-detail.html?id=3" class="btn-voir-detail">Voir le détail <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="realisation-card">
+          <div class="realisation-image">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Rénovation villa avec piscine">
+            <span class="realisation-badge">Rénovation de luxe</span>
+          </div>
+          <div class="realisation-content">
+            <h3 class="realisation-titre">Villa avec Piscine</h3>
+            <p class="realisation-lieu"><i class="fas fa-map-marker-alt"></i> Nice (06000) • Cimiez</p>
+            <div class="realisation-details">
+              <span><i class="fas fa-ruler-combined"></i> 250 m²</span>
+              <span><i class="fas fa-door-open"></i> 6 pièces</span>
+              <span><i class="fas fa-calendar"></i> 2024</span>
+            </div>
+            <p class="realisation-description">Rénovation complète d'une villa avec aménagement extérieur, piscine à débordement et domotique.</p>
+            <a href="realisation-detail.html?id=4" class="btn-voir-detail">Voir le détail <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer-principal">
     <div class="footer-container">
       <div class="footer-col">
         <img src="assets/logo.png" alt="IDEAL Home Project" class="footer-logo">
-        <p class="footer-description">
-          IDEAL Home Project, votre partenaire immobilier de confiance pour vendre, acheter ou rejoindre notre réseau.
-        </p>
+        <p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance pour vendre, acheter ou rejoindre notre réseau.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -314,6 +169,7 @@
           <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
           <li><a href="nos-biens.html">Nos biens</a></li>
           <li><a href="nos-realisations.html">Nos réalisations</a></li>
+          <li><a href="nos-services.html">Nos services</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -331,7 +187,6 @@
           <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
           <li><a href="mentions-legales.html#mentions">Mentions légales</a></li>
           <li><a href="mentions-legales.html#cookies">Politique de gestion des cookies</a></li>
-          <li><a href="mentions-legales.html#cookies">Paramétrer mes cookies</a></li>
           <li><a href="mentions-legales.html#accessibilite">Accessibilité : en cours</a></li>
         </ul>
       </div>

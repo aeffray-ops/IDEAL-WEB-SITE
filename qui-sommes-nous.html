@@ -1,450 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Qui sommes-nous ? — Ideal Home Project</title>
-  <meta name="description" content="Découvrez l'ADN d'Ideal Home Project : Co-agir, Co-construire, Co-réussir. Un nouveau modèle immobilier intelligent, collectif et humain." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qui sommes-nous ? | IDEAL Home Project</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bordeaux:#800020;
-      --ink:#111827;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --soft:#f3f4f6;
-      --bordeaux-05: rgba(128, 0, 32, 0.05);
-      --bordeaux-10: rgba(128, 0, 32, 0.10);
-      --accent-gold:#c9a227;
-      --radius-xl: 20px;
-      --radius-2xl: 28px;
-      --pad: 48px;
-      --container: 1180px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: #fff;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{
-      width:min(var(--container), calc(100% - 2*var(--pad)));
-      margin:0 auto;
-    }
-
-    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .brand-logo{height:44px;width:auto;display:block;}
-    .brand-logo-footer{height:34px;}
-
-    main{padding: 34px 0 70px;}
-    .hero-page{
-      padding: 28px;
-      border-radius: var(--radius-2xl);
-      background: #fff;
-      border:1px solid var(--bordeaux-10);
-      margin-bottom: 26px;
-    }
-    .kicker{
-      display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;
-      text-transform:uppercase;font-weight:900;color: var(--bordeaux);background: var(--bordeaux-05);
-      border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
-    }
-    h1{
-      margin: 0 0 10px;font-family: Montserrat, sans-serif;font-weight: 900;
-      letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;
-    }
-    .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
-
-    section{padding: 26px 0;}
-    h2{
-      margin:0;font-family: Montserrat, sans-serif;font-weight:900;letter-spacing:-0.02em;
-      color:var(--ink);font-size: clamp(22px, 2.2vw, 30px);
-    }
-    .bar{width:96px;height:6px;border-radius:999px;background: var(--bordeaux);margin-top:10px;}
-    p{margin:10px 0 0;color:var(--text);line-height:1.65;font-size:14px;}
-
-    .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;}
-    .grid-3{display:grid;grid-template-columns: repeat(3, 1fr);gap: 18px;}
-
-    .block{
-      padding: 22px;border-radius: var(--radius-xl);background:#fff;
-      border:1px solid var(--bordeaux-10);
-    }
-    .block.soft{background: var(--bordeaux-05);border:1px solid var(--bordeaux-10);}
-    .block h3{
-      margin:0 0 8px;font-family: Montserrat, sans-serif;font-weight:900;color: var(--ink);font-size: 16px;
-    }
-    .block p{margin:0;color: var(--text);line-height:1.65;font-size: 14px;}
-    .tag{
-      display:inline-flex;align-items:center;padding: 7px 10px;border-radius: 999px;
-      background: var(--bordeaux);color:#fff;font-weight:900;font-size:11px;
-      letter-spacing:.12em;text-transform:uppercase;margin-bottom: 10px;width: fit-content;
-    }
-    .lead{margin:10px 0 0;color:var(--muted);max-width: 75ch;line-height:1.6;font-size:14px;}
-    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius: var(--radius-xl);border:1px solid var(--bordeaux-10);background:#fff;}
-    th, td{text-align:left;padding: 14px;font-size: 13px;vertical-align:top;border-bottom:1px solid var(--bordeaux-10);}
-    th{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);background: var(--bordeaux-05);}
-    tr:last-child td{border-bottom:none}
-    .step{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--bordeaux);letter-spacing:.06em;white-space:nowrap;}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding: 13px 16px;border-radius: 16px;font-weight: 900;font-size: 14px;border:1px solid transparent;user-select:none;transition: transform .12s ease;}
-    .btn-primary{background: var(--bordeaux);color:#fff;}
-    .btn:hover{transform: translateY(-1px)}
-
-    .floating-cta{
-      position: fixed;right: 18px;bottom: 18px;z-index: 70;display:flex;flex-direction:column;gap: 6px;
-      padding: 12px 14px;border-radius: 18px;background: #fff;border:1px solid rgba(128,0,32,0.18);
-      min-width: 180px;text-decoration:none;
-      transition: transform .15s ease, background .15s ease;
-    }
-    .floating-cta:hover{transform: translateY(-2px); background: rgba(128,0,32,0.05);}
-    .floating-cta .t1{font-size: 10px;font-weight: 900;letter-spacing:.14em;text-transform: uppercase;color: var(--bordeaux);}
-    .floating-cta .t2{font-family: Montserrat, sans-serif;font-weight: 900;color: var(--ink);font-size: 14px;line-height: 1.1;}
-    .floating-cta .t3{color: var(--muted);font-size: 12px;font-weight: 700;}
-
-    /* SECTION NOTRE ADN ENCADRÉE */
-    .section-adn{padding: 50px 0;background: var(--soft);}
-    .adn-encadre{
-      background: linear-gradient(135deg, rgba(201,162,39,0.08) 0%, rgba(128,0,32,0.06) 100%);
-      border: 2px solid var(--accent-gold);
-      border-radius: var(--radius-xl);
-      padding: 40px 44px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-    .adn-header{text-align: left;margin-bottom: 36px;}
-    .adn-badge{
-      display: inline-block;background: var(--accent-gold);color: #1a1500;
-      padding: 8px 18px;border-radius: 999px;font-size: 13px;font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .adn-header h2{font-size: clamp(26px, 2.5vw, 34px);color: var(--ink);font-weight: 800;margin: 0;}
-    .adn-content{display: grid;grid-template-columns: repeat(2, 1fr);gap: 24px;}
-    .adn-pilier{
-      background: #fff;padding: 28px 24px;border-radius: var(--radius-xl);
-      border: 1px solid var(--bordeaux-10);box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .adn-pilier:hover{transform: translateY(-4px);box-shadow: 0 8px 24px rgba(0,0,0,0.1);}
-    .adn-icon{font-size: 40px;margin-bottom: 14px;}
-    .adn-pilier h3{font-size: 20px;color: var(--bordeaux);margin: 0 0 10px;font-weight: 700;}
-    .adn-pilier p{font-size: 15px;color: var(--text);line-height: 1.65;margin: 0;}
-    @media (max-width: 767px){
-      .adn-encadre{padding: 28px 20px;}
-      .adn-content{grid-template-columns: 1fr;}
-      .adn-header h2{font-size: 26px;}
-    }
-
-    footer{
-      padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);
-    }
-    .footer-row{display:flex;align-items:center;justify-content:space-between;gap: 14px;flex-wrap:wrap;}
-    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
-
-    @media (max-width: 980px){
-      :root{--pad:22px}
-      .grid-2, .grid-3{grid-template-columns: 1fr}
-      .floating-cta{right: 12px; bottom: 12px; min-width: 160px;}
-    }
-  </style>
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/qui-sommes-nous.css">
 </head>
-
 <body>
 
-  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
-  <div id="bandeau-evenement">
-    <div class="bandeau-full">
-      <div class="bandeau-container">
-        <div class="bandeau-content">
-          <span class="bandeau-text">
-            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-            <span class="bandeau-date">Dimanche 15 février 2025 à 20h</span>
-          </span>
-          <a href="webinaire-recrutement.html" class="bandeau-cta">
-            Je m'inscris gratuitement
-            <span class="bandeau-arrow">→</span>
-          </a>
-        </div>
-        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
+  <!-- BANDEAU ÉVÈNEMENTS REPOSITIONNÉ -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left">
+        <span class="bandeau-title">Nos évènements</span>
       </div>
-    </div>
-    <div class="bandeau-mini" aria-hidden="true">
-      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Dimanche 15 février 2025, 20h</span>
-      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
-      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
+      <div class="bandeau-center"></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+        <button class="bandeau-close" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 
   <header class="header-principal">
-    <div class="header-container">
-      <div class="header-logo">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
-        </a>
-      </div>
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
-        <a href="nos-biens.html" class="nav-link">Nos biens</a>
-        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
-        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
-        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
-        <a href="index.html#contact" class="nav-link nav-link-contact">Contact</a>
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
-      <div class="header-cta">
+      <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
-    <span class="t1">RÉSEAU</span>
-    <span class="t2">Devenir membre</span>
-    <span class="t3">Agent Marchand</span>
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
   </a>
 
-  <main class="container" style="text-align:left;">
-
-    <!-- Hero -->
-    <div class="hero-page">
-      <div class="kicker">Qui sommes-nous ?</div>
-      <h1>Créer un immobilier plus intelligent, collectif et humain.</h1>
-      <p class="lead">
-        Chez Ideal Home Project, nous ne nous contentons pas de transformer des bâtiments.
-        Nous redéfinissons la manière de concevoir l'investissement immobilier en plaçant l'humain,
-        la transparence et l'expertise collective au cœur de chaque projet.
-      </p>
+  <!-- HERO QUI SOMMES-NOUS -->
+  <section class="hero-qui">
+    <div class="container-reduced">
+      <h1>Qui sommes-nous ?</h1>
+      <p class="hero-subtitle">Redonner confiance aux vendeurs, aux acquéreurs et aux professionnels de l'immobilier.</p>
     </div>
+  </section>
 
-    <!-- SECTION NOTRE ADN (ENCADRÉE) -->
-    <section class="section-adn">
-      <div class="adn-encadre">
-        <div class="adn-header">
-          <span class="adn-badge">🧬 ADN</span>
-          <h2>Notre ADN</h2>
+  <!-- 1. NOTRE IDEAL -->
+  <section class="section-bloc section-ideal">
+    <div class="container">
+      <div class="bloc-header">
+        <h2 class="section-title">Notre IDEAL</h2>
+      </div>
+      <div class="bloc-content">
+        <p class="intro-text">Chez IDEAL, notre ambition est simple et exigeante :<br><strong>👉 redonner confiance aux vendeurs, aux acquéreurs et aux professionnels de l'immobilier.</strong></p>
+        <p class="paragraph">Nous croyons que cette confiance ne se décrète pas.<br>Elle se construit par :</p>
+        <div class="valeurs-grid">
+          <div class="valeur-card"><div class="valeur-icon">🔍</div><h4>La transparence</h4></div>
+          <div class="valeur-card"><div class="valeur-icon">🎯</div><h4>La maîtrise des projets</h4></div>
+          <div class="valeur-card"><div class="valeur-icon">✅</div><h4>La livraison de solutions finies, sécurisées et compréhensibles</h4></div>
         </div>
-        <div class="adn-content">
-          <div class="adn-pilier">
-            <div class="adn-icon">🏆</div>
-            <h3>Excellence</h3>
-            <p>Chaque projet est traité avec le plus haut niveau d'exigence, de l'analyse initiale à la livraison finale.</p>
+        <p class="conclusion-text">C'est de ce constat métier et marché qu'est née une évidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. NOTRE VISION -->
+  <section class="section-bloc section-vision">
+    <div class="container">
+      <div class="bloc-header">
+        <h2 class="section-title">Notre vision</h2>
+        <p class="section-subtitle">L'Agent Marchand, le métier de demain</p>
+      </div>
+      <div class="bloc-content">
+        <p class="intro-text">Nous sommes convaincus que l'Agent Marchand est le métier qui va progressivement substituer :</p>
+        <div class="substitution-grid">
+          <div class="substitution-item"><p>❌ l'agent immobilier traditionnel,</p></div>
+          <div class="substitution-item"><p>❌ et le marchand de biens isolé.</p></div>
+        </div>
+        <p class="paragraph">Parce qu'il répond aux nouvelles attentes du marché :</p>
+        <div class="attentes-grid">
+          <div class="attente-item">✅ Plus de transparence</div>
+          <div class="attente-item">✅ Plus de valeur ajoutée</div>
+          <div class="attente-item">✅ Plus de sécurité</div>
+          <div class="attente-item">✅ Plus de sens</div>
+        </div>
+        <p class="conclusion-text"><strong>Mais notre vision va plus loin.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. NOTRE ADN -->
+  <section class="section-bloc section-adn" id="adn">
+    <div class="container">
+      <div class="bloc-header">
+        <h2 class="section-title">Notre ADN</h2>
+        <p class="section-subtitle">Co-agir · Co-construire · Co-réussir</p>
+      </div>
+      <div class="bloc-content">
+        <p class="intro-text">Chez IDEAL, personne ne réussit seul.</p>
+        <p class="paragraph">Nous avons bâti un modèle fondé sur :</p>
+        <div class="adn-grid">
+          <div class="adn-card"><div class="adn-icon">🤝</div><h4>La coopération</h4><p>Plutôt que la concurrence interne</p></div>
+          <div class="adn-card"><div class="adn-icon">🔗</div><h4>La mutualisation</h4><p>Des compétences</p></div>
+          <div class="adn-card"><div class="adn-icon">🏆</div><h4>La réussite collective</h4><p>Plutôt que l'individualisme</p></div>
+        </div>
+        <div class="citation-box">
+          <p>Chaque projet est un travail d'équipe.<br>Chaque réussite bénéficie au réseau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LE CONSTAT -->
+  <section class="section-bloc section-constat">
+    <div class="container">
+      <div class="bloc-header">
+        <h2 class="section-title">Le constat</h2>
+      </div>
+      <div class="bloc-content">
+        <p class="intro-text">Le marché immobilier traverse une crise de confiance.</p>
+        <div class="constat-grid">
+          <div class="constat-item">
+            <h3>L'agent immobilier</h3>
+            <p>L'agent immobilier exerce aujourd'hui un métier devenu extrêmement difficile : pression sur les prix, concurrence massive, défiance des vendeurs, promesses parfois irréalistes, modèle économique à bout de souffle.</p>
           </div>
-          <div class="adn-pilier">
-            <div class="adn-icon">💎</div>
-            <h3>Valorisation</h3>
-            <p>Nous ne vendons pas seulement un bien, nous créons de la valeur à chaque étape du processus.</p>
-          </div>
-          <div class="adn-pilier">
-            <div class="adn-icon">🤝</div>
-            <h3>Transparence</h3>
-            <p>Communication claire, engagements tenus, résultats mesurables. Aucune zone d'ombre dans nos opérations.</p>
-          </div>
-          <div class="adn-pilier">
-            <div class="adn-icon">🚀</div>
-            <h3>Innovation</h3>
-            <p>Nous réinventons l'immobilier avec des méthodes modernes, des outils digitaux et un réseau d'agents marchands unique.</p>
+          <div class="constat-item">
+            <h3>Le marchand de biens</h3>
+            <p>De leur côté, les marchands de biens, bien qu'essentiels à la transformation du parc immobilier, souffrent eux aussi d'une image dégradée : opacité, incompréhension de leur rôle, amalgame avec des pratiques opportunistes.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Agent Marchand -->
-    <section>
-      <h2>La Naissance d'un Nouveau Métier : L'Agent Marchand</h2>
-      <div class="bar"></div>
-      <p>
-        Historiquement, l'immobilier était scindé entre l'intermédiaire (l'agent) et l'investisseur
-        (le marchand de biens). Ideal Home Project a créé une rupture en structurant le métier d'Agent Marchand.
-      </p>
-
-      <div class="block soft" style="margin-top:14px;">
-        <p>
-          <strong>L'Agent Marchand IHP est un professionnel hybride.</strong>
-          Il possède la finesse commerciale de l'agent et la rigueur technique du marchand de biens.
-          Soutenu par notre structure, il n'est plus un simple intermédiaire :
-          il devient un créateur de projets capable de sécuriser une vente pour un propriétaire
-          et de garantir une qualité de réalisation pour un acquéreur.
-        </p>
-      </div>
-    </section>
-
-    <!-- Valeurs -->
-    <section>
-      <h2>Nos Valeurs Fondamentales</h2>
-      <div class="bar"></div>
-
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="block">
-          <h3>Humilité</h3>
-          <p>Apprendre de chaque projet pour viser l'excellence.</p>
-        </div>
-        <div class="block">
-          <h3>Transparence</h3>
-          <p>Une communication claire avec les vendeurs et les partenaires.</p>
-        </div>
-        <div class="block">
-          <h3>Exigence</h3>
-          <p>Un haut niveau de finition et de précision technique.</p>
-        </div>
-        <div class="block">
-          <h3>Partage</h3>
-          <p>Transmettre notre savoir-faire pour faire grandir le réseau.</p>
+        <div class="resultat-box">
+          <h4>👉 Résultat :</h4>
+          <ul class="resultat-list">
+            <li>des vendeurs méfiants,</li>
+            <li>des acquéreurs inquiets,</li>
+            <li>et des professionnels de l'immobilier dévalorisés, malgré leur utilité réelle.</li>
+          </ul>
+          <p class="conclusion-text">Le marché ne manque pas de compétences.<br><strong>Il manque un modèle lisible, responsable et aligné.</strong></p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- La Triple Identification -->
-    <section>
-      <h2>La Triple Identification</h2>
-      <div class="bar"></div>
-      <p class="lead">Trois profils, une même exigence : la sécurité.</p>
-      <div class="grid-3" style="margin-top:14px;">
-        <div class="block">
-          <div class="tag">Vendeurs</div>
-          <h3>Libérez-vous des contraintes</h3>
-          <p>Nous achetons votre bien en l'état, sans conditions suspensives de financement complexes.</p>
+  <!-- 5. LA NAISSANCE DE L'AGENT MARCHAND -->
+  <section class="section-bloc section-agent-marchand" id="agent-marchand">
+    <div class="container">
+      <div class="bloc-header">
+        <h2 class="section-title">La naissance de l'Agent Marchand</h2>
+      </div>
+      <div class="bloc-content">
+        <p class="intro-text">Nous avons créé un nouveau métier : <strong>l'Agent Marchand</strong>.</p>
+        <p class="paragraph">Un métier hybride qui combine le meilleur de deux mondes :</p>
+        <div class="hybride-grid">
+          <div class="hybride-item">
+            <h4>🤝 L'agent immobilier</h4>
+            <p>La capacité de conseil et de mise en relation</p>
+          </div>
+          <div class="hybride-separator">+</div>
+          <div class="hybride-item">
+            <h4>🏗️ Le marchand de biens</h4>
+            <p>La maîtrise opérationnelle, financière et technique</p>
+          </div>
         </div>
-        <div class="block">
-          <div class="tag">Acquéreurs</div>
-          <h3>Accédez au clé en main</h3>
-          <p>Des biens entièrement repensés, avec une vision claire des volumes, du budget et de la qualité finale.</p>
+        <div class="agent-marchand-box">
+          <h4>👉 L'Agent Marchand :</h4>
+          <ul class="actions-list">
+            <li><strong>conseille</strong>,</li>
+            <li><strong>valorise</strong>,</li>
+            <li><strong>structure</strong>,</li>
+            <li>et <strong>vend un produit immobilier fini, clé en main</strong>.</li>
+          </ul>
+          <div class="highlight-box">
+            <p><strong>Il ne vend plus une promesse.</strong><br>Il vend un projet abouti.</p>
+          </div>
         </div>
-        <div class="block">
-          <div class="tag">Agents</div>
-          <h3>Devenez Agent Marchand</h3>
-          <p>Rejoignez un réseau structuré qui vous apporte méthode, crédibilité et accompagnement long terme.</p>
+        <p class="conclusion-text">C'est cette approche qui permet de réconcilier vendeurs, acquéreurs et professionnels, et de revaloriser durablement les métiers de l'immobilier.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. NOS AMBITIONS À LONG TERME -->
+  <section class="section-bloc section-ambitions">
+    <div class="container">
+      <div class="bloc-header">
+        <h2 class="section-title">Nos ambitions à long terme</h2>
+      </div>
+      <div class="bloc-content">
+        <!-- GRID 2x3 -->
+        <div class="ambitions-grid">
+          <!-- Ambition 0 : Agent Marchand (NOUVEAU) -->
+          <div class="ambition-card-grid">
+            <div class="ambition-icon">🎯</div>
+            <div class="ambition-number">Agent marchand</div>
+            <h3>Un nouveau métier</h3>
+            <p>Créer et développer le métier d'Agent Marchand, hybride entre agent immobilier et marchand de biens, pour répondre aux nouvelles attentes du marché.</p>
+          </div>
+          <!-- Ambition 1 : Opérations d'associés -->
+          <div class="ambition-card-grid">
+            <div class="ambition-icon">🤝</div>
+            <div class="ambition-number">1</div>
+            <h3>Opérations d'associés</h3>
+            <p>Réaliser collectivement les plus grandes opérations de marchand de biens, grâce à la mutualisation des capitaux, des expertises et des opportunités du réseau.</p>
+          </div>
+          <!-- Ambition 2 : Réseau collaboratif -->
+          <div class="ambition-card-grid">
+            <div class="ambition-icon">🔗</div>
+            <div class="ambition-number">2</div>
+            <h3>Réseau collaboratif</h3>
+            <p>Créer le premier écosystème collaboratif immobilier, intégrant tous les métiers à valeur ajoutée pour accélérer la croissance des projets et des personnes.</p>
+          </div>
+          <!-- Ambition 3 : Rénovation énergétique -->
+          <div class="ambition-card-grid">
+            <div class="ambition-icon">♻️</div>
+            <div class="ambition-number">3</div>
+            <h3>Réseau de référence en rénovation énergétique</h3>
+            <p>Devenir un acteur national de référence de la rénovation énergétique, pour transformer durablement le parc immobilier et répondre aux enjeux de performance et de durabilité.</p>
+          </div>
+          <!-- Ambition 4 : Structure innovante -->
+          <div class="ambition-card-grid">
+            <div class="ambition-icon">🏢</div>
+            <div class="ambition-number">4</div>
+            <h3>Structure innovante</h3>
+            <p>Construire une SAS à capital variable, transparente et performante, où chaque membre contribue activement et bénéficie de la réussite collective.</p>
+          </div>
+          <!-- Ambition 5 : Immobilier auto-suffisant -->
+          <div class="ambition-card-grid ambition-highlight">
+            <div class="ambition-icon">⚡</div>
+            <div class="ambition-number">5</div>
+            <h3>L'immobilier auto-suffisant</h3>
+            <p>Promouvoir des immeubles et résidences énergétiquement autonomes, capables de générer leurs propres revenus : toits productifs, récupération des eaux, énergies renouvelables, géothermie partagée.</p>
+            <div class="ambition-cta-inline">
+              <p><strong>👉 L'immeuble de demain ne coûte plus. Il rapporte.</strong></p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Nos Services -->
-    <section>
-      <h2>Nos Services</h2>
-      <div class="bar"></div>
-      <div class="grid-3" style="margin-top:14px;">
-        <div class="block"><h3>Valorisation</h3><p>Étude de valeur, scénarios, optimisation.</p></div>
-        <div class="block"><h3>Urbanisme</h3><p>DP, permis, coordination administrative.</p></div>
-        <div class="block"><h3>Travaux</h3><p>Courtage, pilotage, contrôle qualité.</p></div>
-        <div class="block"><h3>Design intérieur</h3><p>Matériaux, cohérence, rendu premium.</p></div>
-        <div class="block"><h3>Division / montage</h3><p>Structuration, montage financier.</p></div>
-        <div class="block"><h3>Construction neuve</h3><p>Conception, exécution, MOA.</p></div>
-      </div>
-    </section>
-
-    <!-- Le Processus IDEAL -->
-    <section>
-      <h2>Le Processus IDEAL</h2>
-      <div class="bar"></div>
-      <div style="margin-top:14px;">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:150px;">Étape</th>
-              <th>Action</th>
-              <th>Valeur Ajoutée</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="step">01. Identification</td>
-              <td>Sourcing expert</td>
-              <td>Analyse du potentiel caché</td>
-            </tr>
-            <tr>
-              <td class="step">02. Valorisation</td>
-              <td>Étude Bureau</td>
-              <td>Évaluation, urbanisme, devis</td>
-            </tr>
-            <tr>
-              <td class="step">03. Engagement</td>
-              <td>Offre ferme</td>
-              <td><strong>Zéro condition suspensive</strong></td>
-            </tr>
-            <tr>
-              <td class="step">04. Transformation</td>
-              <td>Chantier piloté</td>
-              <td>MOA et design d'exception</td>
-            </tr>
-            <tr>
-              <td class="step">05. Transmission</td>
-              <td>Revente / Livraison</td>
-              <td>Bien « prêt à vivre » valorisé</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- L'Agent Marchand : Pilier de notre Vision -->
-    <section>
-      <h2>L'Agent Marchand : Pilier de notre Vision</h2>
-      <div class="bar"></div>
-      <div class="block soft" style="margin-top:14px;">
-        <p>Une école de l'excellence pour les professionnels de l'investissement immobilier. Outils, image de marque, accompagnement sur-mesure.</p>
-        <p style="margin-top:10px;">
-          <a class="btn btn-primary" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
-        </p>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <footer class="footer-principal">
     <div class="footer-container">
-      <div class="footer-col">
-        <img src="assets/logo.png" alt="IDEAL Home Project" class="footer-logo">
-        <p class="footer-description">
-          IDEAL Home Project, votre partenaire immobilier de confiance pour vendre, acheter ou rejoindre notre réseau.
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-          <li><a href="nos-biens.html">Nos biens</a></li>
-          <li><a href="nos-realisations.html">Nos réalisations</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="vendeurs.html">Vous êtes Vendeurs</a></li>
-          <li><a href="acquereurs.html">Vous êtes Acquéreurs</a></li>
-          <li><a href="rejoindre-le-reseau.html">Rejoindre le réseau</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Informations légales</h4>
-        <ul class="footer-links">
-          <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
-          <li><a href="mentions-legales.html#mentions">Mentions légales</a></li>
-          <li><a href="mentions-legales.html#cookies">Politique de gestion des cookies</a></li>
-          <li><a href="mentions-legales.html#cookies">Paramétrer mes cookies</a></li>
-          <li><a href="mentions-legales.html#accessibilite">Accessibilité : en cours</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL Home Project" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance pour vendre, acheter ou rejoindre notre réseau.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li><li><a href="nos-services.html">Nos services</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vous êtes Vendeurs</a></li><li><a href="acquereurs.html">Vous êtes Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre le réseau</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Informations légales</h4><ul class="footer-links"><li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#cookies">Politique de gestion des cookies</a></li><li><a href="mentions-legales.html#accessibilite">Accessibilité : en cours</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 IDEAL Home Project - SAS au capital variable - RCS Bordeaux 992 408 047 - Tous droits réservés.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2025 IDEAL Home Project - SAS au capital variable - RCS Bordeaux 992 408 047 - Tous droits réservés.</p></div>
   </footer>
 
   <script src="js/header.js"></script>

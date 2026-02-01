@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tous nos Évènements | IDEAL Home Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/evenements.css">
+</head>
+<body>
+
+  <!-- BANDEAU ÉVÈNEMENTS SIMPLIFIÉ -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="hero-evenements">
+    <div class="hero-evenements-background">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80" 
+           alt="Grande salle de conférence professionnelle"
+           class="hero-evenements-bg-image">
+      <div class="hero-evenements-overlay"></div>
+    </div>
+    <div class="container hero-evenements-content">
+      <h1>Tous nos Évènements</h1>
+      <p>Découvrez tous nos webinaires, formations et rencontres réseau</p>
+    </div>
+  </section>
+
+  <!-- MENU DÉROULANT (SUR LA PAGE) -->
+  <section class="section-filtre">
+    <div class="container-reduced">
+      <div class="filtre-box">
+        <label for="selectEvenement" class="filtre-label">Filtrer par événement :</label>
+        <select id="selectEvenement" class="filtre-select" onchange="if(this.value) window.location.href=this.value">
+          <option value="">Tous les événements</option>
+          <option value="webinaire-investisseurs-heureux.html">Les Investisseurs Heureux</option>
+          <option value="webinaire-recrutement.html">Webinaire IDEAL</option>
+          <option value="tous-nos-evenements.html">Tous nos évènements</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="evenements-grid">
+    <div class="container-reduced">
+      <a href="webinaire-investisseurs-heureux.html" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Conférence immobilière professionnelle" loading="lazy">
+          <span class="event-date">15 FÉV 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Les Investisseurs Heureux</h3>
+          <p>Découvrez comment investir sereinement dans l'immobilier et créer de la valeur durablement. Stratégies, outils et retours d'expérience.</p>
+        </div>
+      </a>
+
+      <a href="webinaire-recrutement.html" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80" alt="Webinaire en ligne avec présentateur" loading="lazy">
+          <span class="event-date">19 FÉV 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Découvrez le modèle Agent Marchand</h3>
+          <p>Rejoignez le réseau IDEAL et transformez votre activité immobilière. Présentation du métier d'Agent Marchand et des opportunités.</p>
+        </div>
+      </a>
+
+      <a href="#" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Session de formation professionnelle" loading="lazy">
+          <span class="event-date">05 MARS 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Rénovation Énergétique : Les Clés du Succès</h3>
+          <p>Maîtrisez les enjeux techniques, financiers et réglementaires de la rénovation énergétique pour vos projets immobiliers.</p>
+        </div>
+      </a>
+
+      <a href="#" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Conférence financement immobilier" loading="lazy">
+          <span class="event-date">12 MARS 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Financement Immobilier : Nouvelles Stratégies</h3>
+          <p>Découvrez les solutions de financement innovantes pour vos projets de marchand de biens et d'investissement locatif.</p>
+        </div>
+      </a>
+
+      <a href="#" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80" alt="Atelier professionnel sur l'énergie" loading="lazy">
+          <span class="event-date">20 MARS 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Atelier Juridique : Sécurisez vos Opérations</h3>
+          <p>Maîtrisez les aspects juridiques essentiels du marchand de biens : statuts, fiscalité, autorisations, responsabilités.</p>
+        </div>
+      </a>
+
+      <a href="#" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80" alt="Networking entre professionnels" loading="lazy">
+          <span class="event-date">28 MARS 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Rencontre du Réseau IDEAL</h3>
+          <p>Rencontrez les membres du réseau IDEAL, partagez vos expériences et développez votre réseau professionnel.</p>
+        </div>
+      </a>
+
+      <a href="#" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="Formation valorisation immobilière" loading="lazy">
+          <span class="event-date">10 AVR 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Valorisation Immobilière : Techniques Avancées</h3>
+          <p>Apprenez à identifier le potentiel d'un bien, estimer les travaux et maximiser la rentabilité de vos opérations.</p>
+        </div>
+      </a>
+
+      <a href="#" class="event-card">
+        <div class="event-photo">
+          <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&q=80" alt="Événement analyse marché immobilier" loading="lazy">
+          <span class="event-date">18 AVR 2025</span>
+        </div>
+        <div class="event-content">
+          <h3>Analyse du Marché Immobilier 2025</h3>
+          <p>Décryptage des tendances du marché immobilier, opportunités par région et perspectives pour les investisseurs.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li><li><a href="nos-services.html">Nos services</a></li><li><a href="tous-nos-evenements.html">Nos évènements</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 IDEAL Home Project - RCS Bordeaux 992 408 047 - Tous droits réservés</p><p>Téléphone : <a href="tel:0664646464" style="color:inherit;">06 64 64 64 64</a></p></div>
+  </footer>
+
+  <script src="js/header.js"></script>
+  <script src="js/bandeau.js"></script>
+</body>
+</html>

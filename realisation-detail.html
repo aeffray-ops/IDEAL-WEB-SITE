@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détail Réalisation - IDEAL Home Project</title>
+  <!-- Google Fonts - POPPINS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/realisations.css">
+</head>
+<body>
+
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
+
+  <!-- HERO PROJET -->
+  <section class="hero-detail">
+    <div class="container">
+      <a href="nos-realisations.html" class="btn-retour-liste">
+        <i class="fas fa-arrow-left"></i> Retour aux réalisations
+      </a>
+      <h1 class="detail-titre">Appartement Haussmannien</h1>
+      <p class="detail-lieu">
+        <i class="fas fa-map-marker-alt"></i>
+        Bordeaux (33000) • Chartrons
+      </p>
+      <div class="detail-meta">
+        <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+        <span><i class="fas fa-door-open"></i> 4 pièces</span>
+        <span><i class="fas fa-calendar"></i> 2023</span>
+        <span><i class="fas fa-euro-sign"></i> Budget : 180 000€</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION AVANT/APRÈS -->
+  <section class="section-avant-apres">
+    <div class="container">
+      <h2 class="section-title">Transformation Avant / Après</h2>
+      <p class="section-intro">Découvrez l'évolution du projet étape par étape</p>
+
+      <div class="avant-apres-grid">
+        <div class="avant-apres-card">
+          <div class="avant-apres-image">
+            <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80" alt="Avant rénovation - État initial">
+            <span class="avant-apres-badge avant">AVANT</span>
+          </div>
+          <h3 class="avant-apres-titre">État Initial</h3>
+          <p class="avant-apres-description">Appartement vétuste avec cloisonnements multiples et installations obsolètes.</p>
+        </div>
+
+        <div class="avant-apres-card">
+          <div class="avant-apres-image">
+            <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80" alt="Phase démolition">
+            <span class="avant-apres-badge travaux">TRAVAUX</span>
+          </div>
+          <h3 class="avant-apres-titre">Phase Démolition</h3>
+          <p class="avant-apres-description">Décloisonnement des espaces et mise à nu des structures pour optimisation.</p>
+        </div>
+
+        <div class="avant-apres-card">
+          <div class="avant-apres-image">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Phase construction">
+            <span class="avant-apres-badge travaux">TRAVAUX</span>
+          </div>
+          <h3 class="avant-apres-titre">Phase Rénovation</h3>
+          <p class="avant-apres-description">Reconstruction avec matériaux nobles, installation électrique et plomberie neuves.</p>
+        </div>
+
+        <div class="avant-apres-card">
+          <div class="avant-apres-image">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Après rénovation - Résultat final">
+            <span class="avant-apres-badge apres">APRÈS</span>
+          </div>
+          <h3 class="avant-apres-titre">Résultat Final</h3>
+          <p class="avant-apres-description">Appartement moderne et lumineux avec finitions haut de gamme et optimisation des volumes.</p>
+        </div>
+      </div>
+
+      <div class="detail-description">
+        <h3>Description du Projet</h3>
+        <p>Ce projet de rénovation complète a transformé un appartement haussmannien vétuste en un espace de vie moderne et fonctionnel. Les travaux ont inclus la dépose complète des cloisons intérieures, la réfection totale des installations électriques et de plomberie, ainsi que l'installation d'une cuisine équipée sur mesure et d'une salle de bain design.</p>
+        <p>L'optimisation des volumes a permis de créer un séjour spacieux et lumineux, tout en préservant le charme de l'ancien avec la restauration des moulures et parquet d'origine.</p>
+
+        <h4>Caractéristiques Techniques</h4>
+        <ul class="caracteristiques-liste">
+          <li><i class="fas fa-check"></i> Décloisonnement et optimisation des espaces</li>
+          <li><i class="fas fa-check"></i> Installation électrique et plomberie neuves</li>
+          <li><i class="fas fa-check"></i> Isolation thermique et phonique renforcée</li>
+          <li><i class="fas fa-check"></i> Parquet massif restauré</li>
+          <li><i class="fas fa-check"></i> Cuisine équipée sur mesure</li>
+          <li><i class="fas fa-check"></i> Salle de bain avec douche à l'italienne</li>
+          <li><i class="fas fa-check"></i> Domotique et éclairage LED</li>
+        </ul>
+
+        <h4>Durée et Budget</h4>
+        <div class="projet-chiffres">
+          <div class="chiffre-box">
+            <i class="fas fa-clock"></i>
+            <span class="chiffre-valeur">6 mois</span>
+            <span class="chiffre-label">Durée des travaux</span>
+          </div>
+          <div class="chiffre-box">
+            <i class="fas fa-euro-sign"></i>
+            <span class="chiffre-valeur">180 000€</span>
+            <span class="chiffre-label">Budget total</span>
+          </div>
+          <div class="chiffre-box">
+            <i class="fas fa-chart-line"></i>
+            <span class="chiffre-valeur">+45%</span>
+            <span class="chiffre-label">Valorisation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-projet">
+        <h3>Un projet similaire ?</h3>
+        <p>Contactez-nous pour discuter de votre projet immobilier</p>
+        <a href="contact.html" class="btn-cta-contact">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li><li><a href="nos-services.html">Nos services</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 IDEAL Home Project - Tous droits réservés.</p></div>
+  </footer>
+
+  <script src="js/header.js"></script>
+  <script src="js/bandeau.js"></script>
+</body>
+</html>

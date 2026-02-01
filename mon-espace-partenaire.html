@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Espace Partenaire - IDEAL Home Project</title>
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #F5F5F5; min-height: 100vh; margin: 0; display: flex; flex-direction: column; }
+    .connexion-hero { background: #6D071A; color: #FFFFFF; padding: 60px 20px 40px; text-align: center; }
+    .connexion-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
+    .connexion-hero p { font-size: 18px; color: rgba(255, 255, 255, 0.9); }
+    .connexion-container { max-width: 500px; margin: -30px auto 80px; padding: 0 20px; }
+    .connexion-card { background: #FFFFFF; border-radius: 16px; padding: 50px 40px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+    .connexion-card h2 { color: #6D071A; font-size: 28px; margin-bottom: 30px; text-align: center; }
+    .form-group { margin-bottom: 25px; }
+    .form-group label { display: block; font-weight: 600; color: #2D0202; margin-bottom: 8px; font-size: 15px; }
+    .form-group select, .form-group input { width: 100%; padding: 14px 18px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 15px; font-family: inherit; }
+    .form-group select:focus, .form-group input:focus { outline: none; border-color: #6D071A; }
+    .btn-connexion { width: 100%; background: #6D071A; color: #FFFFFF; padding: 16px 32px; border: none; border-radius: 30px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }
+    .btn-connexion:hover { background: #6D071A; transform: translateY(-2px); }
+    .connexion-footer { text-align: center; margin-top: 20px; color: #666; font-size: 14px; }
+    .connexion-footer a { color: #6D071A; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
+
+  <section class="connexion-hero">
+    <h1>Espace Partenaire</h1>
+    <p>Accédez à votre espace dédié</p>
+  </section>
+  <div class="connexion-container">
+    <div class="connexion-card">
+      <h2>Connexion</h2>
+      <form id="connexionForm">
+        <div class="form-group">
+          <label for="profil">Je suis...</label>
+          <select id="profil" name="profil" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="entreprise">Entreprise générale du bâtiment</option>
+            <option value="artisan">Artisan</option>
+            <option value="apporteur">Apporteur d'affaires</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="identifiant">Identifiant</label>
+          <input type="text" id="identifiant" name="identifiant" placeholder="Votre identifiant" required>
+        </div>
+        <div class="form-group">
+          <label for="motdepasse">Mot de passe</label>
+          <input type="password" id="motdepasse" name="motdepasse" placeholder="Votre mot de passe" required>
+        </div>
+        <button type="submit" class="btn-connexion">Se connecter</button>
+      </form>
+      <div class="connexion-footer">
+        <p><a href="#">Mot de passe oublié ?</a> | <a href="contact.html">Pas encore de compte ?</a></p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="IDEAL" class="footer-logo">
+        <p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 IDEAL Home Project - Tous droits réservés.</p></div>
+  </footer>
+  <script src="js/header.js"></script>
+  <script>
+    document.getElementById('connexionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var profil = document.getElementById('profil').value;
+      if (profil === 'entreprise') window.location.href = 'espace-entreprise-batiment.html';
+      else if (profil === 'artisan') window.location.href = 'espace-artisan.html';
+      else if (profil === 'apporteur') window.location.href = 'espace-apporteur-affaires.html';
+    });
+  </script>
+</body>
+</html>

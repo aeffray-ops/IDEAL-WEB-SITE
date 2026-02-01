@@ -1,213 +1,117 @@
-/* BANDEAU ÉVÉNEMENT */
+/* ========================================
+   BANDEAU ÉVÈNEMENTS REPOSITIONNÉ
+======================================== */
+.bandeau-evenement,
 #bandeau-evenement {
-  background: #67161f;
-  color: #FFFFFF;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  animation: bandeauSlideDown 0.5s ease-out;
-}
-
-@keyframes bandeauSlideDown {
-  from { transform: translateY(-100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Bloc complet (déplié) */
-.bandeau-full {
-  padding: 16px 20px;
-  transition: opacity 0.25s ease, max-height 0.35s ease, padding 0.25s ease;
-}
-
-#bandeau-evenement.bandeau-minimized .bandeau-full {
-  display: none;
-}
-
-/* Barre minimisée (réductible, toujours visible) */
-.bandeau-mini {
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 20px;
-  min-height: 44px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-#bandeau-evenement.bandeau-minimized .bandeau-mini {
-  display: flex;
-}
-
-.bandeau-mini-text {
-  font-size: 14px;
-  font-weight: 600;
-  flex: 1;
-  min-width: 0;
-}
-
-.bandeau-mini-text strong { color: #FFB800; }
-
-.bandeau-mini-cta {
-  background: linear-gradient(135deg, #FFB800 0%, #FFA500 100%);
-  color: #1A0506;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.bandeau-mini-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255,184,0,0.4);
-  color: #1A0506;
-}
-
-.bandeau-reouvrir {
-  background: transparent;
-  border: 2px solid rgba(255,255,255,0.4);
-  color: #fff;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  flex-shrink: 0;
-}
-
-.bandeau-reouvrir:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #FFB800;
-  color: #FFB800;
+  background: #6D071A;
+  border-bottom: 3px solid #FFD700;
+  padding: 12px 20px;
+  position: relative;
+  z-index: 999;
 }
 
 .bandeau-container {
   max-width: 1400px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
 }
 
-.bandeau-content {
+.bandeau-left {
+  justify-self: start;
+}
+
+.bandeau-title {
+  color: #FFD700;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.bandeau-center {
+  /* Espace flexible */
+}
+
+.bandeau-right {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex: 1;
-  flex-wrap: wrap;
+  gap: 15px;
+  justify-self: end;
 }
 
-.bandeau-icon {
-  font-size: 32px;
-  flex-shrink: 0;
-}
-
-.bandeau-text {
+.btn-bandeau {
+  background: #FFD700;
+  color: #6D071A;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 16px;
-  line-height: 1.4;
-  flex: 1;
-  min-width: 250px;
-}
-
-.bandeau-text strong {
-  color: #FFB800;
-  font-weight: 700;
-}
-
-.bandeau-date {
-  color: #FFA500;
-  font-weight: 600;
-}
-
-.bandeau-cta {
-  background: linear-gradient(135deg, #FFB800 0%, #FFA500 100%);
-  color: #1A0506;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 15px;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   transition: all 0.3s ease;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
 }
 
-.bandeau-cta:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 184, 0, 0.5);
-  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
-  color: #1A0506;
-}
-
-.bandeau-arrow {
-  font-size: 18px;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
-
-.bandeau-cta:hover .bandeau-arrow {
-  transform: translateX(4px);
+.btn-bandeau:hover {
+  background: #FFFFFF;
+  color: #6D071A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
 }
 
 .bandeau-close {
-  background: transparent;
-  border: 2px solid rgba(255,255,255,0.3);
+  background: none;
+  border: none;
   color: #FFFFFF;
-  font-size: 28px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
   flex-shrink: 0;
-  line-height: 1;
-  padding: 0;
 }
 
 .bandeau-close:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #FFB800;
-  color: #FFB800;
-  transform: rotate(90deg);
+  color: #FFD700;
+  transform: scale(1.2);
 }
 
-@media (max-width: 767px) {
-  .bandeau-full { padding: 12px 16px; min-height: 80px; }
-  .bandeau-container { flex-direction: column; gap: 12px; position: relative; }
-  .bandeau-content { flex-direction: column; text-align: center; gap: 12px; }
-  .bandeau-text { font-size: 14px; min-width: 100%; }
-  .bandeau-cta { width: 100%; justify-content: center; padding: 14px 24px; }
-  .bandeau-close { position: absolute; top: 0; right: 0; width: 32px; height: 32px; font-size: 24px; }
+.bandeau-close svg {
+  width: 20px;
+  height: 20px;
+}
 
-  .bandeau-mini {
-    flex-wrap: wrap;
-    padding: 10px 14px;
+@media (max-width: 768px) {
+  .bandeau-container {
+    grid-template-columns: 1fr;
     gap: 10px;
   }
-  .bandeau-mini-text { font-size: 12px; order: 1; width: 100%; }
-  .bandeau-mini-cta { order: 2; flex: 1; justify-content: center; }
-  .bandeau-reouvrir { order: 2; width: 28px; height: 28px; font-size: 16px; }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .bandeau-text { font-size: 15px; }
-  .bandeau-cta { padding: 10px 22px; font-size: 14px; }
-  .bandeau-mini-text { font-size: 13px; }
+  
+  .bandeau-left,
+  .bandeau-right {
+    justify-self: center;
+  }
+  
+  .bandeau-left {
+    order: 1;
+  }
+  
+  .bandeau-right {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn-bandeau {
+    flex: 1;
+  }
+  
+  .bandeau-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    order: 0;
+  }
 }

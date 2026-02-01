@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Services - IDEAL Home Project</title>
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --rouge-bordeaux: #6D071A; }
+    body { font-family: 'Montserrat', sans-serif; background: #F5F5F5; margin: 0; }
+    .btn-retour { position: fixed; top: 100px; left: 20px; background: var(--rouge-bordeaux); color: #FFFFFF; border: none; border-radius: 25px; padding: 10px 18px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(109, 7, 26, 0.3); transition: all 0.3s ease; z-index: 999; }
+    .btn-retour:hover { background: #8B0920; transform: translateX(-3px); }
+    .services-hero { background: var(--rouge-bordeaux); color: #FFFFFF; padding: 80px 20px 60px; text-align: center; }
+    .services-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
+    .services-hero .intro { font-size: 20px; line-height: 1.6; max-width: 900px; margin: 0 auto 20px; color: rgba(255,255,255,0.95); }
+    .services-hero .subtitle { font-size: 18px; font-weight: 600; color: #FFB800; margin-top: 20px; }
+    .services-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+    .service-section { background: #FFFFFF; border-radius: 12px; padding: 40px; margin-bottom: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .service-section h2 { color: var(--rouge-bordeaux); font-size: 32px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+    .service-intro { font-size: 17px; color: #666; line-height: 1.7; margin-bottom: 30px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .service-card { background: #F9F9F9; border-radius: 10px; padding: 25px; border-left: 4px solid var(--rouge-bordeaux); transition: all 0.3s ease; }
+    .service-card:hover { background: #FFF; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateX(5px); }
+    .service-card .photo-placeholder { width: 100%; height: 120px; background: #E5E5E5; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px; margin-bottom: 15px; }
+    .service-card h3 { color: var(--rouge-bordeaux); font-size: 18px; margin-bottom: 10px; }
+    .service-card ul { list-style: none; padding: 0; margin: 0; }
+    .service-card li { color: #666; font-size: 14px; line-height: 1.6; padding-left: 20px; position: relative; margin-bottom: 8px; }
+    .service-card li::before { content: '✓'; position: absolute; left: 0; color: var(--rouge-bordeaux); font-weight: 700; }
+    .service-objectif { background: #FFF9E6; border-left: 4px solid #FFB800; padding: 15px 20px; margin-top: 20px; border-radius: 8px; }
+    .services-cta { background: var(--rouge-bordeaux); color: #FFF; border-radius: 12px; padding: 50px 40px; text-align: center; margin-top: 60px; }
+    .btn-contact { display: inline-block; background: #FFB800; color: var(--rouge-bordeaux); padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; }
+    .btn-contact:hover { background: #FFC933; transform: translateY(-3px); }
+    @media (max-width: 768px) { .services-hero h1 { font-size: 36px; } .service-section { padding: 30px 25px; } }
+  </style>
+</head>
+<body>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
+
+  <section class="services-hero">
+    <div class="container-reduced">
+      <h1>Nos Services</h1>
+      <p class="intro">Chez IDEAL Home Project, nous intervenons sur toute la chaîne de valeur immobilière.<br>Notre rôle : <strong>transformer des situations complexes en projets rentables, sécurisés et maîtrisés</strong>.</p>
+      <p class="subtitle">IDEAL HOME PROJECT : identification, conception, structuration, financement, valorisation et cession de projets immobiliers à forte valeur ajoutée.</p>
+    </div>
+  </section>
+
+  <div class="services-container">
+    <div class="service-section">
+      <h2>🏠 Transaction & Marchand de biens</h2>
+      <p class="service-intro">Nous intervenons aussi bien comme intermédiaire que comme acquéreur professionnel.</p>
+      <div class="services-grid">
+        <div class="service-card"><div class="photo-placeholder">📷 Transaction</div><h3>Transaction immobilière</h3><ul><li>Vente d'immeubles et fonds</li><li>Accompagnement vendeurs et acquéreurs</li><li>Négociation et sécurisation juridique</li></ul></div>
+        <div class="service-card"><div class="photo-placeholder">📷 Marchand de biens</div><h3>Marchand de biens</h3><ul><li>Achat, revente et valorisation</li><li>Opérations de promotion immobilière</li><li>Construction-vente</li></ul></div>
+        <div class="service-card"><div class="photo-placeholder">📷 Valorisation</div><h3>Valorisation patrimoniale</h3><ul><li>Optimisation de biens bâtis</li><li>Valorisation foncière</li><li>Stratégie patrimoniale</li></ul></div>
+      </div>
+      <div class="service-objectif"><strong>Objectif :</strong> Créer de la valeur là où le marché voit un problème.</div>
+    </div>
+    <div class="service-section">
+      <h2>✏️ Conception, architecture & aménagement</h2>
+      <p class="service-intro">Nous concevons des projets pensés pour être réalisables, autorisés et rentables.</p>
+      <div class="services-grid">
+        <div class="service-card"><div class="photo-placeholder">📷 Architecture</div><h3>Architecture d'intérieur</h3><ul><li>Conception et rénovation d'espaces</li><li>Transformation optimisée</li></ul></div>
+        <div class="service-card"><div class="photo-placeholder">📷 Plans</div><h3>Plans techniques</h3><ul><li>Relevés et métrés</li><li>Modélisation 2D / 3D</li></ul></div>
+        <div class="service-card"><div class="photo-placeholder">📷 Aménagement</div><h3>Aménagement sur mesure</h3><ul><li>Création de mobiliers</li><li>Optimisation des volumes</li></ul></div>
+      </div>
+      <div class="service-objectif"><strong>Chaque m² est optimisé.</strong> Rien n'est laissé au hasard.</div>
+    </div>
+    <div class="service-section">
+      <h2>📐 Études & autorisations</h2>
+      <p class="service-intro">Avant d'engager un euro, nous sécurisons le projet.</p>
+      <div class="services-grid">
+        <div class="service-card"><h3>Études préalables</h3><ul><li>Études de faisabilité</li><li>Analyse réglementaire</li></ul></div>
+        <div class="service-card"><h3>Autorisations</h3><ul><li>Déclarations Préalables</li><li>Permis de Construire</li></ul></div>
+        <div class="service-card"><h3>Dossiers techniques</h3><ul><li>DCE</li><li>Coordination technique</li></ul></div>
+      </div>
+      <div class="service-objectif"><strong>Moins de risques.</strong> Plus de visibilité.</div>
+    </div>
+    <div class="service-section">
+      <h2>💰 Économie de la construction</h2>
+      <p class="service-intro">Nous maîtrisons les chiffres avant, pendant et après les travaux.</p>
+      <div class="services-grid">
+        <div class="service-card"><h3>Estimation & devis</h3><ul><li>Estimation financière</li><li>Analyse des offres</li></ul></div>
+        <div class="service-card"><h3>Suivi budgétaire</h3><ul><li>Contrôle des coûts</li><li>Gestion des décomptes</li></ul></div>
+        <div class="service-card"><h3>Pilotage financier</h3><ul><li>Tableaux de bord</li><li>Reporting financier</li></ul></div>
+      </div>
+      <div class="service-objectif"><strong>Le budget n'est pas une surprise.</strong> C'est un outil de pilotage.</div>
+    </div>
+    <div class="service-section">
+      <h2>🧠 Conseil, AMO & ingénierie</h2>
+      <p class="service-intro">Nous accompagnons les décisions stratégiques.</p>
+      <div class="services-grid">
+        <div class="service-card"><h3>Assistance Maîtrise d'Ouvrage</h3><ul><li>Pilotage de projets</li><li>Coordination des intervenants</li></ul></div>
+        <div class="service-card"><h3>Conseil immobilier</h3><ul><li>Conseil patrimonial</li><li>Stratégie d'investissement</li></ul></div>
+        <div class="service-card"><h3>Ingénierie patrimoniale</h3><ul><li>Montage de projets</li><li>Valorisation</li></ul></div>
+      </div>
+      <div class="service-objectif"><strong>Vous décidez en connaissance de cause.</strong></div>
+    </div>
+    <div class="service-section">
+      <h2>🔗 Intermédiation & réseau</h2>
+      <p class="service-intro">Nous activons les bons partenaires au bon moment.</p>
+      <div class="services-grid">
+        <div class="service-card"><h3>Apport d'affaires</h3><ul><li>Intermédiation professionnelle</li><li>Mise en relation qualifiée</li></ul></div>
+        <div class="service-card"><h3>Réseau de partenaires</h3><ul><li>Artisans certifiés</li><li>Entreprises du bâtiment</li></ul></div>
+        <div class="service-card"><h3>Services complémentaires</h3><ul><li>Prospection foncière</li><li>Formation et accompagnement</li></ul></div>
+      </div>
+      <div class="service-objectif"><strong>Un seul interlocuteur, un écosystème complet.</strong></div>
+    </div>
+
+    <div class="services-cta">
+      <h2>Notre approche</h2>
+      <p>Nous ne vendons pas des biens.<br><strong>Nous structurons des projets, nous créons de la valeur, nous sécurisons les décisions.</strong></p>
+      <p style="font-size: 24px; font-weight: 700; color: #FFB800; margin-bottom: 30px;">Co-agir. Co-construire. Co-réussir.</p>
+      <a href="contact.html" class="btn-contact">Parlons de votre projet</a>
+    </div>
+  </div>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li><li><a href="nos-services.html">Nos services</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 IDEAL Home Project - Tous droits réservés.</p></div>
+  </footer>
+  <script src="js/header.js"></script>
+  <script src="js/bandeau.js"></script>
+</body>
+</html>

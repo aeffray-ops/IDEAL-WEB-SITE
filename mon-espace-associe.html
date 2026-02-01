@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Espace Associé - IDEAL Home Project</title>
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #F5F5F5; margin: 0; }
+    .espace-hero {
+      background: #6D071A;
+      color: #FFFFFF;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    .espace-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
+    .espace-hero p { font-size: 18px; color: rgba(255, 255, 255, 0.9); }
+    .dashboard-container { max-width: 1400px; margin: -30px auto 60px; padding: 0 20px; }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    .dashboard-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    .dashboard-card h3 {
+      color: #6D071A;
+      font-size: 22px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dashboard-card .icon { font-size: 28px; }
+    .dashboard-card p { color: #666; font-size: 15px; line-height: 1.6; }
+    .formation-section {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 40px;
+      margin-top: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .formation-section h2 { color: #6D071A; font-size: 32px; margin-bottom: 30px; text-align: center; }
+    .carousel-formation {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .semaine-card {
+      background: #F9F9F9;
+      border: 2px solid #E5E5E5;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .semaine-card:hover {
+      border-color: #6D071A;
+      background: #FFF;
+      transform: translateY(-3px);
+    }
+    .semaine-card h4 { color: #6D071A; font-size: 18px; margin-bottom: 10px; }
+    .semaine-card p { color: #666; font-size: 13px; }
+    .video-placeholder {
+      background: #E5E5E5;
+      height: 120px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 14px;
+    }
+    @media (max-width: 1024px) { .carousel-formation { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) { .carousel-formation { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .carousel-formation { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- BANDEAU ÉVÈNEMENTS SIMPLIFIÉ -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo">
+        <a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a>
+      </div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="espace-hero">
+    <h1>🎯 Mon Espace Associé</h1>
+    <p>Bienvenue dans votre espace privé, Agent Marchand IDEAL</p>
+  </section>
+
+  <div class="dashboard-container">
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3><span class="icon">📅</span> Prochains événements</h3>
+        <p><strong>19 février 2025 - 19h</strong><br>Webinaire recrutement<br><br><strong>22 février 2025 - 14h</strong><br>Formation collective - Module 2<br><br><strong>5 mars 2025 - 10h</strong><br>Réunion trimestrielle réseau</p>
+      </div>
+      <div class="dashboard-card">
+        <h3><span class="icon">📊</span> Résultats IDEAL</h3>
+        <p><strong>CA 2024 :</strong> 2,4 M€ (+35%)<br><strong>Transactions :</strong> 87 ventes<br><strong>Agents actifs :</strong> 24<br><strong>Satisfaction client :</strong> 4,8/5</p>
+      </div>
+      <div class="dashboard-card">
+        <h3><span class="icon">📍</span> Résultats par région</h3>
+        <p><strong>Bordeaux Métropole :</strong> 1,2 M€<br><strong>Bassin d'Arcachon :</strong> 680 K€<br><strong>Entre-Deux-Mers :</strong> 420 K€<br><strong>Médoc :</strong> 180 K€</p>
+      </div>
+      <div class="dashboard-card">
+        <h3><span class="icon">🏆</span> Votre performance</h3>
+        <p><strong>Vos ventes 2024 :</strong> 8 transactions<br><strong>CA généré :</strong> 240 K€<br><strong>Commissions :</strong> 18 K€<br><strong>Classement réseau :</strong> 5ème/24</p>
+      </div>
+      <div class="dashboard-card">
+        <h3><span class="icon">📚</span> Ressources</h3>
+        <p><a href="#" style="color:#6D071A;text-decoration:underline;">Charte graphique IDEAL</a><br><a href="#" style="color:#6D071A;text-decoration:underline;">Templates réseaux sociaux</a><br><a href="#" style="color:#6D071A;text-decoration:underline;">Guide de vente</a><br><a href="#" style="color:#6D071A;text-decoration:underline;">FAQ partenaires</a></p>
+      </div>
+      <div class="dashboard-card">
+        <h3><span class="icon">💬</span> Support</h3>
+        <p><strong>Hotline :</strong> 06 64 64 64 64<br><strong>Email :</strong> support@idealhomeproject.com<br><strong>Horaires :</strong> 9h-18h (Lun-Ven)<br><a href="contact.html" style="color:#6D071A;text-decoration:underline;">Nous contacter</a></p>
+      </div>
+    </div>
+
+    <div class="formation-section">
+      <h2>🎓 Programme de formation - 6 semaines</h2>
+      <div class="carousel-formation">
+        <div class="semaine-card"><h4>Semaine 1</h4><p><strong>Les fondamentaux</strong></p><div class="video-placeholder">📹 5 vidéos</div><p style="font-size:12px;color:#999;">5 jours - 30min/jour</p></div>
+        <div class="semaine-card"><h4>Semaine 2</h4><p><strong>Prospection efficace</strong></p><div class="video-placeholder">📹 5 vidéos</div><p style="font-size:12px;color:#999;">5 jours - 30min/jour</p></div>
+        <div class="semaine-card"><h4>Semaine 3</h4><p><strong>Estimation & valorisation</strong></p><div class="video-placeholder">📹 5 vidéos</div><p style="font-size:12px;color:#999;">5 jours - 30min/jour</p></div>
+        <div class="semaine-card"><h4>Semaine 4</h4><p><strong>Négociation & closing</strong></p><div class="video-placeholder">📹 5 vidéos</div><p style="font-size:12px;color:#999;">5 jours - 30min/jour</p></div>
+        <div class="semaine-card"><h4>Semaine 5</h4><p><strong>Juridique & administratif</strong></p><div class="video-placeholder">📹 5 vidéos</div><p style="font-size:12px;color:#999;">5 jours - 30min/jour</p></div>
+        <div class="semaine-card"><h4>Semaine 6</h4><p><strong>Excellence & leadership</strong></p><div class="video-placeholder">📹 5 vidéos</div><p style="font-size:12px;color:#999;">5 jours - 30min/jour</p></div>
+      </div>
+      <p style="text-align:center;color:#666;font-size:14px;"><strong>Total :</strong> 30 vidéos | 15 heures de formation | Certificat IDEAL à l'issue</p>
+    </div>
+  </div>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="IDEAL Home Project" class="footer-logo">
+        <p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance pour vendre, acheter ou rejoindre notre réseau.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+          <li><a href="nos-biens.html">Nos biens</a></li>
+          <li><a href="nos-realisations.html">Nos réalisations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="vendeurs.html">Vous êtes Vendeurs</a></li>
+          <li><a href="acquereurs.html">Vous êtes Acquéreurs</a></li>
+          <li><a href="rejoindre-le-reseau.html">Rejoindre le réseau</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informations légales</h4>
+        <ul class="footer-links">
+          <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
+          <li><a href="mentions-legales.html#mentions">Mentions légales</a></li>
+          <li><a href="mentions-legales.html#cookies">Politique de gestion des cookies</a></li>
+          <li><a href="mentions-legales.html#cookies">Paramétrer mes cookies</a></li>
+          <li><a href="mentions-legales.html#accessibilite">Accessibilité : en cours</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 IDEAL Home Project - SAS au capital variable - RCS Bordeaux 992 408 047 - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/header.js"></script>
+</body>
+</html>

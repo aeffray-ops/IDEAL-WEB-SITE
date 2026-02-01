@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Webinaire Investisseurs Heureux : Découvrez comment investir sereinement dans l'immobilier et créer de la valeur durablement">
+  <title>Les Investisseurs Heureux | IDEAL Home Project</title>
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/evenements.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --rouge-bordeaux: #6D071A; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: #fff; color: #333; }
+    .formulaire-invest { background: #F9F9F9; padding: 80px 20px; }
+    .formulaire-invest .container { max-width: 700px; margin: 0 auto; }
+    .formulaire-invest h2 { font-size: 36px; color: var(--rouge-bordeaux); text-align: center; margin-bottom: 20px; }
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--rouge-bordeaux); font-size: 15px; }
+    .form-group input { width: 100%; padding: 14px 18px; border: 2px solid #DDD; border-radius: 10px; font-size: 16px; font-family: inherit; }
+    .form-group input:focus { outline: none; border-color: #FFB800; }
+    .btn-submit { width: 100%; background: #FFB800; color: var(--rouge-bordeaux); padding: 18px 40px; border: none; border-radius: 35px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: inherit; }
+    .btn-submit:hover { background: #FFC933; transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <a href="index.html" class="btn-back-white"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>Retour</a>
+
+  <section class="hero-webinaire">
+    <div class="container">
+      <h1>Les Investisseurs Heureux</h1>
+      <p class="hero-subtitle">Webinaire gratuit</p>
+      <div class="webinaire-date">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+        </svg>
+        <span>Jeudi 15 février 2025 à 19h00</span>
+      </div>
+      <a href="#formulaire" style="display:inline-block;background:#FFB800;color:#6D071A;padding:18px 45px;border-radius:35px;font-size:18px;font-weight:700;text-decoration:none;margin-top:30px;transition:all 0.3s;">Je réserve ma place gratuitement →</a>
+    </div>
+  </section>
+
+  <section class="section-contenu">
+    <div class="container">
+      <h2>Ce que vous allez découvrir</h2>
+      <div class="contenu-grid">
+        <div class="contenu-item"><div class="contenu-icon">💡</div><h3>Les fondamentaux de l'investissement immobilier</h3><p>Comprendre les mécanismes de création de valeur et les stratégies gagnantes.</p></div>
+        <div class="contenu-item"><div class="contenu-icon">📊</div><h3>Comment choisir le bon projet</h3><p>Critères d'analyse, pièges à éviter et opportunités à saisir.</p></div>
+        <div class="contenu-item"><div class="contenu-icon">🏗️</div><h3>Valorisation et travaux</h3><p>Techniques pour maximiser la rentabilité de vos opérations.</p></div>
+        <div class="contenu-item"><div class="contenu-icon">💰</div><h3>Financement et montages</h3><p>Solutions de financement et stratégies pour sécuriser vos projets.</p></div>
+        <div class="contenu-item"><div class="contenu-icon">🎯</div><h3>Retours d'expérience</h3><p>Cas concrets d'investisseurs qui ont réussi avec le modèle IDEAL.</p></div>
+        <div class="contenu-item"><div class="contenu-icon">🤝</div><h3>Le réseau IDEAL</h3><p>Comment le collectif IDEAL peut accélérer vos projets.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-intervenant">
+    <div class="container">
+      <h2>Votre intervenant</h2>
+      <div class="intervenant-card">
+        <div class="intervenant-photo">
+          <div class="intervenant-photo-placeholder">Photo à venir</div>
+        </div>
+        <div class="intervenant-info">
+          <h3>Marc FOURRÉ</h3>
+          <p class="intervenant-role">Fondateur IDEAL Home Project</p>
+          <p class="intervenant-bio">Fort de 15 ans d'expérience dans l'immobilier et la valorisation patrimoniale, Marc FOURRÉ a créé le modèle IDEAL pour réconcilier vendeurs, acquéreurs et professionnels de l'immobilier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulaire" class="formulaire-invest">
+    <div class="container">
+      <h2>Inscrivez-vous gratuitement</h2>
+      <p style="text-align:center;margin-bottom:40px;font-size:18px;color:#555;">Places limitées. Remplissez le formulaire pour sécuriser votre accès.</p>
+      <form action="#" method="post" style="background:#fff;padding:50px;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Votre prénom"></div>
+        <div class="form-group"><label>Nom *</label><input type="text" name="nom" required placeholder="Votre nom"></div>
+        <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="nom@exemple.fr"></div>
+        <div class="form-group"><label>Téléphone *</label><input type="tel" name="telephone" required placeholder="06 12 34 56 78"></div>
+        <div class="form-group"><label>Statut</label><input type="text" name="statut" placeholder="Investisseur, Acquéreur..."></div>
+        <button type="submit" class="btn-submit">Je confirme ma participation</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li><li><a href="nos-services.html">Nos services</a></li><li><a href="tous-nos-evenements.html">Nos évènements</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 IDEAL Home Project - Tous droits réservés.</p></div>
+  </footer>
+
+  <script src="js/header.js"></script>
+  <script src="js/bandeau.js"></script>
+</body>
+</html>

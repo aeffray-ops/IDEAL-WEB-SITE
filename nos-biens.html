@@ -100,7 +100,7 @@
 
     /* Hero biens */
     .hero-biens{
-      background: #67161f;
+      background: #6D071A;
       color: #fff;
       padding: 60px 0 50px;
       text-align: center;
@@ -171,11 +171,12 @@
     .bien-image{
       width: 100%;
       height: 240px;
-      background: linear-gradient(135deg, var(--soft) 0%, #e5e7eb 100%);
+      background: #E5E5E5;
       overflow: hidden;
       position: relative;
     }
-    .bien-image img{width: 100%; height: 100%; object-fit: cover;}
+    .bien-image img{width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;}
+.bien-card:hover .bien-image img{transform: scale(1.05);}
     .bien-badge{
       position: absolute;
       top: 16px;
@@ -243,61 +244,50 @@
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
-  <div id="bandeau-evenement">
-    <div class="bandeau-full">
-      <div class="bandeau-container">
-        <div class="bandeau-content">
-          <span class="bandeau-text">
-            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
-            <span class="bandeau-date">Dimanche 15 février 2025 à 20h</span>
-          </span>
-          <a href="webinaire-recrutement.html" class="bandeau-cta">
-            Je m'inscris gratuitement
-            <span class="bandeau-arrow">→</span>
-          </a>
-        </div>
-        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
+  <!-- BOUTON RETOUR -->
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
       </div>
-    </div>
-    <div class="bandeau-mini" aria-hidden="true">
-      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Dimanche 15 février 2025, 20h</span>
-      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
-      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
     </div>
   </div>
 
   <header class="header-principal">
-    <div class="header-container">
-      <div class="header-logo">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
-        </a>
-      </div>
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a>
-        <a href="nos-biens.html" class="nav-link">Nos biens</a>
-        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
-        <a href="vendeurs.html" class="nav-link">Vous êtes Vendeurs</a>
-        <a href="acquereurs.html" class="nav-link">Vous êtes Acquéreurs</a>
-        <a href="index.html#contact" class="nav-link nav-link-contact">Contact</a>
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
-      <div class="header-cta">
+      <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     </div>
   </header>
+
+  <a href="index.html" class="btn-back-white">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2"/></svg>
+    Retour
+  </a>
 
   <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
     <span class="t1">RÉSEAU</span>
@@ -358,7 +348,7 @@
       <div class="biens-grid">
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Maison Bordeaux"><span class="bien-badge">Maison</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Maison de ville rénovée" loading="lazy"><span class="bien-badge">Maison</span></div>
           <div class="bien-content">
             <div class="bien-prix">425 000€</div>
             <h3 class="bien-titre">Maison de ville rénovée</h3>
@@ -372,7 +362,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Appartement Mérignac"><span class="bien-badge">Appartement</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Appartement avec balcon et vue dégagée" loading="lazy"><span class="bien-badge">Appartement</span></div>
           <div class="bien-content">
             <div class="bien-prix">245 000€</div>
             <h3 class="bien-titre">Appartement T3 avec balcon</h3>
@@ -386,7 +376,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Maison Talence"><span class="bien-badge">Maison</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80" alt="Villa rénovée avec jardin et piscine" loading="lazy"><span class="bien-badge">Maison</span></div>
           <div class="bien-content">
             <div class="bien-prix">585 000€</div>
             <h3 class="bien-titre">Villa contemporaine avec piscine</h3>
@@ -400,7 +390,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Appartement Pessac"><span class="bien-badge">Appartement</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80" alt="Appartement lumineux rénové" loading="lazy"><span class="bien-badge">Appartement</span></div>
           <div class="bien-content">
             <div class="bien-prix">189 000€</div>
             <h3 class="bien-titre">Appartement T2 rénové</h3>
@@ -414,7 +404,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Maison Bègles"><span class="bien-badge">Maison</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80" alt="Maison de caractère avec terrasse" loading="lazy"><span class="bien-badge">Maison</span></div>
           <div class="bien-content">
             <div class="bien-prix">395 000€</div>
             <h3 class="bien-titre">Maison familiale avec jardin</h3>
@@ -428,7 +418,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Appartement Bordeaux"><span class="bien-badge">Appartement</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&q=80" alt="Appartement T4 avec terrasse" loading="lazy"><span class="bien-badge">Appartement</span></div>
           <div class="bien-content">
             <div class="bien-prix">325 000€</div>
             <h3 class="bien-titre">Appartement T4 avec terrasse</h3>
@@ -442,7 +432,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Studio Bordeaux"><span class="bien-badge">Studio</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Studio étudiant centre-ville" loading="lazy"><span class="bien-badge">Studio</span></div>
           <div class="bien-content">
             <div class="bien-prix">135 000€</div>
             <h3 class="bien-titre">Studio étudiant centre-ville</h3>
@@ -456,7 +446,7 @@
         </article>
 
         <article class="bien-card">
-          <div class="bien-image"><img src="https://placehold.co/600x400/f3f4f6/6b7280?text=Photo" alt="Loft Bordeaux"><span class="bien-badge">Loft</span></div>
+          <div class="bien-image"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80" alt="Loft industriel rénové" loading="lazy"><span class="bien-badge">Loft</span></div>
           <div class="bien-content">
             <div class="bien-prix">465 000€</div>
             <h3 class="bien-titre">Loft industriel rénové</h3>
@@ -489,6 +479,7 @@
           <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
           <li><a href="nos-biens.html">Nos biens</a></li>
           <li><a href="nos-realisations.html">Nos réalisations</a></li>
+          <li><a href="nos-services.html">Nos services</a></li>
         </ul>
       </div>
       <div class="footer-col">

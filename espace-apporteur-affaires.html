@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Apporteur d'Affaires - IDEAL</title>
+  <link rel="stylesheet" href="css/bandeau.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; }
+    .espace-hero { background: #6D071A; color: #FFFFFF; padding: 60px 20px; text-align: center; }
+    .espace-hero h1 { font-size: 36px; margin-bottom: 10px; }
+    .espace-content { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+    .content-card { background: #FFFFFF; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+    .content-card h3 { color: #6D071A; font-size: 24px; margin-bottom: 15px; }
+    .content-card p { color: #333; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <!-- BANDEAU ÉVÈNEMENTS -->
+  <div id="bandeau-evenement" class="bandeau-evenement">
+    <div class="bandeau-container">
+      <div class="bandeau-left"><span class="bandeau-title">Nos évènements</span></div>
+      <div class="bandeau-right">
+        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
+      </div>
+      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="header-principal">
+    <div class="header-container-full">
+      <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL" class="logo-img"></a></div>
+      <nav class="header-nav-full">
+        <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
+        <div class="header-profil">
+          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+        </div>
+      </div>
+      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="espace-hero">
+    <h1>🤝 Espace Apporteur d'Affaires</h1>
+    <p>Vos apports et vos commissions</p>
+  </section>
+
+  <div class="espace-content">
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>📈 Vos apports 2024</h3>
+        <p>• Nombre d'apports : 12<br>• Apports concrétisés : 7<br>• Taux de conversion : 58%<br>• CA généré : 1,8 M€</p>
+      </div>
+      <div class="content-card">
+        <h3>💰 Vos commissions</h3>
+        <p><strong>Total 2024 :</strong> 18 500 €<br>• Commissions versées : 12 400 €<br>• En attente validation : 6 100 €<br>• Taux moyen : 1,03%</p>
+      </div>
+      <div class="content-card">
+        <h3>🎯 Apports en cours</h3>
+        <p><strong>3 dossiers actifs :</strong><br>• Villa Arcachon - 680 K€ (en négociation)<br>• Appartement Bordeaux - 340 K€ (offre acceptée)<br>• Maison Mérignac - 480 K€ (compromis signé)</p>
+      </div>
+      <div class="content-card">
+        <h3>📊 Grille commissions</h3>
+        <p>• Vente &lt; 300 K€ : 1%<br>• Vente 300-600 K€ : 1,2%<br>• Vente &gt; 600 K€ : 1,5%<br>• Bonus : +0,3% au-delà de 10 apports/an</p>
+      </div>
+      <div class="content-card">
+        <h3>📚 Outils & supports</h3>
+        <p>• <a href="#" style="color:#6D071A;">Plaquette IDEAL</a><br>• <a href="#" style="color:#6D071A;">Modèles email</a><br>• <a href="#" style="color:#6D071A;">Grille estimation</a><br>• <a href="#" style="color:#6D071A;">Formulaire apport</a></p>
+      </div>
+      <div class="content-card">
+        <h3>📞 Votre contact</h3>
+        <p><strong>Service Apporteurs</strong><br>📱 06 64 64 64 64<br>📧 apporteurs@idealhomeproject.com<br><strong>Réponse :</strong> &lt; 24h</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-principal">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="IDEAL" class="footer-logo">
+        <p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre le réseau</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li><li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 IDEAL Home Project - Tous droits réservés.</p></div>
+  </footer>
+
+  <script src="js/header.js"></script>
+</body>
+</html>

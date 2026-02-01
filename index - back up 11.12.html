@@ -65,7 +65,7 @@
       transform: translateY(-2px);
     }
     .split-panel.right{
-      background: #6D071A;
+      background: #8B0000;
       border-color: rgba(255,255,255,0.15);
     }
     .split-panel.right .split-kicker{ color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); }
@@ -166,7 +166,7 @@
       margin: 26px 0;
       border-radius: var(--radius-2xl);
       border: 1px solid var(--bordeaux-10);
-      background: #FFF8F8;
+      background: linear-gradient(180deg, var(--bordeaux-05) 0%, #fff 100%);
     }
     .block-fond h2{ margin-top: 0; }
     .block-fond .lead{ font-size: 16px; line-height: 1.7; margin-top: 14px; }
@@ -390,7 +390,7 @@
       padding-top: 50px;
       padding-bottom: 60px;
       margin-top: 20px;
-      background: #FFF8F8;
+      background: linear-gradient(180deg, var(--bordeaux-05) 0%, #fff 100%);
       border-radius: var(--radius-2xl);
       border: 1px solid var(--bordeaux-10);
     }
@@ -599,54 +599,63 @@
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="top">
 
-  <!-- BANDEAU ÉVÈNEMENTS SIMPLIFIÉ -->
-  <div id="bandeau-evenement" class="bandeau-evenement">
-    <div class="bandeau-container">
-      <div class="bandeau-left">
-        <span class="bandeau-title">Nos évènements</span>
+  <!-- BANDEAU ÉVÉNEMENT (réductible, réouvrable) -->
+  <div id="bandeau-evenement">
+    <div class="bandeau-full">
+      <div class="bandeau-container">
+        <div class="bandeau-content">
+          <span class="bandeau-text">
+            <strong>WEBINAIRE GRATUIT</strong> : Découvrez le Modèle Agent Marchand —
+            <span class="bandeau-date">Dimanche 15 février 2025 à 20h</span>
+          </span>
+          <a href="webinaire-recrutement.html" class="bandeau-cta">
+            Je m'inscris gratuitement
+            <span class="bandeau-arrow">→</span>
+          </a>
+        </div>
+        <button type="button" class="bandeau-close" aria-label="Réduire le bandeau">×</button>
       </div>
-      <div class="bandeau-right">
-        <a href="tous-nos-evenements.html" class="btn-bandeau">Je m'inscris</a>
-      </div>
-      <button class="bandeau-close" type="button" onclick="document.getElementById('bandeau-evenement').style.display='none'" aria-label="Fermer">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
-      </button>
+    </div>
+    <div class="bandeau-mini" aria-hidden="true">
+      <span class="bandeau-mini-text"><strong>Webinaire gratuit</strong> — Dimanche 15 février 2025, 20h</span>
+      <a href="webinaire-recrutement.html" class="bandeau-mini-cta">Je m'inscris</a>
+      <button type="button" class="bandeau-reouvrir" aria-label="Réouvrir le bandeau">↑</button>
     </div>
   </div>
 
   <header class="header-principal">
-    <div class="header-container-full">
+    <div class="header-container">
       <div class="header-logo">
         <a href="index.html">
           <img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img">
         </a>
       </div>
-      <nav class="header-nav-full">
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
         <div class="nav-item-dropdown">
-          <a href="index.html" class="nav-link">
-            <span class="nav-arrow">▼</span> Bonjour
+          <a href="qui-sommes-nous.html" class="nav-link">
+            <span class="nav-arrow">▼</span> Qui sommes-nous ?
           </a>
           <div class="dropdown-menu">
-            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-            <a href="nos-realisations.html">Nos réalisations</a>
-            <a href="nos-services.html">Nos services</a>
-            <a href="le-reseau-ideal.html">Le réseau IDEAL</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="qui-sommes-nous.html#adn">Notre ADN</a>
+            <a href="qui-sommes-nous.html#equipe">L'équipe</a>
+            <a href="qui-sommes-nous.html#valeurs">Nos valeurs</a>
           </div>
         </div>
+        <a href="nos-biens.html" class="nav-link">Nos biens</a>
+        <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
         <div class="nav-item-dropdown">
           <a href="vendeurs.html" class="nav-link">
             <span class="nav-arrow">▼</span> Vous êtes Vendeurs
           </a>
           <div class="dropdown-menu">
-            <a href="vendeurs.html#valoriser">Valoriser votre bien</a>
-            <a href="vendeurs.html#processus">Notre processus</a>
-            <a href="contact.html">Prendre rendez-vous</a>
+            <a href="vendeurs.html#estimer">Estimer mon bien</a>
+            <a href="vendeurs.html#process">Notre processus</a>
+            <a href="contact.html">Nous contacter</a>
           </div>
         </div>
         <div class="nav-item-dropdown">
@@ -654,39 +663,31 @@
             <span class="nav-arrow">▼</span> Vous êtes Acquéreurs
           </a>
           <div class="dropdown-menu">
-            <a href="nos-biens.html">Acheter un bien</a>
-            <a href="contact.html#financement">Financement</a>
-            <a href="contact.html">Prendre rendez-vous</a>
+            <a href="nos-biens.html">Nos biens</a>
+            <a href="acquereurs.html#financement">Financement</a>
+            <a href="contact.html">Prendre RDV</a>
           </div>
         </div>
-        <div class="nav-item-dropdown">
-          <a href="tous-nos-evenements.html" class="nav-link">
-            <span class="nav-arrow">▼</span> Nos évènements
-          </a>
-          <div class="dropdown-menu">
-            <a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a>
-            <a href="webinaire-recrutement.html">Webinaire IDEAL</a>
-            <a href="tous-nos-evenements.html">Tous nos évènements</a>
-          </div>
-        </div>
+        <a href="index.html#contact" class="nav-link nav-link-contact">Contact</a>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
-      <div class="header-actions">
+      <div class="header-cta">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
-        <div class="header-profil">
-          <button type="button" class="btn-profil" id="btnProfil" aria-label="Menu profil" aria-haspopup="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </button>
-          <div class="dropdown-profil" id="dropdownProfil">
-            <a href="mon-espace-associe.html">Mon espace associé</a>
-            <a href="mon-espace-partenaire.html">Mon espace partenaire</a>
-          </div>
+      </div>
+      <div class="header-profil">
+        <a href="mon-espace-partenaire.html" class="btn-profil" id="btnProfil">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="profil-text">Se connecter</span>
+        </a>
+        <div class="dropdown-profil" id="dropdownProfil">
+          <a href="mon-espace-associe.html">Mon espace associé</a>
+          <a href="mon-espace-partenaire.html">Mon espace partenaire</a>
         </div>
       </div>
-      <button class="menu-toggle burger-menu" id="menuToggle" aria-label="Ouvrir le menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
         <span></span>
         <span></span>
         <span></span>
@@ -694,74 +695,32 @@
     </div>
   </header>
 
-  <!-- SECTION 1 : DEUX GRANDES VIGNETTES (en haut) -->
-  <section class="section-double-principales">
-    <div class="hero-background">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" 
-           alt="Villa moderne avec piscine et jardin"
-           class="hero-bg-image">
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="container hero-content">
-      <div class="grid-deux-vignettes">
-        <!-- Vignette 1 : L'univers IDEAL (FOND BLANC) -->
-        <div class="vignette-principale vignette-blanc">
-          <span class="vignette-label">IDEAL HOME PROJECT</span>
-          <h2 class="vignette-titre">L'univers IDEAL</h2>
-          <p class="vignette-description">Un concept pensé pour vendeurs et acquéreurs, en sécurisant les deux parties.</p>
-          <a href="qui-sommes-nous.html" class="btn-vignette">Découvrir</a>
-        </div>
-        <!-- Vignette 2 : Changer de vie professionnelle (FOND ROUGE BORDEAUX) -->
-        <div class="vignette-principale vignette-bordeaux">
-          <span class="vignette-label">DEVENEZ AGENT MARCHAND</span>
-          <h2 class="vignette-titre">Changer de vie professionnelle</h2>
-          <p class="vignette-description">Rejoignez un métier structuré, crédible et rentable.</p>
-          <a href="rejoindre-le-reseau.html" class="btn-vignette">Rejoindre le réseau</a>
+  <!-- Zone split -->
+  <div class="container split-wrap" aria-label="Choix d'univers">
+    <section class="split">
+      <div class="split-panel left" aria-label="L'univers Ideal Home Project">
+        <div class="split-inner">
+          <div class="split-kicker">IDEAL HOME PROJECT</div>
+          <h1 class="split-title">L'univers IDEAL</h1>
+          <p class="split-sub">
+            Un concept pensé pour vendeurs et acquéreurs, en sécurisant les deux parties.
+          </p>
+          <a class="btn btn-primary" style="margin-top:14px;" href="qui-sommes-nous.html">Découvrir</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- SECTION TROIS VIGNETTES (STYLE PHOTO AVEC OVERLAY) -->
-  <section class="section-trois-vignettes">
-    <div class="container">
-      <div class="grid-trois-vignettes">
-        <!-- Vignette 1 : Bienvenue chez IDEAL -->
-        <a href="qui-sommes-nous.html" class="vignette-photo vignette-photo-1" aria-label="Bienvenue chez IDEAL — Qui sommes-nous ?">
-          <div class="vignette-photo-bg">
-            <div class="vignette-overlay"></div>
-            <div class="vignette-photo-content">
-              <h3 class="vignette-photo-titre">Bienvenue chez IDEAL</h3>
-              <p class="vignette-photo-sous-titre">L'excellence de la valorisation immobilière</p>
-              <span class="btn-vignette-photo">Qui sommes-nous ?</span>
-            </div>
-          </div>
-        </a>
-        <!-- Vignette 2 : Nous achetons, valorisons -->
-        <a href="vendeurs.html" class="vignette-photo vignette-photo-2" aria-label="Nous achetons, valorisons — Vendre mon bien">
-          <div class="vignette-photo-bg">
-            <div class="vignette-overlay"></div>
-            <div class="vignette-photo-content">
-              <h3 class="vignette-photo-titre">Nous achetons, valorisons</h3>
-              <p class="vignette-photo-sous-titre">Vendez votre bien en toute sécurité</p>
-              <span class="btn-vignette-photo">Vendre mon bien</span>
-            </div>
-          </div>
-        </a>
-        <!-- Vignette 3 : Nos réalisations -->
-        <a href="nos-realisations.html" class="vignette-photo vignette-photo-3" aria-label="Nos réalisations">
-          <div class="vignette-photo-bg">
-            <div class="vignette-overlay"></div>
-            <div class="vignette-photo-content">
-              <h3 class="vignette-photo-titre">Nos réalisations</h3>
-              <p class="vignette-photo-sous-titre">Des biens transformés par IDEAL</p>
-              <span class="btn-vignette-photo">Voir nos réalisations</span>
-            </div>
-          </div>
-        </a>
+      <div class="split-panel right" aria-label="Devenir Agent Marchand">
+        <div class="split-inner">
+          <div class="split-kicker">DEVENEZ AGENT MARCHAND</div>
+          <h1 class="split-title">Changer de vie professionnelle</h1>
+          <p class="split-sub">
+            Rejoignez un métier structuré, crédible et rentable.
+          </p>
+          <a class="btn btn-primary" style="margin-top:14px;" href="rejoindre-le-reseau.html">Rejoindre le réseau</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
     <span class="t1">RÉSEAU</span>
@@ -771,153 +730,154 @@
 
   <main class="container" id="univers-ihp">
 
-    <!-- Ancre pour les anciens liens vers #bienvenue -->
-    <span id="bienvenue" aria-hidden="true"></span>
+    <!-- Bloc Bienvenue -->
+    <section class="block-fond">
+      <h2>Bienvenue chez IDEAL : L'Excellence de la Valorisation Immobilière</h2>
+      <div class="bar"></div>
+      <p class="lead">
+        Plus qu'une société d'investissement, nous sommes les architectes d'un nouveau modèle immobilier.
+      </p>
+      <p class="citation">« L'immobilier de demain se construit sur la méthode, pas sur le hasard. »</p>
+    </section>
+
+    <!-- Bloc Nous achetons -->
+    <section class="block-fond">
+      <h2>Nous achetons, valorisons et sécurisons vos projets immobiliers</h2>
+      <div class="bar"></div>
+      <p class="lead">
+        Société d'investissement experte, nous transformons des maisons à rénover en actifs d'exception.
+      </p>
+      <a class="btn btn-primary" href="contact.html">Faire étudier mon projet</a>
+    </section>
+
+    <!-- Nos réalisations (aperçu) -->
+    <section>
+      <h2>Nos réalisations</h2>
+      <div class="bar"></div>
+      <p class="lead">Des biens transformés et valorisés par IHP.</p>
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="block case">
+          <div class="pill">Avant / Après</div>
+          <h3>Rénovation complète — Maison de ville</h3>
+          <div class="case-meta"><span>Bordeaux</span></div>
+          <p>Restructuration des volumes, rénovation complète. Vendeurs et acquéreurs ravis.</p>
+        </div>
+        <div class="block case">
+          <div class="pill">Piscine</div>
+          <h3>Extérieur premium — Piscine & aménagement</h3>
+          <p>Optimisation accès, piscine, finitions haut de gamme pour valorisation maximale.</p>
+        </div>
+        <div class="block case">
+          <div class="pill">Surélévation</div>
+          <h3>Surélévation & création de surface</h3>
+          <p>Étude technique, urbanisme, pilotage complet. Bien livré « prêt à vivre ».</p>
+        </div>
+      </div>
+      <div style="margin-top:18px;text-align:center;">
+        <a class="btn btn-primary" href="nos-realisations.html">Voir plus</a>
+      </div>
+    </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section-faq">
-      <div class="container">
-        <h2 class="section-title">Vous vous posez des questions ? On y répond !</h2>
-        
-        <div class="faq-accordion">
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>1. Pourquoi devenir associé Ideal ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <ul>
-                    <li>Intégrer un réseau immobilier innovant et dynamique</li>
-                    <li>Bénéficier d'un accompagnement personnalisé tout au long de votre parcours</li>
-                    <li>Accéder à des outils digitaux performants et à une formation continue</li>
-                    <li>Développer votre activité en toute autonomie avec le soutien du réseau</li>
-                    <li>Profiter d'une marque forte et d'une visibilité accrue sur le marché</li>
-                    <li>Travailler avec des professionnels passionnés et partager les meilleures pratiques</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>2. Quel est le montant de l'adhésion ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p>L'adhésion au réseau Ideal Home Project s'élève à <strong>5 000€ par an.</strong></p>
-                  <p>Ce montant inclut :</p>
-                  <ul>
-                    <li>L'accès à tous les outils et ressources du réseau</li>
-                    <li>La formation continue et l'accompagnement personnalisé</li>
-                    <li>L'accompagnement juridique et administratif</li>
-                    <li>La visibilité sur tous nos supports de communication</li>
-                    <li>Le support technique et marketing</li>
-                    <li>L'accès aux événements et séminaires du réseau</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>3. Quelle est la répartition des commissions ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p>Notre système de rémunération est transparent et avantageux :</p>
-                  <p>💰 <strong>Potentiel de revenus :</strong> jusqu'à 120 000€ par an<br>📊 Basé sur une moyenne de 8 ventes par an</p>
-                  <p>En plus de vos commissions :<br>💎 Dividendes de fin d'année en fonction des résultats du réseau<br>📈 Système de répartition équitable et motivant<br>🤝 Plus vous performez, plus vous gagnez</p>
-                  <p><strong>Votre réussite est notre réussite !</strong></p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>4. Quel accompagnement propose Ideal Home Project ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p>Nous mettons un point d'honneur à accompagner nos associés :</p>
-                  <ul>
-                    <li>📚 Formation initiale complète au lancement</li>
-                    <li>🎓 Formations continues régulières (juridique, commercial, digital)</li>
-                    <li>👥 Mentorat par des agents expérimentés</li>
-                    <li>📞 Support technique et commercial disponible</li>
-                    <li>🛠️ Outils digitaux performants (CRM, site web, communication)</li>
-                    <li>📈 Suivi personnalisé de votre activité et objectifs</li>
-                    <li>🤝 Réunions réseau et partage d'expériences</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>5. Faut-il avoir un bureau physique ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p><strong>Non, ce n'est pas obligatoire !</strong></p>
-                  <p>✅ Vous pouvez travailler depuis chez vous<br>✅ Flexibilité totale dans l'organisation de votre activité<br>✅ Économies sur les frais fixes (loyer, charges)</p>
-                  <p>📍 Si vous souhaitez un bureau : vous êtes libre de choisir votre emplacement, nous vous accompagnons dans la mise en place, visibilité avec l'identité visuelle Ideal Home Project.</p>
-                  <p><em>L'essentiel est votre performance, pas votre adresse !</em></p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>6. Puis-je rejoindre Ideal en conservant une autre activité ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p><strong>Oui, c'est tout à fait possible !</strong></p>
-                  <p>⚖️ Compatibilité avec d'autres activités professionnelles<br>⏰ Gestion flexible de votre emploi du temps<br>📈 Idéal pour une transition progressive vers l'immobilier</p>
-                  <p>⚠️ Points d'attention : respecter les obligations déontologiques, vérifier la compatibilité avec votre statut actuel, s'assurer d'avoir le temps nécessaire pour développer votre activité.</p>
-                  <p>Nous vous conseillons sur la meilleure approche selon votre situation.</p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>7. Quelles sont les zones géographiques disponibles ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p>Ideal Home Project est en plein développement !</p>
-                  <p>🗺️ <strong>Actuellement présent :</strong> Gironde (Bordeaux et périphérie), Nouvelle-Aquitaine, extension en cours vers d'autres régions.</p>
-                  <p>🎯 <strong>Stratégie territoriale :</strong> nous recherchons des agents sur l'ensemble du territoire, exclusivité territoriale possible selon les zones, opportunité de devenir pionnier dans votre région.</p>
-                  <p>📞 Contactez-nous pour connaître les disponibilités dans votre secteur !</p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>8. Comment se déroule le processus de recrutement ?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                </button>
-                <div class="faq-answer">
-                  <p>Un processus simple et transparent en 4 étapes :</p>
-                  <p><strong>1️⃣ PRISE DE CONTACT</strong> — Remplissez le formulaire sur notre site, premier échange téléphonique pour présenter le concept.</p>
-                  <p><strong>2️⃣ ENTRETIEN DÉCOUVERTE</strong> — Rencontre avec l'équipe dirigeante, présentation détaillée du réseau et des opportunités, questions/réponses sur votre projet.</p>
-                  <p><strong>3️⃣ VALIDATION</strong> — Étude de votre profil et de votre projet, vérification des prérequis (carte professionnelle), proposition d'adhésion personnalisée.</p>
-                  <p><strong>4️⃣ INTÉGRATION</strong> — Signature de la convention, formation initiale, démarrage de votre activité avec accompagnement.</p>
-                  <p>⏱️ <strong>Délai moyen : 2 à 4 semaines</strong></p>
-                </div>
-              </div>
+    <section id="faq">
+      <h2>Vous vous posez des questions ? On y répond !</h2>
+      <div class="bar"></div>
+      <div class="faq-wrap">
+        <div class="faq-photo" aria-hidden="true">
+          <span class="faq-photo-placeholder">espace photo</span>
         </div>
+        <ul class="faq-list">
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">1.</span><span class="faq-q-text">Pourquoi devenir associé Ideal ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <ul>
+              <li>Intégrer un réseau immobilier innovant et dynamique</li>
+              <li>Bénéficier d'un accompagnement personnalisé tout au long de votre parcours</li>
+              <li>Accéder à des outils digitaux performants et à une formation continue</li>
+              <li>Développer votre activité en toute autonomie avec le soutien du réseau</li>
+              <li>Profiter d'une marque forte et d'une visibilité accrue sur le marché</li>
+              <li>Travailler avec des professionnels passionnés et partager les meilleures pratiques</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">2.</span><span class="faq-q-text">Quel est le montant de l'adhésion ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>L'adhésion au réseau Ideal Home Project s'élève à <strong>5 000€ par an.</strong></p>
+            <p>Ce montant inclut :</p>
+            <ul>
+              <li>L'accès à tous les outils et ressources du réseau</li>
+              <li>La formation continue et l'accompagnement personnalisé</li>
+              <li>L'accompagnement juridique et administratif</li>
+              <li>La visibilité sur tous nos supports de communication</li>
+              <li>Le support technique et marketing</li>
+              <li>L'accès aux événements et séminaires du réseau</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">3.</span><span class="faq-q-text">Quelle est la répartition des commissions ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Notre système de rémunération est transparent et avantageux :</p>
+            <p>💰 <strong>Potentiel de revenus :</strong> jusqu'à 120 000€ par an<br>📊 Basé sur une moyenne de 8 ventes par an</p>
+            <p>En plus de vos commissions :<br>💎 Dividendes de fin d'année en fonction des résultats du réseau<br>📈 Système de répartition équitable et motivant<br>🤝 Plus vous performez, plus vous gagnez</p>
+            <p><strong>Votre réussite est notre réussite !</strong></p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">4.</span><span class="faq-q-text">Quel accompagnement propose Ideal Home Project ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Nous mettons un point d'honneur à accompagner nos associés :</p>
+            <ul>
+              <li>📚 Formation initiale complète au lancement</li>
+              <li>🎓 Formations continues régulières (juridique, commercial, digital)</li>
+              <li>👥 Mentorat par des agents expérimentés</li>
+              <li>📞 Support technique et commercial disponible</li>
+              <li>🛠️ Outils digitaux performants (CRM, site web, communication)</li>
+              <li>📈 Suivi personnalisé de votre activité et objectifs</li>
+              <li>🤝 Réunions réseau et partage d'expériences</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">5.</span><span class="faq-q-text">Faut-il avoir un bureau physique ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p><strong>Non, ce n'est pas obligatoire !</strong></p>
+            <p>✅ Vous pouvez travailler depuis chez vous<br>✅ Flexibilité totale dans l'organisation de votre activité<br>✅ Économies sur les frais fixes (loyer, charges)</p>
+            <p>📍 Si vous souhaitez un bureau : vous êtes libre de choisir votre emplacement, nous vous accompagnons dans la mise en place, visibilité avec l'identité visuelle Ideal Home Project.</p>
+            <p><em>L'essentiel est votre performance, pas votre adresse !</em></p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">6.</span><span class="faq-q-text">Puis-je rejoindre Ideal en conservant une autre activité ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p><strong>Oui, c'est tout à fait possible !</strong></p>
+            <p>⚖️ Compatibilité avec d'autres activités professionnelles<br>⏰ Gestion flexible de votre emploi du temps<br>📈 Idéal pour une transition progressive vers l'immobilier</p>
+            <p>⚠️ Points d'attention : respecter les obligations déontologiques, vérifier la compatibilité avec votre statut actuel, s'assurer d'avoir le temps nécessaire pour développer votre activité.</p>
+            <p>Nous vous conseillons sur la meilleure approche selon votre situation.</p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">7.</span><span class="faq-q-text">Quelles sont les zones géographiques disponibles ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Ideal Home Project est en plein développement !</p>
+            <p>🗺️ <strong>Actuellement présent :</strong> Gironde (Bordeaux et périphérie), Nouvelle-Aquitaine, extension en cours vers d'autres régions.</p>
+            <p>🎯 <strong>Stratégie territoriale :</strong> nous recherchons des agents sur l'ensemble du territoire, exclusivité territoriale possible selon les zones, opportunité de devenir pionnier dans votre région.</p>
+            <p>📞 Contactez-nous pour connaître les disponibilités dans votre secteur !</p>
+          </div></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" aria-expanded="false"><span class="faq-num">8.</span><span class="faq-q-text">Comment se déroule le processus de recrutement ?</span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Un processus simple et transparent en 4 étapes :</p>
+            <p><strong>1️⃣ PRISE DE CONTACT</strong> — Remplissez le formulaire sur notre site, premier échange téléphonique pour présenter le concept.</p>
+            <p><strong>2️⃣ ENTRETIEN DÉCOUVERTE</strong> — Rencontre avec l'équipe dirigeante, présentation détaillée du réseau et des opportunités, questions/réponses sur votre projet.</p>
+            <p><strong>3️⃣ VALIDATION</strong> — Étude de votre profil et de votre projet, vérification des prérequis (carte professionnelle), proposition d'adhésion personnalisée.</p>
+            <p><strong>4️⃣ INTÉGRATION</strong> — Signature de la convention, formation initiale, démarrage de votre activité avec accompagnement.</p>
+            <p>⏱️ <strong>Délai moyen : 2 à 4 semaines</strong></p>
+          </div></div>
+        </li>
+      </ul>
       </div>
     </section>
 
@@ -1023,9 +983,6 @@
           <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
           <li><a href="nos-biens.html">Nos biens</a></li>
           <li><a href="nos-realisations.html">Nos réalisations</a></li>
-          <li><a href="nos-services.html">Nos services</a></li>
-          <li><a href="le-reseau-ideal.html">Le réseau IDEAL</a></li>
-          <li><a href="tous-nos-evenements.html">Nos événements</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1054,21 +1011,21 @@
   </footer>
 
   <script>
-    // Accordéon FAQ
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        const isActive = faqItem.classList.contains('active');
-        
-        document.querySelectorAll('.faq-item').forEach(item => {
-          item.classList.remove('active');
+    (function() {
+      var faqList = document.querySelector('.faq-list');
+      if (!faqList) return;
+      var items = faqList.querySelectorAll('.faq-item');
+      items.forEach(function(item) {
+        var q = item.querySelector('.faq-q');
+        if (!q) return;
+        q.addEventListener('click', function() {
+          var wasOpen = item.classList.contains('open');
+          items.forEach(function(other) { other.classList.remove('open'); });
+          if (!wasOpen) item.classList.add('open');
+          q.setAttribute('aria-expanded', item.classList.contains('open'));
         });
-        
-        if (!isActive) {
-          faqItem.classList.add('active');
-        }
       });
-    });
+    })();
   </script>
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
