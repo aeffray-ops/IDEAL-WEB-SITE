@@ -81,15 +81,26 @@
 
 .btn-inscription,
 .btn-bandeau {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #FFC107;
   color: #000;
   font-size: 14px;
   font-weight: 700;
-  padding: 8px 20px;
+  padding: 10px 20px;
+  min-height: 44px;
+  min-width: 44px;
   border-radius: 20px;
   text-decoration: none;
   transition: all 0.3s ease;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 193, 7, 0.3);
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .btn-inscription:hover,
@@ -135,6 +146,13 @@
 }
 
 /* Header : espace pour le bandeau fixe */
+/* Bandeau au-dessus pour que les boutons soient cliquables sur mobile */
+#bandeau-evenement,
+.bandeau-evenement,
+.bandeau-evenements {
+  z-index: 40000 !important;
+}
+
 #bandeau-evenement + .header-principal,
 .bandeau-evenement + .header-principal {
   margin-top: 54px;
@@ -147,18 +165,27 @@ body.bandeau-ferme .header-principal {
 
 @media (max-width: 768px) {
   .bandeau-container {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
   }
 
   .bandeau-center {
     order: 1;
+    flex: 1 1 100%;
+    text-align: center;
   }
 
   .bandeau-right {
     order: 2;
     justify-content: center;
-    flex: none;
+    flex: 1 1 auto;
+    gap: 12px;
+    display: flex;
+    align-items: center;
   }
 
   .bandeau-left {
@@ -167,19 +194,40 @@ body.bandeau-ferme .header-principal {
 
   .bandeau-text,
   .bandeau-title {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  .btn-inscription,
+  .btn-bandeau {
+    min-height: 40px;
+    padding: 8px 16px;
+    font-size: 13px;
   }
 
   .btn-close-bandeau,
   .bandeau-close {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    min-height: 32px;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    flex-shrink: 0;
   }
 
   .bandeau-close svg {
     width: 16px;
     height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bandeau-text,
+  .bandeau-title {
+    font-size: 13px;
+  }
+
+  .btn-inscription,
+  .btn-bandeau {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }

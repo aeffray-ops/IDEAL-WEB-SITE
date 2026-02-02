@@ -67,8 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Clic extérieur : fermer tout
-  document.addEventListener('click', function() {
+  // Clic extérieur : fermer tout (sauf si clic sur un lien qui navigue)
+  document.addEventListener('click', function(e) {
+    if (profilDropdown && profilDropdown.contains(e.target)) return;
+    if (nav && nav.contains(e.target)) return;
     closeNav();
     closeProfil();
   });

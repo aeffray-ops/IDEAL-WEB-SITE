@@ -14,10 +14,13 @@
     .connexion-hero { background: #6D071A; color: #FFFFFF; padding: 60px 20px 40px; text-align: center; }
     .connexion-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
     .connexion-hero p { font-size: 18px; color: rgba(255, 255, 255, 0.9); }
-    .connexion-container { max-width: 500px; margin: -30px auto 80px; padding: 0 20px; }
+    .connexion-container { max-width: 500px; margin: -30px auto 80px; padding: 0 20px; width: 100%; box-sizing: border-box; }
     .connexion-card { background: #FFFFFF; border-radius: 16px; padding: 50px 40px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
     .connexion-card h2 { color: #6D071A; font-size: 28px; margin-bottom: 30px; text-align: center; }
     .form-group { margin-bottom: 25px; }
+    .login-form .form-group { margin-bottom: 18px; }
+    .login-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; font-size: 14px; }
+    .login-links a { color: #6D071A; text-decoration: underline; }
     .form-group label { display: block; font-weight: 600; color: #2D0202; margin-bottom: 8px; font-size: 15px; }
     .form-group select, .form-group input { width: 100%; padding: 14px 18px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 15px; font-family: inherit; }
     .form-group select:focus, .form-group input:focus { outline: none; border-color: #6D071A; }
@@ -25,6 +28,22 @@
     .btn-connexion:hover { background: #6D071A; transform: translateY(-2px); }
     .connexion-footer { text-align: center; margin-top: 20px; color: #666; font-size: 14px; }
     .connexion-footer a { color: #6D071A; text-decoration: underline; }
+    .btn-back-white { min-height: 44px; touch-action: manipulation; }
+    @media (max-width: 768px) {
+      .btn-back-white { top: 120px; left: 12px; padding: 10px 14px; font-size: 14px; }
+      .connexion-hero { padding: 30px 16px 30px; }
+      .connexion-hero h1 { font-size: 28px; margin-bottom: 10px; }
+      .connexion-hero p { font-size: 16px; }
+      .connexion-container { margin: -20px 16px 60px; padding: 0; }
+      .connexion-card { padding: 30px 20px; }
+      .connexion-card h2 { font-size: 22px; margin-bottom: 24px; }
+      .form-group input { padding: 12px 16px; font-size: 16px; }
+      .btn-connexion { padding: 14px 24px; font-size: 16px; min-height: 48px; }
+    }
+    @media (max-width: 480px) {
+      .connexion-hero h1 { font-size: 24px; }
+      .connexion-card { padding: 24px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -59,8 +78,8 @@
       <div class="header-actions">
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
         <div class="header-profil">
-          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
-          <div class="dropdown-profil"><a href="mon-espace-associe.html">Mon espace associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+          <button type="button" class="btn-profil" aria-label="Se connecter" aria-expanded="false" aria-controls="profilDropdown"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div id="profilDropdown" class="dropdown-profil profil-dropdown" role="menu" aria-hidden="true"><a href="mon-espace-partenaire.html" class="profil-dropdown-item" role="menuitem">Espace Associé</a><a href="mon-espace-partenaire.html" class="profil-dropdown-item" role="menuitem">Espace Partenaire</a></div>
         </div>
       </div>
       <button class="burger menu-toggle burger-menu" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
@@ -79,29 +98,21 @@
   <div class="connexion-container">
     <div class="connexion-card">
       <h2>Connexion</h2>
-      <form id="connexionForm">
-        <div class="form-group">
-          <label for="profil">Je suis...</label>
-          <select id="profil" name="profil" required>
-            <option value="">-- Sélectionnez --</option>
-            <option value="entreprise">Entreprise générale du bâtiment</option>
-            <option value="artisan">Artisan</option>
-            <option value="apporteur">Apporteur d'affaires</option>
-          </select>
-        </div>
+      <form class="login-form" id="connexionForm" action="#" method="post" autocomplete="on">
         <div class="form-group">
           <label for="identifiant">Identifiant</label>
-          <input type="text" id="identifiant" name="identifiant" placeholder="Votre identifiant" required>
+          <input id="identifiant" name="identifiant" type="text" placeholder="Votre identifiant" required>
         </div>
         <div class="form-group">
-          <label for="motdepasse">Mot de passe</label>
-          <input type="password" id="motdepasse" name="motdepasse" placeholder="Votre mot de passe" required>
+          <label for="password">Mot de passe</label>
+          <input id="password" name="password" type="password" placeholder="Votre mot de passe" required>
         </div>
-        <button type="submit" class="btn-connexion">Se connecter</button>
+        <button type="submit" class="btn-connexion btn-login">Se connecter</button>
+        <div class="login-links connexion-footer">
+          <a href="#">Mot de passe oublié ?</a>
+          <a href="contact.html">Pas encore de compte ?</a>
+        </div>
       </form>
-      <div class="connexion-footer">
-        <p><a href="#">Mot de passe oublié ?</a> | <a href="contact.html">Pas encore de compte ?</a></p>
-      </div>
     </div>
   </div>
   <footer class="footer-principal">
@@ -121,10 +132,7 @@
   <script>
     document.getElementById('connexionForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      var profil = document.getElementById('profil').value;
-      if (profil === 'entreprise') window.location.href = 'espace-entreprise-batiment.html';
-      else if (profil === 'artisan') window.location.href = 'espace-artisan.html';
-      else if (profil === 'apporteur') window.location.href = 'espace-apporteur-affaires.html';
+      window.location.href = 'mon-espace-associe.html';
     });
   </script>
 </body>
