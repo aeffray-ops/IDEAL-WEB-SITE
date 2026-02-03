@@ -1,5 +1,8 @@
 // FERMER LE BANDEAU
 document.addEventListener('DOMContentLoaded', function() {
+  // LIGHT VERSION : activer le mode "profil bloqué" sur tout le site
+  document.body.classList.add('light-version');
+
   const btnClose = document.querySelector('.btn-close-bandeau, .bandeau-close');
   const bandeau = document.getElementById('bandeau-evenement') || document.querySelector('.bandeau-evenement, .bandeau-evenements');
   const header = document.querySelector('.header-principal');
@@ -54,17 +57,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Dropdown profil (clic)
   if (btnProfil && profilDropdown) {
-    btnProfil.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const isOpen = profilDropdown.classList.toggle('is-open');
-      btnProfil.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      profilDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-      if (isOpen) closeNav();
-    });
+    if (document.body.classList.contains('light-version')) {
+      btnProfil.setAttribute('title', 'Accès réservé');
+      btnProfil.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+      profilDropdown.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    } else {
+      btnProfil.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = profilDropdown.classList.toggle('is-open');
+        btnProfil.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        profilDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        if (isOpen) closeNav();
+      });
 
-    profilDropdown.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
+      profilDropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
   }
 
   // Clic extérieur : fermer tout (sauf si clic sur un lien qui navigue)

@@ -8,12 +8,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bordeaux:#800020;--ink:#111827;--text:#1f2937;--muted:#6b7280;--soft:#f3f4f6;
-      --bordeaux-05: rgba(128, 0, 32, 0.05);--bordeaux-10: rgba(128, 0, 32, 0.10);
+      --bordeaux:#6D071A;--ink:#111827;--text:#1f2937;--muted:#6b7280;--soft:#f3f4f6;
+      --bordeaux-05: rgba(109, 7, 26, 0.05);--bordeaux-10: rgba(109, 7, 26, 0.10);
       --radius-xl: 20px;--radius-2xl: 28px;
       --pad: 48px;--container: 1180px;
     }
@@ -27,28 +27,7 @@
       background: #fff;
     }
     a{color:inherit;text-decoration:none}
-    .container{width:min(var(--container), calc(100% - 2*var(--pad)));margin:0 auto;}
-
-    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .brand-logo{height:44px;width:auto;display:block;}
-    .brand-logo-footer{height:34px;}
-
-    main{padding: 34px 0 70px;}
-    .hero-page{
-      padding: 28px;border-radius: var(--radius-2xl);
-      background: #fff;
-      border:1px solid var(--bordeaux-10);margin-bottom: 26px;
-    }
-    .kicker{
-      display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;
-      text-transform:uppercase;font-weight:900;color: var(--bordeaux);background: var(--bordeaux-05);
-      border:1px solid var(--bordeaux-10);padding:10px 12px;border-radius:999px;width:fit-content;margin-bottom: 14px;
-    }
-    h1{
-      margin: 0 0 10px;font-family: 'Poppins', sans-serif;font-weight: 900;
-      letter-spacing: -0.02em;color: var(--ink);font-size: clamp(28px, 3vw, 42px);line-height:1.08;
-    }
-    .lead{margin:0;color:var(--text);line-height:1.7;font-size:15px;max-width: 85ch;}
+    img{max-width:100%;display:block}
 
     .form-rejoindre-wrap{ max-width: 720px; margin: 0 auto; }
     .form-rejoindre{
@@ -96,12 +75,6 @@
       background: var(--bordeaux); color: #fff; text-decoration: none; transition: transform .12s ease, filter .2s ease; }
     .confirmation-rejoindre .btn-retour:hover{ transform: translateY(-2px); filter: brightness(1.05); color: #fff; }
 
-    footer{
-      padding: 22px 0 46px;border-top: 1px solid var(--bordeaux-10);background: rgba(255,255,255,.7);
-    }
-    .footer-row{display:flex;align-items:center;justify-content:space-between;gap: 14px;flex-wrap:wrap;}
-    .legal{color:#9ca3af;font-size: 12px;line-height:1.4;max-width: 90ch;}
-
     @media (max-width: 980px){
       :root{--pad:22px}
       .form-rejoindre .row{ grid-template-columns: 1fr; }
@@ -112,17 +85,322 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- CSS SPÉCIFIQUE PAGE REJOINDRE (scopé .page-rejoindre) -->
+  <style>
+    /* ========================================
+       REJOINDRE LE RÉSEAU - Styles scopés
+    ======================================== */
+
+    .page-rejoindre main { padding: 0; }
+
+    /* HERO */
+    .page-rejoindre .rj-hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+    .page-rejoindre .rj-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .page-rejoindre .rj-hero__panel {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      padding: 48px 42px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 24px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+    .page-rejoindre .rj-hero__title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      color: var(--ink);
+      margin: 0 0 16px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .page-rejoindre .rj-hero__lead {
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .page-rejoindre .rj-hero__lead strong {
+      color: var(--bordeaux);
+    }
+    .page-rejoindre .rj-btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--bordeaux);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .2s ease;
+      text-decoration: none;
+    }
+    .page-rejoindre .rj-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(109,7,26,0.25);
+    }
+
+    /* SECTIONS */
+    .page-rejoindre .rj-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+    .page-rejoindre .rj-section-title {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--ink);
+      text-align: center;
+      margin: 0 0 32px;
+    }
+
+    /* 3 VIGNETTES */
+    .page-rejoindre .rj-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .page-rejoindre .rj-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+      border-radius: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .page-rejoindre .rj-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.18);
+    }
+    .page-rejoindre .rj-card--agent-immo {
+      background-image: url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80");
+    }
+    .page-rejoindre .rj-card--mdb {
+      background-image: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80");
+    }
+    .page-rejoindre .rj-card--futurs-pro {
+      background-image: url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80");
+    }
+    .page-rejoindre .rj-card__overlay {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      background: transparent;
+    }
+    /* Panneau bordeaux translucide pour le contenu texte */
+    .page-rejoindre .rj-card__panel {
+      background: rgba(109, 7, 26, 0.65);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      padding: 18px 16px 16px;
+      backdrop-filter: blur(3px);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .page-rejoindre .rj-card__title {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+    .page-rejoindre .rj-card__list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.55;
+      flex: 1;
+    }
+    .page-rejoindre .rj-card__list li {
+      margin: 6px 0;
+    }
+    .page-rejoindre .rj-card__cta-wrap {
+      margin-top: 14px;
+    }
+    .page-rejoindre .rj-card__cta {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #fff;
+      color: var(--bordeaux);
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background .15s ease, color .15s ease;
+      width: fit-content;
+    }
+    .page-rejoindre .rj-card:hover .rj-card__cta {
+      background: var(--bordeaux);
+      color: #fff;
+    }
+
+    /* FLÈCHE */
+    .page-rejoindre .rj-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0 24px;
+    }
+    .page-rejoindre .rj-arrow__line {
+      width: 4px;
+      height: 60px;
+      background: var(--bordeaux);
+      border-radius: 999px;
+    }
+    .page-rejoindre .rj-arrow__head {
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 20px solid var(--bordeaux);
+    }
+    .page-rejoindre .rj-arrow__text {
+      margin: 16px 0 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--bordeaux);
+      text-align: center;
+    }
+
+    /* CARTE WIDE (Agent-Marchand + Pack) */
+    .page-rejoindre .rj-card-wide {
+      position: relative;
+      display: block;
+      min-height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .page-rejoindre .rj-card-wide:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 56px rgba(0,0,0,0.16);
+    }
+    .page-rejoindre .rj-card-wide--agent-marchand {
+      background-image: url("https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1200&q=80");
+    }
+    .page-rejoindre .rj-card-wide--pack {
+      background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80");
+      margin-top: 40px;
+    }
+    .page-rejoindre .rj-card-wide__overlay {
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 32px;
+      background: transparent;
+    }
+    /* Panneau bordeaux translucide pour cartes wide */
+    .page-rejoindre .rj-card-wide__panel {
+      background: rgba(109, 7, 26, 0.68);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 28px 32px;
+      backdrop-filter: blur(3px);
+      max-width: 720px;
+    }
+    .page-rejoindre .rj-card-wide__title {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      margin: 0 0 18px;
+    }
+    .page-rejoindre .rj-card-wide__list {
+      margin: 0 0 20px;
+      padding-left: 20px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .page-rejoindre .rj-card-wide__list li {
+      margin: 8px 0;
+    }
+    .page-rejoindre .rj-card-wide__cta {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #fff;
+      color: var(--bordeaux);
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background .15s ease, color .15s ease, transform .15s ease;
+      width: fit-content;
+    }
+    .page-rejoindre .rj-card-wide:hover .rj-card-wide__cta {
+      background: var(--bordeaux);
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    /* FORMULAIRE SECTION */
+    .page-rejoindre .rj-form-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+    .page-rejoindre .rj-form-intro {
+      text-align: center;
+      font-size: 18px;
+      color: var(--text);
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+    .page-rejoindre .rj-form-security {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin: 24px 0 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .page-rejoindre .rj-hero { min-height: 500px; padding: 40px 16px; }
+      .page-rejoindre .rj-hero__panel { padding: 32px 24px; }
+      .page-rejoindre .rj-cards { grid-template-columns: 1fr; }
+      .page-rejoindre .rj-card { min-height: 360px; }
+      .page-rejoindre .rj-card-wide__overlay { padding: 28px 24px; }
+      .page-rejoindre .rj-section { padding: 40px 16px; }
+    }
+  </style>
 </head>
 
-<body>
+<body class="page-rejoindre">
 
   <header class="header-principal">
     <div class="header-container-full">
       <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
       <nav id="mainNav" class="header-nav-full">
         <div class="nav-item-dropdown"><a href="index.html" class="nav-link"><span class="nav-arrow">▼</span> Bonjour</a><div class="dropdown-menu"><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="nos-realisations.html">Nos réalisations</a><a href="nos-services.html">Nos services</a><a href="le-reseau-ideal.html">Le réseau IDEAL</a><a href="index.html#contact">Contact</a></div></div>
-        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Valoriser votre bien</a><a href="vendeurs.html#processus">Notre processus</a><a href="contact.html">Prendre rendez-vous</a></div></div>
-        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html#financement">Financement</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="vendeurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Vendeurs</a><div class="dropdown-menu"><a href="vendeurs.html#valoriser">Notre approche IDEAL</a><a href="contact.html">Prendre rendez-vous</a></div></div>
+        <div class="nav-item-dropdown"><a href="acquereurs.html" class="nav-link"><span class="nav-arrow">▼</span> Vous êtes Acquéreurs</a><div class="dropdown-menu"><a href="nos-biens.html">Acheter un bien</a><a href="contact.html">Prendre rendez-vous</a></div></div>
         <div class="nav-item-dropdown"><a href="tous-nos-evenements.html" class="nav-link"><span class="nav-arrow">▼</span> Nos évènements</a><div class="dropdown-menu"><a href="webinaire-investisseurs-heureux.html">Les investisseurs heureux</a><a href="webinaire-recrutement.html">Webinaire IDEAL</a><a href="tous-nos-evenements.html">Tous nos évènements</a></div></div>
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
@@ -147,140 +425,246 @@
     Retour
   </a>
 
-  <a class="floating-cta" href="rejoindre-le-reseau.html" aria-label="Devenir membre">
-    <span class="t1">RÉSEAU</span>
-    <span class="t2">Devenir membre</span>
-    <span class="t3">Agent Marchand</span>
-  </a>
+  <main>
 
-  <main class="container">
+    <!-- HERO -->
+    <section class="rj-hero">
+      <div class="rj-hero__panel">
+        <h1 class="rj-hero__title">Rejoignez IDEAL</h1>
+        <p class="rj-hero__lead">
+          <strong>Changer de vie professionnelle</strong><br>
+          Rejoignez un nouveau métier, structuré, crédible et rentable.
+        </p>
+        <a href="#formulaire-candidature" class="rj-btn">Je candidate</a>
+      </div>
+    </section>
 
-    <!-- Hero -->
-    <div class="hero-page" id="candidature">
-      <div class="kicker">REJOINDRE LE RÉSEAU • AGENT MARCHAND</div>
-      <h1>Si vous avez cliqué ici, c'est que vous souhaitez changer de vie professionnelle.</h1>
-      <p class="lead">
-        Nous ne recherchons pas de simples collaborateurs, mais des partenaires structurés et engagés.
-        Complétez le formulaire ci-dessous : nous vous recontacterons sous 48h. Confidentialité absolue.
-      </p>
-    </div>
+    <!-- SECTION VOUS ÊTES -->
+    <section class="rj-section">
+      <h2 class="rj-section-title">Vous êtes</h2>
 
-    <!-- Formulaire natif -->
-    <div class="form-rejoindre-wrap">
-      <form id="form-rejoindre" class="form-rejoindre" novalidate>
-        <div class="row">
-          <div class="form-group">
-            <label for="r-prenom">Prénom <span class="req">*</span></label>
-            <input type="text" id="r-prenom" name="prenom" placeholder="Ex: Jean" autocomplete="given-name" required>
-            <span class="error-msg" id="err-prenom"></span>
+      <div class="rj-cards">
+        <!-- Vignette 1 : Agent immobilier -->
+        <a href="#formulaire-candidature" class="rj-card rj-card--agent-immo">
+          <div class="rj-card__overlay">
+            <div class="rj-card__panel">
+              <h3 class="rj-card__title">Agent immobilier</h3>
+              <ul class="rj-card__list">
+                <li>Devenez plus qu'un intermédiaire : créez de la valeur sur chaque opération</li>
+                <li>Accompagnement 360° : juridique, technique, urbanisme, travaux</li>
+                <li>Outils & méthode : analyse faisabilité, chiffrage, process</li>
+                <li>Accélérez votre volume tout en restant l'interlocuteur principal</li>
+              </ul>
+              <div class="rj-card__cta-wrap">
+                <span class="rj-card__cta">Rejoindre</span>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="r-nom">Nom <span class="req">*</span></label>
-            <input type="text" id="r-nom" name="nom" placeholder="Ex: Dupont" autocomplete="family-name" required>
-            <span class="error-msg" id="err-nom"></span>
+        </a>
+
+        <!-- Vignette 2 : Marchands de biens -->
+        <a href="#formulaire-candidature" class="rj-card rj-card--mdb">
+          <div class="rj-card__overlay">
+            <div class="rj-card__panel">
+              <h3 class="rj-card__title">Marchands de biens</h3>
+              <ul class="rj-card__list">
+                <li>Deal-flow qualifié & analyse faisabilité</li>
+                <li>Support 360° : juridique, urbanisme, technique, travaux</li>
+                <li>Écosystème mutualisé : artisans, financeurs, notaires partenaires</li>
+                <li>Co‑investissements privilégiés</li>
+              </ul>
+              <div class="rj-card__cta-wrap">
+                <span class="rj-card__cta">Rejoindre</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Vignette 3 : Futurs professionnels -->
+        <a href="#formulaire-candidature" class="rj-card rj-card--futurs-pro">
+          <div class="rj-card__overlay">
+            <div class="rj-card__panel">
+              <h3 class="rj-card__title">Futurs professionnels (sans expérience)</h3>
+              <ul class="rj-card__list">
+                <li>Formation & mentorat pour monter en compétence rapidement</li>
+                <li>Onboarding structuré : process, outils, terrain</li>
+                <li>Accès à des dossiers réels, accompagnés de A à Z</li>
+                <li>Progression claire vers autonomie & performance</li>
+              </ul>
+              <div class="rj-card__cta-wrap">
+                <span class="rj-card__cta">Rejoindre</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flèche -->
+      <div class="rj-arrow" aria-hidden="true">
+        <div class="rj-arrow__line"></div>
+        <div class="rj-arrow__head"></div>
+      </div>
+      <h2 class="rj-section-title">Le profil idéal chez IDEAL</h2>
+
+      <!-- Carte Agent-Marchand pleine largeur -->
+      <a href="#formulaire-candidature" class="rj-card-wide rj-card-wide--agent-marchand">
+        <div class="rj-card-wide__overlay">
+          <div class="rj-card-wide__panel">
+            <h3 class="rj-card-wide__title">Agent‑Marchand (indépendant)</h3>
+            <ul class="rj-card-wide__list">
+              <li><strong>Rôle :</strong> contact IDEAL pour vendeurs et acquéreurs ; conseille, valorise et revend clé en main</li>
+              <li><strong>Revenus :</strong> entre 80k€ et 120k€ pour 8 opérations par an</li>
+              <li><strong>Avantage clé :</strong> vous achetez, les vendeurs vous écoutent</li>
+              <li><strong>Avantage IDEAL :</strong> statut associé</li>
+              <li><strong>Accompagnement :</strong> dossiers ensemble + accompagnement commercial, technique, travaux, artisans…</li>
+              <li><strong>Équipes :</strong> support juridique (notaire + avocat), support technique, commercial, projet</li>
+              <li><strong>Bonus :</strong> en tant qu'associé, dividendes en fin d'année à hauteur de vos parts</li>
+            </ul>
+            <span class="rj-card-wide__cta">Rejoindre</span>
           </div>
         </div>
-        <div class="row">
-          <div class="form-group">
-            <label for="r-email">Email professionnel <span class="req">*</span></label>
-            <input type="email" id="r-email" name="email" placeholder="Ex: jean.dupont@entreprise.fr" autocomplete="email" required>
-            <span class="error-msg" id="err-email"></span>
-          </div>
-          <div class="form-group">
-            <label for="r-tel">Mobile / WhatsApp <span class="req">*</span></label>
-            <input type="tel" id="r-tel" name="telephone" placeholder="Ex: 06 12 34 56 78" autocomplete="tel" required>
-            <span class="error-msg" id="err-telephone"></span>
+      </a>
+
+      <!-- Carte Pack d'adhésion pleine largeur -->
+      <a href="#formulaire-candidature" class="rj-card-wide rj-card-wide--pack">
+        <div class="rj-card-wide__overlay">
+          <div class="rj-card-wide__panel">
+            <h3 class="rj-card-wide__title">Pack d'adhésion</h3>
+            <ul class="rj-card-wide__list">
+              <li>Accompagnement & Méthodologie</li>
+              <li>Outils digitaux exclusifs</li>
+              <li>Bibliothèque documentaire</li>
+              <li>Formation continue</li>
+              <li>Co‑investissements privilégiés</li>
+              <li>Réseau professionnel qualifié</li>
+            </ul>
+            <span class="rj-card-wide__cta">Rejoindre</span>
           </div>
         </div>
-        <div class="form-group full">
-          <label for="r-statut">Votre statut actuel <span class="req">*</span></label>
-          <select id="r-statut" name="statut" required>
-            <option value="">— Sélectionnez —</option>
-            <option value="salarie-immo">Salarié(e) de l'immobilier</option>
-            <option value="indep-immo">Indépendant(e) immobilier</option>
-            <option value="reconversion">En reconversion professionnelle</option>
-            <option value="etudiant">Étudiant(e) / Jeune diplômé(e)</option>
-            <option value="autre">Autre secteur</option>
-          </select>
-          <span class="error-msg" id="err-statut"></span>
-        </div>
-        <div class="row">
-          <div class="form-group">
-            <label for="r-experience">Expérience dans l'immobilier <span class="req">*</span></label>
-            <select id="r-experience" name="experience" required>
+      </a>
+    </section>
+
+    <!-- FORMULAIRE -->
+    <section id="formulaire-candidature" class="rj-form-section">
+      <h2 class="rj-section-title">Vous vous reconnaissez dans l'un de ces profils ?<br>Remplissez le formulaire et nous reviendrons vers vous sous 48h.</h2>
+
+      <div class="form-rejoindre-wrap">
+        <form id="form-rejoindre" class="form-rejoindre" novalidate>
+          <div class="row">
+            <div class="form-group">
+              <label for="r-prenom">Prénom <span class="req">*</span></label>
+              <input type="text" id="r-prenom" name="prenom" placeholder="Ex: Jean" autocomplete="given-name" required>
+              <span class="error-msg" id="err-prenom"></span>
+            </div>
+            <div class="form-group">
+              <label for="r-nom">Nom <span class="req">*</span></label>
+              <input type="text" id="r-nom" name="nom" placeholder="Ex: Dupont" autocomplete="family-name" required>
+              <span class="error-msg" id="err-nom"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="r-email">Email professionnel <span class="req">*</span></label>
+              <input type="email" id="r-email" name="email" placeholder="Ex: jean.dupont@entreprise.fr" autocomplete="email" required>
+              <span class="error-msg" id="err-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="r-tel">Mobile / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="r-tel" name="telephone" placeholder="Ex: 06 12 34 56 78" autocomplete="tel" required>
+              <span class="error-msg" id="err-telephone"></span>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="r-statut">Votre statut actuel <span class="req">*</span></label>
+            <select id="r-statut" name="statut" required>
               <option value="">— Sélectionnez —</option>
-              <option value="aucune">Aucune (débutant)</option>
-              <option value="1-3ans">1 à 3 ans</option>
-              <option value="3-5ans">3 à 5 ans</option>
-              <option value="5ans-plus">Plus de 5 ans</option>
+              <option value="salarie-immo">Salarié(e) de l'immobilier</option>
+              <option value="indep-immo">Indépendant(e) immobilier</option>
+              <option value="reconversion">En reconversion professionnelle</option>
+              <option value="etudiant">Étudiant(e) / Jeune diplômé(e)</option>
+              <option value="autre">Autre secteur</option>
             </select>
-            <span class="error-msg" id="err-experience"></span>
+            <span class="error-msg" id="err-statut"></span>
           </div>
-          <div class="form-group">
-            <label for="r-cartet">Carte T <span class="req">*</span></label>
-            <select id="r-cartet" name="carte-t" required>
+          <div class="row">
+            <div class="form-group">
+              <label for="r-experience">Expérience dans l'immobilier <span class="req">*</span></label>
+              <select id="r-experience" name="experience" required>
+                <option value="">— Sélectionnez —</option>
+                <option value="aucune">Aucune (débutant)</option>
+                <option value="1-3ans">1 à 3 ans</option>
+                <option value="3-5ans">3 à 5 ans</option>
+                <option value="5ans-plus">Plus de 5 ans</option>
+              </select>
+              <span class="error-msg" id="err-experience"></span>
+            </div>
+            <div class="form-group">
+              <label for="r-cartet">Carte T <span class="req">*</span></label>
+              <select id="r-cartet" name="carte-t" required>
+                <option value="">— Sélectionnez —</option>
+                <option value="oui">Oui</option>
+                <option value="en-cours">En cours d'obtention</option>
+                <option value="non">Non</option>
+              </select>
+              <span class="error-msg" id="err-cartet"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="r-dispo">Disponibilité pour démarrer <span class="req">*</span></label>
+              <select id="r-dispo" name="disponibilite" required>
+                <option value="">— Sélectionnez —</option>
+                <option value="immediatement">Immédiatement</option>
+                <option value="1-mois">Dans 1 mois</option>
+                <option value="2-3-mois">Dans 2-3 mois</option>
+                <option value="3-mois-plus">Plus de 3 mois</option>
+              </select>
+              <span class="error-msg" id="err-dispo"></span>
+            </div>
+            <div class="form-group">
+              <label for="r-ambition">Ambition financière annuelle <span class="req">*</span></label>
+              <select id="r-ambition" name="ambition" required>
+                <option value="">— Sélectionnez —</option>
+                <option value="50-70k">50K€ — 70K€</option>
+                <option value="70-100k">70K€ — 100K€</option>
+                <option value="100k-plus">100K€ et plus</option>
+              </select>
+              <span class="error-msg" id="err-ambition"></span>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="r-zone">Zone géographique souhaitée <span class="req">*</span></label>
+            <select id="r-zone" name="zone" required>
               <option value="">— Sélectionnez —</option>
-              <option value="oui">Oui</option>
-              <option value="en-cours">En cours d'obtention</option>
-              <option value="non">Non</option>
+              <option value="bordeaux">Bordeaux</option>
+              <option value="gironde">Gironde (hors Bordeaux)</option>
+              <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+              <option value="autre">Autre région (précisez en message)</option>
             </select>
-            <span class="error-msg" id="err-cartet"></span>
+            <span class="error-msg" id="err-zone"></span>
           </div>
-        </div>
-        <div class="row">
-          <div class="form-group">
-            <label for="r-dispo">Disponibilité pour démarrer <span class="req">*</span></label>
-            <select id="r-dispo" name="disponibilite" required>
-              <option value="">— Sélectionnez —</option>
-              <option value="immediatement">Immédiatement</option>
-              <option value="1-mois">Dans 1 mois</option>
-              <option value="2-3-mois">Dans 2-3 mois</option>
-              <option value="3-mois-plus">Plus de 3 mois</option>
-            </select>
-            <span class="error-msg" id="err-dispo"></span>
+          <div class="form-group full">
+            <label for="r-msg">Votre motivation (optionnel)</label>
+            <textarea id="r-msg" name="message" placeholder="Parlez-nous de votre parcours, votre motivation, vos objectifs..."></textarea>
           </div>
-          <div class="form-group">
-            <label for="r-ambition">Ambition financière annuelle <span class="req">*</span></label>
-            <select id="r-ambition" name="ambition" required>
-              <option value="">— Sélectionnez —</option>
-              <option value="50-70k">50K€ — 70K€</option>
-              <option value="70-100k">70K€ — 100K€</option>
-              <option value="100k-plus">100K€ et plus</option>
-            </select>
-            <span class="error-msg" id="err-ambition"></span>
+          <div class="form-check">
+            <label>
+              <input type="checkbox" id="r-rgpd" name="rgpd" required>
+              <span>J'accepte que mes données soient utilisées pour traiter ma candidature <span class="req">*</span></span>
+            </label>
+            <span class="error-msg" id="err-rgpd"></span>
           </div>
-        </div>
-        <div class="form-group full">
-          <label for="r-zone">Zone géographique souhaitée <span class="req">*</span></label>
-          <select id="r-zone" name="zone" required>
-            <option value="">— Sélectionnez —</option>
-            <option value="bordeaux">Bordeaux</option>
-            <option value="gironde">Gironde (hors Bordeaux)</option>
-            <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
-            <option value="autre">Autre région (précisez en message)</option>
-          </select>
-          <span class="error-msg" id="err-zone"></span>
-        </div>
-        <div class="form-group full">
-          <label for="r-msg">Votre motivation (optionnel)</label>
-          <textarea id="r-msg" name="message" placeholder="Parlez-nous de votre parcours, votre motivation, vos objectifs..."></textarea>
-        </div>
-        <div class="form-check">
-          <label>
-            <input type="checkbox" id="r-rgpd" name="rgpd" required>
-            <span>J'accepte que mes données soient utilisées pour traiter ma candidature <span class="req">*</span></span>
-          </label>
-          <span class="error-msg" id="err-rgpd"></span>
-        </div>
-        <div class="form-check">
-          <label>
-            <input type="checkbox" id="r-rappel" name="rappel">
-            <span>Je souhaite être rappelé(e) sous 48h</span>
-          </label>
-        </div>
-        <button type="submit" class="btn-submit">Envoyer ma candidature</button>
-        <p class="form-footer">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
-      </form>
+          <div class="form-check">
+            <label>
+              <input type="checkbox" id="r-rappel" name="rappel">
+              <span>Je souhaite être rappelé(e) sous 48h</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-submit">Envoyer ma candidature</button>
+        </form>
+      </div>
+
+      <p class="rj-form-security">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
 
       <div id="confirmation-rejoindre" class="confirmation-rejoindre">
         <div class="icon">✅</div>
@@ -291,7 +675,7 @@
         </p>
         <a href="index.html" class="btn-retour">Retour à l'accueil</a>
       </div>
-    </div>
+    </section>
 
   </main>
 
@@ -341,10 +725,21 @@
 
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
-  <script src="js/header.js"></script>
+
+  <!-- Smooth scroll vers formulaire -->
+  <script>
+    document.addEventListener("click", function(e){
+      const a = e.target.closest('a[href="#formulaire-candidature"]');
+      if(!a) return;
+      e.preventDefault();
+      const el = document.querySelector("#formulaire-candidature");
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  </script>
+
+  <!-- Validation formulaire + Google Form -->
   <script>
     (function() {
-      /* Remplacez FORM_URL par l’URL formResponse de votre Google Form, et les entry.XXX dans MAP par les vrais IDs (F12 → Network → formResponse → Payload). */
       var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSff80IuNjtOFVcsHxC6r5bug_iWGPboSsS-8VSLzJGX3hMUBQ/formResponse';
       var MAP = {
         prenom: 'entry.123456789', nom: 'entry.987654321', email: 'entry.111222333', telephone: 'entry.444555666',

@@ -247,8 +247,11 @@
   animation: webinaireMarquee 10s linear infinite;
   will-change: transform;
 }
-.webinaire-marquee__track.is-paused {
-  animation-play-state: paused;
+/* Animation continue - jamais de pause */
+.webinaire-marquee__track,
+.webinaire-marquee__track:hover,
+.webinaire-marquee:hover .webinaire-marquee__track {
+  animation-play-state: running !important;
 }
 @keyframes webinaireMarquee {
   0% { transform: translateX(0); }
@@ -617,4 +620,21 @@ body.page-bordeaux .btn-retour:hover { background: var(--gris-clair); }
 .profil-dropdown,
 .dropdown-profil {
   flex: 0 0 auto;
+}
+
+/* ========================================
+   LIGHT VERSION: profil bloqué
+======================================== */
+body.light-version .header-profil,
+body.light-version .btn-profil,
+body.light-version .dropdown-profil,
+body.light-version .profil-dropdown {
+  cursor: not-allowed !important;
+  opacity: 0.65;
+}
+
+body.light-version .header-profil .dropdown-profil,
+body.light-version .header-profil .profil-dropdown,
+body.light-version .header-profil .profil-dropdown * {
+  pointer-events: none;
 }
