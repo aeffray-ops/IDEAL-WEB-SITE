@@ -24,47 +24,7 @@ body {
   margin: 0;
 }
 
-/* ========================================
-   CORRECTIFS BANDEAU + HEADER (page événements uniquement)
-   Aligné sur les autres pages du site
-======================================== */
-body.page-tous-evenements #bandeau-evenement,
-body.page-tous-evenements .bandeau-evenement,
-body.page-tous-evenements .bandeau-evenements {
-  padding: 12px 20px;
-  min-height: 50px;
-  display: block;
-}
-
-body.page-tous-evenements .bandeau-container {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 50px;
-}
-
-body.page-tous-evenements .header-principal,
-body.page-tous-evenements .header-container-full,
-body.page-tous-evenements .header-actions,
-body.page-tous-evenements .header-profil {
-  overflow: visible !important;
-}
-
-body.page-tous-evenements .btn-profil {
-  overflow: visible !important;
-  min-width: 42px;
-  min-height: 42px;
-  flex-shrink: 0;
-}
-
-body.page-tous-evenements .header-container-full {
-  flex-wrap: nowrap;
-}
-
-body.page-tous-evenements .header-actions {
-  flex-shrink: 0 !important;
-}
-
+/* Page événements : hero uniquement (ne pas toucher au header) */
 body.page-tous-evenements .hero-evenements {
   margin-top: 0;
 }

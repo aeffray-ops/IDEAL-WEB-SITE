@@ -240,24 +240,6 @@
 <body>
 
   <!-- BOUTON RETOUR -->
-  <!-- BANDEAU ÉVÈNEMENTS -->
-  <div id="bandeau-evenement" class="bandeau-evenement bandeau-evenements">
-    <div class="bandeau-container">
-      <div class="bandeau-left"></div>
-      <div class="bandeau-center">
-        <a href="tous-nos-evenements.html" class="bandeau-link">
-          <span class="bandeau-text">Nos événements</span>
-        </a>
-      </div>
-      <div class="bandeau-right">
-        <a href="tous-nos-evenements.html" class="btn-inscription">Je m'inscris</a>
-        <button type="button" class="btn-close-bandeau bandeau-close" aria-label="Fermer">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5L5 15M5 5l10 10"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
   <header class="header-principal">
     <div class="header-container-full">
       <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="IDEAL Home Project" class="logo-img"></a></div>
@@ -269,10 +251,15 @@
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
       <div class="header-actions">
+        <a class="btn btn-webinaire" href="webinaire-investisseurs-heureux.html">
+          <span class="webinaire-marquee" aria-label="Inscription webinaire">
+            <span class="webinaire-marquee__track">Inscription webinaire</span>
+          </span>
+        </a>
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
         <div class="header-profil">
-          <button type="button" class="btn-profil" aria-label="Menu profil" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
-          <div class="dropdown-profil"><a href="mon-espace-partenaire.html" class="profil-dropdown-item" role="menuitem">Espace Associé</a><a href="mon-espace-partenaire.html">Mon espace partenaire</a></div>
+          <button type="button" class="btn-profil" aria-label="Se connecter" aria-expanded="false" aria-controls="profilDropdown"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+          <div id="profilDropdown" class="dropdown-profil profil-dropdown" role="menu" aria-hidden="true"><a href="espace-associe-login.html" class="profil-dropdown-item" role="menuitem">Espace Associé</a><a href="espace-partenaire-login.html" class="profil-dropdown-item" role="menuitem">Espace Partenaire</a></div>
         </div>
       </div>
       <button class="burger menu-toggle burger-menu" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
@@ -524,5 +511,6 @@
   </script>
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
+  <script src="js/header.js"></script>
 </body>
 </html>

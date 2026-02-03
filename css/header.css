@@ -38,6 +38,7 @@
    CONTAINERS
 ======================================== */
 
+/* Flex : permettre la compression de la nav sans pousser les actions hors écran */
 .header-container-full,
 .header-container {
   display: flex;
@@ -51,6 +52,7 @@
   position: relative;
   overflow: visible !important;
   gap: 30px;
+  min-width: 0;
 }
 
 .header-container { max-width: 1400px; margin: 0 auto; }
@@ -77,8 +79,9 @@
   display: flex;
   align-items: center;
   gap: 35px;
-  flex: 1;
+  flex: 1 1 auto;
   justify-content: center;
+  min-width: 0;
 }
 
 .nav-link {
@@ -122,6 +125,7 @@
 /* Dropdown desktop */
 .nav-item-dropdown { position: relative; }
 
+/* Dropdown : jamais transparent, z-index au-dessus du header */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -144,6 +148,8 @@
   opacity: 1 !important;
   visibility: visible;
   transform: translateY(0);
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
 }
 
 .dropdown-menu a {
@@ -171,8 +177,10 @@
   display: flex !important;
   align-items: center;
   gap: 15px;
+  flex: 0 0 auto;
   margin-left: auto;
   flex-shrink: 0 !important;
+  white-space: nowrap;
   position: relative;
   z-index: 26000;
 }
@@ -197,6 +205,77 @@
   background: #8B0920;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(109, 7, 26, 0.35);
+}
+
+/* ========================================
+   CTA "INSCRIPTION WEBINAIRE" (bordeaux + jaune)
+   Même forme que btn-rejoindre
+======================================== */
+.btn-webinaire {
+  background: #6D071A !important;
+  color: #FFB800 !important;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(109, 7, 26, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border: none;
+}
+.btn-webinaire:hover {
+  background: #8B0920 !important;
+  color: #FFB800 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(109, 7, 26, 0.35);
+}
+
+/* Marquee viewport */
+.webinaire-marquee {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 190px;
+}
+.webinaire-marquee__track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: webinaireMarquee 10s linear infinite;
+  will-change: transform;
+}
+.webinaire-marquee__track.is-paused {
+  animation-play-state: paused;
+}
+@keyframes webinaireMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Pages webinaire : masquer CTA et bandeau si présents */
+body.page-webinaire .btn-webinaire,
+body.page-webinaire .bandeau-evenement,
+body.page-webinaire .bandeau-evenements {
+  display: none !important;
+}
+
+/* FIX: page webinaire — bouton Rejoindre le réseau doit rester blanc/noir */
+body.page-webinaire .btn-rejoindre,
+body.page-webinaire a.btn-rejoindre,
+body.page-webinaire .header-actions .btn-rejoindre {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+body.page-webinaire .btn-rejoindre:hover,
+body.page-webinaire .btn-rejoindre:focus,
+body.page-webinaire .btn-rejoindre:active {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 /* ========================================
@@ -530,4 +609,12 @@ body.page-bordeaux .btn-retour:hover { background: var(--gris-clair); }
     font-size: 13px;
   }
   .btn-retour svg { width: 16px; height: 16px; }
+}
+
+/* FIX events: icône profil ne doit jamais shrink */
+.header-profil,
+.btn-profil,
+.profil-dropdown,
+.dropdown-profil {
+  flex: 0 0 auto;
 }

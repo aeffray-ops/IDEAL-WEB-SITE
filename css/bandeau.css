@@ -153,8 +153,10 @@
   z-index: 40000 !important;
 }
 
+/* Header : décalage quand le bandeau est affiché (frère direct) */
 #bandeau-evenement + .header-principal,
-.bandeau-evenement + .header-principal {
+.bandeau-evenement + .header-principal,
+.bandeau-evenements + .header-principal {
   margin-top: 54px;
   transition: margin-top 0.3s ease;
 }

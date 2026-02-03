@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Espace Partenaire - IDEAL Home Project</title>
+  <title>Espace Associé - Connexion | IDEAL Home Project</title>
   <link rel="stylesheet" href="css/bandeau.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -22,10 +22,10 @@
     .login-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; font-size: 14px; }
     .login-links a { color: #6D071A; text-decoration: underline; }
     .form-group label { display: block; font-weight: 600; color: #2D0202; margin-bottom: 8px; font-size: 15px; }
-    .form-group select, .form-group input { width: 100%; padding: 14px 18px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 15px; font-family: inherit; }
-    .form-group select:focus, .form-group input:focus { outline: none; border-color: #6D071A; }
+    .form-group input { width: 100%; padding: 14px 18px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 15px; font-family: inherit; }
+    .form-group input:focus { outline: none; border-color: #6D071A; }
     .btn-connexion { width: 100%; background: #6D071A; color: #FFFFFF; padding: 16px 32px; border: none; border-radius: 30px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }
-    .btn-connexion:hover { background: #6D071A; transform: translateY(-2px); }
+    .btn-connexion:hover { background: #8B0920; transform: translateY(-2px); }
     .connexion-footer { text-align: center; margin-top: 20px; color: #666; font-size: 14px; }
     .connexion-footer a { color: #6D071A; text-decoration: underline; }
     .btn-back-white { min-height: 44px; touch-action: manipulation; }
@@ -58,11 +58,7 @@
         <a href="index.html#faq" class="nav-link">FAQ</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-webinaire" href="webinaire-investisseurs-heureux.html">
-          <span class="webinaire-marquee" aria-label="Inscription webinaire">
-            <span class="webinaire-marquee__track">Inscription webinaire</span>
-          </span>
-        </a>
+        <a class="btn btn-webinaire" href="webinaire-investisseurs-heureux.html"><span class="webinaire-marquee" aria-label="Inscription webinaire"><span class="webinaire-marquee__track">Inscription webinaire</span></span></a>
         <a href="rejoindre-le-reseau.html" class="btn-rejoindre">Rejoindre le réseau</a>
         <div class="header-profil">
           <button type="button" class="btn-profil" aria-label="Se connecter" aria-expanded="false" aria-controls="profilDropdown"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
@@ -85,35 +81,13 @@
   </a>
 
   <section class="connexion-hero">
-    <h1>Espace Partenaire</h1>
-    <p>Accédez à votre espace dédié</p>
+    <h1>Espace Associé</h1>
+    <p>Accédez à votre espace Agent Marchand</p>
   </section>
   <div class="connexion-container">
     <div class="connexion-card">
       <h2>Connexion</h2>
       <form class="login-form" id="connexionForm" action="#" method="post" autocomplete="on">
-        <div class="form-group">
-          <label for="metier">Je suis</label>
-          <select id="metier" name="metier" required>
-            <option value="" selected disabled>-- Sélectionnez --</option>
-            <option value="architecte">Architecte</option>
-            <option value="entreprise_generale_btp">Entreprise générale du BTP</option>
-            <option value="maitre_oeuvre">Maître d'œuvre</option>
-            <option value="dessinateur_projeteur">Dessinateur / Projeteur</option>
-            <option value="diagnostiqueur">Diagnostiqueur immobilier</option>
-            <option value="bureau_etudes">Bureau d'études (structure / thermique)</option>
-            <option value="geometre">Géomètre-expert</option>
-            <option value="notaire">Notaire</option>
-            <option value="agent_immobilier">Agent immobilier</option>
-            <option value="courtier">Courtier en financement</option>
-            <option value="artisan">Artisan (plomberie / électricité / etc.)</option>
-            <option value="architecte_interieur">Décorateur / Architecte d'intérieur</option>
-            <option value="paysagiste">Paysagiste</option>
-            <option value="promoteur_mdb">Promoteur / Marchand de biens</option>
-            <option value="investisseur">Investisseur</option>
-            <option value="autre">Autre</option>
-          </select>
-        </div>
         <div class="form-group">
           <label for="identifiant">Identifiant</label>
           <input id="identifiant" name="identifiant" type="text" placeholder="Votre identifiant" required>
@@ -132,10 +106,7 @@
   </div>
   <footer class="footer-principal">
     <div class="footer-container">
-      <div class="footer-col">
-        <img src="assets/logo.png" alt="IDEAL" class="footer-logo">
-        <p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p>
-      </div>
+      <div class="footer-col"><img src="assets/logo.png" alt="IDEAL" class="footer-logo"><p class="footer-description">IDEAL Home Project, votre partenaire immobilier de confiance.</p></div>
       <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-biens.html">Nos biens</a></li><li><a href="nos-realisations.html">Nos réalisations</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="vendeurs.html">Vendeurs</a></li><li><a href="acquereurs.html">Acquéreurs</a></li><li><a href="rejoindre-le-reseau.html">Rejoindre</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Légal</h4><ul class="footer-links"><li><a href="mentions-legales.html#mentions">Mentions légales</a></li></ul></div>
@@ -144,11 +115,10 @@
   </footer>
   <script src="js/header.js"></script>
   <script src="js/bandeau.js"></script>
-  <script src="js/header.js"></script>
   <script>
     document.getElementById('connexionForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      window.location.href = 'espace-partenaire.html';
+      window.location.href = 'espace-associe.html';
     });
   </script>
 </body>
